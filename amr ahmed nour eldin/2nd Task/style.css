@@ -1,0 +1,37 @@
+.prep{
+    background-color:rgb(165, 42, 42,20%);
+    
+    h1{
+        padding: 10px;
+        color: rgb(165, 42, 42);
+    }
+    li{
+        padding-bottom: 10px;
+    }
+}
+.ing{
+    
+    h1{
+        padding: 10px;
+        color: rgb(165, 42, 42);
+    }
+    li{
+        padding-bottom: 10px;
+        
+    }
+}
+.inst{
+    
+    h1{
+        padding: 10px;
+        color: rgb(165, 42, 42);
+    }
+    li{
+        padding-bottom: 10px;
+    }
+}
+img{
+    border-radius: 10px;
+    width: 500px;
+    height: 200px;
+}
