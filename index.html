@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Assignments — Showcase</title>
+  <meta name="description" content="Browse students and explore their coding assignments." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <div class="brand">
+        <span class="brand__mark">SA-01</span>
+        <span class="brand__name">Student Assignments</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="hero__eyebrow">Assignment Showcase</p>
+      <h1 class="hero__title">Explore students<br />and their work.</h1>
+      <p class="hero__subtitle">
+        Every project below was built and submitted by a student — browse
+        by name to see their assignments, live demos, and source code.
+      </p>
+      <div class="hero__meta">
+        <span><strong id="stat-students">0</strong> students</span>
+        <span><strong id="stat-tasks">0</strong> assignments total</span>
+      </div>
+      <div class="search-bar">
+        <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"/>
+          <path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <input
+          type="text"
+          id="student-search"
+          placeholder="Search students by name…"
+          autocomplete="off"
+        />
+      </div>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="wrap">
+      <div class="student-grid" id="student-grid"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      Built with HTML, CSS &amp; vanilla JavaScript — no frameworks.
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
