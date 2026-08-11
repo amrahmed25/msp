@@ -104,7 +104,6 @@ function taskCardTemplate(task, index) {
          src="${task.preview}"
          alt="${escapeHtml(task.title)} preview"
          loading="lazy"
-         onerror="this.parentElement.innerHTML = ${JSON.stringify(previewFallbackHtml())}"
        />`
     : previewFallbackHtml();
 

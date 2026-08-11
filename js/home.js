@@ -1,9 +1,3 @@
-/**
- * home.js — Home page logic.
- * Renders the student grid from `students` (data.js) and wires up the
- * live search filter. No frameworks: plain DOM + template strings.
- */
-
 (function () {
   const grid = document.getElementById("student-grid");
   const searchInput = document.getElementById("student-search");
