@@ -1,6 +1,6 @@
 const students = [
   {
-    id: "1",
+    id: "amr ahmed",
     name: "amr",
     image: "./students/amr ahmed/image/amr3.png",
     tasksPath: "./students/amr ahmed/Tasks/",
