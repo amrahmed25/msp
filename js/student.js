@@ -42,14 +42,14 @@ function initials(name) {
 
 function notFoundTemplate(id) {
   return `
-    <div class="empty-state" style="margin-top:56px;">
-      <p class="empty-state__glyph">— 404 —</p>
-      <h3 class="empty-state__title">Student not found</h3>
-      <p class="empty-state__text">
+    <div class="empty-state text-center py-5 px-3 border rounded-3 mt-5">
+      <p class="empty-state__glyph mb-2">— 404 —</p>
+      <h3 class="empty-state__title h4 mb-2">Student not found</h3>
+      <p class="empty-state__text mx-auto mb-4">
         ${id ? `No student matches the id "${escapeHtml(id)}".` : "No student id was given in the URL."}
         Check the link or head back to the full list.
       </p>
-      <a class="btn btn--primary" href="index.html">← Back to Students</a>
+      <a class="btn btn-ledger-primary" href="index.html">← Back to Students</a>
     </div>
   `;
 }
@@ -57,18 +57,18 @@ function notFoundTemplate(id) {
 function profileTemplate(student) {
   const count = student.assignments ? student.assignments.length : 0;
   return `
-    <header class="profile-header">
-      <div class="profile-header__photo-wrap">
+    <header class="profile-header d-flex align-items-center gap-4 flex-wrap pt-5 pb-2">
+      <div class="profile-header__photo-wrap rounded-circle overflow-hidden">
         <img
-          class="profile-header__photo"
+          class="profile-header__photo w-100 h-100"
           src="${student.image}"
           alt="${escapeHtml(student.name)}"
           onerror="this.replaceWith(Object.assign(document.createElement('div'), {className:'profile-header__photo-fallback', textContent:'${initials(student.name)}'}))"
         />
       </div>
       <div>
-        <h1 class="profile-header__name">${escapeHtml(student.name)}</h1>
-        <p class="profile-header__count"><strong>${count}</strong> ${count === 1 ? "assignment" : "assignments"} on file</p>
+        <h1 class="profile-header__name mb-1">${escapeHtml(student.name)}</h1>
+        <p class="profile-header__count mb-0"><strong>${count}</strong> ${count === 1 ? "assignment" : "assignments"} on file</p>
       </div>
     </header>
   `;
@@ -79,16 +79,16 @@ function assignmentsTemplate(student) {
 
   if (!assignments.length) {
     return `
-      <div class="empty-state" style="margin-top:40px;">
-        <p class="empty-state__glyph">— Empty —</p>
-        <h3 class="empty-state__title">No assignments yet</h3>
-        <p class="empty-state__text">Once tasks are added to this student's Tasks folder and listed in js/data.js, they'll show up here.</p>
+      <div class="empty-state text-center py-5 px-3 border rounded-3 mt-4">
+        <p class="empty-state__glyph mb-2">— Empty —</p>
+        <h3 class="empty-state__title h4 mb-2">No assignments yet</h3>
+        <p class="empty-state__text mx-auto mb-0">Once tasks are added to this student's Tasks folder and listed in js/data.js, they'll show up here.</p>
       </div>
     `;
   }
 
   const cards = assignments.map(taskCardTemplate).join("");
-  return `<section class="task-grid">${cards}</section>`;
+  return `<section class="row g-4 task-grid mt-1">${cards}</section>`;
 }
 
 function taskCardTemplate(task, index) {
@@ -108,19 +108,21 @@ function taskCardTemplate(task, index) {
     : previewFallbackHtml();
 
   return `
-    <article class="task-card">
-      <span class="task-card__tab">TASK ${String(index + 1).padStart(2, "0")}</span>
-      <div class="task-card__preview-wrap">${previewMarkup}</div>
-      <div class="task-card__body">
-        <h3 class="task-card__title">${escapeHtml(task.title)}</h3>
-        ${task.description ? `<p class="task-card__desc">${escapeHtml(task.description)}</p>` : ""}
-        ${tech ? `<div class="task-card__tech">${tech}</div>` : ""}
-        <div class="task-card__actions">
-          <a class="btn btn--primary" href="${liveDemo}" target="_blank" rel="noopener">Live Demo</a>
-          ${hasGithub ? `<a class="btn btn--ghost" href="${task.github}" target="_blank" rel="noopener">View Code</a>` : ""}
+    <div class="col-12 col-md-6 col-xl-4">
+      <article class="task-card card h-100 border overflow-hidden shadow-sm">
+        <span class="task-card__tab">TASK ${String(index + 1).padStart(2, "0")}</span>
+        <div class="task-card__preview-wrap">${previewMarkup}</div>
+        <div class="card-body task-card__body d-flex flex-column">
+          <h3 class="card-title task-card__title">${escapeHtml(task.title)}</h3>
+          ${task.description ? `<p class="card-text task-card__desc flex-grow-1">${escapeHtml(task.description)}</p>` : ""}
+          ${tech ? `<div class="task-card__tech d-flex flex-wrap gap-2 mb-2">${tech}</div>` : ""}
+          <div class="task-card__actions d-flex gap-2 mt-auto">
+            <a class="btn btn-ledger-primary flex-fill" href="${liveDemo}" target="_blank" rel="noopener">Live Demo</a>
+            ${hasGithub ? `<a class="btn btn-ledger-ghost flex-fill" href="${task.github}" target="_blank" rel="noopener">View Code</a>` : ""}
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </div>
   `;
 }
 
