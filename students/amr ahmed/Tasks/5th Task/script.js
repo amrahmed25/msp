@@ -13,9 +13,7 @@ if (loginForm) {
         const destination = prompt(
             "What is your favorite travel destination?"
         );
-        alert(
-            `Welcome ${name}! We hope you enjoy your trip to ${destination}.`
-        );
+        
         console.log("User Information:");
         console.log("Name:", name);
         console.log("Email:", email);
@@ -25,5 +23,6 @@ if (loginForm) {
         alert(
             `Welcome ${name}! We hope you enjoy your trip to ${destination}.`
         );
+        
     });
 }
