@@ -21,7 +21,7 @@ if (loginForm) {
         console.log("Email:", email);
         console.log("Password:", password);
         console.log("Favorite Destination:", destination);
-        window.location.href = "index.html";
+        window.location.href = "home.html";
         alert(
             `Welcome ${name}! We hope you enjoy your trip to ${destination}.`
         );

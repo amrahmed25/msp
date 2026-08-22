@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Travel Agency</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+    <nav class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-teal-700">
+                Travel<span class="text-orange-500">Go</span>
+            </a>
+
+            <div class="flex gap-8 font-medium">
+
+                <a href="#home" class="hover:text-teal-600 transition">
+                    Home
+                </a>
+
+                <a href="#destinations" class="hover:text-teal-600 transition">
+                    Destinations
+                </a>
+
+                <a href="#about" class="hover:text-teal-600 transition">
+                    About
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <section
+        id="home"
+        class="min-h-screen flex items-center justify-center text-center px-6 bg-gradient-to-r from-teal-700 to-cyan-600 text-white"
+    >
+
+        <div class="max-w-3xl">
+
+            <p class="text-orange-300 font-semibold text-lg mb-4">
+                EXPLORE THE WORLD
+            </p>
+
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                Discover Your Next Adventure
+            </h1>
+
+            <p class="text-lg text-teal-50 mb-8">
+                Explore beautiful destinations, discover new cultures,
+                and create unforgettable memories with TravelGo.
+            </p>
+
+            <a
+                href="#destinations"
+                class="inline-block bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-full font-semibold transition"
+            >
+                Explore Destinations
+            </a>
+
+        </div>
+
+    </section>
+
+    <section id="about" class="py-20 px-6">
+
+        <div class="max-w-4xl mx-auto text-center">
+
+            <p class="text-teal-600 font-semibold mb-3">
+                ABOUT US
+            </p>
+
+            <h2 class="text-4xl font-bold mb-6">
+                Travel Made Simple
+            </h2>
+
+            <p class="text-gray-600 text-lg leading-8">
+                At TravelGo, we believe that traveling is more than just
+                visiting new places. It is about experiencing different
+                cultures, meeting new people, and creating memories that
+                last a lifetime.
+            </p>
+
+        </div>
+
+    </section>
+    <section class="bg-teal-50 py-16 px-6">
+
+        <div class="max-w-5xl mx-auto text-center">
+
+            <h2 class="text-3xl font-bold mb-5">
+                Why Should You Travel?
+            </h2>
+
+            <p class="text-gray-600 max-w-3xl mx-auto leading-7">
+                Traveling allows you to step outside your comfort zone,
+                explore new cultures, taste different foods, and see the
+                world from a completely different perspective.
+                Every journey can become a story worth remembering.
+            </p>
+
+        </div>
+
+    </section>
+    <section id="destinations" class="py-20 px-6">
+
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+
+                <p class="text-teal-600 font-semibold mb-2">
+                    TOP PLACES
+                </p>
+
+                <h2 class="text-4xl font-bold">
+                    Popular Destinations
+                </h2>
+
+                <p class="text-gray-500 mt-4">
+                    Explore some of the most beautiful places around the world.
+                </p>
+
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
+
+                    <img
+                        src="images/paris.jpg"
+                        alt="Paris"
+                        class="w-full h-52 object-cover"
+                    >
+
+                    <div class="p-5">
+
+                        <h3 class="text-xl font-bold mb-2">
+                            Paris
+                        </h3>
+
+                        <p class="text-gray-500 text-sm mb-5">
+                            Discover the Eiffel Tower, beautiful streets,
+                            amazing food and French culture.
+                        </p>
+
+                        <button
+                            class="bg-teal-700 text-white px-5 py-2 rounded-lg hover:bg-teal-800 transition"
+                        >
+                            Discover More
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
+
+                    <img
+                        src="images/bali.jpg"
+                        alt="Bali"
+                        class="w-full h-52 object-cover"
+                    >
+
+                    <div class="p-5">
+
+                        <h3 class="text-xl font-bold mb-2">
+                            Bali
+                        </h3>
+
+                        <p class="text-gray-500 text-sm mb-5">
+                            Relax on beautiful beaches and explore the
+                            tropical paradise of Bali.
+                        </p>
+
+                        <button
+                            class="bg-teal-700 text-white px-5 py-2 rounded-lg hover:bg-teal-800 transition"
+                        >
+                            Discover More
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
+
+                    <img
+                        src="images/dubai.jpg"
+                        alt="Dubai"
+                        class="w-full h-52 object-cover"
+                    >
+
+                    <div class="p-5">
+
+                        <h3 class="text-xl font-bold mb-2">
+                            Dubai
+                        </h3>
+
+                        <p class="text-gray-500 text-sm mb-5">
+                            Experience luxury, modern architecture,
+                            shopping and exciting adventures.
+                        </p>
+
+                        <button
+                            class="bg-teal-700 text-white px-5 py-2 rounded-lg hover:bg-teal-800 transition"
+                        >
+                            Discover More
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
+
+                    <img
+                        src="images/maldives.jpg"
+                        alt="Maldives"
+                        class="w-full h-52 object-cover"
+                    >
+
+                    <div class="p-5">
+
+                        <h3 class="text-xl font-bold mb-2">
+                            Maldives
+                        </h3>
+
+                        <p class="text-gray-500 text-sm mb-5">
+                            Enjoy crystal-clear water, relaxing beaches
+                            and unforgettable island experiences.
+                        </p>
+
+                        <button
+                            class="bg-teal-700 text-white px-5 py-2 rounded-lg hover:bg-teal-800 transition"
+                        >
+                            Discover More
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="py-20 bg-slate-900 text-white text-center px-6">
+
+        <div class="max-w-3xl mx-auto">
+
+            <h2 class="text-4xl font-bold mb-5">
+                Ready For Your Next Adventure?
+            </h2>
+
+            <p class="text-gray-300 mb-8">
+                Start exploring amazing destinations and plan your
+                next unforgettable journey.
+            </p>
+
+            <a
+                href="#destinations"
+                class="inline-block bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-full font-semibold transition"
+            >
+                Explore Destinations
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <footer class="bg-black text-gray-400 text-center py-6">
+
+        <p>
+            © 2026 TravelGo. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
