@@ -1,3 +1,5 @@
+import students from "./data.js";
+
 (function () {
   const grid = document.getElementById("student-grid");
   const searchInput = document.getElementById("student-search");

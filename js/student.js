@@ -1,9 +1,5 @@
-/**
- * student.js — Student page logic (student.html?id=...).
- * Reads `id` from the URL, finds the matching student in `students`
- * (data.js), and renders their profile + assignment cards. Falls back
- * to a "student not found" state if the id doesn't match anyone.
- */
+
+import students from "./data.js";
 
 (function () {
   const params = new URLSearchParams(window.location.search);
