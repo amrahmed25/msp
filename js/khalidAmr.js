@@ -1,7 +1,7 @@
 const khalidAmr={
     id: "khalidAmr",
     name: "khaled Amr",
-    image: "./students/khalidAmr/Image/khaled2.jpeg",
+    image: "./students/khalidAmr/Image/khaled.jpeg",
     tasksPath: "./students/khalidAmr/Tasks/",
     assignments: [
       {
@@ -51,8 +51,8 @@ const khalidAmr={
       
       {
         title: "Quiz — STUDENT ACTIVITY-MSP ",
-        folder: "./students/khalidAmr/Tasks/5th Task/",
-        preview: "./students/khalidAmr/Tasks/5th Task/khaled2.jpeg",
+        folder: "./students/khalidAmr/Tasks/QUIZ/",
+        preview: "./students/khalidAmr/Tasks/5th Task/khaled.jpeg",
         description: "A responsive website with a Home section, Abou section, and contact.",
         technologies: ["HTML", "CSS", "JavaScript"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/khalidAmr/Tasks/QUIZ"
