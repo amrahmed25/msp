@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Travel</title>
+</head>
+<body class="bg-[url(travel.jpg)] bg-cover bg-center min-h-screen flex items-center justify-center">
+    <form action="main.html" class="p-4 h-95 w-80 rounded-xl bg-gray-700/[50%] shadow-2xl shadow-cyan-900">
+        <h1 class="text-center text-white text-2xl">Welcome to Travel</h1>
+        <div class="py-5">
+            <div class="py-1">
+                <label class=" text-white text-xl" for="">Name</label><br>
+                <input id="name" class="bg-white h-9 p-1 w-65 text-l rounded-md" type="text" placeholder="Your Name"><br>
+            </div>
+            <div class="py-1">
+                <label class=" text-white text-xl" for="">Email</label><br>
+                <input id="email" class="bg-white h-9 p-1 w-65 text-l rounded-md" type="email" placeholder="Your Email"><br>
+            </div>
+            <div class="py-1">
+                <label class="text-white text-xl" for="">Password</label><br>
+                <input id="password" class="bg-white h-9 p-1 w-65 text-l rounded-md" type="password" placeholder="Your Password"><br>
+            </div>
+        </div>
+        <div class="text-center"> 
+            <button class="p-1 bg-white h-10 w-40 rounded-md cursor-pointer text-xl" onclick="whenSubmit()">Submit</button><br> 
+        </div>
+    </form>
+    <script src="login.js"></script>
+</body>
+</html>
