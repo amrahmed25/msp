@@ -52,7 +52,7 @@ const khalidAmr={
       {
         title: "Quiz — STUDENT ACTIVITY-MSP ",
         folder: "./students/khalidAmr/Tasks/QUIZ/",
-        preview: "./students/khalidAmr/Tasks/QUIZ/khaled.jpeg",
+        preview: "./students/khalidAmr/Tasks/QUIZ/khaled2.jpeg",
         description: "A responsive website with a Home section, About section, and contact.",
         technologies: ["HTML", "CSS", "JavaScript"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/khalidAmr/Tasks/QUIZ"
