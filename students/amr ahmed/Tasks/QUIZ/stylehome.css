@@ -141,3 +141,10 @@ footer{
         padding-left: 20px;
     }
 }
+@media(max-width:768px){
+    .card{
+        section{
+            width: 300px;
+        }
+    }
+}
