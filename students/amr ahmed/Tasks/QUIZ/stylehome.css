@@ -1,0 +1,150 @@
+nav{
+    display: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 1000px;
+    top: 0;
+    left: 0;
+    background-color: rgb(25, 25, 89);
+    h1{
+        color: rgb(53, 53, 222);
+        padding-left: 10px;
+    }
+}
+.navLinks{
+    margin-right: 10px;
+}
+
+a{
+    text-decoration: none;
+    padding-left: 10px;
+    color: aliceblue;
+}
+#home{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: rgb(10, 10, 108);
+    section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p{
+            color: whitesmoke;
+        }
+        .h1{
+            color: whitesmoke;
+        }
+        .develop{
+            color:rgb(68, 68, 200);
+        }
+    }
+    label{
+        h1{
+            display:inline;
+            padding-left: 10px;
+        }
+    }
+    button{
+    background-color: rgb(53, 53, 239);
+    border-radius: 10px;
+    width: 180px;
+    margin: 10px; 
+    cursor: pointer;
+    padding: 10px;
+    }   
+    button:hover{
+        background-color: rgb(21, 21, 240);
+        width:200px;
+    }
+}
+#about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 200px;
+    background-color: rgb(5, 5, 63);
+    h1{
+        color: rgb(20, 20, 204);
+    }
+    p{
+        color: whitesmoke;
+    }
+}
+#courses{
+    background-color: rgb(25, 25, 89);
+    .courseTitle{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+        h1{
+        color: rgb(20, 20, 204);
+    }
+    p{
+        color: whitesmoke;
+    }
+    }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    .card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        section{
+            display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: blue;
+        margin: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-radius: 10px;
+        width:400px;
+        h1{
+            color: white;
+        }
+        p{
+            color: rgba(245, 245, 245, 0.677);
+            padding-left:40px ;
+        }
+        a{
+            color: rgb(6, 6, 31);
+        }
+
+        }
+    }
+}
+footer{
+    background-color: black;
+    
+    padding: 10px;
+    a{
+        color: blueviolet;
+    }
+    p{
+        color: aliceblue;
+        padding-left: 20px;
+    }
+}
+@media(max-width:768px){
+    .card{
+        section{
+            width: 300px;
+        }
+    }
+}
