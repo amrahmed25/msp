@@ -1,0 +1,92 @@
+body {
+    background-color: #f3e5d8;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    max-width: 650px;
+    padding: 30px;
+}
+
+.recipe-img {
+    border-radius: 12px;
+    width: 100%;    
+}
+
+.title {
+    font-family: 'Times New Roman', Times, serif;
+    color: #312e2b;
+    margin-top: 20px;
+}
+
+.description {
+    color: #5f564d;
+    line-height: 1.5;
+}
+
+.prep-time-box {
+    background-color: #fff5fa;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin: 20px 0;
+    
+}
+
+.prep-title {
+    color: #7a284e;
+    margin-top: 0;
+}
+
+.prep-time-box ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.prep-time-box li {
+    margin-bottom: 8px;
+    color: #5f564d;
+}
+
+.prep-time-box li::marker {
+    color: #7a284e;
+}
+
+.section-title {
+    color: #854632;
+}
+
+.ingredients-list, .instructions-list {
+    padding-left: 20px;
+    color: #5f564d;
+}
+
+.ingredients-list li, .instructions-list li {
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.instructions-list li::marker {
+    font-weight: bold;
+    color: #854632;
+}
+
+.ingredients-list li::marker {
+    font-weight: bold;
+    color: #854632;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #e3ded7;
+    margin: 25px 0;
+}
+
+
+
+

@@ -1,0 +1,67 @@
+body {
+  background: #e5ceae;
+  font-family: Arial, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  max-width: 400px;
+}
+
+.card-img {
+  height: 300px;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.category {
+  letter-spacing: 3px;
+  color: gray;
+  font-size: 12px;
+}
+
+.title {
+  font-size: 24px;
+  margin: 10px 0;
+  font-family:'Playfair Display', serif;
+  font-weight: bolder;
+}
+
+.description {
+  font-size: 16px;
+  color: #555;
+}
+
+.price {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.new-price {
+  color: #3c8067;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+}
+
+
