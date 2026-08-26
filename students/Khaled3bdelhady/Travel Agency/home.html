@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="bg-slate-200 justify-between flex gap-4 md:gap-8 items-center">
+        <h3 class="text-2xl font-bold text-blue-950" >Travel Agency</h3>
+        <div class="gap-6">
+            <a href="#Home" class="text-gray-700 hover:text-blue-700" >Home</a>
+            <a href="#Destinations" class="text-gray-700 hover:text-blue-700" >Destinations</a>
+            <a href="#About" class="text-gray-700 hover:text-blue-700" >About</a>
+        </div>
+    </nav>
+    <header id="Home" class="min-h-[220px] bg-[url(02_hero_beach.png)] bg-cover bg-center ">
+        <h1 class="text-4xl font-bold">Explore The World</h1>
+        <h2 class="text-4xl font-bold text-blue-700">Make Memories</h2>
+        <p>Find the best places to visit and enjoy unforgettable experiences</p>
+        <button class="bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition border border-blue-700 px-5 py-2  ">Explore Destinations</button>
+    </header >
+
+    <section id="About" class="bg-white justify-between items-center">
+        <h3 class="text-2xl font-bold">About Traveling</h3>
+        <div class="flex">
+            <p>Traviling opens your mind and fills your life with amazing experiences. it's not just about the places you visit. but the memories you make.</p>
+            <img src="travel_illustration.png" alt="travel_illustration">
+        </div>
+    </section>
+
+    <div id="Destinations" class=" justify-center gap-6 text-center">
+        <h2 class="text-2xl font-bold text-center mb-6">Popular Destinations</h2> 
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+            <div class="bg-white rounded-xl overflow-hidden flex flex-col">
+                <img src="paris.png" alt="paris" class="w-full h-48 object-cover">
+                <h4 class="text-xl font-bold text-blue-700">Paris, France</h4>
+                <p class="mt-2 text-gray-600">The city of love and beautifull lights.</p>
+                <button  class="mt-auto w-full bg-blue-700 text-white rounded-lg py-2 hover:bg-blue-900 ">Discover More</button>
+            </div>
+
+            <div class="bg-white rounded-xl overflow-hidden flex flex-col">
+                <img src="05_maldives.png" alt="maldives" class="w-full h-48 object-cover">
+                <h4 class="text-xl font-bold text-blue-700">Maldives</h4>
+                <p class="mt-2 text-gray-600">Enjoy the clear blue water and relaxing beaches.</p>
+                <button class="mt-auto w-full bg-blue-700 text-white rounded-lg py-2 hover:bg-blue-900 ">Discover More</button>
+            </div>  
+
+                <div class="bg-white rounded-xl overflow-hidden flex flex-col">
+                <img src="06_switzerland.png" alt="switzerland" class="w-full h-48 object-cover">
+                <h4 class="text-xl font-bold text-blue-700">Switzerland</h4>
+                <p class="mt-2 text-gray-600">Mountains, lakes and stunning nature.</p>
+                <button  class="mt-auto w-full bg-blue-700 text-white rounded-lg py-2 hover:bg-blue-900 ">Discover More</button>
+            </div>
+        
+            <div class="bg-white rounded-xl overflow-hidden flex flex-col">
+                <img src="07_egypt.png" alt="egypt" class="w-full h-48 object-cover">
+                <h4 class="text-xl font-bold text-blue-700">Egypt</h4>
+                <p class="mt-2 text-gray-600">Discover the history of a great civilization.</p>
+                <button class="mt-auto w-full bg-blue-700 text-white rounded-lg py-2 hover:bg-blue-900 ">Discover More</button>
+            </div>
+        </div>
+    </div>    
+    <footer class="text-center bg-slate-200"> 
+        <p>© 2026 Travel Agency. All rights reserved.</p>
+    </footer>
+</body>
+</html>

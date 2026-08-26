@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelAgency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+</head>
+<body class="min-h-screen bg-[url('01_login_background.png')] bg-cover bg-center">
+        
+    <div class="min-h-screen flex justify-center items-center">
+
+        <form action="home.html" class="bg-white w-96 p-8 rounded-2xl shadow-lg">
+            <h1 class="text-3xl font-bold text-center text-blue-950">Travel Agency</h1>
+            <h5 class="text-center">Let's explore the world together!</h5>
+            <h2 class="text-blue-400 text-2xl font-bold text-center">Login</h2>
+            <h6 class="text-center">Please login to continue</h6>
+            <input id="Name"  class="w-full px-4 py-1 border border-gray-400 rounded-lg" type="text" placeholder="Full Name" required>
+            <br>
+            <br>
+            <input id="Email" class="w-full px-4 py-1 border border-gray-400 rounded-lg" type="email" placeholder="Email" required>
+            <br>
+            <br>       
+            <input id="Password" class="w-full px-4 py-1 border border-gray-400 rounded-lg" type="password" placeholder="Password" minlength="6" required>
+            <br>
+            <br>
+
+            <button onclick="getdestination()" class="bg-blue-700 text-white w-full rounded-lg hover:bg-blue-800">Login</button>
+
+        </form>
+    </div>
+<script src="java.js"></script>
+</body>
+</html>
