@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html class="scroll-smooth " lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Travel</title>
+</head>
+<body class="bg-[url(travel.jpg)]">
+    <div class="bg-sky-300 p-3">
+        <nav class="inline-block w-125 text-2xl text-white text-shadow-lg m-3">Travel</nav>
+        <div class="inline-block relative left-25">
+            <a class="mx-4 text-lg p-[1px] hover:border-b-2" href="#">Home</a>
+            <a class="mx-4 text-lg  p-[1px] hover:border-b-2" href="#about">About</a>        
+            <a class="mx-4 text-lg  p-[1px] hover:border-b-2" href="#destinations">Destinations </a>
+        </div>
+    </div>
+    <div class="bg-[url(fuji.png)] h-120 relative">
+        <p class="text-2xl p-2 text-justify w-[50%] text-shadow-sm text-neutral-950 tracking-wide inline-block absolute top-10 left-100">Traveling is more than just visiting new places — it's about discovering yourself, exploring different cultures, and creating memories that last a lifetime.</p>
+        <p ID="about" class="text-2xl p-2 text-justify w-[50%] text-shadow-sm text-neutral-950 tracking-wide inline-block absolute top-60 left-100">At Travel, we offer the best travel solutions — from flight and hotel bookings to organizing domestic and international tours. Our goal is to make your journey easy, comfortable, and full of unforgettable moments.</p>
+    </div>
+    <div id="destinations" class="grid grid-cols-2 gap-7 p-5 my-5">
+        <div class="grid grid-cols-2 gap-0">
+            <img class="w-91 inline-block" src="cards/Paris.jpg" alt="paris">
+            <p class="inline-block bg-sky-400 p-2 px-4 relative text-justify text-lg tracking-wide">
+                <span class="text-2xl inline-block my-2">Eiffel Tower</span><br><br>
+                <span class="opacity-65">The Eiffel Tower stands proudly in the heart of Paris, symbolizing romance, elegance, and timeless architecture. It remains one of the most iconic and must-visit landmarks for travelers from around the world.</span><br>
+                <button onclick="explore()" class="bg-white h-12 w-40 absolute bottom-35 left-25 inline-block cursor-pointer rounded-lg">Explore More</button>
+            </p>
+        </div>
+        <div class="grid grid-cols-2">
+            <img class="w-91 inline-block" src="cards/roma.jpg" alt="roma">
+            <p class="inline-block bg-sky-400 p-2 px-4 relative text-justify text-lg tracking-wide">
+                <span class="text-2xl inline-block my-2">Colosseum</span><br><br>
+                <span class="opacity-65">The Colosseum, located in Rome, Italy, is one of the world's most famous ancient landmarks — a symbol of Roman engineering and history that continues to amaze visitors from around the globe</span><br>
+                <button onclick="explore()" class="bg-white h-12 w-40 absolute bottom-35 left-25 inline-block cursor-pointer rounded-lg">Explore More</button>
+            </p>
+        </div>
+        <div class="grid grid-cols-2">
+            <img class="w-91 inline-block" src="cards/bali.jpg" alt="bali">
+            <p class="inline-block bg-sky-400 p-2 px-4 relative text-justify text-lg tracking-wide">
+                <span class="text-2xl inline-block my-2">Beratan Temple</span><br><br>
+                <span class="opacity-65">Beratan Temple is a beautiful Hindu-Buddhist temple on the shores of Lake Bratan in Bali. Known for its iconic multi-tiered roofs and peaceful lakeside setting, it's one of the most visited and photographed landmarks on the island.</span><br>
+                <button onclick="explore()" class="bg-white h-12 w-40 absolute bottom-35 left-25 inline-block cursor-pointer rounded-lg">Explore More</button>
+            </p>
+        </div>
+        <div class="grid grid-cols-2">
+            <img class="w-91 inline-block" src="cards/dubai.jpg" alt="dubai">
+            <p class="inline-block bg-sky-400 p-2 px-4 relative text-justify text-lg tracking-wide">
+                <span class="text-2xl inline-block my-2">Eiffel Tower</span><br><br>
+                <span class="opacity-65">Burj Khalifa is the tallest building in the world, standing in the heart of Dubai. A true icon of modern engineering and architecture, it offers breathtaking views of the city and remains one of the most visited landmarks in the UAE.</span><br>
+                <button onclick="explore()" class="bg-white h-12 w-40 absolute bottom-35 left-25 inline-block cursor-pointer rounded-lg ">Explore More</button>
+            </p>
+        </div>
+    </div>
+    <footer class="text-center text-xl text-shadow-sm p-6 bg-sky-200">© 2026 About Travel . All rights reserved.</footer>
+    <script src="main.js"></script>
+</body>
+</html>

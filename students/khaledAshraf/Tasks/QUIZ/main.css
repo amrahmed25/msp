@@ -1,0 +1,123 @@
+body{
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+}
+.nav-bar{
+    padding: 15px;
+    background-color: rgb(0, 58, 134);
+}
+.nav-bar nav{
+    display: inline-block;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 20px;
+    color: rgb(0, 213, 255);
+}
+.nav-bar section{
+    display: inline-block;
+}
+.nav-bar section a{
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+    position: relative;
+    left: 1500px;
+    font-size: 24px;
+}
+/* .nav-bar section a:hover{
+    border-bottom: 1px solid black;
+} */
+#header{
+    background-color: rgb(1, 1, 146);
+    height: 550px;
+}
+#header section{
+    position: relative;
+    top:150px;
+    left:700px;
+    width: 800px;
+}
+#header section p{
+    margin: 0px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    width: 608px;
+}
+#header section p #head{
+    margin: 0px;
+    color:rgb(0, 213, 255);
+}
+#header section p #big{
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0px;
+}
+#header section p #big #unique{
+    margin: 0px;
+    color:rgb(0, 213, 255);
+}
+#header section button{
+    color:black;
+    background-color:rgb(0, 213, 255);
+    border: none;
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 8px;
+    position: relative;
+    left: 215px;
+}
+#about{
+    background-color: rgb(0, 0, 57);
+    height: 300px;
+}
+#about section{
+    width: 1000px;
+    padding: 40px;
+    position: relative;
+    left: 470px;
+    top:40px
+}
+#about section h1{
+    color:rgb(0, 213, 255);
+    font-size: 32px;
+    margin: 0;
+    text-align: center;
+}
+#about section p{
+    color: white;
+    text-align: center;
+}
+#courses{
+    background-color: rgb(0, 0, 41);
+}
+#courses h1{
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color:rgb(0, 213, 255);
+}
+#courses p{
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+}
+#courses section{
+    display: grid;
+    grid-template-columns: 550px 550px 550px;
+    gap:90px;
+}
+#courses section .course{
+    background-color: rgba(0, 0, 41, 0.3);
+}
+#courses section .course p{
+    font-size: 21px;
+}
+#courses section .course .description{
+    text-align: justify;
+    color: rgb(255, 255, 255, 0.6);
+}
+#courses section .course a{
+    text-decoration: none;
+}
