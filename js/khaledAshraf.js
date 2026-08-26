@@ -1,7 +1,7 @@
 const khaledAshraf={
     id: "khaledAshraf",
     name: "khaled",
-    image: "./students/khaledAshraf/image/kholuo.jpeg",
+    image: "./students/khaledAshraf/Image/kholuo.jpeg",
     tasksPath: "./students/khaledAshraf/Tasks/",
     assignments: [
       {
