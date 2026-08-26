@@ -106,7 +106,7 @@ nav h1 {
 }
 
 .section-3 {
-    background: linear-gradient(#111227, rgb(0, 0, 0));
+    background: linear-gradient(#111227, #000000);
     display: flex;
     justify-content: center;
     align-items: center;
