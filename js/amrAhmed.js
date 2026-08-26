@@ -5,6 +5,14 @@ const amrAhmed={
     tasksPath: "./students/amr ahmed/Tasks/",
     assignments: [
       {
+        title: "Quiz — STUDENT ACTIVITY-MSP ",
+        folder: "./students/amr ahmed/Tasks/QUIZ/",
+        preview: "./students/amr ahmed/Tasks/QUIZ/amr.jpeg",
+        description: "A responsive website with a Home section, About section, and contact.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        github: "https://github.com/amrahmed25/msp/tree/main/students/amr%20ahmed/Tasks/QUIZ"
+      },
+      {
         title: "Task 5 — Travel website",
         folder: "./students/amr ahmed/Tasks/5th Task/",
         preview: "./students/amr ahmed/Tasks/5th Task/images/bali.jpg",
