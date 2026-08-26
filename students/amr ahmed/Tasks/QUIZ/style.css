@@ -39,18 +39,17 @@ form{
      
     border-radius: 10px;
 }
-button{
+a{
     background-color: blue;
     border-radius: 10px;
     width: 180px;
     margin: 10px; 
+    text-align: center;
     cursor: pointer;
     padding: 10px;
+    text-decoration: none;
 }
-button:hover{
+a:hover{
         background-color: rgb(21, 21, 240);
         width:200px;
     }
-a{
-    text-decoration: none;
-}
