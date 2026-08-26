@@ -1,16 +1,16 @@
 const khaledAbdelhady={
     id: "khaledAbdelhady",
     name: "khaledAbdelhady",
-    image: "./students/Khaled3bdelhady/Image/khaled.jpeg",
-    tasksPath: "./students/Khaled3bdelhady/Tasks/",
+    image: "./students/Khaled3bdelhady/image/Khaled.jfif",
+    tasksPath: "./students/Khaled3bdelhady/",
     assignments: [
       {
-        title: "Task 1 — PERFUME CARD",
+        title: "Task 1 — RECIPE CARD",
         folder: "./students/Khaled3bdelhady/Tasks/1stTask/",
         preview: "./students/Khaled3bdelhady/Tasks/1stTask/PERFUME.jpeg",
         description: "A Simple Perfume Card.",
         technologies: ["HTML", "CSS"],
-        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/Tasks/1stTask"
+        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/task1"
       },
 
       {
@@ -19,7 +19,7 @@ const khaledAbdelhady={
         preview: "./students/Khaled3bdelhady/Tasks/2nd Task/Eggs.jpeg",
         description: "A Simple Recipe Card",
         technologies: ["HTML", "CSS"],
-        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/Tasks/2nd%20Task"
+        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/task%202"
       },
 
       {
@@ -28,7 +28,7 @@ const khaledAbdelhady={
         preview: "./students/Khaled3bdelhady/Tasks/3rd Task/Images/khaled.jpeg",
         description: "A Simple Profiles with Cards",
         technologies: ["HTML", "CSS"],
-        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/Tasks/3rd%20Task"
+        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/task%203"
       },
 
       {
@@ -37,7 +37,7 @@ const khaledAbdelhady={
         preview: "./students/Khaled3bdelhady/Tasks/4th Task/img/khaled.jpeg",
         description: "A responsive personal portfolio landing page with a hero section, project grid, and contact form.",
         technologies: ["HTML", "CSS", "JavaScript"],
-        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/Tasks/4th%20Task"
+        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/portfolio"
       },
 
       {
@@ -46,7 +46,7 @@ const khaledAbdelhady={
         preview: "./students/Khaled3bdelhady/Tasks/5th Task/rome.jpg",
         description: "A responsive website with a hero section, project grid, and contact form.",
         technologies: ["HTML", "CSS", "JavaScript"],
-        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/Tasks/5th%20Task"
+        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/Travel%20Agency"
       },
       
       {
@@ -55,7 +55,7 @@ const khaledAbdelhady={
         preview: "./students/Khaled3bdelhady/Tasks/QUIZ/khaled2.jpeg",
         description: "A responsive website with a Home section, About section, and contact.",
         technologies: ["HTML", "CSS", "JavaScript"],
-        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/Tasks/QUIZ"
+        github: ""
       },
     ]
   };
