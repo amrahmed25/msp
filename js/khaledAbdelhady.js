@@ -36,7 +36,7 @@ const khaledAbdelhady={
         folder: "./students/Khaled3bdelhady/portfolio/",
         preview: "./students/Khaled3bdelhady/portfolio/img2.jfif/",
         description: "A responsive personal portfolio ",
-        technologies: ["HTML", "CSS", "JavaScript"],
+        technologies: ["HTML", "CSS", ],
         github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/portfolio"
       },
 
@@ -49,15 +49,23 @@ const khaledAbdelhady={
         github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/Travel%20Agency"
       },
       
+      // {
+      //   title: "Quiz — STUDENT ACTIVITY-MSP ",
+      //   folder: "./students/Khaled3bdelhady/Tasks/QUIZ/",
+      //   preview: "./students/Khaled3bdelhady/Tasks/QUIZ/khaled2.jpeg",
+      //   description: "A responsive website with a Home section, About section, and contact.",
+      //   technologies: ["HTML", "CSS", "JavaScript"],
+      //   github: ""
+      // },
+
       {
-        title: "Quiz — STUDENT ACTIVITY-MSP ",
-        folder: "./students/Khaled3bdelhady/Tasks/QUIZ/",
-        preview: "./students/Khaled3bdelhady/Tasks/QUIZ/khaled2.jpeg",
-        description: "A responsive website with a Home section, About section, and contact.",
+        title:"Nexora Gaming website"
+        folder: "./students/Khaled3bdelhady/Project_gaming/",
+        preview: "./students/Khaled3bdelhady/Project_gaming/Images/Valorant.jpg/",
+        description: "A responsive gaming website with ",
         technologies: ["HTML", "CSS", "JavaScript"],
-        github: ""
+        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/Project_gaming"
       },
-      
     ]
   };
   export default khaledAbdelhady;

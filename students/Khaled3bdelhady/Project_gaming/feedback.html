@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="feedback.css">
+    <title>Nexora</title>
+</head>
+<body>
+     <nav class="navbar">
+        <a href="index.html" class="logo">Nexora⚡</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index-login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="feedback-container">
+        <h2>Send Us Your Feedback 💬</h2>
+
+        <form id="login-form" class="feedback-form">
+            <label for="name">Feedback type</label>
+            <div class="feedback-type">
+                <input type="radio" name="feedback-type" checked id="suggestion">
+                <label for="suggestion">Suggestion 💡</label>
+                <br>
+                <input type="radio" name="feedback-type" id="suggestion">
+                <label for="suggestion">Report ⚠️</label>
+                <br>
+                <input type="radio" name="feedback-type" id="suggestion">
+                <label for="suggestion">Bugs 🪲</label>
+                <br>
+                <input type="radio" name="feedback-type" id="suggestion">
+                <label for="suggestion">Other 💬</label>
+            </div>
+
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="Uname">User Name</label>
+            <input type="text" id="Uname" placeholder="Enter your User-Nmae" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="pass">Your Password</label>
+            <input type="password" id="pass" placeholder="Enter your Password" required>
+
+            <label for="Subject">Your Subject</label>
+            <input type="text" id="Subject" placeholder="Write your subject here..." required></input>
+
+            <label for="feedback">Your Feedback</label>
+            <textarea rows="6" id="feedback" placeholder="Write your Feedback here..." required></textarea>
+
+            <button class="submit-btn">Send Feedback 🚀</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <h3 class="footer-logo">Nexora⚡</h3>
+        <p class="copyright">© 2026 Nexora. All rights reserved.</p>
+    </footer>
+
+    <script>
+            const submit = document.getElementById("login-form");
+
+            submit.addEventListener("submit",function (event) {
+
+            event.preventDefault();
+
+            alert("\nThanks for your feedback 🎮🔥\n");
+
+        }); 
+
+    </script>
+
+</body>
+</html>
+
