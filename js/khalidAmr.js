@@ -59,10 +59,10 @@ const khalidAmr={
       },
 
       {
-        title: "Task 6 - Plateform Gaming  ",
+        title: "Task 7 - Platform Gaming  ",
         folder: "./students/khalidAmr/Tasks/Project_gaming/",
         preview: "./students/khalidAmr/Tasks/Project_gaming/Images/rdr2.jpg",
-        description: "A responsive plateform gaming with a Home section, About section, category, feedback, and login section.",
+        description: "A responsive platform gaming with a Home section, About section, category, feedback, and login section.",
         technologies: ["HTML", "CSS", "JavaScript"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/khalidAmr/Tasks/Project_gaming"
       },
