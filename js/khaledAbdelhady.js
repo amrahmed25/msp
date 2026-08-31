@@ -61,7 +61,7 @@ const khaledAbdelhady={
       {
         title:"Nexora Gaming website"
         folder: "./students/Khaled3bdelhady/Project_gaming/",
-        preview: "./students/Khaled3bdelhady/Project_gaming/Valorant.jpg/",
+        preview: "./students/Khaled3bdelhady/Project_gaming/Images/Valorant.jpg/",
         description: "A responsive gaming website with ",
         technologies: ["HTML", "CSS", "JavaScript"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/Project_gaming"
