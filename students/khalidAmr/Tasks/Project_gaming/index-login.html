@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Nexora</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Nexora⚡</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index-login.html">Login</a></li>
+        </ul>
+    </nav>
+    
+
+     <div class="login-page">
+         <h1 class="Login">Login</h1>
+        <form id="login-form">
+            <label class="label" for="f-name">Full Name</label>
+            <input id="f-name" type="text" required placeholder="your name">
+            <label class="label"  for="user-name">User Name</label>
+            <input id="user-name" type="text" required placeholder="Username">
+            <label class="label"  for="email">Email</label>
+            <input id="email" type="email" required placeholder="example@gamil.com">
+            <label class="label"  for="password">Password</label>
+            <input id="password" type="password" required placeholder="Password">
+            <button  id="button" class="button" >Login</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <h3 class="footer-logo">Nexora⚡</h3>
+        <p class="copyright">© 2026 Nexora. All rights reserved.</p>
+    </footer>
+
+    <script>
+
+        const submit = document.getElementById("login-form");
+
+        submit.addEventListener("submit",function (event) {
+
+        event.preventDefault();
+
+        alert("Welcome to Nexora ⚡\nLet the game begin! 🎮🔥");
+
+        window.location.href = "index.html";
+
+        }); 
+
+    </script>
+</body>
+</html>
+
