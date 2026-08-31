@@ -1,0 +1,43 @@
+body{
+    background-color:rgb(1, 39, 88);
+    font-size: 24px;
+}
+div{
+    position: relative;
+    top:200px;
+    left:700px;
+    background-color: rgb(0, 58, 134);
+    width: 450px;
+    margin: 10px;
+    padding: 40px;
+    border-radius: 20px;
+}
+h1{
+    color: rgb(0, 213, 255);
+    text-align: center;
+}
+p,label{
+    color:white;
+    text-align: center;
+}
+form{
+    text-align: justify;
+}
+input{
+    background-color: rgb(1, 39, 88);
+    color: white;
+    width: 400px;
+    height: 35px;
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 5px;
+}
+#button{
+    background-color: rgb(0, 213, 255);
+    color: black;
+    border: none;
+    width: 420px;
+    height: 55px;
+    font-size: 22px;
+    border-radius: 10px;
+}

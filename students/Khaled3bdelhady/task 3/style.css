@@ -1,0 +1,12 @@
+.card{
+
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 15px;
+    text-align: center;
+}
+button:hover{
+    background-color: aqua;
+    color:white;
+}

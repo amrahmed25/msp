@@ -1,0 +1,19 @@
+h2{
+    color:firebrick;
+}
+h3{
+    color: hsl(332, 51%, 32%);
+
+
+}
+
+div{
+    background-color:rgb(255, 247, 252) 
+}
+ul{
+    line-height: 1.5;
+}
+ol{
+        line-height: 1.5;
+
+}

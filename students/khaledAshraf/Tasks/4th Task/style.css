@@ -1,0 +1,125 @@
+html {
+  scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    background-image: url(background.jpg);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.nav-bar{
+    padding: 10px;
+    /* width: 100%;
+    position: fixed;
+    background-color: #EAF6FF; */
+    
+}
+.nav-bar nav{
+    display: inline-block;
+    width: 125px;
+    font-size: 27px;
+    color: #0A1F44;
+    margin: 10px;
+    font-weight: 600;
+    text-decoration: line-through;
+}
+.buttons{
+    display: inline-block;
+    position: relative;
+    left: 25%;
+}
+.buttons a{
+    margin: 0 25px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.buttons a:hover{
+    border-bottom: 1px solid rgb(0, 0, 0);;
+}
+#intro{
+    height: 500px;
+    margin: 10px;
+}
+.name{
+    display: inline-block;
+    position: relative;
+    left:400px;
+    top:60px;
+    width:300px;
+    height: 400px;
+}
+.name h1{
+    font-size: 60px;
+}
+#first{
+    color:#0A1F44;
+}
+#last{
+    color: #EAF6FF;
+}
+#intro img{
+    position: relative;
+    top:100px;
+    left:450px;
+    width:320px;
+    border-radius: 200px;
+}
+#intro p{
+    display:inline-block;
+    position: relative;
+    left:18px;
+    color:#0A1F44;
+    font-weight: bold;
+    letter-spacing:1px;
+}
+.head{
+    color:#EAF6FF;
+    font-weight: bold;
+    position: relative;
+    left:635px;
+    width: 150px;
+    font-size: 24px;
+}
+#about,#service,#contact{
+    padding: 25px;
+    margin: 25px;
+}
+.details{
+    color:#0a1f44bb;
+}
+#description{
+    position: relative;
+    width: 1000px;
+    left: 185px;
+    text-align:justify;
+    color:#0A1F44;
+    letter-spacing:1px;
+    line-height: 30px;
+    padding: 10px 0px;
+}
+.advantage,.data{
+    display: grid;
+    grid-template-columns: 450px 450px 450px;
+    width:1380px;
+    gap:20px;
+    padding: 20px 5px;
+}
+.coding , .info{
+    background-color: #EAF6FF;
+    color:#0A1F44;
+    width:400px;
+    padding: 20px;
+    display: inline-block;
+}
+.coding p , .info p{
+    text-align: justify;
+    letter-spacing:1px;
+    line-height: 30px;
+}
+footer{
+    padding: 20px;
+    text-align: center;
+    letter-spacing:1px;
+    line-height: 30px;
+}
