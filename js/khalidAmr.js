@@ -59,12 +59,12 @@ const khalidAmr={
       },
 
       {
-        title: "Quiz — STUDENT ACTIVITY-MSP ",
-        folder: "./students/khalidAmr/Tasks//",
-        preview: "./students/khalidAmr/Tasks/QUIZ/khaled2.jpeg",
-        description: "A responsive website with a Home section, About section, and contact.",
+        title: "Task 6 - Plateform Gaming  ",
+        folder: "./students/khalidAmr/Tasks/Project_gaming/",
+        preview: "./students/khalidAmr/Tasks/Project_gaming/Images/rdr2.jpg",
+        description: "A responsive plateform gaming with a Home section, About section, category, feedback, and login section.",
         technologies: ["HTML", "CSS", "JavaScript"],
-        github: "https://github.com/amrahmed25/msp/tree/main/students/khalidAmr/Tasks/QUIZ"
+        github: "https://github.com/amrahmed25/msp/tree/main/students/khalidAmr/Tasks/Project_gaming"
       },
     ]
   };
