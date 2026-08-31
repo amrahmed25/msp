@@ -57,6 +57,15 @@ const khalidAmr={
         technologies: ["HTML", "CSS", "JavaScript"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/khalidAmr/Tasks/QUIZ"
       },
+
+      {
+        title: "Quiz — STUDENT ACTIVITY-MSP ",
+        folder: "./students/khalidAmr/Tasks//",
+        preview: "./students/khalidAmr/Tasks/QUIZ/khaled2.jpeg",
+        description: "A responsive website with a Home section, About section, and contact.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        github: "https://github.com/amrahmed25/msp/tree/main/students/khalidAmr/Tasks/QUIZ"
+      },
     ]
   };
   export default khalidAmr;
