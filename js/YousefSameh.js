@@ -1,7 +1,7 @@
 const YousefSameh={
     id: "YousefSameh",
     name: "Yousef-Sameh",
-    image: "./students/YousefSameh/Image/yousef.jpg",
+    image: "./students/YousefSameh/Images/yousef.jpg",
     tasksPath: "./students/YousefSameh/Tasks/",
 
     assignments: [
