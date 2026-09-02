@@ -1,17 +1,17 @@
-const amrAhmed={
+const YossefAyman={
     id: "Joo",
     name: "Yossef Ayman",
-    image: "./students/YossefAyman/Image/profile.png",
+    image: "./students/YossefAyman/Image/profile.jpg",
     tasksPath: "./students/YossefAyman/Tasks/",
     assignments: [
         {
             title: "Gaming Website",
             folder: "./students/YossefAyman/Tasks/Gaming_website/",
-            // preview: "./students/",
+            preview: "./students/YossefAyman/Tasks/Gaming_website/Images/Rocket League.jpg",
             description: "A modern, responsive gaming platform frontend built with Vanilla JS and CSS Custom Properties, featuring a neon glassmorphism theme and real time dual filtering.",
             technologies: ["HTML", "CSS", "JavaScript"],
             github: "https://github.com/yossef-ayman359/Steam-Demo"
         }
     ]
 };
-export default amrAhmed;
+export default YossefAyman;
