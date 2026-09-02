@@ -1,7 +1,7 @@
 const amrAhmed={
     id: "Joo",
     name: "Yossef Ayman",
-    image: "./students/YossefAyman/image/profile.png",
+    image: "./students/YossefAyman/Image/profile.png",
     tasksPath: "./students/YossefAyman/Tasks/",
     assignments: [
         {
