@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameNexus | categories</title>
+
+    <link rel="stylesheet" href="../Css/navbar.css">
+    <link rel="stylesheet" href="../Css/categories.css">
+    <script src="../Js/navbar.js"></script>
+</head>
+<body>
+    <nav-bar></nav-bar>
+
+    <div class="container">
+        <div class="browse">
+            <h1>Browse</h1>
+        </div>
+
+        <div class="category-filter">
+            <select id="selectCategore">
+                <option value="all">All Categories</option>
+                <option value="action">Action</option>
+                <option value="adventure">Adventure</option>
+                <option value="sports">Sports</option>
+                <option value="Strategy">Strategy</option>
+            </select>
+        </div>
+
+        <div class="rate-filter">
+            <select id="selectRate">
+                <option value="0">All Ratings</option>
+                <option value="4">⭐ 4.0 & Up</option>
+                <option value="3">⭐ 3.0 & Up</option>
+                <option value="2">⭐ 2.0 & Up</option>
+                <option value="1">⭐ 1.0 & Up</option>
+            </select>
+        </div>
+
+        <div class="games">
+            <div class="game-card" 
+                data-category="action"
+                data-rate="3.7">
+                <img src="../Images/Battle Storm.jpg" alt="Battle Storm">
+                <h3>Battle Storm</h3>
+                <p>Action | ⭐️3.7</p>
+                <button class="details-button">View Details</button>
+            </div>
+
+            <div class="game-card" 
+                data-category="action"
+                data-rate="4.2">
+                <img src="../Images/War Zone.jpg" alt="War Zone ">
+                <h3>Warzone X</h3>
+                <p>Action | ⭐️4.2</p>
+                <button class="details-button">View Details</button>
+            </div>
+
+            <div class="game-card" 
+                data-category="adventure"
+                data-rate="4.8">
+                <img src="../Images/Unravel-Two.jpeg" alt="Unravel Two">
+                <h3>Unravel Two</h3>
+                <p>Adventure | ⭐️4.8</p>
+                <button class="details-button">View Details</button>
+            </div>
+
+            <div class="game-card" 
+                data-category="adventure"
+                data-rate="3.5">
+                <img src="../Images/It-Takes-Two.jpeg" alt="It Takes Two">
+                <h3>It Takes Two</h3>
+                <p>Adventure | ⭐️3.5</p>
+                <button class="details-button"> View Details</button>
+            </div>
+
+            <div class="game-card" 
+                data-category="sports"
+                data-rate="3.5">
+                <img src="../Images/Rocket League.jpg" alt="Rocket League">
+                <h3>Rocket League</h3>
+                <p>Sports | ⭐️3.5</p>
+                <button class="details-button"> View Details</button>
+            </div>
+
+            <div class="game-card" 
+                data-category="sports"
+                data-rate="4.0">
+                <img src="../Images/Cricket 24.jpg" alt="Cricket 24">
+                <h3>Cricket 24</h3>
+                <p>Sports | ⭐️4.0</p>
+                <button class="details-button"> View Details</button>
+            </div>
+
+            <div class="game-card" 
+                data-category="Strategy"
+                data-rate="4.5">
+                <img src="../Images/Age of Empires IV.jpg" alt="Age of Empires IV">
+                <h3>Age of Empires IV</h3>
+                <p>Strategy | ⭐️4.5</p>
+                <button class="details-button"> View Details</button>
+            </div>
+
+            <div class="game-card" 
+                data-category="Strategy"
+                data-rate="4.9">
+                <img src="../Images/Stardew Valley.jpg" alt="Stardew Valley">
+                <h3>Stardew Valley</h3>
+                <p>Strategy | ⭐️4.9</p>
+                <button class="details-button"> View Details</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Js/category.js"></script>
+</body>
+</html>
