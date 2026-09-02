@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/register.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Register</title>
+</head>
+<body>
+    <div id="containerDiv">
+        <div id="messageDiv" class="hidden">
+            <p id="message"></p>
+        </div>
+    </div>
+    <div id="containerForm">
+        <form>
+            <h1 id="greeting">Sign Up for Games Station</h1>
+            <div id="containerFill">
+                <div class="containerInput">
+                    <input id="name" type="text" placeholder="Name" autofocus autocomplete="off"><br>
+                </div>
+                <div class="containerInput">
+                    <input id="email" type="email" placeholder="Email" autocomplete="off"><br>
+                </div>
+                <div class="containerInput">
+                    <input id="password" type="password" placeholder="Password" autocomplete="off"><br>
+                </div>
+            </div>
+            <div id="containerButton"> 
+                <button type="button" onclick="window.location.href='home.html'">
+    create account
+</button><br> 
+            </div>
+            <div id="containerP">
+                <p><span>Already have an account?</span><a href="index.html">Click Here</a></p>
+            </div>
+        </form>
+    </div>
+    <!-- <script src="js/auth.js"></script> -->
+</body>
+</html>
