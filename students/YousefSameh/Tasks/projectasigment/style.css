@@ -13,7 +13,9 @@ body {
     padding: 15px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 .navbar .logo {
@@ -26,14 +28,15 @@ body {
 .navbar a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 5px 10px;
     padding: 7px;
     border: 2px solid rgba(0, 255, 204, 0.4);
     border-radius: 12px;
+    display: inline-block;
 }
 
-.navbar a:hover{
-    color:rgba(0, 255, 204, 0.4) ;
+.navbar a:hover {
+    color: rgba(0, 255, 204, 0.4);
     background-color: transparent;
 }
 
@@ -69,7 +72,8 @@ body {
 }
 
 form {
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     margin: 20px auto;
     padding: 20px;
     border: 2px solid #8b5cf6;
@@ -135,10 +139,13 @@ button:hover {
 .card-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cont {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cont .card img {
@@ -203,9 +210,8 @@ button:hover {
         0 0 15px rgba(0, 255, 204, 0.6);
 }
 
-.feature-card:hover{
+.feature-card:hover {
     transform: translateY(-10px) scale(1.03);
-
 }
 
 .about-summary {
@@ -216,14 +222,16 @@ button:hover {
     margin: 0 auto;
 }
 
-.big{
+.big {
     text-align: center;
 }
-.descrip{
+
+.descrip {
     list-style-type: none;
+    padding: 0;
 }
 
-.descrip li{
+.descrip li {
     padding: 5px;
 }
 
@@ -268,11 +276,9 @@ button:hover {
         0 0 15px rgba(0, 255, 204, 0.6);
 }
 
-.about-card:hover{
-    transform:translatey(-10px) scale(1.03);
+.about-card:hover {
+    transform: translateY(-10px) scale(1.03);
 }
-
-
 
 .about-card h2 {
     color: #8b5cf6;
@@ -345,4 +351,3 @@ button:hover {
     color: #777;
     font-size: 0.85rem;
 }
-

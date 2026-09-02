@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+}
+
+body {
+    min-height: 100vh;
+    
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-y: scroll;
+}
+
+
+:root {
+    --bg-main: #0d0f17;             /* Primary dark background */
+    --bg-card: rgba(22, 27, 46, 0.6); /* Glassmorphic card background */
+    --bg-card-hover: rgba(30, 38, 64, 0.8);
+
+    --primary-neon: #00f0ff;        /* Cyan neon accent */
+    --secondary-neon: #ff007f;      /* Pink/Magenta neon accent */
+    --accent-gold: #ffb703;         /* Gold accent for ratings and stars */
+
+    --text-primary: #ffffff;        /* Main headings and body text */
+    --text-secondary: #a0a5c0;      /* Subtitles and secondary details */
+    --text-muted: #626880;          /* Muted or disabled text */
+
+    --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Orbitron', var(--font-main); /* Futuristic display font */
+
+    --fs-sm: 0.875rem;              /* 14px */
+    --fs-base: 1rem;                /* 16px */
+    --fs-md: 1.25rem;               /* 20px */
+    --fs-lg: 1.75rem;               /* 28px */
+    --fs-xl: 2.5rem;                /* 40px */
+
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+    --glass-border-glow: 1px solid rgba(0, 240, 255, 0.4);
+    --glass-blur: blur(12px);
+
+    --neon-glow: 0 0 15px rgba(0, 240, 255, 0.4);
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --error-neon: #ff0055;
+    --error-glow: 0 0 15px rgba(255, 0, 85, 0.4);
+
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-full: 9999px;
+
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
