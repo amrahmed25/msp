@@ -59,7 +59,7 @@ const khaledAbdelhady={
       // },
 
       {
-        title:"Nexora Gaming website"
+        title:"Nexora Gaming website",
         folder: "./students/Khaled3bdelhady/Project_gaming/",
         preview: "./students/Khaled3bdelhady/Project_gaming/Images/Valorant.jpg/",
         description: "A responsive gaming website with ",
