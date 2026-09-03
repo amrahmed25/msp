@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Send Us Your Feedback</title>
+<link rel="stylesheet" href="css/feedback.css" />
+</head>
+<body>
+  <nav>
+        <h1>Nostalgia</h1>
+        <section class="navLinks">
+            <a href="home.html">home</a>
+            <a href="categories.html">games</a>
+            <a href="about.html">about</a>
+            <a href="feedback.html">feedback</a>
+        </section>
+    </nav>
+  <div class="page">
+    <div class="card">
+      <h1 class="title">Send Us Your Feedback</h1>
+
+      <div class="field">
+        <label class="label" for="subject">Subject</label>
+        <input class="input" type="text" id="subject" placeholder="Briefly describe your feedback" />
+      </div>
+
+      <div class="field">
+        <label class="label" for="feedback">
+          Your Feedback (<span id="charCount">0</span>/500)
+        </label>
+        <textarea class="textarea" id="feedback" maxlength="500" rows="7" placeholder="Please provide detailed feedback..."></textarea>
+        <p class="char-remaining"><span id="charRemaining">500</span> characters remaining</p>
+      </div>
+
+      <div class="field">
+        <label class="label" for="game">Related Game (Optional)</label>
+        <select class="select" id="game">
+          <option>-- None --</option>
+        </select>
+      </div>
+      <button type="button" class="submit-btn">
+        Submit Feedback
+      </button>
+    </div>
+  </div>
+  <footer>
+        <p> &copy; 2026 Nostalgia. All Rights Reserved. </p>
+  </footer>
+
+</body>
+</html>

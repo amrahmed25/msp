@@ -5,6 +5,14 @@ const amrAhmed={
     tasksPath: "./students/amr ahmed/Tasks/",
     assignments: [
       {
+        title: "Nostalgia — Relive the Classics ",
+        folder: "./students/amr ahmed/Tasks/gamesStation/",
+        preview: "./students/amr ahmed/Tasks/gamesStation/images/nostalgia.png",
+        description: "Step back into the world of classic gaming with Nostalgia. Discover timeless games, revisit unforgettable memories, and enjoy the games that made every moment special.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        github: "https://github.com/amrahmed25/msp/tree/main/students/amr%20ahmed/Tasks/gamesStation"
+      },
+      {
         title: "Quiz — STUDENT ACTIVITY-MSP ",
         folder: "./students/amr ahmed/Tasks/QUIZ/",
         preview: "./students/amr ahmed/Tasks/QUIZ/amr.jpeg",

@@ -1,0 +1,79 @@
+@import url(./root.css);
+
+.navbar {
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    
+    backdrop-filter: blur(12px);
+    background: rgba(15, 23, 42, 0.75);
+    
+    margin: 15px auto;
+    padding: 10px 19px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar a {
+    color: rgb(226, 232, 240);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+
+    position: relative;
+
+    padding: 8px 17px;
+    border-radius: 99px;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar a::after {
+    content: '';
+
+    width: 0;
+    height: 2px;
+
+    background-color: rgb(56, 189, 248);
+
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    border-radius: 2px;
+
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.navbar a:hover {
+    color: rgb(56, 189, 248);
+}
+
+.navbar a:hover::after {
+    width: 60%;
+}
+
+.navbar a[href*="login"] {
+    background-color: rgb(56, 189, 248);
+    color: rgb(15, 23, 42);
+    font-weight: 700;
+
+    margin-left: 8px;
+    box-shadow: 0 4px 14px rgba(56, 189, 248, 0.25);
+}
+
+.navbar a[href*="login"]::after {
+    display: none;
+}
+
+.navbar a[href*="login"]:hover {
+    background-color: rgb(2, 132, 199);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+}

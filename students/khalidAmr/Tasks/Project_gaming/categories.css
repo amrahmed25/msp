@@ -61,14 +61,14 @@ body {
     gap: 15px;
 }
 
-.Categorie ,h2 {
+.Categories h2 {
     margin-top: 40px;
     font-size: 30px;
     font-weight: 700;
     color: #00ff66;
 }
 
-.Categorie ,select {
+.Categories select {
     background-color: #151821;
     color: #00ff66;
     border: 1.5px solid #00ff66;
