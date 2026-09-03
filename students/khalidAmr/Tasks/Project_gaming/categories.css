@@ -242,19 +242,7 @@ section {
         font-size: 15px;
     }
 
-    .hero h1 {
-        font-size: 24px;
-    }
 
-    .hero p {
-        font-size: 16px;
-        padding: 0 10px;
-    }
-
-    .hero button {
-        font-size: 18px;
-        padding: 8px 16px;
-    }
 
     .container {
         gap: 20px;
