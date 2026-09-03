@@ -173,12 +173,7 @@ body {
         font-size: 15px;
     }
 
-
-
-    .container {
-        gap: 20px;
-    }
-
+   
     .footer {
         flex-direction: column;
         gap: 10px;
