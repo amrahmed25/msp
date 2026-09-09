@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body class= "font-[Poppins] bg-[url(bg.jfif)] bg-slate-950 text-slate-100 min-h-screen flex flex-col items-center justify-center p-4 selection:bg-rose-500 selection:text-white">
+
+
+    <main
+        class="w-full max-w-md bg-slate-900/80 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-2xl relative overflow-hidden">
+
+        <div class="absolute -top-10 -left-10 w-32 h-32 bg-rose-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-sky-500/10 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <header class="text-center mb-6">
+            <h1
+                class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2 bg-gradient-to-r from-rose-400 via-purple-400 to-sky-400 bg-clip-text text-transparent">
+                TIC TAC TOE
+            </h1>
+            <p class="text-slate-400 text-xs sm:text-sm font-medium">Simple, Clean & Interactive Game</p>
+        </header>
+
+        <div class="flex bg-slate-950 p-1 rounded-xl mb-6 border border-slate-800">
+            <button
+                class="flex-1 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-300 bg-rose-500 text-white shadow-md">
+                <i class="fa-solid fa-users mr-1"></i> 2 Players
+            </button>
+
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 bg-slate-950/60 p-3 rounded-2xl border border-slate-800/80 mb-6 text-center">
+            <div class="p-2 rounded-xl border border-rose-500/30 bg-rose-500/5">
+                <span  class="block text-xs text-[#E1A51B] font-semibold mb-1">Player X</span>
+                <span id="xscore" class="text-xl font-bold text-slate-100">0</span>
+            </div>
+            <div class="p-2 rounded-xl flex flex-col justify-center items-center">
+                <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold mb-1">Ties</span>
+                <span id="tiescore" class="text-lg font-bold text-slate-400">0</span>
+            </div>
+            <div class="p-2 rounded-xl border border-transparent">
+                <span class="block text-xs text-[#02C3AE] font-semibold mb-1 drop-shadow-[0_0_15px_rgba(23,53,66,0.6)]">Player O</span>
+                <span id="oscore" class="text-xl font-bold text-slate-100">0</span>
+            </div>
+        </div>
+
+        <div id="playerturn" class="text-center mb-4">
+            <span class="text-sm font-semibold text-[#E1A51B] inline-flex items-center gap-2">
+                Player <span class="text-[#E1A51B] font-bold drop-shadow-[0_0_15px_rgba(244, 63, 94, 0.6)]">X</span>'s Turn
+            </span>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 mb-6 aspect-square">
+            <button id="box1" onclick="turn(this)"
+                class="cell hover:-translate-y-0.5 bg-slate-950 border border-slate-800 rounded-2xl flex items-center justify-center text-4xl sm:text-5xl font-extrabold transition-all duration-200 focus:outline-none"></button>
+            <button id="box2" onclick="turn(this)"
+                class="cell hover:-translate-y-0.5 bg-slate-950 border border-slate-800 rounded-2xl flex items-center justify-center text-4xl sm:text-5xl font-extrabold transition-all duration-200 focus:outline-none"></button>
+            <button id="box3" onclick="turn(this)"
+                class="cell hover:-translate-y-0.5 bg-slate-950 border border-slate-800 rounded-2xl flex items-center justify-center text-4xl sm:text-5xl font-extrabold transition-all duration-200 focus:outline-none"></button>
+            <button id="box4" onclick="turn(this)"
+                class="cell hover:-translate-y-0.5 bg-slate-950 border border-slate-800 rounded-2xl flex items-center justify-center text-4xl sm:text-5xl font-extrabold transition-all duration-200 focus:outline-none"></button>
+            <button id="box5" onclick="turn(this)"
+                class="cell hover:-translate-y-0.5 bg-slate-950 border border-slate-800 rounded-2xl flex items-center justify-center text-4xl sm:text-5xl font-extrabold transition-all duration-200 focus:outline-none"></button>
+            <button id="box6" onclick="turn(this)"
+                class="cell hover:-translate-y-0.5 bg-slate-950 border border-slate-800 rounded-2xl flex items-center justify-center text-4xl sm:text-5xl font-extrabold transition-all duration-200 focus:outline-none"></button>
+            <button id="box7" onclick="turn(this)"
+                class="cell hover:-translate-y-0.5 bg-slate-950 border border-slate-800 rounded-2xl flex items-center justify-center text-4xl sm:text-5xl font-extrabold transition-all duration-200 focus:outline-none"></button>
+            <button id="box8" onclick="turn(this)"
+                class="cell hover:-translate-y-0.5 bg-slate-950 border border-slate-800 rounded-2xl flex items-center justify-center text-4xl sm:text-5xl font-extrabold transition-all duration-200 focus:outline-none"></button>
+            <button id="box9" onclick="turn(this)"
+                class="cell hover:-translate-y-0.5 bg-slate-950 border border-slate-800 rounded-2xl flex items-center justify-center text-4xl sm:text-5xl font-extrabold transition-all duration-200 focus:outline-none"></button>
+        </div>
+
+        <div class="flex gap-3">
+            <button onclick="ResetBoard()"
+                class="flex-1 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-semibold rounded-xl transition-all duration-200 flex items-center justify-center gap-2 border border-slate-700">
+                <i class="fa-solid fa-rotate-right"></i> Reset Board
+            </button>
+            <button
+                class="py-3 px-4 bg-slate-950 hover:bg-slate-800 text-slate-400 hover:text-slate-200 text-sm font-semibold rounded-xl transition-all duration-200 border border-slate-800"
+                title="Reset Scores">
+                <i onclick="ResetScores()" class="fa-solid fa-trash-can"></i>
+            </button>
+        </div>
+
+        <footer class="mt-6 text-center text-slate-500 text-xs font-medium">
+            Designed & Built with <i class="fa-solid fa-heart text-rose-500 text-[10px]"></i>
+        </footer>
+    </main>
+
+    <audio id="gamesound" loop >
+        <source src="gamesound.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="finish" >
+        <source src="finish.mp3" type="audio/mpeg">
+    </audio>
+<script src="java.js"></script>
+</body>
+
+</html>
