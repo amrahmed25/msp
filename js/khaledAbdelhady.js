@@ -67,14 +67,8 @@ const khaledAbdelhady={
         github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/Project_gaming"
       },
 
-      {
-        title:"XO Game",
-        folder: "./students/Khaled3bdelhady/xo/",
-        preview: "./students/Khaled3bdelhady/xo/bg.jfif/",
-        description: "A responsive XO Game website ",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/xo"
-      },
+      
+
     ]
   };
   export default khaledAbdelhady;
