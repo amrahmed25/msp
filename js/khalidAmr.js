@@ -66,6 +66,15 @@ const khalidAmr={
         technologies: ["HTML", "CSS", "JavaScript"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/khalidAmr/Tasks/Project_gaming"
       },
+
+      {
+        title: "Task 8 - Tic Tac Toe GAME ",
+        folder: "./students/khalidAmr/Tasks/game/",
+        preview: "./students/khalidAmr/Tasks/game/ttt.jpg",
+        description: "A fun and interactive tic tac toe game built with HTML, Tailwind CSS , Javascript. Play against the bot or a friend, with 3 rounds, score tracking , and sound effects.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        github: "https://github.com/amrahmed25/msp/tree/main/students/khalidAmr/Tasks/game"
+      },
     ]
   };
   export default khalidAmr;

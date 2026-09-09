@@ -62,9 +62,18 @@ const khaledAbdelhady={
         title:"Nexora Gaming website",
         folder: "./students/Khaled3bdelhady/Project_gaming/",
         preview: "./students/Khaled3bdelhady/Project_gaming/Images/Valorant.jpg/",
-        description: "A responsive gaming website with ",
+        description: "A responsive gaming website ",
         technologies: ["HTML", "CSS", "JavaScript"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/Project_gaming"
+      },
+
+      {
+        title:"XO Game",
+        folder: "./students/Khaled3bdelhady/XO/",
+        preview: "./students/Khaled3bdelhady/XO/bg.jfif/",
+        description: "A responsive XO Game website ",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/XO"
       },
     ]
   };
