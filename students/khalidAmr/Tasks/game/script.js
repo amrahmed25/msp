@@ -226,6 +226,23 @@ function botMove() {
         }
     }
 
+    if (board[4] === "") {
+        makeMove(4, p2Symbol);
+        return;
+    }
+
+    const corners = [0, 2, 6, 8];
+
+    const emptyCorners = corners.filter(index => board[index] === "");
+
+    if (emptyCorners.length > 0) {
+        const randomCorner =
+            emptyCorners[Math.floor(Math.random() * emptyCorners.length)];
+
+        makeMove(randomCorner, p2Symbol);
+        return;
+    }
+
     const emptyCells = board
         .map((cell, index) => cell === "" ? index : null)
         .filter(index => index !== null);

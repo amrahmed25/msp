@@ -4,6 +4,14 @@ const amrAhmed={
     image: "./students/amr ahmed/image/amr3.png",
     tasksPath: "./students/amr ahmed/Tasks/",
     assignments: [
+       {
+        title: "XO game",
+        folder: "./students/amr ahmed/Tasks/xo game/",
+        preview: "./students/amr ahmed/Tasks/xo game/xxxxx.png.png",
+        description: "A responsive XO (Tic-Tac-Toe) game with both online multiplayer and offline gameplay, built with HTML, CSS, JavaScript, and Supabase.Features a clean, interactive UI with real-time game synchronization, winner/draw detection, rematch functionality, and full mobile & desktop responsiveness.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        github: "https://github.com/amrahmed25/msp/tree/main/students/amr%20ahmed/Tasks/xo game"
+      },
       {
         title: "Nostalgia — Relive the Classics ",
         folder: "./students/amr ahmed/Tasks/gamesStation/",
