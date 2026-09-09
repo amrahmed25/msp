@@ -73,7 +73,7 @@ const khaledAbdelhady={
         preview: "./students/Khaled3bdelhady/XO/bg.jfif/",
         description: "A responsive XO Game website ",
         technologies: ["HTML", "CSS", "JavaScript"],
-        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/Project_gaming"
+        github: ""
       },
     ]
   };
