@@ -1,0 +1,2034 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>X VS O | The Arena</title>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Corner/frame labels use fixed px offsets designed for desktop;
+           pull them in on narrow screens so they don't overlap content. */
+        @media (max-width: 640px) {
+            #gameInfo { left: 20px !important; top: 20px !important; }
+            #systemStatus { right: 20px !important; top: 20px !important; }
+            #startScreen .absolute.left-\[70px\],
+            #startScreen .absolute.left-\[33px\] { left: 14px !important; }
+            #startScreen .absolute.right-\[65px\],
+            #startScreen .absolute.right-\[33px\] { right: 14px !important; }
+            #startScreen .absolute.bottom-\[34px\] { bottom: 14px !important; }
+            #startScreen .absolute.top-\[34px\] { top: 14px !important; }
+            #mainX, #mainO { font-size: 88px !important; }
+        }
+
+        /* The player-vs-player cards flank the board with fixed widths
+           at left-[5%]/right-[5%]; on narrow phones this collides with
+           the board. Stack them above/below the board instead. */
+        @media (max-width: 640px) {
+            #gameBoard #playerOneCard,
+            #gameBoard #playerTwoCard {
+                position: static !important;
+            }
+            #gameBoard > div:has(#playerOneCard),
+            #gameBoard > div:has(#playerTwoCard) {
+                position: static !important;
+                transform: none !important;
+                width: 140px !important;
+                margin: 8px auto;
+            }
+            #gameBoard {
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: flex-start !important;
+                padding-top: 90px;
+                padding-bottom: 40px;
+                gap: 6px;
+            }
+            #board {
+                width: min(88vw, 300px) !important;
+                height: min(88vw, 300px) !important;
+                margin-top: 10px !important;
+            }
+        }
+
+        /* Comfortable tap targets on touch devices */
+        @media (max-width: 640px) {
+            button { min-height: 44px; }
+        }
+    </style>
+
+</head>
+
+
+<body class="bg-[#020308] text-white overflow-hidden">
+
+
+
+    <main
+        id="startScreen"
+        class="relative min-h-screen w-full overflow-hidden
+        bg-[#020308]
+        flex items-center justify-center">
+
+
+        
+
+        <img
+            src="background-one.jpeg"
+            alt=""
+            class="absolute inset-0
+            w-full h-full
+            object-cover
+            opacity-100
+            pointer-events-none"
+        >
+
+
+        
+        
+
+        <div
+            class="absolute inset-0
+            bg-black/20">
+        </div>
+
+
+       
+
+        <div
+            class="absolute
+            left-[-180px]
+            top-[25%]
+            w-[550px]
+            h-[550px]
+            rounded-full
+            bg-red-700/10
+            blur-[120px]
+            pointer-events-none">
+        </div>
+
+
+       
+
+        <div
+            class="absolute
+            right-[-180px]
+            top-[25%]
+            w-[550px]
+            h-[550px]
+            rounded-full
+            bg-blue-700/10
+            blur-[120px]
+            pointer-events-none">
+        </div>
+
+
+        
+
+        <div
+            class="absolute inset-0
+            opacity-[0.055]
+            pointer-events-none
+            bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
+            bg-[size:48px_48px]">
+        </div>
+
+
+       
+
+        <div
+            class="absolute
+            inset-[34px]
+            md:inset-[32px]
+            border
+            border-white/[0.08]
+            pointer-events-none">
+        </div>
+
+
+      
+
+        <div
+            class="absolute
+            left-[33px]
+            top-[34px]
+            w-9
+            h-9
+            border-l-2
+            border-t-2
+            border-red-600/80
+            pointer-events-none">
+        </div>
+
+
+        
+
+        <div
+            class="absolute
+            right-[33px]
+            top-[34px]
+            w-9
+            h-9
+            border-r-2
+            border-t-2
+            border-blue-500/80
+            pointer-events-none">
+        </div>
+
+
+        
+
+        <div
+            class="absolute
+            left-[33px]
+            bottom-[34px]
+            w-9
+            h-9
+            border-l-2
+            border-b-2
+            border-red-600/80
+            pointer-events-none">
+        </div>
+
+
+        
+
+        <div
+            class="absolute
+            right-[33px]
+            bottom-[34px]
+            w-9
+            h-9
+            border-r-2
+            border-b-2
+            border-blue-500/80
+            pointer-events-none">
+        </div>
+
+
+
+       
+
+        <div
+            id="gameInfo"
+            class="absolute
+            left-[70px]
+            top-[65px]
+            z-20
+            opacity-0
+            -translate-x-8
+            transition-all
+            duration-1000">
+
+
+            <p
+                class="text-[11px]
+                md:text-sm
+                tracking-[0.45em]
+                text-gray-300
+                uppercase">
+
+                Game 01
+
+            </p>
+
+
+            <p
+                class="mt-2
+                text-[9px]
+                md:text-[10px]
+                tracking-[0.3em]
+                text-gray-500
+                uppercase">
+
+                Player VS Player
+
+            </p>
+
+        </div>
+
+
+
+        
+
+        <div
+
+           id="systemStatus"
+            class="absolute
+            right-[65px]
+            top-[65px]
+            z-20
+            flex
+            items-center
+            gap-3
+            opacity-0
+            translate-x-8
+            transition-all
+            duration-1000">
+
+
+
+            <div
+                class="w-2.5
+                h-2.5
+                rounded-full
+                bg-green-600
+                animate-pulse">
+            </div>
+
+            <p
+                class="text-[8px]
+                md:text-xs
+                tracking-[0.35em]
+                text-gray-400
+                uppercase">
+
+                System Online
+
+            </p>
+
+        </div>
+
+
+          <div
+            id="mainContent"
+            class="relative
+            z-10
+            w-full
+            max-w-5xl
+            text-center
+            px-6
+            opacity-0
+            translate-y-8
+            transition-all
+            duration-1000">
+
+
+          
+
+            <p
+                class="text-gray-400
+                text-[10px]
+                md:text-xs
+                tracking-[0.75em]
+                uppercase
+                mb-12">
+
+                The Ultimate Duel
+
+            </p>
+
+
+
+
+
+        
+
+            <div
+                class="flex
+                items-center
+                justify-center
+                gap-7
+                md:gap-12">
+
+
+                <!-- X -->
+
+                <div
+                    id="mainX"
+                    class="text-[110px]
+                    sm:text-[140px]
+                    md:text-[180px]
+                    font-black
+                    leading-none
+                    text-red-600
+                    drop-shadow-[0_0_25px_rgba(239,68,68,0.75)]
+                    transition-all
+                    duration-300
+                    hover:scale-110
+                    hover:drop-shadow-[0_0_55px_rgba(239,68,68,1)]">
+
+                    X
+
+                </div>
+
+
+
+               
+
+                <div
+                    class="flex
+                    flex-col
+                    items-center
+                    gap-3">
+
+
+                    <span
+                        class="w-16
+                        h-px
+                        bg-gray-600">
+                    </span>
+
+
+                    <span
+                        class="text-gray-400
+                        text-xl
+                        md:text-2xl
+                        font-medium
+                        tracking-[0.15em]">
+
+                        VS
+
+                    </span>
+
+
+                    <span
+                        class="w-16
+                        h-px
+                        bg-gray-600">
+                    </span>
+
+
+                </div>
+
+
+
+                
+
+                <div
+                    id="mainO"
+                    class="text-[110px]
+                    sm:text-[140px]
+                    md:text-[180px]
+                    font-black
+                    leading-none
+                    text-blue-500
+                    drop-shadow-[0_0_25px_rgba(59,130,246,0.75)]
+                    transition-all
+                    duration-300
+                    hover:scale-110
+                    hover:drop-shadow-[0_0_55px_rgba(59,130,246,1)]">
+
+                    O
+
+                </div>
+
+
+            </div>
+
+
+            <div
+                class="flex
+                items-center
+                justify-center
+                gap-5
+                mt-10">
+
+
+                <span
+                    class="h-[2px]
+                    w-16
+                    md:w-20
+                    bg-red-600
+                    shadow-[0_0_10px_rgba(239,68,68,0.7)]">
+                </span>
+
+
+                <h2
+                    class="text-lg
+                    md:text-2xl
+                    tracking-[0.45em]
+                    uppercase
+                    text-gray-200">
+
+                    The Arena
+
+                </h2>
+
+
+                <span
+                    class="h-[2px]
+                    w-16
+                    md:w-20
+                    bg-blue-500
+                    shadow-[0_0_10px_rgba(59,130,246,0.7)]">
+                </span>
+
+
+            </div>
+
+
+            <p
+                class="mt-10
+                text-gray-400
+                text-[10px]
+                md:text-xs
+                tracking-[0.5em]
+                uppercase">
+
+                Only One Can Win
+
+            </p>
+
+
+
+
+
+        <div
+            class="relative
+            z-10
+            text-center">
+
+
+           
+
+
+            
+
+
+
+           
+            <button
+                id="enterBtn"
+                type="button"
+                class="group
+                relative
+                mx-auto
+                mt-8
+                w-[360px]
+                md:w-[490px]
+                h-[72px]
+                md:h-[90px]
+                cursor-pointer
+                p-[1px]
+                bg-gradient-to-r
+                from-red-600
+                via-gray-300
+                to-blue-500
+                [clip-path:polygon(0_18px,18px_0,calc(100%-18px)_0,100%_18px,100%_calc(100%-18px),calc(100%-18px)_100%,18px_100%,0_calc(100%-18px))]
+                transition-all
+                duration-500
+                hover:scale-[1.02]
+                hover:shadow-[0_0_35px_rgba(239,68,68,0.15)]">
+
+
+               
+
+                <span
+                    class="relative
+                    flex
+                    w-full
+                    h-full
+                    items-center
+                    justify-center
+                    gap-6
+                    bg-[#020308]/95
+                    text-white
+                    overflow-hidden
+                    [clip-path:polygon(0_17px,17px_0,calc(100%-17px)_0,100%_17px,100%_calc(100%-17px),calc(100%-17px)_100%,17px_100%,0_calc(100%-17px))]">
+
+
+                    
+
+                    <span
+                        class="absolute
+                        top-0
+                        left-0
+                        w-[45px]
+                        h-[2px]
+                        bg-red-600
+                        shadow-[0_0_10px_rgba(239,68,68,0.8)]
+                        transition-all
+                        duration-500
+                        group-hover:w-[80px]">
+                    </span>
+
+
+                    
+
+                    <span
+                        class="absolute
+                        bottom-0
+                        right-0
+                        w-[45px]
+                        h-[2px]
+                        bg-blue-500
+                        shadow-[0_0_10px_rgba(59,130,246,0.8)]
+                        transition-all
+                        duration-500
+                        group-hover:w-[80px]">
+                    </span>
+
+
+                   
+
+                    <span
+                        class="relative
+                        z-10
+                        text-xs
+                        md:text-sm
+                        font-bold
+                        tracking-[0.4em]
+                        uppercase
+                        transition-all
+                        duration-300
+                        group-hover:tracking-[0.5em]">
+
+                        START BATTLE
+
+                    </span>
+
+
+                    
+
+                    <span
+                        class="relative
+                        z-10
+                        text-xl
+                        md:text-2xl
+                        font-light
+                        transition-all
+                        duration-300
+                        group-hover:translate-x-2">
+
+                        →
+
+                    </span>
+
+
+                </span>
+
+            </button>
+        </div>
+
+
+         <div
+                class="flex
+                items-center
+                justify-center
+                gap-4
+                mt-8">
+
+
+                <span
+                    class="w-2
+                    h-2
+                    rounded-full
+                    bg-red-600
+                    shadow-[0_0_10px_rgba(168,85,247,0.8)]
+                    animate-pulse">
+                </span>
+
+
+                <span
+                    class="text-[9px]
+                    md:text-[10px]
+                    tracking-[0.45em]
+                    text-gray-500
+                    uppercase">
+
+                    Ready To Play
+
+                </span>
+
+
+                <span
+                    class="w-2
+                    h-2
+                    rounded-full
+                    bg-blue-500
+                    shadow-[0_0_10px_rgba(59,130,246,0.8)]
+                    animate-pulse">
+                </span>
+
+
+            </div>
+
+
+    </main>
+
+
+
+    <div
+        id="characterScreen"
+        class="hidden min-h-screen w-full overflow-hidden
+        bg-[#020308]
+        flex-col items-center justify-center relative">
+
+
+        <img
+            src="background-one.jpeg"
+            alt=""
+            class="absolute inset-0
+            w-full h-full
+            object-cover
+            opacity-80
+            pointer-events-none">
+
+
+        <div
+            class="absolute inset-0
+            bg-black/40">
+        </div>
+
+
+        <div
+            class="absolute inset-0
+            opacity-[0.035]
+            pointer-events-none
+            bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
+            bg-[size:48px_48px]">
+        </div>
+
+        <div
+            class="absolute
+            inset-[34px]
+            md:inset-[32px]
+            border
+            border-white/[0.08]
+            pointer-events-none">
+        </div>
+
+
+        <div
+            class="absolute
+            left-[33px]
+            top-[34px]
+            w-9
+            h-9
+            border-l-2
+            border-t-2
+            border-red-600/80
+            pointer-events-none">
+        </div>
+
+
+        <div
+            class="absolute
+            right-[33px]
+            top-[34px]
+            w-9
+            h-9
+            border-r-2
+            border-t-2
+            border-blue-500/80
+            pointer-events-none">
+        </div>
+
+
+        <div
+            class="absolute
+            left-[33px]
+            bottom-[34px]
+            w-9
+            h-9
+            border-l-2
+            border-b-2
+            border-red-600/80
+            pointer-events-none">
+        </div>
+
+
+        <div
+            class="absolute
+            right-[33px]
+            bottom-[34px]
+            w-9
+            h-9
+            border-r-2
+            border-b-2
+            border-blue-500/80
+            pointer-events-none">
+        </div>
+
+
+        <div
+            class="relative
+            z-10
+            text-center">
+
+
+            <p
+                class="text-[10px]
+                tracking-[0.5em]
+                text-gray-500
+                uppercase">
+
+                CHOOSE YOUR CHARACTER
+
+            </p>
+
+
+            <div
+                class="mt-12
+                flex
+                items-center
+                justify-center
+                gap-12
+                md:gap-24">
+
+
+                <div
+                    class="flex
+                    flex-col
+                    items-center
+                    gap-4
+                    cursor-pointer
+                    group">
+
+
+                    <div
+                        class="w-24
+                        h-24
+                        flex
+                        items-center
+                        justify-center
+                        border-2
+                        border-red-600/50
+                        rounded-lg
+                        bg-black/40
+                        text-5xl
+                        font-black
+                        text-red-600
+                        transition-all
+                        duration-300
+                        group-hover:border-red-400
+                        group-hover:shadow-[0_0_30px_rgba(168,85,247,0.4)]
+                        group-hover:scale-110">
+
+                        X
+
+                    </div>
+
+
+                    <p
+                        class="text-xs
+                        font-bold
+                        text-red-400
+                        tracking-[0.2em]
+                        uppercase">
+
+                        Player 1
+
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="flex
+                    flex-col
+                    items-center
+                    gap-4
+                    cursor-pointer
+                    group">
+
+
+                    <div
+                        class="w-24
+                        h-24
+                        flex
+                        items-center
+                        justify-center
+                        border-2
+                        border-blue-500/50
+                        rounded-lg
+                        bg-black/40
+                        text-5xl
+                        font-black
+                        text-blue-500
+                        transition-all
+                        duration-300
+                        group-hover:border-blue-400
+                        group-hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]
+                        group-hover:scale-110">
+
+                        O
+
+                    </div>
+
+
+                    <p
+                        class="text-xs
+                        font-bold
+                        text-blue-400
+                        tracking-[0.2em]
+                        uppercase">
+
+                        Player 2
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <p
+                class="mt-8
+                text-[9px]
+                tracking-[0.3em]
+                text-gray-500
+                uppercase">
+
+                Click any to continue
+
+            </p>
+
+
+            <div
+                class="mt-10
+                flex
+                justify-center
+                items-center
+                gap-4">
+
+                <span
+                    class="w-2
+                    h-2
+                    rounded-full
+                    bg-red-600
+                    shadow-[0_0_12px_rgba(168,85,247,0.9)]
+                    animate-pulse">
+                </span>
+
+                <span
+                    class="text-gray-500
+                    text-[10px]
+                    tracking-[0.45em]
+                    uppercase">
+
+                    Enter The Arena
+
+                </span>
+
+                <span
+                    class="w-2
+                    h-2
+                    rounded-full
+                    bg-blue-500
+                    shadow-[0_0_12px_rgba(59,130,246,0.9)]
+                    animate-pulse">
+                </span>
+
+            </div>
+
+        </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- ============================================================
+         OFFLINE MODE SECTION
+         This is the original offline game screen. It remains
+         completely unchanged from the original code.
+         ============================================================ -->
+
+    <section
+        id="playerSetup"
+        class="hidden min-h-screen w-full overflow-hidden
+        bg-[#020308]
+        flex-col items-center justify-center relative px-4 py-8">
+
+
+        <img
+            src="background-one.jpeg"
+            alt=""
+            class="absolute inset-0
+            w-full h-full
+            object-cover
+            opacity-80
+            pointer-events-none">
+
+
+        <div
+            class="absolute inset-0
+            bg-black/40">
+        </div>
+
+
+        <div
+            class="absolute inset-0
+            opacity-[0.035]
+            pointer-events-none
+            bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
+            bg-[size:48px_48px]">
+        </div>
+
+        <div
+            class="absolute
+            inset-[34px]
+            md:inset-[32px]
+            border
+            border-white/[0.08]
+            pointer-events-none">
+        </div>
+
+
+        <div
+            class="absolute
+            left-[33px]
+            top-[34px]
+            w-9
+            h-9
+            border-l-2
+            border-t-2
+            border-red-600/80
+            pointer-events-none">
+        </div>
+
+
+        <div
+            class="absolute
+            right-[33px]
+            top-[34px]
+            w-9
+            h-9
+            border-r-2
+            border-t-2
+            border-blue-500/80
+            pointer-events-none">
+        </div>
+
+
+        <div
+            class="absolute
+            left-[33px]
+            bottom-[34px]
+            w-9
+            h-9
+            border-l-2
+            border-b-2
+            border-red-600/80
+            pointer-events-none">
+        </div>
+
+
+        <div
+            class="absolute
+            right-[33px]
+            bottom-[34px]
+            w-9
+            h-9
+            border-r-2
+            border-b-2
+            border-blue-500/80
+            pointer-events-none">
+        </div>
+
+        <div
+            class="relative
+            z-10
+            max-w-xl
+            w-full">
+
+
+            <div
+                class="text-center
+                mb-12">
+
+                <p
+                    class="text-[9px]
+                    tracking-[0.3em]
+                    text-gray-500
+                    uppercase">
+
+                    Offline Mode
+
+                </p>
+
+                <h2
+                    class="mt-2
+                    text-4xl
+                    md:text-5xl
+                    font-black
+                    tracking-[0.08em]">
+
+                    Enter Your Name
+
+                </h2>
+
+            </div>
+
+
+            <div
+                class="space-y-6">
+
+
+                <div>
+
+                    <label
+                        class="block
+                        text-[9px]
+                        tracking-[0.3em]
+                        text-red-400
+                        uppercase
+                        mb-3">
+
+                        Player 1 (X)
+
+                    </label>
+
+                    <input
+                        id="player1Name"
+                        type="text"
+                        placeholder="Enter name..."
+                        class="w-full
+                        px-5
+                        py-3
+                        border
+                        border-red-600/50
+                        bg-black/60
+                        text-white
+                        placeholder-gray-600
+                        text-sm
+                        focus:outline-none
+                        focus:border-red-400
+                        focus:shadow-[0_0_20px_rgba(168,85,247,0.2)]
+                        transition-all
+                        duration-300">
+
+                </div>
+
+
+                <div>
+
+                    <label
+                        class="block
+                        text-[9px]
+                        tracking-[0.3em]
+                        text-blue-400
+                        uppercase
+                        mb-3">
+
+                        Player 2 (O)
+
+                    </label>
+
+                    <input
+                        id="player2Name"
+                        type="text"
+                        placeholder="Enter name..."
+                        class="w-full
+                        px-5
+                        py-3
+                        border
+                        border-blue-500/50
+                        bg-black/60
+                        text-white
+                        placeholder-gray-600
+                        text-sm
+                        focus:outline-none
+                        focus:border-blue-400
+                        focus:shadow-[0_0_20px_rgba(59,130,246,0.2)]
+                        transition-all
+                        duration-300">
+
+                </div>
+
+                <p
+                    id="setupMessage"
+                    class="text-red-600
+                    text-[9px]
+                    tracking-[0.2em]
+                    uppercase
+                    opacity-0
+                    transition-opacity
+                    duration-300">
+
+                    Both names required
+
+                </p>
+
+            </div>
+
+
+            <button
+                id="continueBtn"
+                type="button"
+                class="mt-10
+                w-full
+                px-9
+                py-4
+                border
+                border-red-600/70
+                bg-red-600/10
+                text-white
+                text-xs
+                font-bold
+                tracking-[0.3em]
+                uppercase
+                transition-all
+                duration-300
+                hover:border-red-400
+                hover:bg-red-600/20
+                hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]">
+
+                Continue To Game
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- ============================================================
+         MODE SELECT SCREEN
+         New screen: choose between Offline and Online modes
+         ============================================================ -->
+
+    <section
+        id="modeSelect"
+        class="hidden min-h-screen w-full overflow-hidden
+        bg-[#020308]
+        flex-col items-center justify-center relative px-4 py-8">
+
+        <img
+            src="background-one.jpeg"
+            alt=""
+            class="absolute inset-0
+            w-full h-full
+            object-cover
+            opacity-80
+            pointer-events-none">
+
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <div class="absolute inset-0 opacity-[0.035] pointer-events-none
+            bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
+            bg-[size:48px_48px]"></div>
+
+        <div class="absolute inset-[34px] md:inset-[32px] border border-white/[0.08] pointer-events-none"></div>
+
+        <div class="absolute left-[33px] top-[34px] w-9 h-9 border-l-2 border-t-2 border-red-600/80 pointer-events-none"></div>
+        <div class="absolute right-[33px] top-[34px] w-9 h-9 border-r-2 border-t-2 border-blue-500/80 pointer-events-none"></div>
+        <div class="absolute left-[33px] bottom-[34px] w-9 h-9 border-l-2 border-b-2 border-red-600/80 pointer-events-none"></div>
+        <div class="absolute right-[33px] bottom-[34px] w-9 h-9 border-r-2 border-b-2 border-blue-500/80 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-2xl w-full text-center">
+
+            <p class="text-[9px] tracking-[0.3em] text-gray-500 uppercase">Choose Mode</p>
+            <h2 class="mt-2 text-4xl md:text-5xl font-black tracking-[0.08em]">Play Solo or Live</h2>
+
+            <div class="mt-12 flex flex-col md:flex-row gap-6 justify-center">
+
+                <!-- OFFLINE MODE -->
+                <div class="flex-1 max-w-sm">
+                    <button
+                        id="offlineModeBtn"
+                        type="button"
+                        class="w-full px-8 py-6 border-2 border-red-600/50 bg-black/40 backdrop-blur-sm text-white text-center
+                        transition-all duration-300 hover:border-red-400 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] hover:scale-105">
+                        <p class="text-[10px] tracking-[0.3em] text-red-400 uppercase mb-3">Local Game</p>
+                        <h3 class="text-2xl font-black tracking-[0.1em] mb-4">Offline Mode</h3>
+                        <p class="text-[9px] tracking-[0.2em] text-gray-400 uppercase">Play with a friend<br>on the same device</p>
+                    </button>
+                </div>
+
+                <!-- ONLINE MODE -->
+                <div class="flex-1 max-w-sm">
+                    <button
+                        id="onlineModeBtn"
+                        type="button"
+                        class="w-full px-8 py-6 border-2 border-blue-500/50 bg-black/40 backdrop-blur-sm text-white text-center
+                        transition-all duration-300 hover:border-blue-400 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:scale-105">
+                        <p class="text-[10px] tracking-[0.3em] text-blue-400 uppercase mb-3">Real-time Multiplayer</p>
+                        <h3 class="text-2xl font-black tracking-[0.1em] mb-4">Online Mode</h3>
+                        <p class="text-[9px] tracking-[0.2em] text-gray-400 uppercase">Challenge a friend<br>over the internet</p>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- ============================================================
+         ONLINE MODE: SETUP SCREEN
+         New: Join or create an online room
+         ============================================================ -->
+
+    <section
+        id="onlineSetup"
+        class="hidden min-h-screen w-full overflow-hidden
+        bg-[#020308]
+        flex-col items-center justify-center relative px-4 py-8">
+
+        <img
+            src="background-one.jpeg"
+            alt=""
+            class="absolute inset-0
+            w-full h-full
+            object-cover
+            opacity-80
+            pointer-events-none">
+
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <div class="absolute inset-0 opacity-[0.035] pointer-events-none
+            bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
+            bg-[size:48px_48px]"></div>
+
+        <div class="absolute inset-[34px] md:inset-[32px] border border-white/[0.08] pointer-events-none"></div>
+
+        <div class="absolute left-[33px] top-[34px] w-9 h-9 border-l-2 border-t-2 border-red-600/80 pointer-events-none"></div>
+        <div class="absolute right-[33px] top-[34px] w-9 h-9 border-r-2 border-t-2 border-blue-500/80 pointer-events-none"></div>
+        <div class="absolute left-[33px] bottom-[34px] w-9 h-9 border-l-2 border-b-2 border-red-600/80 pointer-events-none"></div>
+        <div class="absolute right-[33px] bottom-[34px] w-9 h-9 border-r-2 border-b-2 border-blue-500/80 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-xl w-full">
+
+            <div class="text-center mb-10">
+                <p class="text-[9px] tracking-[0.3em] text-gray-500 uppercase">Online Arena</p>
+                <h2 class="mt-2 text-4xl md:text-5xl font-black tracking-[0.08em]">Create Or Join Room</h2>
+            </div>
+
+            <p id="onlineSetupMessage" class="mb-6 text-center text-red-600 text-[9px] tracking-[0.2em] uppercase opacity-0 transition-opacity duration-300"></p>
+
+            <div class="mt-10 flex flex-col gap-4">
+
+                <button
+                    id="createRoomBtn"
+                    type="button"
+                    class="w-full px-9 py-4 border border-red-600/70 bg-red-600/10 text-white text-xs font-bold tracking-[0.3em]
+                    uppercase transition-all duration-300 hover:border-red-400 hover:bg-red-600/20 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]">
+                    Create Room
+                </button>
+
+                <button
+                    id="joinRoomBtn"
+                    type="button"
+                    class="w-full px-9 py-4 border border-blue-500/70 bg-blue-500/10 text-white text-xs font-bold tracking-[0.3em]
+                    uppercase transition-all duration-300 hover:border-blue-400 hover:bg-blue-500/20 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]">
+                    Join Room
+                </button>
+
+            </div>
+
+            <!-- Join Room Code Input (hidden by default) -->
+            <div id="joinRoomCodeSection" class="hidden mt-6 space-y-4">
+                <input
+                    id="joinRoomCodeInput"
+                    type="text"
+                    placeholder="Enter 6-character room code..."
+                    maxlength="6"
+                    class="w-full px-5 py-3 border border-blue-500/50 bg-black/60 text-white uppercase placeholder-gray-600 text-sm font-mono
+                    focus:outline-none focus:border-blue-400 focus:shadow-[0_0_20px_rgba(59,130,246,0.2)]
+                    transition-all duration-300">
+                <button
+                    id="submitRoomCodeBtn"
+                    type="button"
+                    class="w-full px-9 py-4 border border-blue-500/70 bg-blue-500/10 text-white text-xs font-bold tracking-[0.3em]
+                    uppercase transition-all duration-300 hover:border-blue-400 hover:bg-blue-500/20 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]">
+                    Submit Code
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Back button -->
+        <button
+            id="onlineBackBtn"
+            type="button"
+            class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 px-6 py-3 border border-gray-700 bg-black/30 text-gray-500
+            text-[9px] font-bold tracking-[0.3em] uppercase transition-all duration-300 hover:border-blue-500/60 hover:text-gray-300">
+            Back
+        </button>
+
+    </section>
+
+
+
+
+    <!-- ============================================================
+         ONLINE MODE: WAITING PANEL
+         Shown to Player 1 while waiting for Player 2
+         ============================================================ -->
+
+    <section
+        id="onlineWaitingPanel"
+        class="hidden min-h-screen w-full overflow-hidden
+        bg-[#020308]
+        flex-col items-center justify-center relative px-4 py-8">
+
+        <img
+            src="background-one.jpeg"
+            alt=""
+            class="absolute inset-0
+            w-full h-full
+            object-cover
+            opacity-80
+            pointer-events-none">
+
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="absolute inset-0 opacity-[0.035] pointer-events-none bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:48px_48px]"></div>
+        <div class="absolute inset-[34px] md:inset-[32px] border border-white/[0.08] pointer-events-none"></div>
+
+        <div class="absolute left-[33px] top-[34px] w-9 h-9 border-l-2 border-t-2 border-red-600/80 pointer-events-none"></div>
+        <div class="absolute right-[33px] top-[34px] w-9 h-9 border-r-2 border-t-2 border-blue-500/80 pointer-events-none"></div>
+        <div class="absolute left-[33px] bottom-[34px] w-9 h-9 border-l-2 border-b-2 border-red-600/80 pointer-events-none"></div>
+        <div class="absolute right-[33px] bottom-[34px] w-9 h-9 border-r-2 border-b-2 border-blue-500/80 pointer-events-none"></div>
+
+        <div class="relative z-10 text-center max-w-md">
+
+            <p class="text-[9px] tracking-[0.3em] text-gray-500 uppercase">Waiting for opponent</p>
+            <h2 class="mt-4 text-4xl md:text-5xl font-black tracking-[0.08em]">Room Created</h2>
+
+            <div class="mt-10 px-8 py-6 border border-red-600/50 bg-black/40 backdrop-blur-sm">
+                <p class="text-[10px] tracking-[0.3em] text-gray-500 uppercase mb-3">Your Room Code</p>
+                <p id="roomCodeDisplay" class="text-4xl font-black text-red-400 tracking-[0.15em] font-mono">XXXXXX</p>
+            </div>
+
+            <p class="mt-6 text-[9px] tracking-[0.2em] text-gray-400 uppercase">Share this code with your opponent</p>
+
+            <div class="mt-8 flex items-center justify-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                <p class="text-sm text-gray-400">Waiting for player 2...</p>
+                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+            </div>
+
+            <button
+                id="cancelWaitingBtn"
+                type="button"
+                class="mt-10 px-9 py-3 border border-gray-700 bg-black/30 text-gray-500 text-xs font-bold tracking-[0.3em]
+                uppercase transition-all duration-300 hover:border-red-600/60 hover:text-red-400">
+                Cancel
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- ============================================================
+         OFFLINE GAME BOARD
+         This is the original game board, unmodified.
+         ============================================================ -->
+
+    <section
+        id="gameBoard"
+        class="hidden min-h-screen w-full overflow-hidden
+        bg-[#020308]
+        relative
+        flex
+        items-center
+        justify-center">
+
+        <img
+            src="background-one.jpeg"
+            alt=""
+            class="absolute
+            inset-0
+            w-full
+            h-full
+            object-cover
+            opacity-60
+            pointer-events-none">
+
+        <div
+            class="absolute
+            inset-0
+            bg-[#020308]/65
+            pointer-events-none">
+        </div>
+
+        <div
+            class="absolute
+            inset-0
+            opacity-[0.035]
+            pointer-events-none
+            bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
+            bg-[size:48px_48px]">
+        </div>
+
+        <div
+            class="absolute
+            inset-[34px]
+            md:inset-[32px]
+            border
+            border-white/[0.08]
+            pointer-events-none">
+        </div>
+
+        <div
+            class="absolute
+            left-[33px]
+            top-[34px]
+            w-9
+            h-9
+            border-l-2
+            border-t-2
+            border-red-600/80
+            pointer-events-none">
+        </div>
+
+        <div
+            class="absolute
+            right-[33px]
+            top-[34px]
+            w-9
+            h-9
+            border-r-2
+            border-t-2
+            border-blue-500/80
+            pointer-events-none">
+        </div>
+
+        <div
+            class="absolute
+            left-[33px]
+            bottom-[34px]
+            w-9
+            h-9
+            border-l-2
+            border-b-2
+            border-red-600/80
+            pointer-events-none">
+        </div>
+
+        <div
+            class="absolute
+            right-[33px]
+            bottom-[34px]
+            w-9
+            h-9
+            border-r-2
+            border-b-2
+            border-blue-500/80
+            pointer-events-none">
+        </div>
+
+
+        <div
+            class="absolute
+            top-[60px]
+            left-1/2
+            -translate-x-1/2
+            z-20">
+
+            <p
+                class="text-[9px]
+                tracking-[0.3em]
+                text-gray-500
+                uppercase
+                text-center">
+
+                Offline Mode
+
+            </p>
+
+            <p
+                class="mt-2
+                text-sm
+                md:text-base
+                font-bold
+                text-white
+                tracking-[0.1em]
+                uppercase
+                text-center">
+
+                The Arena
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="relative
+            z-10
+            flex
+            items-center
+            justify-center
+            h-full
+            min-h-screen
+            py-12">
+
+            <div
+                class="absolute
+                left-[5%]
+                top-1/2
+                -translate-y-1/2
+                z-10">
+
+                <div
+                    id="playerOneCard"
+                    class="border
+                    border-red-600/50
+                    bg-black/40
+                    backdrop-blur-sm
+                    px-5
+                    py-6
+                    text-center
+                    w-40
+                    md:w-48">
+
+                    <p
+                        class="text-[8px]
+                        tracking-[0.3em]
+                        text-red-400
+                        uppercase">
+
+                        Player 01
+
+                    </p>
+
+                    <p
+                        id="boardPlayer1"
+                        class="mt-3
+                        text-white
+                        font-bold
+                        text-sm
+                        md:text-base
+                        tracking-[0.2em]
+                        uppercase">
+
+                        PLAYER 01
+
+                    </p>
+
+                    <p
+                        id="boardPlayer1Sym"
+                        class="mt-2
+                        text-3xl
+                        md:text-4xl
+                        font-black
+                        text-red-600
+                        drop-shadow-[0_0_20px_rgba(168,85,247,0.9)]">
+
+                        X
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="relative
+                z-20
+                flex
+                flex-col
+                items-center
+                gap-6">
+
+                <div
+                    class="text-center">
+
+                    <p
+                        id="turnText"
+                        class="text-[10px]
+                        md:text-xs
+                        font-bold
+                        tracking-[0.25em]
+                        text-red-400
+                        uppercase">
+
+                        X's Turn
+
+                    </p>
+
+                    <div
+                        id="turnDot"
+                        class="mt-2
+                        w-2
+                        h-2
+                        rounded-full
+                        bg-red-600
+                        mx-auto
+                        shadow-[0_0_15px_rgba(168,85,247,1)]
+                        animate-pulse">
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="board"
+                    class="grid
+                    grid-cols-3
+                    gap-2
+                    md:gap-3
+                    w-[min(90vw,300px)]
+                    md:w-[390px]
+                    aspect-square
+                    p-4
+                    md:p-6
+                    border
+                    border-white/[0.1]
+                    bg-black/30
+                    backdrop-blur-sm">
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="absolute
+                right-[5%]
+                top-1/2
+                -translate-y-1/2
+                z-10">
+
+                <div
+                    id="playerTwoCard"
+                    class="border
+                    border-blue-500/50
+                    bg-black/40
+                    backdrop-blur-sm
+                    px-5
+                    py-6
+                    text-center
+                    w-40
+                    md:w-48">
+
+                    <p
+                        class="text-[8px]
+                        tracking-[0.3em]
+                        text-blue-400
+                        uppercase">
+
+                        Player 02
+
+                    </p>
+
+                    <p
+                        id="boardPlayer2"
+                        class="mt-3
+                        text-white
+                        font-bold
+                        text-sm
+                        md:text-base
+                        tracking-[0.2em]
+                        uppercase">
+
+                        PLAYER 02
+
+                    </p>
+
+                    <p
+                        id="boardPlayer2Sym"
+                        class="mt-2
+                        text-3xl
+                        md:text-4xl
+                        font-black
+                        text-blue-500
+                        drop-shadow-[0_0_20px_rgba(59,130,246,0.9)]">
+
+                        O
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="absolute
+            bottom-[5%]
+            left-1/2
+            -translate-x-1/2
+            z-20
+            flex
+            items-center
+            gap-5">
+
+
+           
+
+            <button
+                id="resetGame"
+                type="button"
+                class="group
+                px-7
+                py-3
+                border
+                border-red-600/50
+                bg-black/40
+                text-gray-300
+                text-[9px]
+                font-bold
+                tracking-[0.35em]
+                uppercase
+                transition-all
+                duration-300
+                hover:border-red-400
+                hover:text-white
+                hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]">
+
+                REMATCH
+
+            </button>
+
+
+          
+
+            <button
+                id="exitArena"
+                type="button"
+                class="px-7
+                py-3
+                border
+                border-gray-700
+                bg-black/30
+                text-gray-500
+                text-[9px]
+                font-bold
+                tracking-[0.35em]
+                uppercase
+                transition-all
+                duration-300
+                hover:border-blue-500/60
+                hover:text-gray-300">
+
+                EXIT ARENA
+
+            </button>
+
+        </div>
+
+
+
+        
+
+        <div
+            id="winnerOverlay"
+            class="hidden
+            absolute
+            inset-0
+            z-50
+            bg-[#020308]/90
+            backdrop-blur-md
+            items-center
+            justify-center">
+
+
+            <div
+                class="text-center
+                px-6">
+
+
+                <p
+                    class="text-red-400
+                    text-[10px]
+                    tracking-[0.6em]
+                    uppercase">
+
+                    Victory
+
+                </p>
+
+
+                <h2
+                    id="winnerTitle"
+                    class="mt-5
+                    text-6xl
+                    md:text-8xl
+                    font-black
+                    tracking-[0.08em]">
+
+                    X
+
+                </h2>
+
+
+                <p
+                    id="winnerName"
+                    class="mt-4
+                    text-xl
+                    md:text-2xl
+                    font-bold
+                    tracking-[0.3em]
+                    uppercase">
+
+                    PLAYER 01
+
+                </p>
+
+
+                <p
+                    class="mt-6
+                    text-gray-500
+                    text-[10px]
+                    tracking-[0.45em]
+                    uppercase">
+
+                    Has Conquered The Arena
+
+                </p>
+
+
+                <button
+                    id="overlayRematch"
+                    type="button"
+                    class="mt-10
+                    px-12
+                    py-4
+                    border
+                    border-red-600
+                    bg-red-600/10
+                    text-white
+                    text-xs
+                    font-bold
+                    tracking-[0.4em]
+                    uppercase
+                    transition-all
+                    duration-300
+                    hover:bg-red-600/20
+                    hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]">
+
+                    REMATCH
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+</section>
+
+
+
+    <!-- ============================================================
+         ONLINE GAME BOARD (real-time multiplayer via Supabase)
+         Visually matches the offline board (same colors, fonts,
+         card style, cell style) but is a separate section with its
+         own IDs so the offline board/logic is never touched.
+         Adds a live 1:00 countdown timer per player.
+         ============================================================ -->
+    <section
+        id="onlineBoardScreen"
+        class="hidden relative min-h-screen w-full overflow-hidden
+        bg-[#020308] text-white flex-col items-center justify-center px-4 py-8">
+
+        <img
+            src="background-one.jpeg"
+            alt=""
+            class="absolute inset-0 w-full h-full object-cover opacity-70 pointer-events-none">
+
+        <div class="absolute inset-0 bg-[#020308]/55 pointer-events-none"></div>
+
+        <div
+            class="absolute inset-0 opacity-[0.035] pointer-events-none
+            bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
+            bg-[size:48px_48px]">
+        </div>
+
+        <div class="absolute inset-[16px] md:inset-[28px] border border-white/[0.07] pointer-events-none"></div>
+
+        <div class="relative z-10 text-center mb-4">
+            <p class="text-gray-500 text-[9px] md:text-[10px] tracking-[0.5em] uppercase">Online Arena</p>
+            <h1 class="mt-2 text-3xl md:text-5xl font-black tracking-[0.08em] uppercase">
+                Live <span class="bg-gradient-to-r from-red-600 via-white to-blue-500 bg-clip-text text-transparent">Duel</span>
+            </h1>
+        </div>
+
+        <!-- Player cards + timers -->
+        <div class="relative z-10 w-full max-w-2xl flex items-center justify-between gap-3 md:gap-6 mb-4 px-2">
+
+            <div id="onlinePlayerOneCard" class="flex-1 border border-red-600/50 bg-black/40 backdrop-blur-sm p-3 md:p-5 text-center">
+                <p class="text-[8px] tracking-[0.3em] text-red-400 uppercase">Player 01 · X</p>
+                <p id="onlineBoardPlayer1" class="mt-2 text-white font-bold text-xs md:text-sm tracking-[0.2em] uppercase truncate"></p>
+                <p id="onlineTimer1" class="mt-3 text-2xl md:text-3xl font-black text-red-400 tabular-nums">1:00</p>
+            </div>
+
+            <div class="flex flex-col items-center gap-2 shrink-0">
+                <span id="onlineTurnDot" class="w-2.5 h-2.5 rounded-full bg-red-600 shadow-[0_0_15px_rgba(168,85,247,1)] animate-pulse"></span>
+                <span id="onlineTurnText" class="text-[9px] md:text-xs font-bold tracking-[0.25em] text-red-400 uppercase whitespace-nowrap">X'S TURN</span>
+            </div>
+
+            <div id="onlinePlayerTwoCard" class="flex-1 border border-blue-500/50 bg-black/40 backdrop-blur-sm p-3 md:p-5 text-center">
+                <p class="text-[8px] tracking-[0.3em] text-blue-400 uppercase">Player 02 · O</p>
+                <p id="onlineBoardPlayer2" class="mt-2 text-white font-bold text-xs md:text-sm tracking-[0.2em] uppercase truncate"></p>
+                <p id="onlineTimer2" class="mt-3 text-2xl md:text-3xl font-black text-blue-400 tabular-nums">1:00</p>
+            </div>
+
+        </div>
+
+        <!-- Board (built by JS, same cell styling as offline board) -->
+        <div
+            id="onlineBoardEl"
+            class="relative z-20 grid grid-cols-3 gap-2 md:gap-3
+            w-[min(90vw,300px)] h-[min(90vw,300px)] md:w-[390px] md:h-[390px]">
+        </div>
+
+        <p id="onlineStatusMsg" class="relative z-20 mt-5 text-[10px] tracking-[0.3em] text-gray-500 uppercase min-h-[14px]"></p>
+
+        <div class="relative z-20 mt-6 flex items-center gap-4">
+            <button
+                id="onlineRematchBtn"
+                type="button"
+                class="px-6 py-3 border border-red-600/50 bg-black/40 text-gray-300
+                text-[9px] font-bold tracking-[0.3em] uppercase transition-all duration-300
+                hover:border-red-400 hover:text-white">
+                Rematch
+            </button>
+            <button
+                id="onlineExitBtn"
+                type="button"
+                class="px-6 py-3 border border-gray-700 bg-black/30 text-gray-500
+                text-[9px] font-bold tracking-[0.3em] uppercase transition-all duration-300
+                hover:border-blue-500/60 hover:text-gray-300">
+                Exit Arena
+            </button>
+        </div>
+
+        <!-- Winner overlay (separate from offline overlay) -->
+        <div id="onlineWinnerOverlay" class="hidden absolute inset-0 z-50 bg-[#020308]/90 backdrop-blur-md items-center justify-center">
+            <div class="text-center px-6">
+                <p class="text-red-400 text-[10px] tracking-[0.5em] uppercase">Result</p>
+                <h2 id="onlineWinnerTitle" class="mt-4 text-5xl md:text-7xl font-black tracking-[0.08em]">X</h2>
+                <p id="onlineWinnerName" class="mt-4 text-lg md:text-2xl font-bold tracking-[0.3em] uppercase"></p>
+                <p id="onlineWinnerReason" class="mt-3 text-gray-500 text-[9px] tracking-[0.3em] uppercase"></p>
+                <button
+                    id="onlineOverlayRematch"
+                    type="button"
+                    class="mt-8 px-10 py-4 border border-red-600 bg-red-600/10 text-white
+                    text-xs font-bold tracking-[0.35em] uppercase transition-all duration-300
+                    hover:bg-red-600/20">
+                    Rematch
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+    
+
+    <script src="js/auth.js"></script>
+
+
+</body>
+
+</html>
