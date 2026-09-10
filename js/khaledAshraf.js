@@ -5,6 +5,13 @@ const khaledAshraf={
     tasksPath: "./students/khaledAshraf/Tasks/",
     assignments: [
       {
+        title: "XO GAME ",
+        folder: "./students/khalidAmr/Tasks/XO game/",
+        preview: "./students/khalidAmr/Tasks/XO game/game.png",
+        description: "A fun and interactive tic tac toe game built with HTML, Tailwind CSS , Javascript. Play against the bot or a friend, with 3 rounds, score tracking , and sound effects.",
+        technologies: ["HTML", "Tailwind CSS", "JavaScript"],
+      },
+      {
         title: "Quiz — STUDENT ACTIVITY-MSP ",
         folder: "./students/khaledAshraf/Tasks/QUIZ/",
         preview: "./students/khaledAshraf/Tasks/QUIZ/MSP.avif",
