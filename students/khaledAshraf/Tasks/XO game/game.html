@@ -1,0 +1,73 @@
+ <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe - Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-[#1a2a3a] flex items-center justify-center p-4 font-sans antialiased">
+    
+    <div id="page2" class="w-full max-w-md">
+        
+      
+         <div class="flex justify-between items-center gap-2 mb-4">
+            
+             <div class="text-2xl font-bold text-white/80 tracking-wider">
+                <span class="text-yellow-400">X</span>
+                <span class="text-cyan-400">O</span>
+            </div> 
+            
+             <div class="flex items-center gap-1.5 bg-[#1f3640] px-3 py-1.5 rounded-lg shadow-[0_4px_0_0_rgba(16,33,42,1)]">
+                <span id="turnIcon" class="text-base font-bold text-yellow-400">X</span>
+                <span id="turnText" class="text-slate-300 font-bold text-[10px] tracking-wider">TURN</span>
+            </div> 
+            
+             <button onclick="makeReset()" id="restartBtn" class="w-8 h-8 bg-[#a8bcc9] hover:bg-[#8faec9] rounded-lg shadow-[0_3px_0_0_rgba(107,137,151,1)] flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#1a2a3a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12a9 9 0 1 0 9-9m0 0v6m0-6h-6"/>
+                </svg>
+            </button>
+            
+        </div> 
+         
+         <div class="grid grid-cols-3 gap-3 my-4">
+            <div onclick="clickBox(0)" class="box aspect-square bg-[#1f3640] rounded-xl shadow-[0_5px_0_0_rgba(16,33,42,1)] flex items-center justify-center text-3xl font-bold cursor-pointer hover:bg-[#253b47] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 min-h-4.375"></div>
+              <div onclick="clickBox(1)" class="box aspect-square bg-[#1f3640] rounded-xl shadow-[0_5px_0_0_rgba(16,33,42,1)] flex items-center justify-center text-3xl font-bold cursor-pointer hover:bg-[#253b47] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 min-h-4.375"></div>
+              <div onclick="clickBox(2)" class="box aspect-square bg-[#1f3640] rounded-xl shadow-[0_5px_0_0_rgba(16,33,42,1)] flex items-center justify-center text-3xl font-bold cursor-pointer hover:bg-[#253b47] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 min-h-4.375"></div>
+              <div onclick="clickBox(3)" class="box aspect-square bg-[#1f3640] rounded-xl shadow-[0_5px_0_0_rgba(16,33,42,1)] flex items-center justify-center text-3xl font-bold cursor-pointer hover:bg-[#253b47] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 min-h-4.375"></div>
+              <div onclick="clickBox(4)" class="box aspect-square bg-[#1f3640] rounded-xl shadow-[0_5px_0_0_rgba(16,33,42,1)] flex items-center justify-center text-3xl font-bold cursor-pointer hover:bg-[#253b47] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 min-h-4.375"></div>
+             <div onclick="clickBox(5)" class="box aspect-square bg-[#1f3640] rounded-xl shadow-[0_5px_0_0_rgba(16,33,42,1)] flex items-center justify-center text-3xl font-bold cursor-pointer hover:bg-[#253b47] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 min-h-4.375"></div>
+             <div onclick="clickBox(6)" class="box aspect-square bg-[#1f3640] rounded-xl shadow-[0_5px_0_0_rgba(16,33,42,1)] flex items-center justify-center text-3xl font-bold cursor-pointer hover:bg-[#253b47] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 min-h-4.375"></div>
+             <div onclick="clickBox(7)" class="box aspect-square bg-[#1f3640] rounded-xl shadow-[0_5px_0_0_rgba(16,33,42,1)] flex items-center justify-center text-3xl font-bold cursor-pointer hover:bg-[#253b47] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 min-h-4.375"></div>
+             <div onclick="clickBox(8)" class="box aspect-square bg-[#1f3640] rounded-xl shadow-[0_5px_0_0_rgba(16,33,42,1)] flex items-center justify-center text-3xl font-bold cursor-pointer hover:bg-[#253b47] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 min-h-4.375"></div>
+             
+         </div>
+         
+        
+        <div class="grid grid-cols-3 gap-2.5">
+            
+             <div class="bg-cyan-400 rounded-lg py-2 text-center shadow-[0_3px_0_0_rgba(16,33,42,1)]">
+                <p class="text-[#1a2a3a] text-[10px] font-medium tracking-wider">X (P1)</p>
+                <p id="scoreX" class=" text-[#1a2a3a] text-2xl font-bold">0</p>
+            </div>
+             
+             <div class="bg-[#a8bcc9] rounded-lg py-2 text-center shadow-[0_3px_0_0_rgba(16,33,42,1)]">
+                <p class="text-[#1a2a3a] text-[10px] font-medium tracking-wider">TIES</p>
+                <p id="scoreTies" class="text-[#1a2a3a] text-2xl font-bold">0</p>
+            </div>
+             
+             <div class="bg-yellow-400 rounded-lg py-2 text-center shadow-[0_3px_0_0_rgba(16,33,42,1)]">
+                <p class="text-[#1a2a3a] text-[10px] font-medium tracking-wider">O (P2)</p>
+                <p id="scoreO" class=" text-[#1a2a3a] text-2xl font-bold">0</p>
+            </div>
+            
+        </div>
+        
+    </div> 
+    <script src="game.js"></script>
+
+    
+
+ </body>
+</html> 
