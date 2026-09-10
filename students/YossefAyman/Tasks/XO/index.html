@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XO Game Document</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#1a1733] text-white min-h-screen flex items-center justify-center font-sans">
+
+    <div class="bg-[#211d42] p-8 rounded-2xl shadow-[0_0_20px_rgba(147,51,234,0.3)] border border-purple-900/50 flex flex-col gap-5 w-88 items-center">
+        
+        <h1 class="select-none text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500 tracking-wider">
+            Tic-tac-toe XO game
+        </h1>
+
+        <select id="options" class="w-full bg-[#272142] text-cyan-300 border border-cyan-500/30 rounded-xl px-4 py-2.5 text-center focus:outline-none focus:border-cyan-400 cursor-pointer">
+            <option value="" disabled selected hidden class="bg-[#272142]">Select Game Type</option>
+            <option value="1" class="bg-[#272142] select-none ">Player vs Player</option>
+            <option value="2" class="bg-[#272142] select-none ">Player vs AI</option>
+        </select>
+
+        <div id="levels" class="hidden w-full bg-[#272142] text-cyan-300 border border-cyan-500/30 rounded-xl p-1.5 flex gap-1">
+            <label class="flex-1 cursor-pointer">
+                <input type="radio" name="ai-level" value="easy" class="peer hidden" />
+                <span class="select-none block w-full text-center py-2 text-sm font-semibold rounded-lg transition-all duration-200 text-cyan-300/70 hover:text-cyan-300 peer-checked:bg-cyan-500 peer-checked:text-[#272142] peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(6,182,212,0.4)]">
+                    Easy
+                </span>
+            </label>
+
+            <label class="flex-1 cursor-pointer">
+                <input type="radio" name="ai-level" value="medium" class="peer hidden" checked/>
+                <span class="select-none block w-full text-center py-2 text-sm font-semibold rounded-lg transition-all duration-200 text-cyan-300/70 hover:text-cyan-300 peer-checked:bg-cyan-500 peer-checked:text-[#272142] peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(6,182,212,0.4)]">
+                    Medium
+                </span>
+            </label>
+
+            <label class="flex-1 cursor-pointer">
+                <input type="radio" name="ai-level" value="impossible" class="peer hidden" />
+                <span class="select-none block w-full text-center py-2 text-sm font-semibold rounded-lg transition-all duration-200 text-cyan-300/70 hover:text-cyan-300 peer-checked:bg-cyan-500 peer-checked:text-[#272142] peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(6,182,212,0.4)]">
+                    Impossible
+                </span>
+            </label>
+        </div>
+
+        <div id="inputs" class="hidden w-full flex flex-col gap-4">
+
+            <div id="player1-inp" class="hidden flex items-center gap-3 w-full">
+                <p class="select-none w-10 h-10 flex items-center justify-center bg-[#272142] text-cyan-400 font-extrabold text-xl rounded-xl border border-cyan-500/50 shadow-[0_0_10px_rgba(6,182,212,0.4)]">
+                    X
+                </p>
+                <input type="text" placeholder="player1" class="flex-1 bg-[#272142] text-white placeholder-slate-400 border border-slate-700 rounded-xl px-4 py-2 focus:outline-none focus:border-cyan-400">
+            </div>
+
+            <div id="player2-inp" class="hidden flex items-center gap-3 w-full">
+                <p class="select-none w-10 h-10 flex items-center justify-center bg-[#272142] text-pink-500 font-extrabold text-xl rounded-xl border border-pink-500/50 shadow-[0_0_10px_rgba(236,72,153,0.4)]">
+                    O
+                </p>
+                <input type="text" placeholder="player2" class="flex-1 bg-[#272142] text-white placeholder-slate-400 border border-slate-700 rounded-xl px-4 py-2 focus:outline-none focus:border-pink-500">
+            </div>
+
+            <button type="button" id="btn" class="select-none w-full bg-gradient-to-r from-cyan-500 to-pink-500 hover:from-cyan-400 hover:to-pink-400 text-white font-bold py-3 rounded-xl shadow-[0_0_15px_rgba(236,72,153,0.4)] active:scale-95 transition-all mt-2 cursor-pointer">
+                Ready to Play
+            </button>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="./script/setup.js"></script>
+</body>
+</html>
+
