@@ -45,7 +45,7 @@ const khalidAmr={
         folder: "./students/khalidAmr/Tasks/5th Task/",
         preview: "./students/khalidAmr/Tasks/5th Task/rome.jpg",
         description: "A responsive website with a hero section, project grid, and contact form.",
-        technologies: ["HTML", "CSS", "JavaScript"],
+        technologies: ["HTML", "Tailwind CSS", "JavaScript"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/khalidAmr/Tasks/5th%20Task"
       },
       
