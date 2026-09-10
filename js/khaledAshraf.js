@@ -8,8 +8,9 @@ const khaledAshraf={
         title: "XO GAME ",
         folder: "./students/khaledAshraf/Tasks/XO game/",
         preview: "./students/khaledAshraf/Tasks/XO game/game.png",
-        description: "A fun and interactive tic tac toe game built with HTML, Tailwind CSS , Javascript. Play against the bot or a friend, with 3 rounds, score tracking , and sound effects.",
+        description: "A fun and interactive tic tac toe game built with HTML, Tailwind CSS , Javascript.",
         technologies: ["HTML", "Tailwind CSS", "JavaScript"],
+        github: "https://github.com/amrahmed25/msp/tree/main/students/khaledAshraf/Tasks/XO%20game"
       },
       {
         title: "Quiz — STUDENT ACTIVITY-MSP ",
