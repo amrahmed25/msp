@@ -15,9 +15,9 @@ const YossefAyman={
         {
             title: "XO Game",
             folder: "./students/YossefAyman/Tasks/XO/",
-            preview: "./students/YossefAyman/Tasks/XO/Images/XO.png",
+            preview: "./students/YossefAyman/Tasks/XO/Images/XO.jpg",
             description: "A Tic Tac Toe game with an AI opponent, featuring three difficulty levels and a responsive design.",
-            technologies: ["HTML", "CSS", "JavaScript"],
+            technologies: ["HTML", "tailwind", "JavaScript"],
         }
     ]
 };
