@@ -30,11 +30,17 @@ let tiepoints =0;
 
 let gameOver =false;
 
+let gamesound =document.getElementById('gamesound')
+
+let finishsound = document.getElementById('finish')
+
+
 function turn(button){
     if (gameOver) return;
 
     if(button.textContent ===""){
         button.textContent = player;
+        gamesound.play();
         if (player==="X"){
             button.style.color ='#E1A51B';
         }
@@ -49,6 +55,8 @@ function turn(button){
                 xscore.textContent = xpoints;
                 playerturn.textContent = "Player X Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return;
             }
             else if (player ==="O"){
@@ -56,6 +64,8 @@ function turn(button){
                 oscore.textContent = opoints;
                 playerturn.textContent = "Player O Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return;
                  
             
@@ -68,6 +78,8 @@ function turn(button){
                 xscore.textContent = xpoints;
                 playerturn.textContent = "Player X Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return;
 
             }
@@ -76,6 +88,8 @@ function turn(button){
                 oscore.textContent = opoints;
                 playerturn.textContent = "Player O Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return;
             
             }            
@@ -86,6 +100,8 @@ function turn(button){
                 xscore.textContent = xpoints;
                 playerturn.textContent = "Player X Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return;
             }
             else if (player ==="O"){
@@ -93,6 +109,8 @@ function turn(button){
                 oscore.textContent = opoints;
                 playerturn.textContent = "Player O Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return;
                  
             
@@ -104,6 +122,8 @@ function turn(button){
                 xscore.textContent = xpoints;
                 playerturn.textContent = "Player X Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return;
             }
             else if (player ==="O"){
@@ -111,6 +131,8 @@ function turn(button){
                 oscore.textContent = opoints;
                 playerturn.textContent = "Player O Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return; 
             
             }
@@ -121,6 +143,8 @@ function turn(button){
                 xscore.textContent = xpoints;
                 playerturn.textContent = "Player X Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return;
             }
             else if (player ==="O"){
@@ -128,6 +152,8 @@ function turn(button){
                 oscore.textContent = opoints;
                 playerturn.textContent = "Player O Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return;
                  
             
@@ -139,6 +165,8 @@ function turn(button){
                 xscore.textContent = xpoints;
                 playerturn.textContent = "Player X Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return;
             }
             else if (player ==="O"){
@@ -146,6 +174,8 @@ function turn(button){
                 oscore.textContent = opoints;
                 playerturn.textContent = "Player O Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return; 
             
             }
@@ -156,6 +186,8 @@ function turn(button){
                 xscore.textContent = xpoints;
                 playerturn.textContent = "Player X Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return;
             }
             else if (player ==="O"){
@@ -163,6 +195,8 @@ function turn(button){
                 oscore.textContent = opoints;
                 playerturn.textContent = "Player O Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return; 
             
             }
@@ -173,6 +207,8 @@ function turn(button){
                 xscore.textContent = xpoints;
                 playerturn.textContent = "Player X Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return;
             }
             else if (player ==="O"){
@@ -180,6 +216,8 @@ function turn(button){
                 oscore.textContent = opoints;
                 playerturn.textContent = "Player O Wins";
                 gameOver = true;
+                gamesound.pause();
+                finishsound.play();
                 return; 
             
             }
@@ -191,6 +229,8 @@ function turn(button){
             playerturn.textContent = "Tie";
             playerturn.style.color = '#f1f5f9';
             gameOver = true;
+            gamesound.pause();
+                finishsound.play();
             return; 
 
         }
@@ -223,7 +263,15 @@ function ResetBoard(){
     box8.textContent= "";
     box9.textContent= "";
 
+    finishsound.pause();
+    finishsound.currentTime = 0;
+
+    gamesound.pause();
+    gamesound.currentTime = 0;
+
     gameOver=false;
+    player="X";
+
     playerturn.textContent ="Player X's Turn";
     playerturn.style.color="#E1A51B";
 }

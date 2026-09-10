@@ -11,6 +11,13 @@ const YossefAyman={
             description: "A modern, responsive gaming platform frontend built with Vanilla JS and CSS Custom Properties, featuring a neon glassmorphism theme and real time dual filtering.",
             technologies: ["HTML", "CSS", "JavaScript"],
             github: "https://github.com/yossef-ayman359/Steam-Demo"
+        },
+        {
+            title: "XO Game",
+            folder: "./students/YossefAyman/Tasks/XO/",
+            preview: "./students/YossefAyman/Tasks/XO/Images/XO.jpg",
+            description: "A Tic Tac Toe game with an AI opponent, featuring three difficulty levels and a responsive design.",
+            technologies: ["HTML", "tailwind", "JavaScript"],
         }
     ]
 };
