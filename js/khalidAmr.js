@@ -45,7 +45,7 @@ const khalidAmr={
         folder: "./students/khalidAmr/Tasks/5th Task/",
         preview: "./students/khalidAmr/Tasks/5th Task/rome.jpg",
         description: "A responsive website with a hero section, project grid, and contact form.",
-        technologies: ["HTML", "CSS", "JavaScript"],
+        technologies: ["HTML", "Tailwind CSS", "JavaScript"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/khalidAmr/Tasks/5th%20Task"
       },
       
@@ -72,8 +72,15 @@ const khalidAmr={
         folder: "./students/khalidAmr/Tasks/game/",
         preview: "./students/khalidAmr/Tasks/game/ttt.jpg",
         description: "A fun and interactive tic tac toe game built with HTML, Tailwind CSS , Javascript. Play against the bot or a friend, with 3 rounds, score tracking , and sound effects.",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        github: "https://github.com/amrahmed25/msp/tree/main/students/khalidAmr/Tasks/game"
+        technologies: ["HTML", "Tailwind CSS", "JavaScript"],
+      },
+
+      {
+        title: "Task 9 - Quiz GAME ",
+        folder: "./students/khalidAmr/Tasks/Lamha/",
+        preview: "./students/khalidAmr/Tasks/Lamha/Lamha.png",
+        description: "LAMHA is an interactive and fast-paced quiz game designed to turn ordinary questions into an exciting gaming experience. Players can choose their category, difficulty, and number of questions, then challenge themselves against the clock. ⏱️🔥",
+        technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
       },
     ]
   };
