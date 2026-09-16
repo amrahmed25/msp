@@ -229,7 +229,8 @@ function answerQuestion() {
     shuffleAnswers();
     let buttons = questions[currentQuestion].querySelectorAll("button");
 
-
+    let questionIndex = questions[currentQuestion].querySelector(".question-index");
+    questionIndex.textContent = String(currentQuestion + 1).padStart(2, "0");
     if(answered[currentQuestion] === true) {
         time = questionTime[currentQuestion] ;
         timer.textContent = time;
