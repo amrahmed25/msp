@@ -74,6 +74,14 @@ const khalidAmr={
         description: "A fun and interactive tic tac toe game built with HTML, Tailwind CSS , Javascript. Play against the bot or a friend, with 3 rounds, score tracking , and sound effects.",
         technologies: ["HTML", "Tailwind CSS", "JavaScript"],
       },
+
+      {
+        title: "Task 9 - Quiz GAME ",
+        folder: "./students/khalidAmr/Tasks/Lamha/",
+        preview: "./students/khalidAmr/Tasks/Lamha/Lamha.png",
+        description: "LAMHA is an interactive and fast-paced quiz game designed to turn ordinary questions into an exciting gaming experience. Players can choose their category, difficulty, and number of questions, then challenge themselves against the clock. ⏱️🔥",
+        technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+      },
     ]
   };
   export default khalidAmr;
