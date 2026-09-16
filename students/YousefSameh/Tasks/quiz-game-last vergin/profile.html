@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Profile - QuizVerse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/back.css">
+</head>
+
+<body>
+
+    <div class="home-page profile-page">
+        <div class="background-overlay"></div>
+
+        <header class="navbar-wrapper">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a href="home.html" class="logo">
+                        <span class="logo-icon">
+                            <i class="bi bi-lightbulb-fill"></i>
+                        </span>
+                        <span class="logo-text" id="welcome-message">
+                            QUIZ<span>VERSE</span>
+                        </span>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                        <i class="bi bi-list"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="mainNavbar">
+
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="home.html">
+                                    <i class="bi bi-house-fill"></i> Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="categories.html">
+                                    <i class="bi bi-grid-fill"></i> Categories
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="quiz.html">
+                                    <i class="bi bi-controller"></i> Quiz
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="profile.html">
+                                    <i class="bi bi-person-fill"></i> Profile
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="nav-actions" id="nav-actions">
+                            <a href="index.html" class="login-btn">Login</a>
+                            <a href="register.html" class="register-btn">Register</a>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="profile-main">
+            <div class="container-fluid">
+
+                <div class="back-row">
+                    <a href="home.html" class="back-link"><span class="back-arrow">←</span> Back to home</a>
+                </div>
+
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+                    <div>
+                        <p class="eyebrow">Your progress</p>
+                        <h1 id="profile-name">Player</h1>
+                        <p class="profile-email" id="profile-email"></p>
+                    </div>
+                </div>
+
+                <div class="stat-cards" id="stat-cards">
+                    <div class="stat-card">
+                        <div class="stat-card-icon"><i class="bi bi-joystick"></i></div>
+                        <div>
+                            <span class="stat-card-value" id="stat-total">0</span>
+                            <span class="stat-card-label">Quizzes played</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                        <div>
+                            <span class="stat-card-value" id="stat-average">0%</span>
+                            <span class="stat-card-label">Average score</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-icon"><i class="bi bi-trophy-fill"></i></div>
+                        <div>
+                            <span class="stat-card-value" id="stat-best">0%</span>
+                            <span class="stat-card-label">Best score</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-icon"><i class="bi bi-check2-circle"></i></div>
+                        <div>
+                            <span class="stat-card-value" id="stat-questions">0</span>
+                            <span class="stat-card-label">Questions answered</span>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="history-section">
+                    <h2 class="section-title">Quiz history</h2>
+
+                    <div id="history-list" class="history-list">
+                        
+                    </div>
+
+                    <div id="empty-state" class="empty-state" style="display: none;">
+                        <i class="bi bi-controller"></i>
+                        <p>You haven't played any quizzes yet.</p>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/profile.js"></script>
+
+</body>
+
+</html>
