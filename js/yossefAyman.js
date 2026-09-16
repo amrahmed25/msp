@@ -25,6 +25,7 @@ const YossefAyman={
             preview: "./students/YossefAyman/Tasks/Quiz-App/Images/Quiz-App.jpeg",
             description: "An interactive Quiz App with configurable categories, difficulty levels, question limits, and countdown timers.",
             technologies: ["HTML", "BootStrap", "Css", "JavaScript"],
+            github: "https://github.com/yossef-ayman359/Quiz-App"
         },
     ]
 };
