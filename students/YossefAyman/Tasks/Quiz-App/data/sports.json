@@ -1,0 +1,632 @@
+[
+     {
+        "id": 1,
+        "question": "Who is the UFC MMA Fighter that has never lost a match via KO, TKO or Submission?",
+        "image": "",
+        "options": [
+            "Khabib Nurmagomedov",
+            "George Saint Pierre",
+            "Jon Jones",
+            "Conor McGregor"
+        ],
+        "correctAnswer": 1,
+        "category": "sports",
+        "difficulty": "easy"
+    },
+    {
+        "id": 2,
+        "question": "Which Country hosted the 2024 Summer Olympics?",
+        "image": "",
+        "options": [
+            "Japan",
+            "Brazil",
+            "France",
+            "Australia"
+        ],
+        "correctAnswer": 3,
+        "category": "sports",
+        "difficulty": "easy"
+    },
+    {
+         "id": 3,
+        "question": "Which National Team is this?",
+        "image": "./data/egy.jpeg",
+        "options": [
+            "Yemen",
+            "Egypt",
+            "Sudan",
+            "Iraq"
+        ],
+        "correctAnswer": 2,
+        "category": "sports",
+        "difficulty": "easy"
+    },
+    {
+         "id": 4,
+        "question": "Which country does Yusuf Dekic, the olympic gunman silver medalist in the 2024 Summer Olympics, represent?",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdzxPVJTwqrp_bjqEjO8FXGcli-1w0zHSCDJS7FE4T-DQlk9zAyuUXGEx6&s=10",
+        "options": [
+            "Kazakhstan",
+            "Syria",
+            "Iran",
+            "Turkey"
+        ],
+        "correctAnswer": 4,
+        "category": "sports",
+        "difficulty": "easy"
+    },
+    {
+          "id": 5,
+        "question": "Which National Team has won the 2014 FIFA World Cup?",
+        "image": "https://upload.wikimedia.org/wikipedia/en/1/1d/2014_FIFA_World_Cup.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+        "options": [
+            "Argentina",
+            "Brazil",
+            "Germany",
+            "France"
+        ],
+        "correctAnswer": 3,
+        "category": "sports",
+        "difficulty": "easy"
+    },
+    {
+        "id": 6,
+        "question": "Which of those professional boxers have been undefeated according to their record?",
+        "image": "",
+        "options": [
+            "Muhammad Ali",
+            "Mike Tyson",
+            "George Foreman",
+            "Floyd Mayweather"
+        ],
+        "correctAnswer": 4,
+        "category": "sports",
+        "difficulty": "easy"
+    },
+    {
+        "id": 7,
+        "question": "Which Club does Cristiano Ronaldo play for?",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP46NyAlveMlpFM8r3fsO2V0RT3dy585TlPyI6MPo-XgWdCgrmjmioacoV&s=10",
+        "options": [
+            "Al Nassr FC",
+            "Juventus",
+            "Manchester United",
+            "Real Madrid CF"
+        ],
+        "correctAnswer": 1,
+        "category": "sports",
+        "difficulty": "easy"
+    },
+    {
+        "id": 8,
+        "question": "Which National Team did Lionel Messi play for?",
+        "image": "https://ichef.bbci.co.uk/ace/standard/981/cpsprodpb/5c38/live/16192430-f5ef-11ef-bd6e-cd71c2e1454a.jpg",
+        "options": [
+            "Spain",
+            "Italy",
+            "Uruguay",
+            "Argentina"
+        ],
+        "correctAnswer": 4,
+        "category": "sports",
+        "difficulty": "easy"
+    },
+    {
+        "id": 9,
+        "question": "Which has represented Michael Phelps in the Olympic Summer Games?",
+        "image": "https://dotorg.brightspotcdn.com/7e/2b/4a0ba6224f7cba0a068991a50d45/800x800-michael-phelps.jpg",
+        "options": [
+            "Canada",
+            "United States",
+            "England",
+            "Wales"
+        ],
+        "correctAnswer": 2,
+        "category": "sports",
+        "difficulty": "easy"
+    },
+    {
+        "id": 10,
+        "question": "Which year did Big Ramy win Mr. Olympia?",
+        "image": "https://egyptianstreets.com/wp-content/uploads/2021/10/245000994_408381890651759_5977354972309010674_n.jpeg",
+        "options": [
+            "2020",
+            "2018",
+            "2019",
+            "2022"
+        ],
+        "correctAnswer": 1,
+        "category": "sports",
+        "difficulty": "easy"
+    },
+    {
+        "id": 11,
+        "question": "Which country did Usain Bolt represent in the 2012 Olympic Summer Games",
+        "image": "",
+        "options": [
+            "Jamaica",
+            "United States",
+            "England",
+            "Canada"
+        ],
+        "correctAnswer": 1,
+        "category": "sports",
+        "difficulty": "easy"
+    },
+    {
+        "id": 12,
+        "question": "In boxing, what is it called when a fighter is knocked out in the ring after the referee counts to 10?",
+        "image": "",
+        "options": [
+            "TO (Time Out)",
+            "TKO",
+            "KO",
+            "DQ"
+        ],
+        "correctAnswer": 1,
+        "category": "sports",
+        "difficulty": "easy"
+    },
+    {
+        "id": 13,
+        "question": "Which Colour of a belt that signifies the highest rank and mastery in traditional martial arts?",
+        "image": "", 
+        "options": [
+            "White",
+            "Blue",
+            "Red",
+            "Black"
+        ],
+        "correctAnswer": 4,
+        "category": "sports",
+        "difficulty": "easy"
+    },
+    {
+        "id": 14,
+        "question": "Which ring shape does the UFC famously use in their matches?",
+        "image": "",
+        "options": [
+            "Square",
+            "Octagon",
+            "Rectangle",
+            "Hexagon"
+        ],
+        "correctAnswer": 2,
+        "category": "sports",
+        "difficulty": "easy"
+    },
+    {
+        "id": 15,
+        "question": "Normally, how often does AFCON (African Cup of Nations) hold its tournaments before the 2027 AFCON's decision? ",
+        "image": "",
+        "options": [
+            "Every year",
+            "Every 4 years",
+            "Every 3 years",
+            "Every 2 years"
+        ],
+        "correctAnswer": 4,
+        "category": "sports",
+        "difficulty": "easy"
+    },
+    {
+         "id": 16,
+        "question": "Which Shirt Number has Omar Marmoush had during his spell at Manchester City?",
+        "image": "",
+        "options": [
+            "#11",
+            "#7",
+            "#22",
+            "#14"
+        ],
+        "correctAnswer": 2,
+        "category": "sports",
+        "difficulty": "medium"
+    },
+    {
+         "id": 17,
+        "question": "Lewis Hamilton represents which iconic manufacturer in Formula-1?",
+        "image": "",
+        "options": [
+            "Ferrari",
+            "Mercedez Benz",
+            "Red Bull Racing",
+            "Aston Martin"
+        ],
+        "correctAnswer": 1,
+        "category": "sports",
+        "difficulty": "medium"
+    },
+    {
+         "id": 18,
+        "question": "Which team did Lebron James play for both currently and in the past?",
+        "image": "",
+        "options": [
+            "Miami Heat",
+            "LA Lakers",
+            "Cleveland Cavaliers",
+            "All of the Above"
+        ],
+        "correctAnswer": 4,
+        "category": "sports",
+        "difficulty": "medium"
+    }, 
+    {
+        "id": 19,
+        "question": "Which nationality does Rafael Nadal represent for",
+        "image": "",
+        "options": [
+            "Portugal",
+            "Italy",
+            "Spain",
+            "France"
+        ],
+        "correctAnswer": 2,
+        "category": "sports",
+        "difficulty": "medium"
+    },
+    {
+        "id": 20,
+        "question": "How many UEFA Champions League does AC Milan have?",
+        "image": "",
+        "options": [
+            "7",
+            "6",
+            "8",
+            "5"
+        ],
+        "correctAnswer": 1,
+        "category": "sports",
+        "difficulty": "medium"
+    },
+    {
+        "id": 21,
+        "question": "Which nationality is Novak Djokovic from?",
+        "image": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTkGHKA58r3_AWEzgHd8Oap-jRik7PFjBp4iaCJ9Ao7OjdtdaROBRhycP-WEOFKxHn-ewN4C4Jk-fiX5Ily5uhJp_wRhVEYmSULJwUPMRLhnaPDHKCJ5Wa19LNHJRDjPv0GfUgJptCUFg&s=19",
+        "options": [
+            "Croatia",
+            "Serbia",
+            "Montenegro",
+            "Slovakia"
+        ],
+        "correctAnswer": 2,
+        "category": "sports",
+        "difficulty": "medium"
+    },
+    {
+         "id": 22,
+        "question": "Who won the 2015/16 Barclays Premier League title?",
+        "image": "https://www.beinmediagroup.com/wp-content/uploads/2015/08/English.png",
+        "options": [
+            "Arsenal",
+            "Manchester City",
+            "Tottenham",
+            "Leicester City"
+        ],
+        "correctAnswer": 4,
+        "category": "sports",
+        "difficulty": "medium"
+    },
+    {
+         "id": 23,
+        "question": "What is Floyd Mayweather's record in Professional Boxing?",
+        "image": "https://cdn.britannica.com/96/261796-050-CD340290/boxer-floyd-mayweather-jr-celebrates-unanimous-decision-victory-over-robert-guerrero-in-the-wbc-welterweight-title-bout-at-mgm-grand-garden-arena-may-4-2013-las-vegas-nevada.jpg",
+        "options": [
+            "50-0",
+            "43-0",
+            "46-0",
+            "48-0"
+        ],
+        "correctAnswer": 1,
+        "category": "sports",
+        "difficulty": "medium"
+    },
+    {
+         "id": 24,
+        "question": "What is Khabib Nurmagomedov's record in the UFC?",
+        "image": "https://ufc.com/images/styles/background_image_sm/s3/2020-10/Nurmagomedov%20Khabib%20Weigh%20In%20229%20Hero.jpg?h=7092119a&itok=jfbdPucs",
+        "options": [
+            "25-0",
+            "27-0",
+            "29-0",
+            "21-0"
+        ],
+        "correctAnswer": 3,
+        "category": "sports",
+        "difficulty": "medium"
+    },
+    {
+         "id": 25,
+        "question": "Which National Team has the most UEFA Euro competitions of all time?",
+        "image": "https://preview.redd.it/uefa-euro-all-logos-1960-2028-v0-r8fjdat3cu1g1.png?auto=webp&s=a04844311ed080b1aa1df62ec7be6a79a90fd2c6",
+        "options": [
+            "France",
+            "Germany",
+            "Netherlands",
+            "Spain"
+        ],
+        "correctAnswer": 4,
+        "category": "sports",
+        "difficulty": "medium"
+    },
+    {
+         "id": 26,
+        "question": "Which Bodybuilders have the most Mr. Olympia wins?",
+        "image": "",
+        "options": [
+            "Ronnie Coleman",
+            "Both A & C",
+            "Lee Haney",
+            "Arnold Schwarznegger"
+        ],
+        "correctAnswer": 2,
+        "category": "sports",
+        "difficulty": "medium"
+    },
+    {
+         "id": 27,
+        "question": "Which national team did Stephen Curry play for when winning his first Olympic Gold Medal at the 2024 Paris Games?",
+        "image": "",
+        "options": [
+        "United States",
+        "Canada",
+        "France",
+        "Australia"
+        ],
+        "correctAnswer": 1,
+        "category": "sports",
+        "difficulty": "medium"
+    },
+    {
+         "id": 28,
+        "question": "Which NBA team drafted Allen Iverson as the overall #1 pick in 1996?",
+        "image": "",
+        "options": [
+        "Denver Nuggets",
+        "Philadelphia 76ers",
+        "Detroit Pistons",
+        "Memphis Grizzlies"
+        ],
+        "correctAnswer": 2,
+        "category": "sports",
+        "difficulty": "medium"
+    },
+    {
+        "id": 29,
+        "question": "Which team did Russell Westbrook win his 2017 NBA MVP award with?",
+        "image": "",
+        "options": [
+        "Houston Rockets",
+        "Washington Wizards",
+        "LA Lakers",
+        "Oklahoma City Thunder"
+        ],
+        "correctAnswer": 4,
+        "category": "sports",
+        "difficulty": "medium"
+    },
+    {
+    "id": 30,
+    "question": "How many UEFA Champions League titles has Inter Milan won in their history?",
+    "image": "",
+    "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+    ],
+    "correctAnswer": 2,
+    "category": "sports",
+    "difficulty": "medium"
+    },
+    {
+    "id": 31,
+    "question": "How many UEFA Champions League titles has Inter Milan won in total?",
+    "image": "",
+    "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+    ],
+    "correctAnswer": 2,
+    "category": "sports",
+    "difficulty": "hard"
+},
+{
+    "id": 32,
+    "question": "Who was the first fighter to defeat Mike Tyson in a professional boxing match (1990)?",
+    "image": "",
+    "options": [
+        "Evander Holyfield",
+        "Lennox Lewis",
+        "Buster Douglas",
+        "George Foreman"
+    ],
+    "correctAnswer": 3,
+    "category": "sports",
+    "difficulty": "hard"
+},
+{
+    "id": 33,
+    "question": "Which player holds the record for the most 3-pointers made in NBA history?",
+    "image": "",
+    "options": [
+        "Ray Allen",
+        "Reggie Miller",
+        "Stephen Curry",
+        "James Harden"
+    ],
+    "correctAnswer": 3,
+    "category": "sports",
+    "difficulty": "hard"
+},
+{
+    "id": 34,
+    "question": "Who is the only manager to win the UEFA Champions League title 5 times?",
+    "image": "",
+    "options": [
+        "Zinedine Zidane",
+        "Pep Guardiola",
+        "Carlo Ancelotti",
+        "Sir Alex Ferguson"
+    ],
+    "correctAnswer": 3,
+    "category": "sports",
+    "difficulty": "hard"
+},
+{
+    "id": 35,
+    "question": "In 2016, Conor McGregor became the first UFC fighter to simultaneously hold two belt titles. Which two weight classes were they?",
+    "image": "",
+    "options": [
+        "Featherweight & Lightweight",
+        "Lightweight & Welterweight",
+        "Flyweight & Bantamweight",
+        "Featherweight & Welterweight"
+    ],
+    "correctAnswer": 1,
+    "category": "sports",
+    "difficulty": "hard"
+},
+{
+    "id": 36,
+    "question": "Which player holds the record for most triple-doubles in NBA history?",
+    "image": "",
+    "options": [
+        "Oscar Robertson",
+        "Magic Johnson",
+        "LeBron James",
+        "Russell Westbrook"
+    ],
+    "correctAnswer": 4,
+    "category": "sports",
+    "difficulty": "hard"
+},
+{
+    "id": 37,
+    "question": "Which nation won the very first FIFA World Cup tournament in 1930?",
+    "image": "",
+    "options": [
+        "Brazil",
+        "Argentina",
+        "Uruguay",
+        "Italy"
+    ],
+    "correctAnswer": 3,
+    "category": "sports",
+    "difficulty": "hard"
+},
+{
+    "id": 38,
+    "question": "Which boxing legend defeated Muhammad Ali in the famous 1971 'Fight of the Century'?",
+    "image": "",
+    "options": [
+        "Joe Frazier",
+        "Sonny Liston",
+        "Ken Norton",
+        "Larry Holmes"
+    ],
+    "correctAnswer": 1,
+    "category": "sports",
+    "difficulty": "hard"
+},
+{
+    "id": 39,
+    "question": "Who holds the record for the fastest goal scored in Premier League history (7.69 seconds)?",
+    "image": "",
+    "options": [
+        "Shane Long",
+        "Ledley King",
+        "Alan Shearer",
+        "Philip Billing"
+    ],
+    "correctAnswer": 1,
+    "category": "sports",
+    "difficulty": "hard"
+},
+{
+    "id": 40,
+    "question": "Which UFC fighter successfully defended their title the most consecutive times in UFC history (11 defenses)?",
+    "image": "",
+    "options": [
+        "Jon Jones",
+        "Demetrious Johnson",
+        "Georges St-Pierre",
+        "Anderson Silva"
+    ],
+    "correctAnswer": 2,
+    "category": "sports",
+    "difficulty": "hard"
+},
+{
+    "id": 41,
+    "question": "How many total NBA Championship rings did Michael Jordan win during his career with the Chicago Bulls?",
+    "image": "",
+    "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+    ],
+    "correctAnswer": 2,
+    "category": "sports",
+    "difficulty": "hard"
+},
+{
+    "id": 42,
+    "question": "Which football club has won the most total UEFA Champions League titles in history?",
+    "image": "",
+    "options": [
+        "AC Milan",
+        "Bayern Munich",
+        "Liverpool",
+        "Real Madrid"
+    ],
+    "correctAnswer": 4,
+    "category": "sports",
+    "difficulty": "hard"
+},
+{
+    "id": 43,
+    "question": "Which tennis player has won the most Grand Slam Men's Singles titles in history?",
+    "image": "",
+    "options": [
+        "Roger Federer",
+        "Rafael Nadal",
+        "Novak Djokovic",
+        "Pete Sampras"
+    ],
+    "correctAnswer": 3,
+    "category": "sports",
+    "difficulty": "hard"
+},
+{
+    "id": 44,
+    "question": "In what year did Floyd Mayweather defeat Manny Pacquiao in the highest-grossing boxing match of all time?",
+    "image": "",
+    "options": [
+        "2013",
+        "2015",
+        "2017",
+        "2018"
+    ],
+    "correctAnswer": 2,
+    "category": "sports",
+    "difficulty": "hard"
+},
+{
+    "id": 45,
+    "question": "Which player holds the record for most assists in the UEFA Champions League history?",
+    "image": "",
+    "options": [
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Angel Di Maria",
+        "Toni Kroos"
+    ],
+    "correctAnswer": 1,
+    "category": "sports",
+    "difficulty": "hard"
+}
+]
