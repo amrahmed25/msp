@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS | Gaming Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="nexus-quiz.css">
+</head>
+<body>
+<header class="nexus-top">
+    <a class="brand" href="home.html"><span class="brand-mark">✦</span>NEXUS</a>
+    <div class="player-mini">
+        <img id="topAvatar" src="avatar-1.png.jpg" alt="Avatar">
+        <div><strong id="topPlayer">SHADOW</strong><span>LV. 12</span></div>
+    </div>
+</header>
+<div class="layout">
+    <aside class="sidebar">
+        <a class="side-link" href="home.html"><i class="bi bi-house-door"></i>HOME</a>
+        <a class="side-link active" href="gaming.html"><i class="bi bi-controller"></i>PLAY</a>
+        <a class="side-link" href="leaderboard.html"><i class="bi bi-trophy"></i>LEADERBOARD</a>
+        <a class="side-link" href="portfolio.html"><i class="bi bi-person"></i>PORTFOLIO</a>
+        <a class="side-link" href="settings.html"><i class="bi bi-gear"></i>SETTINGS</a>
+        <div class="side-footer"><span class="spark">✦</span>KNOWLEDGE<br>IS POWER</div>
+    </aside>
+    <main class="page-main">
+        <section class="quiz-main">
+            <div class="quiz-topline">
+                <div class="quiz-category"><i class="bi bi-controller"></i><span>GAMING</span></div>
+                <div class="question-counter">QUESTION <b id="currentNumber">1</b> / <b id="totalNumber">10</b></div>
+            </div>
+            <div class="quiz-columns">
+                <div>
+                    <div class="question-panel">
+                        <div id="questionsContainer">
+<section id="easy" class="level-group" data-level="easy">
+<article class="question-card">
+    <div class="question-index">01</div>
+    <h3 dir="rtl">إلى أي سلسلة تنتمي شخصية Pikachu؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Digimon</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Pokémon</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Final Fantasy</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Sonic</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">02</div>
+    <h3 dir="rtl">ما العملة المستخدمة داخل Fortnite؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Robux</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>V-Bucks</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Minecoins</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Coins</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">03</div>
+    <h3 dir="rtl">ما الشخصية الافتراضية الشهيرة في Minecraft؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Alex</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Steve</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Herobrine</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Creeper</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">04</div>
+    <h3 dir="rtl">ما اسم الشخصية الرئيسية الشهيرة في سلسلة Super Mario؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Luigi</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Mario</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Link</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Sonic</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">05</div>
+    <h3 dir="rtl">ما الشركة التي طورت لعبة Super Mario؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Sony</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Nintendo</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Microsoft</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Sega</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">06</div>
+    <h3 dir="rtl">ماذا تعني GTA؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Grand Tactical Action</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Grand Theft Auto</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Global Theft Arena</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Great Traffic Adventure</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">07</div>
+    <h3 dir="rtl">أي لعبة من تطوير Rockstar Games؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>GTA V</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Fortnite</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Minecraft</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Valorant</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">08</div>
+    <h3 dir="rtl">ما اسم الأعداء الخضراء الشهيرة التي تنفجر في Minecraft؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Zombies</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Creepers</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Skeletons</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Endermen</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">09</div>
+    <h3 dir="rtl">من هو بطل سلسلة The Legend of Zelda؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Zelda</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Link</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Mario</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Ganondorf</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">10</div>
+    <h3 dir="rtl">ما الشركة التي تطور Xbox؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Sony</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Microsoft</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Nintendo</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Valve</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">11</div>
+    <h3 dir="rtl">من هو بطل سلسلة Halo الشهير؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Kratos</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Master Chief</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Marcus Fenix</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Doom Slayer</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">12</div>
+    <h3 dir="rtl">من هو بطل سلسلة God of War؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Kratos</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Geralt</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Nathan Drake</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Master Chief</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">13</div>
+    <h3 dir="rtl">ما المنصة الرقمية الشهيرة لشراء وتشغيل ألعاب الكمبيوتر؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Steam</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Discord</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Twitch</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Reddit</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">14</div>
+    <h3 dir="rtl">ما اللعبة التي تدور فكرتها حول اكتشاف المحتال بين أفراد الطاقم؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Among Us</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Fall Guys</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Roblox</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Terraria</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">15</div>
+    <h3 dir="rtl">إلى أي سلسلة تنتمي لعبة Warzone؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Battlefield</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Call of Duty</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Halo</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Counter-Strike</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">16</div>
+    <h3 dir="rtl">ما اسم اللعبة التي تشتهر بشخصية Kratos؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>God of War</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Assassin&#x27;s Creed</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Halo</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Doom</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">17</div>
+    <h3 dir="rtl">أي لعبة تشتهر بنظام Battle Royale وتضم خريطة اسمها Erangel؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>PUBG</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Minecraft</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>FIFA</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Terraria</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">18</div>
+    <h3 dir="rtl">في أي لعبة توجد شخصية Link؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>The Legend of Zelda</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Pokémon</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Street Fighter</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Mortal Kombat</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">19</div>
+    <h3 dir="rtl">في لعبة Among Us، ما اسم اللاعب الذي يحاول القضاء على باقي اللاعبين؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Hunter</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Impostor</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Killer</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Enemy</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">20</div>
+    <h3 dir="rtl">ما اسم اللعبة التي تدور فكرتها الأساسية حول بناء عالم من المكعبات؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Minecraft</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>FIFA</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Valorant</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Tekken</span></button>
+    </div>
+</article>
+</section>
+<section id="medium" class="level-group" data-level="medium">
+<article class="question-card">
+    <div class="question-index">01</div>
+    <h3 dir="rtl">في أي لعبة تظهر شخصية Lara Croft؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Tomb Raider</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Uncharted</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Assassin&#x27;s Creed</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Horizon</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">02</div>
+    <h3 dir="rtl">من طورت لعبة Fortnite؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Epic Games</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Rockstar Games</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Ubisoft</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Activision</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">03</div>
+    <h3 dir="rtl">ما اسم المدينة الرئيسية في GTA V؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Liberty City</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Los Santos</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Vice City</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>San Fierro</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">04</div>
+    <h3 dir="rtl">ما الشركة التي استحوذت على Mojang عام 2014؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Sony</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Microsoft</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Nintendo</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Tencent</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">05</div>
+    <h3 dir="rtl">ما اسم الخريطة الشهيرة في League of Legends التي تتنافس فيها الفرق عادةً في النمط الأساسي؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Dust II</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Summoner&#x27;s Rift</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>King&#x27;s Canyon</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Verdansk</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">06</div>
+    <h3 dir="rtl">ما اسم الشخصية الرئيسية في سلسلة Uncharted؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Nathan Drake</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Joel Miller</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Arthur Morgan</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Ezio Auditore</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">07</div>
+    <h3 dir="rtl">في أي لعبة من سلسلة The Witcher يظهر Geralt of Rivia كشخصية رئيسية؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>The Witcher 3: Wild Hunt</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>The Witcher: Origins</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>The Witcher 4</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>The Witcher Online</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">08</div>
+    <h3 dir="rtl">ما اللعبة التي تدور حول لعب كرة القدم باستخدام السيارات؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Rocket League</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>FIFA</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Trackmania</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Asphalt</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">09</div>
+    <h3 dir="rtl">في أي لعبة توجد حركة Fatality الشهيرة؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Tekken</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Mortal Kombat</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Street Fighter</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>WWE 2K</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">10</div>
+    <h3 dir="rtl">إلى أي سلسلة تنتمي شخصية Geralt of Rivia؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Skyrim</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>The Witcher</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Dark Souls</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Dragon Age</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">11</div>
+    <h3 dir="rtl">في لعبة Minecraft، أي أداة تُستخدم لاستخراج الـ Obsidian؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Iron Pickaxe</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Diamond Pickaxe</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Stone Pickaxe</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Gold Pickaxe</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">12</div>
+    <h3 dir="rtl">في لعبة GTA V، ما أسماء الشخصيات الثلاث الرئيسية التي يمكن اللعب بها؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>مايكل، فرانكلين، تريفور</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>كارل، تومي، نيكو</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>فرانكلين، لامار، رون</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>مايكل، لامار، توني</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">13</div>
+    <h3 dir="rtl">في لعبة Dark Souls، ما اسم الـBoss الشهير الذي يقاتله اللاعب في منطقة Undead Burg؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Ornstein</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Taurus Demon</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Artorias</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Manus</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">14</div>
+    <h3 dir="rtl">في لعبة Resident Evil 2، ما اسم قسم الشرطة الذي يستكشفه اللاعب في بداية اللعبة؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Raccoon Police Department</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Umbrella Police Department</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Spencer Police Department</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Arklay Police Department</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">15</div>
+    <h3 dir="rtl">من طور لعبة Red Dead Redemption 2؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Rockstar Games</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Naughty Dog</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Ubisoft</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>CD Projekt Red</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">16</div>
+    <h3 dir="rtl">ما اسم بطل Red Dead Redemption 2؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>John Marston</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Arthur Morgan</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Trevor Philips</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Joel Miller</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">17</div>
+    <h3 dir="rtl">ما اسم اللعبة التي تدور أحداثها في عالم Tamriel وتشتهر بمدينة Whiterun؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Skyrim</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Fallout 4</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Oblivion</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>The Witcher 3</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">18</div>
+    <h3 dir="rtl">ما اسم الاستوديو الذي طور لعبة God of War عام 2018؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Santa Monica Studio</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Naughty Dog</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Insomniac Games</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Guerrilla Games</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">19</div>
+    <h3 dir="rtl">ما اسم الشخصية الرئيسية في لعبة Assassin&#x27;s Creed II؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Ezio Auditore</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Altair</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Edward Kenway</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Connor Kenway</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">20</div>
+    <h3 dir="rtl">في لعبة Valorant، ما اسم الشركة التي طورت اللعبة؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Riot Games</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Valve</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Ubisoft</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Activision</span></button>
+    </div>
+</article>
+</section>
+<section id="hard" class="level-group" data-level="hard">
+<article class="question-card">
+    <div class="question-index">01</div>
+    <h3 dir="rtl">من طور لعبة Elden Ring؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>FromSoftware</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Capcom</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Square Enix</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Bandai Namco</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">02</div>
+    <h3 dir="rtl">ما اسم الشخصية الرئيسية في The Last of Us؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Joel Miller</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Nathan Drake</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Arthur Morgan</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Sam Porter Bridges</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">03</div>
+    <h3 dir="rtl">ما اسم الاستوديو الذي طور لعبة The Last of Us؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Naughty Dog</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Santa Monica Studio</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Insomniac Games</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Guerrilla Games</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">04</div>
+    <h3 dir="rtl">في أي عام صدرت لعبة Minecraft رسميًا بنسخة الإصدار الكامل 1.0؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>2009</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>2010</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>2011</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>2012</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">05</div>
+    <h3 dir="rtl">ما أول جهاز ألعاب منزلي أصدرته Nintendo عالميًا باسم Nintendo Entertainment System؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>SNES</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>NES</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>N64</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>GameCube</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">06</div>
+    <h3 dir="rtl">من ابتكر وأخرج سلسلة Metal Gear؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>هيديو كوجيما</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>شينجي ميكامي</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>هيديتاكا ميازاكي</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>ساتورو إيواتاما</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">07</div>
+    <h3 dir="rtl">ما اسم المحرك الذي طورت به Valve عددًا من ألعابها الشهيرة مثل Half-Life 2؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Unreal Engine</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Source Engine</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Unity</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Frostbite</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">08</div>
+    <h3 dir="rtl">ما اسم الشركة التي طورت لعبة Portal؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Valve</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Epic Games</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Ubisoft</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Blizzard</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">09</div>
+    <h3 dir="rtl">ما اسم الاستوديو الذي طور سلسلة Dark Souls؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>FromSoftware</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Valve</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Bethesda</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Remedy</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">10</div>
+    <h3 dir="rtl">من أخرج لعبة Elden Ring بالتعاون مع FromSoftware؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>هيديو كوجيما</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>هيديتاكا ميازاكي</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>شينجي ميكامي</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>ساتورو إيواساكي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">11</div>
+    <h3 dir="rtl">في لعبة Dark Souls III، ما اسم الـBoss الذي يُعد الزعيم النهائي الأساسي للقصة؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Nameless King</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Soul of Cinder</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Pontiff Sulyvahn</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Aldrich</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">12</div>
+    <h3 dir="rtl">أي لعبة فازت بجائزة Game of the Year في The Game Awards لعام 2020؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>The Last of Us Part II</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Ghost of Tsushima</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Hades</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Animal Crossing: New Horizons</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">13</div>
+    <h3 dir="rtl">ما اسم جهاز Nintendo المحمول الذي صدر عام 1989 واشتهر بلعبة Tetris؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Nintendo DS</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Game Boy</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Game Boy Advance</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Nintendo 3DS</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">14</div>
+    <h3 dir="rtl">ما اسم الشخصية الرئيسية في سلسلة Resident Evil التي ظهرت في عدة أجزاء رئيسية؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Leon Kennedy</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Chris Redfield</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Ethan Winters</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Albert Wesker</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">15</div>
+    <h3 dir="rtl">ما اسم الشركة التي طورت لعبة Resident Evil؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Capcom</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Konami</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Sega</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Square Enix</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">16</div>
+    <h3 dir="rtl">في سلسلة Metal Gear، ما الاسم الحقيقي لشخصية Solid Snake؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>David</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Jack</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>John</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Eli</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">17</div>
+    <h3 dir="rtl">في لعبة Hollow Knight، ما اسم المملكة التي تدور فيها أحداث اللعبة؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Hallownest</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Dirtmouth</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Deepnest</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Greenpath</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">18</div>
+    <h3 dir="rtl">في سلسلة Resident Evil، ما اسم المنظمة التي أسسها Ozwell E. Spencer مع شركائه؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>BSAA</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Umbrella Corporation</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Tricell</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Blue Umbrella</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">19</div>
+    <h3 dir="rtl">في لعبة Portal 2، ما اسم الذكاء الاصطناعي الذي يتحكم في منشأة Aperture Science؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Cortana</span></button>
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>GLaDOS</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>SHODAN</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Wheatley</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">20</div>
+    <h3 dir="rtl">في لعبة BioShock Infinite، ما الاسم الكامل لشخصية Elizabeth؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Elizabeth Comstock</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Elizabeth Ryan</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Elizabeth Fontaine</span></button>
+        <button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Elizabeth Lamb</span></button>
+    </div>
+</article>
+</section>
+                        </div>
+                    </div>
+                    <div class="quiz-controls">
+                        <button class="quiz-btn" id="previous" type="button"><i class="bi bi-arrow-left"></i> &nbsp; PREVIOUS</button>
+                        <button class="quiz-btn primary" id="next" type="button">NEXT &nbsp; <i class="bi bi-arrow-right"></i></button>
+                    </div>
+                </div>
+                <aside class="stats-panel">
+                    <div class="timer"><strong id="timer">20</strong><span>SEC</span></div>
+                    <div class="stat-block">
+                        <div class="stat-label">PROGRESS</div>
+                        <div class="progress-row"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><div class="progress-number" id="progressText">1 / 10</div></div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-label">SCORE</div>
+                        <div class="score-value"><i class="bi bi-star-fill"></i><span id="score">0</span></div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const avatar = localStorage.getItem('selectedAvatar') || 'avatar-1.png.jpg';
+    const name = localStorage.getItem('playerName') || 'SHADOW';
+    document.getElementById('topAvatar').src = avatar;
+    document.getElementById('topPlayer').textContent = name.toUpperCase();
+});
+</script>
+<script src="quiz.js"></script>
+</body>
+</html>
