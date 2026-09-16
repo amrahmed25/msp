@@ -168,7 +168,7 @@ function nextQuestion() {
 async function retrieveData() {
     console.log('Category name: ', cat);
     
-    const response = await fetch(`../data/${cat}.json`);
+    const response = await fetch(`./data/${cat}.json`);
     const Data     = await response.json();
     return Data.filter(item => (item.category === cat && item.difficulty === diff) || (item.category === 'init' && item.difficulty === 'init') );
 }
