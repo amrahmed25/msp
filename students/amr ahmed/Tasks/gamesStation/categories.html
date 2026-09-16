@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/categories.css">
+    <title>Categories</title>
+</head>
+<body>
+    <nav>
+        <h1>Nostalgia</h1>
+        <section class="navLinks">
+            <a href="home.html">home</a>
+            <a href="categories.html">games</a>
+            <a href="about.html">about</a>
+            <a href="feedback.html">feedback</a>
+        </section>
+    </nav>
+    <div id="containerFilter">
+        <div>
+            <select id="categories">
+                <option value="all">All</option>
+                <option value="shooter">Shooter</option>
+                <option value="adventure">Adventure</option>
+                <option value="casual">Casual</option>
+            </select>
+            <input id="gameQuery" type="text" placeholder="Find a game" autofocus>
+            <button onclick="searchGame()"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </div>
+    <p id="placeWrite" style="font-size: 2rem;"></p>
+    <div id="games">
+        <div class="gameTitle">
+            <h1>
+                Our games
+            </h1>
+            <p>Explore different fields and develop your</p>
+        </div>
+        <div class="card">
+            <section class="game-card">
+                <div class="card-inner">
+
+
+                    <div class="card-front">
+                        <div>
+                            <img src="images/pubg.jpg" alt="">
+                        </div>
+
+                        <h1 class="card-front-p">PUBG</h1>
+                    </div>
+
+
+                    <div class="card-back">
+                        <h1>PUBG</h1>
+                        <p>
+                            Battle players from around the world in an intense survival experience.
+                            Collect weapons, build strategies, and be the last player standing.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/PUBG_Mobile">view more</a>
+                    </div>
+
+                </div>
+            </section>
+            <section class="game-card">
+                <div class="card-inner">
+
+
+                    <div class="card-front">
+                        <div>
+                            <img src="images/CF.jpg" alt="">
+                        </div>
+
+                        <h1 class="card-front-p">CrossFire</h1>
+                    </div>
+
+
+                    <div class="card-back">
+                        <h1>CrossFire</h1>
+                        <p>
+                            Enter fast-paced team battles where every move can change the game.
+                            Choose your weapons, work with your team, and fight for victory.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Crossfire_(series)">view more</a>
+                    </div>
+
+                </div>
+            </section>
+            <section class="game-card">
+                <div class="card-inner">
+
+
+                    <div class="card-front">
+                        <div>
+                            <img src="images/Super-Mario.webp" alt="">
+                        </div>
+
+                        <h1 class="card-front-p">Super Mario</h1>
+                    </div>
+
+
+                    <div class="card-back">
+                        <h1>Super Mario</h1>
+                        <p>
+                            Join Mario on exciting adventures through colorful and challenging worlds.
+                            Jump, explore, defeat enemies, and save the Mushroom Kingdom.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Super_Mario">view more</a>
+                    </div>
+
+                </div>
+            </section>
+            <section class="game-card">
+                <div class="card-inner">
+
+
+                    <div class="card-front">
+                        <div>
+                            <img src="images/gta.jpg" alt="">
+                        </div>
+                        <h1 class="card-front-p">GTA</h1>
+
+
+
+                    </div>
+
+
+                    <div class="card-back">
+                        <h1>GTA</h1>
+                        <p>
+                            Explore a massive open world filled with action, missions, and adventures.
+                            Drive cars, complete missions, and experience the freedom of the city.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City">view more</a>
+                    </div>
+
+                </div>
+            </section>
+            <section class="game-card">
+                <div class="card-inner">
+
+
+                    <div class="card-front">
+                        <div>
+                            <img src="images/funnyFarm.jpg" alt="">
+                        </div>
+
+                        <h1 class="card-front-p">Happy Farm</h1>
+                    </div>
+
+
+                    <div class="card-back">
+                        <h1>Happy Farm</h1>
+                        <p>
+                            Build and manage your own farm in a fun and relaxing experience.
+                            Grow crops, take care of animals, and create your dream farm.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Happy_Farm">view more</a>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+    <footer>
+        <p> &copy; 2026 Nostalgia. All Rights Reserved. </p>
+    </footer>    
+    <script src="js/categories.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameNexus | Feedback</title>
+
+    
+    <link rel="stylesheet" href="../Css/navbar.css">
+    <link rel="stylesheet" href="../Css/feedback.css">
+    <script src="../Js/navbar.js" defer></script>
+</head>
+
+<body>
+    <nav-bar></nav-bar>
+
+    <div class="container">
+        <h2>Feedback</h2>
+        <form>
+            <div class="type">
+                <p>Feedback Type:</p>
+                <div class="types">
+                    <label class="feedType">
+                        <input type="radio" name="feedback Type" value="suggestion">
+                        suggestion
+                    </label>
+
+                    <label class="feedType">
+                        <input type="radio" name="feedback Type" value="bug">
+                        Bug Report
+                    </label>
+
+                    <label class="feedType">
+                        <input type="radio" name="feedback Type" value="complaint">
+                        Complaint
+                    </label>
+
+                    <label class="feedType">
+                        <input type="radio" name="feedback Type" value="other">
+                        Other
+                    </label>
+                    <input type="text" id="other-feedback">
+                </div>
+            </div>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" class = "input-box">
+
+            <label for="feedback">Your Feedback :</label>
+            <input type="text" id="feedback" class= "input-box"  >
+
+            <label for="game">Related Game:</label>
+            <select id="game">
+                <option value="" disabled selected hidden> None </option >
+                <option value="BattelStrom">Battel Strom</option>
+                <option value="WarzoneX">Warzone X</option>
+                <option value="UnravelTwo">Unravel Two</option>
+                <option value="ItTakesTwo">It Takes Two</option>
+                <option value="RocketLeague">Rocket League</option>
+                <option value="Cricket24">Cricket 24</option>
+                <option value="AgeofEmpiresIV">Age of Empires IV</option>
+                <option value="StardewValley">Stardew Valley</option>
+            </select>
+            
+            <button type="button" onclick="handleSubmit()" id="submit-button">
+                Submit Feedback
+            </button>
+        </form>
+    </div>
+
+    <script src="../Js/feedback.js"></script>
+</body>
+</html>
+

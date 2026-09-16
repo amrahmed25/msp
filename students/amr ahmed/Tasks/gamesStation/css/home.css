@@ -1,0 +1,305 @@
+:root {
+    --web-ground: #1B1B2F;
+    --button-color: #5e0e1b;
+    --section-color: #162447;
+    --text-color: #F5E6C8;
+    --cards-color: #FFB703;
+}
+* {
+    margin: 0;
+    font-family: "Inter", sans-serif;   
+    box-sizing: border-box;
+}
+
+nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+
+    background-color: var(--web-ground);
+
+    h1 {
+        color: var(--text-color);
+        padding-left: 10px;
+    }
+}
+
+.navLinks {
+    padding: 25px;
+    a {
+    text-decoration: none;
+    padding-left: 10px;
+    color: var(--text-color);
+}
+a:hover{
+    font-size: 18px;
+    transition: ease;
+}
+    a:focus{
+        text-decoration: underline;
+
+    }
+}
+
+a {
+    text-decoration: none;
+    padding-left: 10px;
+    color: var(--text-color);
+}
+
+#home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 80vh;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.40)),
+        url('../images/nostalgia.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            color: var(--text-color);
+        }
+
+        .h1 {
+            color: var(--text-color);
+        }
+
+        .develop {
+            color: var(--button-color);
+        }
+    }
+
+    label {
+        h1 {
+            display: inline;
+            padding-left: 10px;
+        }
+    }
+
+    button {
+        background-color: var(--button-color);
+        border-radius: 10px;
+        width: 180px;
+        margin: 10px;
+        cursor: pointer;
+        padding: 10px;
+        border: none;
+    }
+
+    button:hover {
+        background-color: var(--section-color);
+        width: 200px;
+    }
+}
+
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    height: 200px;
+    background-color: var(--web-ground);
+
+    h1 {
+        color: var(--text-color);
+    }
+
+    p {
+        color: var(--text-color);
+    }
+}
+
+
+#games {
+    background-color: var(--section-color);
+    padding: 30px;
+
+    .gameTitle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h1 {
+            color: var(--text-color);
+        }
+
+        p {
+            color: var(--text-color);
+        }
+    }
+
+
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .game-card {
+            width: 400px;
+            height: 350px;
+
+            margin: 20px;
+
+            perspective: 1000px;
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+
+            position: relative;
+
+            transition: transform 0.7s;
+
+            transform-style: preserve-3d;
+        }
+
+        .game-card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            border-radius: 10px;
+
+            backface-visibility: hidden;
+
+            overflow: hidden;
+        }
+
+        .card-front {
+            background-color: var(--button-color);
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            flex-direction: column;
+
+            overflow: hidden;
+
+
+            img {
+                width: 100%;
+                height: 250px;
+
+                object-fit: cover;
+
+                display: block;
+
+                flex-shrink: 0;
+            }
+
+            h1 {
+                color: var(--text-color);
+
+                margin: 15px 10px 5px;
+            }
+
+            p {
+                color: var(--text-color);
+
+                padding-left: 40px;
+                padding-right: 40px;
+
+                text-align: center;
+            }
+
+
+            
+        }
+
+
+        .card-back {
+            background-color: var(--button-color);
+
+            color: var(--text-color);
+
+            display: flex;
+
+            justify-content: flex-start;
+            align-items: center;
+
+            flex-direction: column;
+
+            padding: 30px;
+
+            box-sizing: border-box;
+
+            transform: rotateY(180deg);
+
+
+            h1 {
+                color: var(--text-color);
+                padding-bottom: 50px;
+                padding-top: 30px;
+            }
+
+
+            p {
+                color: var(--text-color);
+
+                text-align: center;
+            }
+
+
+            a {
+                color: #1c0fa6;
+                font-size: 18px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                background-color: #F5E6C8;
+                padding: 10px;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: var(--web-ground);
+
+    padding: 25px;
+    p {
+        color: var(--text-color);
+
+        padding-left: 20px;
+    }
+}
+.card-front img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}

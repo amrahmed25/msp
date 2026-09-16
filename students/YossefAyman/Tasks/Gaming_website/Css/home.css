@@ -1,0 +1,274 @@
+@import url('root.css');
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 48px auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.welcome {
+    position: relative;
+
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+
+    padding: 72px 32px;
+    border: var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 36px;
+
+    overflow: hidden;
+    transition: border var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.welcome:hover {
+    border: var(--glass-border-glow);
+    box-shadow: var(--card-shadow), var(--neon-glow);
+}
+
+.welcome h1 {
+    max-width: 850px;
+
+    background: linear-gradient(135deg, var(--primary-neon), var(--secondary-neon));
+    background-clip: text;
+    color: transparent;
+    font-family: var(--font-heading);
+    font-size: var(--fs-xl);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.35));
+    line-height: 1.25;
+}
+
+.welcome .buttons {
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.browse-button {
+    background: linear-gradient(135deg, var(--primary-neon), var(--secondary-neon));
+    color: #000;
+    font-family: var(--font-heading);
+    font-size: var(--fs-base);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    padding: 14.4px 36px;
+    border: none;
+    border-radius: var(--radius-full);
+
+    cursor: pointer;
+
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+}
+
+.browse-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 22px rgba(0, 240, 255, 0.6);
+    filter: brightness(1.1);
+}
+
+.browse-button:active {
+    transform: translateY(0);
+}
+
+.join-button {
+    background: transparent;
+    backdrop-filter: var(--glass-blur);
+    color: var(--primary-neon);
+    font-family: var(--font-heading);
+    font-size: var(--fs-base);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    padding: 13.6px 36px;
+    border: var(--glass-border-glow);
+    border-radius: var(--radius-full);
+
+    cursor: pointer;
+
+    transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.join-button:hover {
+    background: var(--primary-neon);
+    color: #000;
+    box-shadow: var(--neon-glow);
+    transform: translateY(-3px);
+}
+
+.join-button:active {
+    transform: translateY(0);
+}
+
+.popular {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.popular h2 {
+    position: relative;
+
+    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.4));
+
+    padding-left: 20px;
+    border-left: 4px solid var(--primary-neon);
+
+    font-family: var(--font-heading);
+    font-size: var(--fs-lg);
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.popular .games {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+}
+
+.game-card {
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--card-shadow);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    transition: transform var(--transition-normal), border var(--transition-normal), box-shadow var(--transition-normal), background-color var(--transition-normal);
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    border: var(--glass-border-glow);
+    box-shadow: var(--card-shadow), var(--neon-glow);
+    background: var(--bg-card-hover);
+}
+
+/* Game Image Box */
+.game-card img {
+    width: 100%;
+    height: 180px;
+    
+    margin-bottom: 16px;
+    border-radius: var(--radius-sm);
+    
+    object-fit:cover;
+
+    transition: transform var(--transition-normal);
+}
+
+.game-card:hover img {
+    transform: scale(1.05);
+}
+
+.game-card h3 {
+    margin-bottom: 6.4px;
+
+    font-family: var(--font-heading);
+    font-size: var(--fs-md);
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+}
+
+.game-card p {
+    margin-bottom: 20px;
+
+    color: var(--text-secondary);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+}
+
+.details-button {
+    width: 100%;
+
+    background: transparent;
+    color: var(--primary-neon);
+    font-family: var(--font-heading);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    margin-top: auto;
+    padding: 12px 20px;
+    border: var(--glass-border-glow);
+    border-radius: var(--radius-full);
+
+    cursor: pointer;
+
+    transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.details-button:hover {
+    background-color: var(--primary-neon);
+    color: #000;
+    border-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.details-button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 24px auto;
+        gap: 40px;
+    }
+
+    .welcome {
+        padding: 40px 20px;
+        gap: 24px;
+    }
+
+    .welcome h1 {
+        font-size: var(--fs-lg);
+    }
+
+    .welcome .buttons {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .browse-button,
+    .join-button {
+        width: 100%;
+    }
+
+    .popular h2 {
+        font-size: var(--fs-md);
+    }
+
+    .popular .games {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+    }
+}

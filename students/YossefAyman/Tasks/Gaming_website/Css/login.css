@@ -1,0 +1,119 @@
+@import url('root.css');
+
+.box {
+    width: 90%;
+    max-width: 420px;
+
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+
+    margin: auto;
+    padding: 48px 40px;
+    border: var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    transition: border var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.box:hover {
+    border: var(--glass-border-glow);
+    box-shadow: var(--card-shadow), var(--neon-glow);
+}
+
+.box h2 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-xl);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    background: linear-gradient(135deg, var(--primary-neon), var(--secondary-neon));
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.3));
+}
+
+.inp-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inp-box label {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+
+    margin-bottom: -8px;
+}
+
+.inp-box input {
+    width: 100%;
+
+    background-color: rgba(13, 15, 23, 0.6);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: var(--fs-base);
+
+    padding: 13.6px 16px;
+    border: var(--glass-border);
+    border-radius: var(--radius-sm);
+    outline: none;
+
+    transition: border var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.inp-box input:focus {
+    background-color: rgba(13, 15, 23, 0.9);
+    border: var(--glass-border-glow);
+    box-shadow: var(--neon-glow);
+}
+
+.box button {
+    width: 100%;
+
+    background: linear-gradient(135deg, var(--primary-neon), var(--secondary-neon));
+    color: #000;
+    font-family: var(--font-heading);
+    font-size: var(--fs-base);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .0938rem;
+
+    padding: 14.4px;
+    border: none;
+    border-radius: var(--radius-full);
+
+    cursor: pointer;
+
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+}
+
+.box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 1.4px rgba(0, 240, 255, 0.6);
+    filter: brightness(1.1);
+}
+
+.box button:active {
+    transform: translateY(0);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+@media (max-width: 480px) {
+    .box {
+        padding: 32px 24px;
+        margin: auto 16px;
+    }
+
+    .box h2 {
+        font-size: var(--fs-lg);
+    }
+}

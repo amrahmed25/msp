@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XO Game - Play</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="w-screen h-screen bg-[#1a1733] text-white font-sans flex items-center justify-center p-4">
+  <button id="backSetup" class="absolute top-6 left-6 flex items-center gap-2 bg-[#161224] hover:bg-[#2a2552] text-cyan-400 border border-cyan-500/30 px-4 py-2 rounded-xl transition-all shadow-[0_0_10px_rgba(6,182,212,0.2)] active:scale-95 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        <span class="select-none">Back to Setup</span>
+  </button>
+
+  <div class="bg-[#211d42] p-10 rounded-3xl shadow-[0_0_35px_rgba(112,26,117,0.3)] border border-purple-900/40 flex flex-col items-center gap-6 w-96 sm:w-[450px]">
+
+    <div class="text-center flex flex-col items-center">
+      <div class="flex items-center gap-2 text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-300 to-pink-500 tracking-wider">
+        <h1 class="select-none"> X   VS   O</h1>
+      </div>
+    </div>
+
+    <div class="bg-[#1c1435] px-4 py-2 rounded-full border border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.15)] w-full text-center">
+      <h1 id="currentPlayer" class="select-none font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500 tracking-wide">
+        Think Fast ,Move Smart
+      </h1>
+    </div>
+
+    <div id="cells" class="grid grid-cols-3 gap-3 w-full aspect-square bg-[#1c1435]/60 p-3 rounded-2xl border border-purple-800/40 shadow-[inner_0_0_15px_rgba(0,0,0,0.5)]">
+      
+      <button type="button" data-index="0" class="cell select-none aspect-square bg-[#161224] border border-cyan-500/30 rounded-xl flex items-center justify-center text-3xl font-black cursor-pointer hover:border-cyan-400 hover:shadow-[0_0_10px_rgba(6,182,212,0.5)] active:scale-95 transition-all text-cyan-400"></button>
+      <button type="button" data-index="1" class="cell select-none aspect-square bg-[#161224] border border-cyan-500/30 rounded-xl flex items-center justify-center text-3xl font-black cursor-pointer hover:border-cyan-400 hover:shadow-[0_0_10px_rgba(6,182,212,0.5)] active:scale-95 transition-all text-cyan-400"></button>
+      <button type="button" data-index="2" class="cell select-none aspect-square bg-[#161224] border border-cyan-500/30 rounded-xl flex items-center justify-center text-3xl font-black cursor-pointer hover:border-cyan-400 hover:shadow-[0_0_10px_rgba(6,182,212,0.5)] active:scale-95 transition-all text-cyan-400"></button>
+      <button type="button" data-index="3" class="cell select-none aspect-square bg-[#161224] border border-cyan-500/30 rounded-xl flex items-center justify-center text-3xl font-black cursor-pointer hover:border-cyan-400 hover:shadow-[0_0_10px_rgba(6,182,212,0.5)] active:scale-95 transition-all text-cyan-400"></button>
+      <button type="button" data-index="4" class="cell select-none aspect-square bg-[#161224] border border-cyan-500/30 rounded-xl flex items-center justify-center text-3xl font-black cursor-pointer hover:border-cyan-400 hover:shadow-[0_0_10px_rgba(6,182,212,0.5)] active:scale-95 transition-all text-cyan-400"></button>
+      <button type="button" data-index="5" class="cell select-none aspect-square bg-[#161224] border border-cyan-500/30 rounded-xl flex items-center justify-center text-3xl font-black cursor-pointer hover:border-cyan-400 hover:shadow-[0_0_10px_rgba(6,182,212,0.5)] active:scale-95 transition-all text-cyan-400"></button>
+      <button type="button" data-index="6" class="cell select-none aspect-square bg-[#161224] border border-cyan-500/30 rounded-xl flex items-center justify-center text-3xl font-black cursor-pointer hover:border-cyan-400 hover:shadow-[0_0_10px_rgba(6,182,212,0.5)] active:scale-95 transition-all text-cyan-400"></button>
+      <button type="button" data-index="7" class="cell select-none aspect-square bg-[#161224] border border-cyan-500/30 rounded-xl flex items-center justify-center text-3xl font-black cursor-pointer hover:border-cyan-400 hover:shadow-[0_0_10px_rgba(6,182,212,0.5)] active:scale-95 transition-all text-cyan-400"></button>
+      <button type="button" data-index="8" class="cell select-none aspect-square bg-[#161224] border border-cyan-500/30 rounded-xl flex items-center justify-center text-3xl font-black cursor-pointer hover:border-cyan-400 hover:shadow-[0_0_10px_rgba(6,182,212,0.5)] active:scale-95 transition-all text-cyan-400"></button>
+
+    </div>
+
+    <div id="score-reset" class="flex flex-col items-center gap-3 w-full">
+      <h2 class="text-xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 tracking-wide min-h-[28px]"></h2>
+      <button type="button" class="select-none w-full bg-gradient-to-r from-cyan-400 to-pink-500 hover:opacity-95 text-white font-bold py-3 rounded-2xl shadow-[0_0_20px_rgba(236,72,153,0.35)] active:scale-95 transition-all text-sm cursor-pointer">
+        Ready to match
+      </button>
+    </div>
+
+  </div>
+
+  <script type="module" src="./script/script.js"></script>
+</body>
+
+</html>

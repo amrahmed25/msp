@@ -1,0 +1,253 @@
+@import url('root.css');
+
+.container {
+    width: 90%;
+    max-width: 680px;
+
+    margin: 48px auto 0;
+    padding: 48px 40px;
+    border: var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
+
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    transition: border var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.container:hover {
+    border: var(--glass-border-glow);
+    box-shadow: var(--card-shadow), var(--neon-glow);
+}
+
+.container h2 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-xl);
+    text-align: center;
+    letter-spacing: 2px;
+
+    background: linear-gradient(135deg, var(--primary-neon), var(--secondary-neon));
+    background-clip: text;
+    color: transparent;
+
+    filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.3));
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form > label {
+    color: var(--text-secondary);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    margin-bottom: -8px;
+}
+
+.type .p, 
+.type p {
+    color: var(--text-secondary);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+}
+
+.types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+}
+
+.feedType {
+    background-color: rgba(13, 15, 23, 0.5);
+    color: var(--text-secondary);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    text-transform: capitalize;
+
+    padding: 12px 16px;
+    border: var(--glass-border);
+    border-radius: var(--radius-sm);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    cursor: pointer;
+
+    transition: all var(--transition-fast);
+}
+
+.feedType input[type="radio"] {
+    accent-color: var(--primary-neon);
+    cursor: pointer;
+}
+
+.feedType:hover {
+    background-color: var(--bg-card-hover);
+    border-color: var(--primary-neon);
+    color: var(--text-primary);
+}
+
+.feedType:has(input[type="radio"]:checked) {
+    background-color: rgba(0, 240, 255, 0.1);
+    color: var(--primary-neon);
+
+    border: var(--glass-border-glow);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+#other-feedback {
+    grid-column: 1 / -1;
+    display: none;
+
+    background-color: rgba(13, 15, 23, 0.6);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: var(--fs-base);
+
+    margin-top: 4px;
+    padding: 12px 16px;
+    border: var(--glass-border-glow);
+    border-radius: var(--radius-sm);
+    outline: none;
+
+    transition: all var(--transition-fast);
+}
+
+.input-box,
+#game {
+    width: 100%;
+
+    background-color: rgba(13, 15, 23, 0.6);
+    color: var(--primary-neon);
+    font-family: var(--font-main);
+    font-size: var(--fs-base);
+
+    padding: 13.6px 16px;
+    border: var(--glass-border);
+    border-radius: var(--radius-sm);
+    outline: none;
+
+    transition: border var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+#game {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%2300f0ff' height='32' viewBox='0 0 24 24' width='32' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    appearance: none;
+    background-color: var(--bg-card);
+    backdrop-filter: blur(--glass-blur);
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: border var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+#game:focus,
+#game:hover {
+    border: var(--glass-border-glow);
+    box-shadow: var(--neon-glow);
+    background-color: var(--bg-card-hover);
+}
+
+.input-box:focus,
+#other-feedback:focus {
+    border: var(--glass-border-glow);
+    box-shadow: var(--neon-glow);
+    background-color: rgba(13, 15, 23, 0.9);
+}
+
+#game option {
+    background-color: #161b2e;
+    color: var(--text-primary);
+    padding: 8px;
+}
+
+#submit-button {
+    width: 100%;
+
+    background: linear-gradient(135deg, var(--primary-neon), var(--secondary-neon));
+    color: #000;
+    font-family: var(--font-heading);
+    font-size: var(--fs-base);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    margin-top: 16px;
+    padding: 16px;
+    border: none;
+    border-radius: var(--radius-full);
+
+    cursor: pointer;
+
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+}
+
+#submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+    filter: brightness(1.1);
+}
+
+#submit-button:active {
+    transform: translateY(0);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+.inp-error{
+    border: 1px solid var(--error-neon) !important;
+    box-shadow: var(--error-glow);
+    animation: errorShanke .5s 1;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 32px 20px;
+        margin: 24px auto;
+    }
+
+    .container h2 {
+        font-size: var(--fs-lg);
+    }
+
+    .types {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@keyframes errorShanke {
+    0% {
+        margin-left: 2px;
+    }
+    25% {
+        margin-left: 5px;
+    }
+    50% {
+        margin-left: 2px;
+    }
+    75% {
+        margin-left: 5px;
+    }
+    100% {
+        margin-left: 2px;
+    }
+
+}

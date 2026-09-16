@@ -1,0 +1,78 @@
+<mxfile host="Electron" agent="ChatGPT">
+  <diagram name="GamesStation_Class_Diagram" id="0">
+    <mxGraphModel dx="847" dy="509" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pl" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;b&gt;Player&lt;/b&gt;&lt;hr&gt;- id : UUID&lt;br&gt;- userName : String&lt;br&gt;- createdAt : Date&lt;br&gt;&lt;hr&gt;+ login()&lt;br&gt;+ logout()&lt;br&gt;+ createProfile()" vertex="1">
+          <mxGeometry height="180" width="300" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="game" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;b&gt;Game&lt;/b&gt;&lt;hr&gt;- board : Array&lt;br&gt;- currentTurn : X|O&lt;br&gt;- winner : X|O|null&lt;br&gt;- status : String&lt;br&gt;&lt;hr&gt;+ initializeBoard()&lt;br&gt;+ makeMove()&lt;br&gt;+ checkWinner()&lt;br&gt;+ checkDraw()&lt;br&gt;+ switchTurn()&lt;br&gt;+ resetGame()" vertex="1">
+          <mxGeometry height="260" width="320" x="390" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="online" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;b&gt;OnlineGame / OnlineRoom&lt;/b&gt;&lt;hr&gt;- roomId : UUID&lt;br&gt;- roomCode : String&lt;br&gt;- hostId : UUID&lt;br&gt;- playerX : UUID&lt;br&gt;- playerO : UUID&lt;br&gt;- board : Array&lt;br&gt;- currentTurn : X|O&lt;br&gt;- winner : String&lt;br&gt;- status : String&lt;br&gt;- playerXTime : Number&lt;br&gt;- playerOTime : Number&lt;br&gt;&lt;hr&gt;+ createRoom()&lt;br&gt;+ joinRoom()&lt;br&gt;+ subscribeToRoom()&lt;br&gt;+ syncGame()&lt;br&gt;+ makeOnlineMove()&lt;br&gt;+ requestRematch()&lt;br&gt;+ exitRoom()" vertex="1">
+          <mxGeometry height="300" width="350" x="820" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;b&gt;AuthenticationService&lt;/b&gt;&lt;hr&gt;+ signUp()&lt;br&gt;+ signIn()&lt;br&gt;+ signOut()&lt;br&gt;+ getCurrentUser()&lt;br&gt;+ ensurePlayerProfile()" vertex="1">
+          <mxGeometry height="220" width="300" x="40" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="room" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;b&gt;RoomService&lt;/b&gt;&lt;hr&gt;+ createRoom()&lt;br&gt;+ joinRoom()&lt;br&gt;+ getRoom()&lt;br&gt;+ updateRoom()&lt;br&gt;+ leaveRoom()" vertex="1">
+          <mxGeometry height="220" width="320" x="590" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="rt" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;b&gt;RealtimeService&lt;/b&gt;&lt;hr&gt;&lt;br&gt;+ handleRoomUpdate()" vertex="1">
+          <mxGeometry height="190" width="300" x="40" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;b&gt;GameUI&lt;/b&gt;&lt;hr&gt;+ renderBoard()&lt;br&gt;+ updateBoard()&lt;br&gt;+ showWinner()&lt;br&gt;+ showDraw()&lt;br&gt;+ showRematch()&lt;br&gt;+ showExit()" vertex="1">
+          <mxGeometry height="220" width="320" x="410" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" edge="1" parent="1" source="pl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" target="game" value="uses">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" edge="1" parent="1" source="pl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" target="online" value="participates">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" edge="1" parent="1" source="auth" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" target="pl" value="creates profile">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" edge="1" parent="1" source="room" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" target="online" value="manages">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" edge="1" parent="1" source="gs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" target="game" value="logic">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" edge="1" parent="1" source="gs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" target="online" value="logic">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" edge="1" parent="1" source="rt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" target="online" value="syncs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" edge="1" parent="1" source="ui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" target="game" value="renders">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" edge="1" parent="1" source="gs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" target="online" value="renders">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" edge="1" parent="1" source="auth" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" target="room" value="authenticated access">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c11" edge="1" parent="1" source="room" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" target="rt" value="room updates">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="465" y="720" />
+              <mxPoint x="465" y="795" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SYI7jO3l5UrRgEvJY4_4-1" edge="1" parent="1" source="ui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" target="gs" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="960" as="sourcePoint" />
+            <mxPoint x="995" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;b&gt;GameService&lt;/b&gt;&lt;hr&gt;+ checkWinner()&lt;br&gt;+ checkDraw()&lt;br&gt;+ makeMove()&lt;br&gt;+ resetGame()" vertex="1">
+          <mxGeometry height="220" width="300" x="890" y="450" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

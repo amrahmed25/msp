@@ -45,7 +45,7 @@ const khalidAmr={
         folder: "./students/khalidAmr/Tasks/5th Task/",
         preview: "./students/khalidAmr/Tasks/5th Task/rome.jpg",
         description: "A responsive website with a hero section, project grid, and contact form.",
-        technologies: ["HTML", "CSS", "JavaScript"],
+        technologies: ["HTML", "Tailwind CSS", "JavaScript"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/khalidAmr/Tasks/5th%20Task"
       },
       
@@ -65,6 +65,14 @@ const khalidAmr={
         description: "A responsive platform gaming with a Home section, About section, category, feedback, and login section.",
         technologies: ["HTML", "CSS", "JavaScript"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/khalidAmr/Tasks/Project_gaming"
+      },
+
+      {
+        title: "Task 8 - Tic Tac Toe GAME ",
+        folder: "./students/khalidAmr/Tasks/game/",
+        preview: "./students/khalidAmr/Tasks/game/ttt.jpg",
+        description: "A fun and interactive tic tac toe game built with HTML, Tailwind CSS , Javascript. Play against the bot or a friend, with 3 rounds, score tracking , and sound effects.",
+        technologies: ["HTML", "Tailwind CSS", "JavaScript"],
       },
     ]
   };
