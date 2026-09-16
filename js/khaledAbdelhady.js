@@ -75,13 +75,15 @@ const khaledAbdelhady={
         technologies: ["HTML", "CSS", "JavaScript"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/xo"
       },
+
+      
       {
         title:"Quiz Game",
         folder: "./students/Khaled3bdelhady/quiz game/",
         preview: "./students/Khaled3bdelhady/quiz game/Neon Castle Above the Misty Valley.png/",
         description: "A responsive QUIZ Game website ",
         technologies: ["HTML", "CSS", "JavaScript"],
-        github: ""
+        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/quiz%20game"
       },
     ]
   };
