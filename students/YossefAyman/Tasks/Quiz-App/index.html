@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Quiz's Home Page</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="min-vh-100 d-flex flex-column justify-content-center align-items-center relative-container">
+    <button id="theme-toggle" class="btn btn-outline-secondary theme-toggle-btn shadow-sm" aria-label="Toggle Theme">
+        <i id="theme-icon" class="bi bi-moon-stars-fill fs-5"></i>
+    </button>
+    <main class="container d-flex justify-content-center align-items-center my-4">
+        <div class="card quiz-card shadow-lg border-0 p-4 p-sm-5 text-center">
+            <div class="question-avatar mx-auto mb-4">
+                <div class="inner-blue-circle">
+                    <i class="bi bi-question-lg"></i>
+                </div>
+            </div>
+            
+            <div id="step-difficulty">
+                <h1 class="card-title fw-bold mb-2 fs-2">Guess the Answer!</h1>
+                <p class="text-secondary mb-4 fs-6">Test your knowledge in each category across different challenges!</p>
+                
+                <hr class="quiz-divider my-4">
+                
+                <h2 class="fs-5 fw-bold mb-1">Select Difficulty</h2>
+                <p class="text-secondary fs-6 mb-4">Choose a level to start playing</p>
+                
+                <div class="d-grid gap-3">
+                    <button type="button" class="btn btn-success btn-lg quiz-btn py-3 px-4 d-flex align-items-center justify-content-between shadow-sm difficulty-option" data-difficulty="easy">
+                        <span class="d-flex align-items-center gap-2 fw-semibold">
+                            <i class="bi bi-controller fs-4"></i> Easy
+                        </span>
+                        <i class="bi bi-arrow-right fs-5"></i>
+                    </button> 
+
+                    <button type="button" class="btn btn-primary btn-lg quiz-btn py-3 px-4 d-flex align-items-center justify-content-between shadow-sm difficulty-option" data-difficulty="medium">
+                        <span class="d-flex align-items-center gap-2 fw-semibold">
+                            <i class="bi bi-lightning-fill fs-5"></i> Medium
+                        </span>
+                        <i class="bi bi-arrow-right fs-5"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-danger btn-lg quiz-btn py-3 px-4 d-flex align-items-center justify-content-between shadow-sm difficulty-option" data-difficulty="hard">
+                        <span class="d-flex align-items-center gap-2 fw-semibold">
+                            <i class="bi bi-fire fs-5"></i> Hard
+                        </span>
+                        <i class="bi bi-arrow-right fs-5"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="step-category" class="d-none">
+                <h2 class="fs-4 fw-bold mb-1">Select Category</h2>
+                <p class="text-secondary fs-6 mb-3">Pick one of the 20 categories below</p>
+                
+                <div class="category-scroll-container d-grid gap-2 mb-4">
+                    <button class="btn btn-outline-primary py-2 text-start px-3 category-option" data-cat="sports">Sports</button>
+                    <button class="btn btn-outline-primary py-2 text-start px-3 category-option" data-cat="music">Music</button>
+                    <button class="btn btn-outline-primary py-2 text-start px-3 category-option" data-cat="geography">Geography</button>
+                    <button class="btn btn-outline-primary py-2 text-start px-3 category-option" data-cat="movies">Movies</button>
+                    <button class="btn btn-outline-primary py-2 text-start px-3 category-option" data-cat="food">Food</button>
+                    <button class="btn btn-outline-primary py-2 text-start px-3 category-option" data-cat="electronics">Electronics</button>
+                    <button class="btn btn-outline-primary py-2 text-start px-3 category-option" data-cat="animals">Animals</button>
+                    <button class="btn btn-outline-primary py-2 text-start px-3 category-option" data-cat="science">Science</button>
+                    <button class="btn btn-outline-primary py-2 text-start px-3 category-option" data-cat="math">Math</button>
+                    <button class="btn btn-outline-primary py-2 text-start px-3 category-option" data-cat="programming">Technology & Programming</button>
+                    <button class="btn btn-outline-primary py-2 text-start px-3 category-option" data-cat="cars">Car Brands</button>
+                    <button class="btn btn-outline-primary py-2 text-start px-3 category-option" data-cat="languages">Languages and Words</button>
+                    <button class="btn btn-outline-primary py-2 text-start px-3 category-option" data-cat="holidays">National Holidays & Festivals</button>
+                </div>
+
+                <button id="btn-back" class="btn btn-link text-secondary text-decoration-none">
+                    <i class="bi bi-arrow-left me-1"></i> Back to Difficulty
+                </button>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

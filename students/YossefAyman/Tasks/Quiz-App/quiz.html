@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+    <!-- Back to Setup Button -->
+    <button id="backSetup" class="btn-back-setup position-absolute d-flex align-items-center gap-2 border px-3 py-2 rounded-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        <span class="user-select-none">Back to Setup</span>
+    </button>
+
+    <!-- theme button -->
+    <button id="theme-toggle" class="btn btn-outline-secondary theme-toggle-btn shadow-sm" aria-label="Toggle Theme">
+        <i id="theme-icon" class="bi bi-moon-stars-fill fs-5"></i>
+    </button>
+
+    <!-- main container -->
+    <main class="main container d-block">
+        <!-- Progress Container -->
+        <div class="Progress-Container container-sm mt-5">
+            <!-- Progress Bar -->
+            <div class="progress w-100" style="height: 1.5rem;" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <!-- Progress Slider -->
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%">
+                    
+                </div>
+            </div>
+        </div>
+
+        <section calss="middle-sectoin container d-flex justify-content-center align-items-center mt-5">
+            <!-- Duration step -->
+            <div class="Duration-Container d-flex align-items-center justify-content-center" style="height: 90vh;" id="step-duration">
+                <div class="card p-4 rounded-4 shadow mx-auto" style="width: 400px;">
+                    <h1 class="card-title fw-bold mb-2 fs-2">Time Per Question</h1>
+                    <p class="text-secondary mb-4 fs-6">Pick how many seconds you get to answer each question!</p>
+
+                    <hr class="quiz-divider my-4">
+
+                    <h2 class="fs-5 fw-bold mb-1">Select Duration</h2>
+                    <p class="text-secondary fs-6 mb-4">Choose a time limit to start playing</p>
+
+                    <div class="d-grid gap-3">
+                        <button type="button" class="btn btn-success btn-lg quiz-btn py-3 px-4 d-flex align-items-center justify-content-between shadow-sm duration-option" data-duration="5">
+                            <span class="d-flex align-items-center gap-2 fw-semibold">
+                                <i class="bi bi-stopwatch-fill fs-4"></i> 5 Seconds
+                            </span>
+                            <i class="bi bi-arrow-right fs-5"></i>
+                        </button> 
+
+                        <button type="button" class="btn btn-primary btn-lg quiz-btn py-3 px-4 d-flex align-items-center justify-content-between shadow-sm duration-option" data-duration="10">
+                            <span class="d-flex align-items-center gap-2 fw-semibold">
+                                <i class="bi bi-stopwatch-fill fs-5"></i> 10 Seconds
+                            </span>
+                            <i class="bi bi-arrow-right fs-5"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-danger btn-lg quiz-btn py-3 px-4 d-flex align-items-center justify-content-between shadow-sm duration-option" data-duration="15">
+                            <span class="d-flex align-items-center gap-2 fw-semibold">
+                                <i class="bi bi-stopwatch-fill fs-5"></i> 15 Seconds
+                            </span>
+                            <i class="bi bi-arrow-right fs-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Number of Questions -->
+            <div class="QuestionCount-Container d-flex align-items-center justify-content-center d-none" style="height: 90vh;" id="step-question-count">
+                <div class="card p-4 rounded-4 shadow mx-auto" style="width: 400px;">
+                    <h1 class="card-title fw-bold mb-2 fs-2">Number of Questions</h1>
+                    <p class="text-secondary mb-4 fs-6">Pick how many questions you'd like to answer!</p>
+                    
+                    <hr class="quiz-divider my-4">
+                    
+                    <h2 class="fs-5 fw-bold mb-1">Select Question Count</h2>
+                    <p class="text-secondary fs-6 mb-4">Choose how many rounds to play</p>
+                    
+                    <div class="d-grid gap-3">
+                        <button type="button" class="btn btn-success btn-lg quiz-btn py-3 px-4 d-flex align-items-center justify-content-between shadow-sm count-option" data-count="5">
+                            <span class="d-flex align-items-center gap-2 fw-semibold">
+                                <i class="bi bi-list-ol fs-4"></i> 5 Questions
+                            </span>
+                            <i class="bi bi-arrow-right fs-5"></i>
+                        </button> 
+
+                        <button type="button" class="btn btn-primary btn-lg quiz-btn py-3 px-4 d-flex align-items-center justify-content-between shadow-sm count-option" data-count="10">
+                            <span class="d-flex align-items-center gap-2 fw-semibold">
+                                <i class="bi bi-list-ol fs-5"></i> 10 Questions
+                            </span>
+                            <i class="bi bi-arrow-right fs-5"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-danger btn-lg quiz-btn py-3 px-4 d-flex align-items-center justify-content-between shadow-sm count-option" data-count="15">
+                            <span class="d-flex align-items-center gap-2 fw-semibold">
+                                <i class="bi bi-list-ol fs-5"></i> 15 Questions
+                            </span>
+                            <i class="bi bi-arrow-right fs-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Card Container -->
+            <div class="Quiz-Container align-items-center d-flex justify-content-center d-none" style="height: 90vh;">
+                <!-- Quiz Card -->
+                <div class="card p-4 rounded-4 shadow mx-auto" style="width: 400px; height: 600px;">
+                    <!-- Question Section and Sidebar -->
+                    <div class="q-section position-relative">
+                        <!-- text Question -->
+                        <div class="Question text-center py-3 fs-5 fw-bold rounded-4 user-select-none">
+                            Q?
+                        </div>
+                    </div>
+
+                    <hr class=" my-4">
+
+                    <!-- Options Sections -->
+                    <div class="d-flex flex-column flex-grow-1 gap-3">
+                        <button class="option btn btn-primary flex-fill p-3 rounded-4 fw-semibold" data-value="1">
+                            <span class="fs-4 fw-semibold">option 1</span>
+                        </button>
+
+                        <button class="option btn btn-primary flex-fill p-3 rounded-4 fw-semibold" data-value="2">
+                            <span class="fs-4 fw-semibold">option 2</span>
+                        </button>
+
+                        <button class="option btn btn-primary flex-fill p-3 rounded-4 fw-semibold" data-value="3">
+                            <span class="fs-4 fw-semibold">option 3</span>
+                        </button>
+
+                        <button class="option btn btn-primary flex-fill p-3 rounded-4 fw-semibold" data-value="4">
+                            <span class="fs-4 fw-semibold">option 4</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="image-sidebar d-flex align-items-center bg-light text-dark rounded-end-3 overflow-hidden shadow collapsed">
+                    <div class="Img fw-bold">
+                    <!-- Img -->
+                        <img src="" alt="Quiz Image" class="img-fluid rounded-3">
+                    </div>
+                    <button id="sidebarToggle" class="btn btn-secondary rounded-0 px-2 py-2">
+                        <span>&lt;</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dashboard Container -->
+            <div class="Dashboard-Container position-relative d-flex align-items-center justify-content-center d-none" style="height: 90vh;" id="step-dashboard">
+                <div class="card p-4 rounded-4 shadow mx-auto" style="width: 400px;">
+                    
+                    <h1 class="card-title fw-bold mb-2 fs-2 text-center">Quiz Results</h1>
+                    <p class="text-secondary mb-4 fs-6 text-center">Here's how you did!</p>
+                    
+                    <hr class="quiz-divider my-4">
+
+                    <!-- Stats Grid -->
+                    <div class="d-grid gap-3 dashboard-stats">
+                        <div class="stat-item d-flex align-items-center justify-content-between p-3 rounded-4 shadow-sm bg-primary-subtle text-primary">
+                            <span class="d-flex align-items-center gap-2 fw-semibold">
+                                <i class="bi bi-question-circle-fill fs-4 text-primary"></i> Total Questions
+                            </span>
+                            <span class="fs-4 fw-bold stat-value" id="stat-total-questions">10</span>
+                        </div>
+
+                        <div class="stat-item d-flex align-items-center justify-content-between p-3 rounded-4 shadow-sm bg-warning-subtle text-warning">
+                            <span class="d-flex align-items-center gap-2 fw-semibold">
+                                <i class="bi bi-stopwatch-fill fs-4 text-warning"></i> Time Per Question
+                            </span>
+                            <span class="fs-4 fw-bold stat-value" id="stat-time-per-question">10s</span>
+                        </div>
+
+                        <div class="stat-item d-flex align-items-center justify-content-between p-3 rounded-4 shadow-sm bg-success-subtle text-success">
+                            <span class="d-flex align-items-center gap-2 fw-semibold">
+                                <i class="bi bi-check-circle-fill fs-4 text-success"></i> Correct Answers
+                            </span>
+                            <span class="fs-4 fw-bold stat-value" id="stat-correct-answers">7</span>
+                        </div>
+
+                        <div class="stat-item d-flex align-items-center justify-content-between p-3 rounded-4 shadow-sm bg-info-subtle text-info">
+                            <span class="d-flex align-items-center gap-2 fw-semibold">
+                                <i class="bi bi-percent fs-4 text-info"></i> Score Percentage
+                            </span>
+                            <span class="fs-4 fw-bold stat-value" id="stat-percentage">70%</span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-lg quiz-btn py-3 px-4 d-flex align-items-center justify-content-center gap-2 shadow-sm mt-4" id="restart-quiz">
+                        <i class="bi bi-arrow-repeat fs-5"></i> Play Again
+                    </button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Custom JavaScript -->
+    <script type="module" src="./js/Quiz.js"></script>
+</body>
+</html>
