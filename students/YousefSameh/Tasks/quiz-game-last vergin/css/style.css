@@ -1,0 +1,438 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-void: #100725;
+    --bg-deep: #220b39;
+    --bg-panel: #0d0821;
+
+    --accent-orange: #ff7a2f;
+    --accent-pink: #ba319f;
+    --accent-violet: #6e1f86;
+
+    --text-main: #eae7f6;
+    --text-muted: #9b93b8;
+    --border-glass: rgba(186, 49, 159, 0.25);
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 15% 25%,
+            rgba(110, 31, 134, 0.45) 0%,
+            transparent 45%),
+        radial-gradient(circle at 85% 75%,
+            rgba(186, 49, 159, 0.35) 0%,
+            transparent 45%),
+        radial-gradient(circle at 50% 50%,
+            rgba(255, 122, 47, 0.12) 0%,
+            transparent 55%),
+        linear-gradient(135deg, #100725 0%, #220b39 50%, #1a0533 100%);
+
+    background-size: 200% 200%;
+    animation: moveBackground 18s ease infinite alternate;
+    font-family: "Exo 2", sans-serif;
+    color: var(--text-main);
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.star {
+    position: fixed;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 4s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.15;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.split-screen {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: 100vh;
+}
+
+.brand-panel {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    padding: 4rem 4vw;
+    background: linear-gradient(160deg,
+            rgba(186, 49, 159, 0.12),
+            transparent 60%);
+    border-right: 1px solid var(--border-glass);
+}
+
+.brand-content {
+    max-width: 460px;
+}
+
+.logo-row {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 2.5rem;
+}
+
+.logo-text {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.logo-text .accent {
+    background: linear-gradient(90deg, var(--accent-orange), var(--accent-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo-orbit {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.logo-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%,
+            var(--accent-orange),
+            var(--accent-pink));
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px var(--accent-pink);
+}
+
+.logo-ring {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    animation: spin 6s linear infinite;
+}
+
+.logo-dot {
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    border-radius: 50%;
+    background: var(--accent-orange);
+    box-shadow: 0 0 8px var(--accent-orange);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.brand-headline {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(1.7rem, 2.6vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1.1rem;
+}
+
+.brand-sub {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2.4rem;
+}
+
+.feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-bottom: 2.6rem;
+}
+
+.feature-list li {
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+}
+
+.feature-icon {
+    font-size: 1.3rem;
+    line-height: 1;
+    margin-top: 0.15rem;
+}
+
+.feature-list strong {
+    display: block;
+    font-size: 0.98rem;
+    margin-bottom: 0.15rem;
+}
+
+.feature-list p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.4;
+}
+
+.stat-strip {
+    display: flex;
+    gap: 2.2rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--border-glass);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-num {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--accent-orange), var(--accent-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.form-panel {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 380px;
+    background: rgba(255, 255, 255, 0.045);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid var(--border-glass);
+    border-radius: 18px;
+    padding: 2.4rem 2.2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.eyebrow {
+    font-size: 0.8rem;
+    background: linear-gradient(90deg, var(--accent-orange), var(--accent-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.4rem;
+}
+
+.auth-title {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.8rem;
+}
+
+.field-group label {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.35rem;
+}
+
+.field-group .form-control {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-glass);
+    color: var(--text-main);
+    padding: 0.65rem 0.9rem;
+    border-radius: 10px;
+}
+
+.field-group .form-control::placeholder {
+    color: rgba(234, 231, 246, 0.35);
+}
+
+.field-group .form-control:focus {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: var(--accent-pink);
+    box-shadow: 0 0 0 3px rgba(186, 49, 159, 0.28);
+    color: var(--text-main);
+}
+
+.btn-glow {
+    font-family: "Exo 2", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(100deg,
+            var(--accent-orange),
+            var(--accent-pink),
+            #8e32e9);
+    background-size: 200% 200%;
+    box-shadow: 0 0 20px rgba(186, 49, 159, 0.45);
+    transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 30px rgba(186, 49, 159, 0.7);
+    transform: translateY(-2px);
+    background-position: 100% 0%;
+    color: #fff;
+}
+
+.switch-auth {
+    text-align: center;
+    margin-top: 1.6rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.switch-auth a {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.switch-auth a:hover {
+    text-decoration: underline;
+    color: var(--accent-pink);
+}
+
+@media (max-width: 900px) {
+    .split-screen {
+        flex-direction: column;
+    }
+
+    .brand-panel {
+        border-right: none;
+        border-bottom: 1px solid var(--border-glass);
+        padding: 2.6rem 6vw 2rem;
+    }
+
+    .brand-content {
+        max-width: 100%;
+    }
+
+    .brand-sub,
+    .feature-list li:nth-child(2),
+    .feature-list li:nth-child(3) {
+        display: none;
+    }
+
+    .form-panel {
+        padding: 2.2rem 1.2rem 3rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    body,
+    .star,
+    .logo-ring {
+        animation: none !important;
+    }
+}
+.stat-strip {
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .brand-panel {
+        padding: 2rem 5vw 1.6rem;
+    }
+
+    .logo-row {
+        margin-bottom: 1.5rem;
+        gap: 0.7rem;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .brand-headline {
+        font-size: 1.55rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .feature-list {
+        gap: 0.8rem;
+        margin-bottom: 1.6rem;
+    }
+
+    .stat-strip {
+        gap: 1.2rem;
+        padding-top: 1.1rem;
+    }
+
+    .stat-num {
+        font-size: 1.25rem;
+    }
+
+    .form-panel {
+        padding: 1.6rem 1rem 2.6rem;
+    }
+
+    .auth-card {
+        padding: 1.8rem 1.3rem;
+        border-radius: 16px;
+    }
+
+    .auth-title {
+        font-size: 1.2rem;
+        margin-bottom: 1.3rem;
+    }
+
+    .switch-auth {
+        margin-top: 1.2rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .stat-strip {
+        display: none;
+    }
+}

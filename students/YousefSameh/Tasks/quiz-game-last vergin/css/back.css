@@ -1,0 +1,54 @@
+.back-row {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px 9px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(20, 8, 35, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-link:hover,
+.back-link:focus {
+    color: #fff;
+    border-color: rgba(255, 122, 47, 0.7);
+    box-shadow: 0 0 18px rgba(236, 31, 140, 0.35);
+    transform: translateX(-3px);
+}
+
+.back-link:active {
+    transform: translateX(-1px) scale(0.97);
+}
+
+.back-arrow {
+    font-size: 1.05rem;
+    line-height: 1;
+}
+
+@media (max-width: 576px) {
+    .back-row {
+        margin-bottom: 1.1rem;
+    }
+
+    .back-link {
+        padding: 8px 14px 8px 11px;
+        font-size: 0.82rem;
+    }
+}

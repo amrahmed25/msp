@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DARK ZONE — Challenge</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="nexus-quiz.css">
+  <link rel="stylesheet" href="darkzone.css">
+</head>
+
+<body class="dare-page quiz-page dark-question-page">
+
+  <div class="dare-bg"></div>
+  <div class="dare-overlay"></div>
+
+  <main class="quiz-layout dark-quiz-layout">
+
+    <aside class="quiz-sidebar dark-sidebar">
+      <a href="dark.html" class="back-link">
+        <i class="bi bi-arrow-left"></i> DARK ZONE
+      </a>
+
+      <div class="dark-side-mark">☠</div>
+      <div class="sidebar-label">CURRENT MODE</div>
+      <div class="sidebar-mode" id="sideMode">RANDOM</div>
+
+      <div class="dark-player-box">
+        <img id="topAvatar" src="avatar-1.png.jpg" alt="Avatar">
+        <div>
+          <small>PLAYER</small>
+          <strong id="topName">SHADOW</strong>
+        </div>
+      </div>
+
+      <div class="dark-score-box">
+        <small>SCORE</small>
+        <strong id="score">0</strong>
+      </div>
+    </aside>
+
+    <section class="quiz-main dark-quiz-main">
+
+      <header class="quiz-header">
+        <div>
+          <div class="dark-live"><span></span> LIVE CHALLENGE</div>
+          <h1 class="quiz-title">DARK ZONE</h1>
+        </div>
+
+        <div class="dark-timer">
+          <small>TIME</small>
+          <strong id="timer">24</strong>
+        </div>
+      </header>
+
+      <div class="dark-progress">
+        <div class="dark-progress-top">
+          <span>CHALLENGE <b id="current">1</b> / <b id="total">20</b></span>
+          <span id="difficultyLabel">RANDOM</span>
+        </div>
+        <div class="dark-progress-track">
+          <div id="progressBar"></div>
+        </div>
+      </div>
+
+      <div class="questions-wrap">
+        
+      <div class="question-card" data-index="1">
+        <div class="question-index">01</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Say your name like a movie trailer narrator.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="2">
+        <div class="question-index">02</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Do your best victory dance for 10 seconds.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="3">
+        <div class="question-index">03</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Speak in a robot voice until your next turn.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="4">
+        <div class="question-index">04</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Make the funniest face you can for 5 seconds.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="5">
+        <div class="question-index">05</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Give the player on your right a ridiculous superhero name.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="6">
+        <div class="question-index">06</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Clap a rhythm and make everyone copy it.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="7">
+        <div class="question-index">07</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Say the alphabet backwards as far as you can.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="8">
+        <div class="question-index">08</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Do 5 dramatic air punches.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="9">
+        <div class="question-index">09</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Describe your favorite food like it is a luxury product.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="10">
+        <div class="question-index">10</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Act like you just won a world championship.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="11">
+        <div class="question-index">11</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Make up a two-word slogan for yourself.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="12">
+        <div class="question-index">12</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Talk like a sports commentator for 10 seconds.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="13">
+        <div class="question-index">13</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Do an exaggerated slow-motion celebration.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="14">
+        <div class="question-index">14</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Invent a fake game show title.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="15">
+        <div class="question-index">15</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Say one sentence using three random words chosen by the group.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="16">
+        <div class="question-index">16</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Pretend the floor is lava for 5 seconds.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="17">
+        <div class="question-index">17</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Give yourself a secret-agent code name.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="18">
+        <div class="question-index">18</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Do your best evil laugh.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="19">
+        <div class="question-index">19</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Describe the room like you are narrating a documentary.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="20">
+        <div class="question-index">20</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Strike a superhero pose and hold it for 8 seconds.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="21">
+        <div class="question-index">21</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Imitate a famous movie scene without saying its title.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="22">
+        <div class="question-index">22</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Tell a completely harmless embarrassing story in 20 seconds.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="23">
+        <div class="question-index">23</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Let the group choose one silly word you must use in every sentence for one minute.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="24">
+        <div class="question-index">24</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Do a dramatic runway walk across the room.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="25">
+        <div class="question-index">25</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Create a 10-second advertisement for the nearest object.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="26">
+        <div class="question-index">26</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Speak only in questions until your next turn.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="27">
+        <div class="question-index">27</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Act like an angry chef explaining how to make a sandwich.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="28">
+        <div class="question-index">28</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Give a motivational speech about something completely useless.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="29">
+        <div class="question-index">29</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Do three different character voices in one sentence.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="30">
+        <div class="question-index">30</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Make up a conspiracy theory about why socks disappear.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="31">
+        <div class="question-index">31</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Pretend you are accepting an award for 'Best Procrastinator'.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="32">
+        <div class="question-index">32</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Describe another player using only three positive words.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="33">
+        <div class="question-index">33</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Act like a video-game boss introducing yourself.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="34">
+        <div class="question-index">34</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Make a handshake with another player in 15 seconds.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="35">
+        <div class="question-index">35</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Sing one line of any song in an exaggerated opera voice.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="36">
+        <div class="question-index">36</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Give a weather report for the room you are sitting in.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="37">
+        <div class="question-index">37</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Tell a joke with a completely serious face.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="38">
+        <div class="question-index">38</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Act like an alien trying to understand a normal chair.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="39">
+        <div class="question-index">39</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Create a ridiculous new holiday and explain its tradition.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="40">
+        <div class="question-index">40</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Do a 15-second fake news report about something happening in the room.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="41">
+        <div class="question-index">41</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Give a 30-second motivational speech while pretending you are losing your voice.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="42">
+        <div class="question-index">42</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Act out a full dramatic scene using only gestures for 20 seconds.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="43">
+        <div class="question-index">43</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Create a nickname and backstory for every player in the room.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="44">
+        <div class="question-index">44</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Improvise a commercial for a completely useless product in 30 seconds.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="45">
+        <div class="question-index">45</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Tell a story that includes three random objects chosen by the group.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="46">
+        <div class="question-index">46</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Debate the statement 'Pizza is a breakfast food' for 30 seconds.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="47">
+        <div class="question-index">47</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Do a character switch: copy another player's mannerisms for 15 seconds.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="48">
+        <div class="question-index">48</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Invent a new sport and explain its rules like a professional commentator.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="49">
+        <div class="question-index">49</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Make a dramatic villain monologue about losing your phone charger.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="50">
+        <div class="question-index">50</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Speak for 30 seconds without using the words 'I', 'you', or 'the'.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="51">
+        <div class="question-index">51</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Create a mini rap using three words chosen by the group.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="52">
+        <div class="question-index">52</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Pretend you are trapped inside a video game and explain your strategy.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="53">
+        <div class="question-index">53</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Tell a story backwards from the ending to the beginning.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="54">
+        <div class="question-index">54</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Perform a fake acceptance speech for an absurd award.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="55">
+        <div class="question-index">55</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Convince the group that a normal household object is actually priceless.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="56">
+        <div class="question-index">56</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Do a 30-second stand-up comedy routine about everyday life.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="57">
+        <div class="question-index">57</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Create a fictional movie title, plot, villain, and ending in 30 seconds.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="58">
+        <div class="question-index">58</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Act as a dramatic detective solving the mystery of a missing snack.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="59">
+        <div class="question-index">59</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Give a serious presentation about why your favorite emoji deserves an award.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+
+      <div class="question-card" data-index="60">
+        <div class="question-index">60</div>
+        <div class="challenge-label"><i class="bi bi-lightning-charge-fill"></i> CHALLENGE</div>
+        <h3 dir="auto">Finish this challenge: make the whole group laugh without telling a normal joke.</h3>
+        <div class="challenge-actions">
+          <button type="button" class="quiz-answer challenge-done" data-correct="true">
+            <i class="bi bi-check2-circle"></i> DONE
+          </button>
+          <button type="button" class="quiz-answer challenge-skip" data-correct="false">
+            <i class="bi bi-x-circle"></i> SKIP
+          </button>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="dark-navigation">
+        <button id="previous" type="button" class="dark-nav-btn">
+          <i class="bi bi-arrow-left"></i> PREVIOUS
+        </button>
+
+        <div class="dark-center-status">
+          <span class="pulse-dot"></span>
+          STAY IN THE ZONE
+        </div>
+
+        <button id="next" type="button" class="dark-nav-btn primary">
+          NEXT <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="darkzonequiz.js"></script>
+</body>
+</html>

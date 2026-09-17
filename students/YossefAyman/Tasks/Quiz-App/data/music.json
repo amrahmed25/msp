@@ -1,0 +1,632 @@
+[
+     {
+        "id": 1,
+        "question": "Which song is the most viewed song on Youtube?",
+        "image": "",
+        "options": [
+            "Baby Shark Dance",
+            "See you again",
+            "Despacito",
+            "Shape of You"
+        ],
+        "correctAnswer": 1,
+        "category": "music",
+        "difficulty": "easy"
+    },
+    {
+        "id": 2,
+        "question": "What language was spoken in the song Alors on Danse by Stromae in 2009?",
+        "image": "",
+        "options": [
+            "Portuguese",
+            "Italian",
+            "French",
+            "Spanish"
+        ],
+        "correctAnswer": 3,
+        "category": "music",
+        "difficulty": "easy"
+    },
+    {
+         "id": 3,
+        "question": "Which nationality is Amr Diab from?",
+        "image": "",
+        "options": [
+            "Lebanon",
+            "Egypt",
+            "United Arab Emirates",
+            "Libya"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "easy"
+    },
+    {
+         "id": 4,
+        "question": "Who is the singer that released the song 'Banadek Ta'ala' in 2011?",
+        "image": "",
+        "options": [
+            "Wael Gassar",
+            "Bahaa Sultan",
+            "Amr Diab",
+            "Ehab Tawfik"
+        ],
+        "correctAnswer": 3,
+        "category": "music",
+        "difficulty": "easy"
+    },
+    {
+          "id": 5,
+        "question": "Who's the singer that released the song Habeeby Da in 2025?",
+        "image": "",
+        "options": [
+            "Legecy",
+            "Tul8te",
+            "Marawan Moussa",
+            "Muhab"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "easy"
+    },
+    {
+        "id": 6,
+        "question": "Who's the singer that featured with Tul8te in a song called Nano",
+        "image": "",
+        "options": [
+            "Legecy",
+            "Saint Levant",
+            "Molotof",
+            "Marwan Pablo"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "easy"
+    },
+    {
+        "id": 7,
+        "question": "Who's the singer that released the song 'Castle on the Hill' in 2017",
+        "image": "",
+        "options": [
+            "Ed Sheeran",
+            "Charlie Puth",
+            "Shawn Mendes",
+            "Frank Sinatra"
+        ],
+        "correctAnswer": 1,
+        "category": "music",
+        "difficulty": "easy"
+    },
+    {
+        "id": 8,
+        "question": "Which streaming platform famously launched its annual personalized user recap feature called 'Wrapped' in 2016?",
+        "image": "",
+        "options": [
+            "Apple Music",
+            "Spotify",
+            "Deezer",
+            "SoundCloud"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "easy"
+    },
+    {
+        "id": 9,
+        "question": "Which country is pop superstar Taylor Swift originally from?",
+        "image": "",
+        "options": [
+            "United States",
+            "Canada",
+            "England",
+            "Australia"
+        ],
+        "correctAnswer": 1,
+        "category": "music",
+        "difficulty": "easy"
+    },
+    {
+        "id": 10,
+        "question": "In which year did Egyptian rapper Marwan Pablo make his high-profile comeback with the release of the 'CTRL' EP?",
+        "image": "",
+        "options": [
+            "2019",
+            "2020",
+            "2021",
+            "2022"
+        ],
+        "correctAnswer": 3,
+        "category": "music",
+        "difficulty": "easy"
+    },
+    {
+        "id": 11,
+        "question": "Which Caribbean nation was reggae icon Bob Marley born in?",
+        "image": "",
+        "options": [
+            "Barbados",
+            "Jamaica",
+            "Trinidad and Tobago",
+            "The Bahamas"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "easy"
+    },
+    {
+        "id": 12,
+        "question": "Which Canadian artist broke global streaming records with his 2019 synth-pop megahit 'Blinding Lights'?",
+        "image": "",
+        "options": [
+            "Justin Bieber",
+            "The Weeknd",
+            "Drake",
+            "Shawn Mendes"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "easy"
+    },
+    {
+        "id": 13,
+        "question": "Who is the lead vocalist and frontman of the popular Egyptian rock band Cairokee?",
+        "image": "",
+        "options": [
+            "Amir Eid",
+            "Zap Tharwat",
+            "Tarek El Sheikh",
+            "Marwan Moussa"
+        ],
+        "correctAnswer": 1,
+        "category": "music",
+        "difficulty": "easy"
+    },
+    {
+        "id": 14,
+        "question": "Which modern pop star released the record-breaking album 'GUTS' in 2023 following her debut 'SOUR'?",
+        "image": "",
+        "options": [
+            "Sabrina Carpenter",
+            "Billie Eilish",
+            "Olivia Rodrigo",
+            "Dua Lipa"
+        ],
+        "correctAnswer": 3,
+        "category": "music",
+        "difficulty": "easy"
+    },
+    {
+        "id": 15,
+        "question": "Which French electronic duo made headlines across the globe when they announced their official breakup in 2021?",
+        "image": "",
+        "options": [
+            "Justice",
+            "Daft Punk",
+            "Air",
+            "Polo & Pan"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "easy"
+    },
+    {
+        "id": 16,
+        "question": "Which Egyptian hip-hop artist released the viral megahit 'El Bakht' in early 2022?",
+        "image": "",
+        "options": [
+            "Marwan Pablo",
+            "Wegz",
+            "Abyusif",
+            "Afroto"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "medium"
+    },
+    {
+        "id": 17,
+        "question": "Which Frank Ocean studio album featured critically acclaimed tracks like 'Nikes' and 'Nights' upon its 2016 release?",
+        "image": "",
+        "options": [
+            "Channel Orange",
+            "Blonde",
+            "Nostalgia, Ultra",
+            "Endless"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "medium"
+    },
+    {
+        "id": 18,
+        "question": "Which rapper released the chart-topping collaborative album 'Her Loss' alongside 21 Savage in 2022?",
+        "image": "",
+        "options": [
+            "Travis Scott",
+            "Future",
+            "Drake",
+            "Lil Baby"
+        ],
+        "correctAnswer": 3,
+        "category": "music",
+        "difficulty": "medium"
+    },
+    {
+        "id": 19,
+        "question": "Which British indie rock band released the critically acclaimed 2013 album 'AM'?",
+        "image": "",
+        "options": [
+            "The 1975",
+            "Arctic Monkeys",
+            "Foals",
+            "Kasabian"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "medium"
+    },
+    {
+        "id": 20,
+        "question": "Which 2024 album by Kendrick Lamar spawned the massive viral hit 'Not Like Us'?",
+        "image": "",
+        "options": [
+            "Mr. Morale & the Big Steppers",
+            "GNX",
+            "DAMN.",
+            "To Pimp a Butterfly"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "medium"
+    },
+    {
+        "id": 21,
+        "question": "Which Egyptian alternative indie-pop band gained massive popularity with songs like 'Desouky' and 'Radio'?",
+        "image": "",
+        "options": [
+            "Massar Egbari",
+            "Sharmoofers",
+            "Disconnection",
+            "Hawas"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "medium"
+    },
+    {
+        "id": 22,
+        "question": "Which artist achieved massive global success with the 2020 disco-pop album 'Future Nostalgia'?",
+        "image": "",
+        "options": [
+            "Charli XCX",
+            "Dua Lipa",
+            "Doja Cat",
+            "Bebe Rexha"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "medium"
+    },
+    {
+        "id": 23,
+        "question": "Which Travis Scott studio album featured the global hit 'SICKO MODE' with Drake?",
+        "image": "",
+        "options": [
+            "Rodeo",
+            "Birds in the Trap Sing McKnight",
+            "ASTROWORLD",
+            "UTOPIA"
+        ],
+        "correctAnswer": 3,
+        "category": "music",
+        "difficulty": "medium"
+    },
+    {
+        "id": 24,
+        "question": "At what age did British singer-songwriter Amy Winehouse pass away in 2011?",
+        "image": "",
+        "options": [
+            "25",
+            "27",
+            "30",
+            "33"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "medium"
+    },
+    {
+        "id": 25,
+        "question": "Which European country hosts the massive annual electronic music festival Tomorrowland in Boom?",
+        "image": "",
+        "options": [
+            "Netherlands",
+            "Germany",
+            "Belgium",
+            "Spain"
+        ],
+        "correctAnswer": 3,
+        "category": "music",
+        "difficulty": "medium"
+    },
+    {
+        "id": 26,
+        "question": "Which teen sensation made history by winning all four major Grammy general categories in 2020?",
+        "image": "",
+        "options": [
+            "Lorde",
+            "Billie Eilish",
+            "Alessia Cara",
+            "Halsey"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "medium"
+    },
+    {
+        "id": 27,
+        "question": "In which U.S. state is the iconic Coachella Valley Music and Arts Festival held every spring?",
+        "image": "",
+        "options": [
+            "California",
+            "Nevada",
+            "Texas",
+            "Florida"
+        ],
+        "correctAnswer": 1,
+        "category": "music",
+        "difficulty": "medium"
+    },
+    {
+        "id": 28,
+        "question": "Which English producer/DJ was featured on the hit track 'Cold Heart' with Elton John in 2021?",
+        "image": "",
+        "options": [
+            "Calvin Harris",
+            "Fred again..",
+            "Dua Lipa",
+            "PNAU"
+        ],
+        "correctAnswer": 4,
+        "category": "music",
+        "difficulty": "medium"
+    },
+    {
+        "id": 29,
+        "question": "Which popular electronic subgenre pioneered by artists like Skrillex exploded in global mainstream music around 2011–2013?",
+        "image": "",
+        "options": [
+            "Synthwave",
+            "Dubstep",
+            "Deep House",
+            "Drum and Bass"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "medium"
+    },
+    {
+        "id": 30,
+        "question": "Who became the most decorated artist in Grammy history after surpassing 31 total award wins in 2023?",
+        "image": "",
+        "options": [
+            "Beyoncé",
+            "Taylor Swift",
+            "Adele",
+            "Kanye West"
+        ],
+        "correctAnswer": 1,
+        "category": "music",
+        "difficulty": "medium"
+    },
+    {
+        "id": 31,
+        "question": "Which Egyptian hip-hop beatmaker produced the iconic track 'Sheraton' for Marwan Pablo?",
+        "image": "",
+        "options": [
+            "Molotof",
+            "El Wazeer",
+            "Hades",
+            "DC"
+        ],
+        "correctAnswer": 1,
+        "category": "music",
+        "difficulty": "hard"
+    },
+    {
+        "id": 32,
+        "question": "Which album by Tyler, the Creator won the Grammy Award for Best Rap Album in 2020?",
+        "image": "",
+        "options": [
+            "Flower Boy",
+            "IGOR",
+            "CALL ME IF YOU GET LOST",
+            "CHROMAKOPIA"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "hard"
+    },
+    {
+        "id": 33,
+        "question": "Which Australian psychedelic music project is led entirely by multi-instrumentalist Kevin Parker?",
+        "image": "",
+        "options": [
+            "King Gizzard",
+            "Unknown Mortal Orchestra",
+            "Tame Impala",
+            "Pond"
+        ],
+        "correctAnswer": 3,
+        "category": "music",
+        "difficulty": "hard"
+    },
+    {
+        "id": 34,
+        "question": "Which producer collaborated closely with Kanye West to construct the signature aggressive synth sound on 'Yeezus' (2013)?",
+        "image": "",
+        "options": [
+            "Arca",
+            "Mike Dean",
+            "Hudson Mohawke",
+            "Rick Rubin"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "hard"
+    },
+    {
+        "id": 35,
+        "question": "Which Egyptian artist released the popular full-length hip-hop album 'Florida' in late 2020?",
+        "image": "",
+        "options": [
+            "Marwan Moussa",
+            "Abo El Anwar",
+            "Afroto",
+            "Dizzy Too Skinny"
+        ],
+        "correctAnswer": 1,
+        "category": "music",
+        "difficulty": "hard"
+    },
+    {
+        "id": 36,
+        "question": "Which American record producer became world-famous for his iconic producer tag 'If Young Metro don't trust you...'?",
+        "image": "",
+        "options": [
+            "Murda Beatz",
+            "Pierre Bourne",
+            "Metro Boomin",
+            "Wheezy"
+        ],
+        "correctAnswer": 3,
+        "category": "music",
+        "difficulty": "hard"
+    },
+    {
+        "id": 37,
+        "question": "Which album earned SZA critical acclaim and multiple awards following its late 2022 release?",
+        "image": "",
+        "options": [
+            "Ctrl",
+            "SOS",
+            "Z",
+            "Lana"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "hard"
+    },
+    {
+        "id": 38,
+        "question": "Which electronic music producer gained massive festival recognition with his hit Boiler Room set in London in 2022?",
+        "image": "",
+        "options": [
+            "Fred again..",
+            "Skrillex",
+            "Four Tet",
+            "Kaytranada"
+        ],
+        "correctAnswer": 1,
+        "category": "music",
+        "difficulty": "hard"
+    },
+    {
+        "id": 39,
+        "question": "Which popular Egyptian rock band released the hit album 'Roma' in 2022?",
+        "image": "",
+        "options": [
+            "Cairokee",
+            "Massar Egbari",
+            "Wust El Balad",
+            "Black Theama"
+        ],
+        "correctAnswer": 1,
+        "category": "music",
+        "difficulty": "hard"
+    },
+    {
+       "id": 40,
+        "question": "Which iconic British band released the massive global hit single 'A Sky Full of Stars' in 2014?",
+        "image": "",
+        "options": [
+            "Coldplay",
+            "Imagine Dragons",
+            "Maroon 5",
+            "OneRepublic"
+        ],
+        "correctAnswer": 1,
+        "category": "music",
+        "difficulty": "hard"
+    },
+    {
+        "id": 41,
+        "question": "Which British electronic music group released the acclaimed album 'Energy' in 2020?",
+        "image": "",
+        "options": [
+            "Disclosure",
+            "Gorgon City",
+            "Bicep",
+            "Rudimental"
+        ],
+        "correctAnswer": 1,
+        "category": "music",
+        "difficulty": "hard"
+    },
+    {
+        "id": 42,
+        "question": "Which viral electronic music artist exploded on TikTok with the 2023 track 'Atmosphere' alongside Fisher?",
+        "image": "",
+        "options": [
+            "Chris Lake",
+            "Kita Alexander",
+            "Peggy Gou",
+            "John Summit"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "hard"
+    },
+    {
+        "id": 43,
+        "question": "Which rap album by Playboi Carti debuted at #1 on the Billboard 200 on Christmas Day 2020?",
+        "image": "",
+        "options": [
+            "Die Lit",
+            "Whole Lotta Red",
+            "Playboi Carti",
+            "MUSIC"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "hard"
+    },
+    {
+        "id": 44,
+        "question": "Which Korean pop group became the first K-pop act to top the U.S. Billboard Hot 100 with 'Dynamite' in 2020?",
+        "image": "",
+        "options": [
+            "BLACKPINK",
+            "BTS",
+            "Stray Kids",
+            "SEVENTEEN"
+        ],
+        "correctAnswer": 2,
+        "category": "music",
+        "difficulty": "hard"
+    },
+    {
+        "id": 45,
+        "question": "Which global pop star collaborated with ROSÉ on the viral 2024 chart-topping hit 'APT.'?",
+        "image": "",
+        "options": [
+            "Bruno Mars",
+            "Justin Bieber",
+            "The Weeknd",
+            "Post Malone"
+        ],
+        "correctAnswer": 1,
+        "category": "music",
+        "difficulty": "hard"
+    }
+]
