@@ -140,11 +140,6 @@ const stylemessageDiv = document.createElement("style");
 stylemessageDiv.textContent = messageDivCSS;
 document.head.appendChild(stylemessageDiv);
 
-
-// ============================================================
-// AUTH
-// ============================================================
-
 async function whenSubmit(e) {
     e.preventDefault();
 
@@ -176,15 +171,9 @@ async function whenSubmit(e) {
         }
     }
 
-    // Detect whether this is Sign Up or Login
     const isRegister =
     greetingMessage?.innerText.trim().toLowerCase() === "create account";
 
-
-
-    // ========================================================
-    // SIGN UP
-    // ========================================================
     console.log("AUTH MODE:", isRegister ? "SIGN UP" : "LOGIN");
 console.log("GREETING TEXT:", greetingMessage?.innerText);
 
@@ -227,21 +216,11 @@ console.log("GREETING TEXT:", greetingMessage?.innerText);
                 }
             });
 
-
-            // ------------------------------------------------
-            // Sign Up Error
-            // ------------------------------------------------
-
             if (error) {
                 console.error("Sign Up error:", error);
                 showMessage(error.message);
                 return;
             }
-
-
-            // ------------------------------------------------
-            // Make sure Auth user was created
-            // ------------------------------------------------
 
             if (!data || !data.user) {
 
@@ -263,11 +242,6 @@ console.log("GREETING TEXT:", greetingMessage?.innerText);
                 data.user
             );
 
-
-            // ------------------------------------------------
-            // Create player profile
-            // ------------------------------------------------
-
             try {
 
                 await ensurePlayerProfile(
@@ -286,21 +260,12 @@ console.log("GREETING TEXT:", greetingMessage?.innerText);
                     profileErr
                 );
 
-                // Don't stop the registration because
-                // the Auth account was already created.
             }
-
-
-            // ------------------------------------------------
-            // Success
-            // ------------------------------------------------
 
             showMessage(
                 "Account created successfully!"
             );
 
-
-            // Go to Login page
             setTimeout(() => {
                 window.location.href = "home.html";
             }, 1500);
@@ -323,11 +288,6 @@ console.log("GREETING TEXT:", greetingMessage?.innerText);
         }
     }
 
-
-
-    // ========================================================
-    // LOGIN
-    // ========================================================
 
     if (!emailInput) {
         showMessage("Please enter your email.");
@@ -352,11 +312,6 @@ console.log("GREETING TEXT:", greetingMessage?.innerText);
             password: passwordInput
         });
 
-
-        // ------------------------------------------------
-        // Login Error
-        // ------------------------------------------------
-
         if (error) {
 
             console.error(
@@ -369,10 +324,6 @@ console.log("GREETING TEXT:", greetingMessage?.innerText);
             return;
         }
 
-
-        // ------------------------------------------------
-        // Make sure user exists
-        // ------------------------------------------------
 
         if (!data || !data.user) {
 
@@ -395,10 +346,6 @@ console.log("GREETING TEXT:", greetingMessage?.innerText);
         );
 
 
-        // ------------------------------------------------
-        // Ensure player profile exists
-        // ------------------------------------------------
-
         try {
 
             await ensurePlayerProfile(
@@ -415,14 +362,8 @@ console.log("GREETING TEXT:", greetingMessage?.innerText);
                 "Error ensuring player profile on login:",
                 profileErr
             );
-
-            // Don't prevent login because of profile issues.
         }
 
-
-        // ------------------------------------------------
-        // Login Success
-        // ------------------------------------------------
 
         showMessage(
             "Login successful! Redirecting..."

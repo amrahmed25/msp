@@ -91,8 +91,6 @@ const changeArenaBtn =
 const homeBtn =
     document.getElementById("home-btn");
 
-// ===================== SOUND SETUP =====================
-
 const muteBtn =
     document.getElementById("mute-btn");
 
@@ -144,8 +142,6 @@ muteBtn.addEventListener(
 );
 
 updateMuteIcon();
-
-// =========================================================
 
 const questionBank = {
     public: {
@@ -1343,8 +1339,6 @@ function finishGame() {
                 ) * 100
             );
     }
-
-    // Stop the background music once the round is over
     backgroundSound.pause();
     backgroundSound.currentTime = 0;
 
