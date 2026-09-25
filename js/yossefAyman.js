@@ -30,7 +30,7 @@ const YossefAyman={
         {
             title: "2048 Game",
             folder: "https://2048-game-xi-inky.vercel.app/",
-            preview: "./students/YossefAyman/Tasks/Quiz-App/Images/Quiz-App.jpeg",
+            preview: "https://tse4.mm.bing.net/th/id/OIP.SGhv24AvR7xbo6b0eB_d_gHaDk?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
             description: "A 2048 puzzle game featuring undo and redo moves, real-time score and best score tracking, background sound controls, and an instant restart feature.",
             technologies: ["HTML", "Tailwind", "Css", "JavaScript"],
             github: "https://github.com/yossef-ayman359/2048-Game"
