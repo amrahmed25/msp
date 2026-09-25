@@ -66,6 +66,21 @@ body{
 
     height: 100%;
 }
+.menu-btn {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+    border: 1px solid #a735ff;
+
+    background: rgba(120, 40, 210, 0.85);
+    color: white;
+
+    font-size: 24px;
+    cursor: pointer;
+}
 .nav-link {
     height: 100%;
 
@@ -361,33 +376,59 @@ body{
     }
 }
 @media (max-width: 500px) {
-    .navbar {
-        width: 96%;
-        padding: 0 6px;
-    }
 
     .nav {
-        gap: 8px;
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav.show {
+        display: flex;
+
+        position: absolute;
+        top: 80px;
+        left: 0;
+
+        width: 100%;
+
+        height: auto;
+
+        flex-direction: column;
+        gap: 15px;
+
+        padding: 20px;
+
+        background: rgba(45, 14, 140, 0.95);
+
+        border: 1px solid #e05cff;
+        border-radius: 25px;
+
+        backdrop-filter: blur(15px);
     }
 
     .nav-link {
-        font-size: 15px;
-        gap: 10px;
-        padding: 0 1px;
-    }
-
-    .title-logo {
-        font-size: 12px;
+        height: auto;
+        font-size: 16px;
+        padding: 10px;
     }
 
     .register-btn {
-        padding: 5px 6px;
-        font-size: 9px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
     }
 
-    .icon-btn {
-        width: 0px;
-        height: 30px;
+    .main-btn {
+        width: 90%;
+        min-width: 0;
+        height: 60px;
         font-size: 20px;
     }
 }

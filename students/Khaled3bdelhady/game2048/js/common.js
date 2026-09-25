@@ -242,6 +242,15 @@
 
     function setupNav() {
         const user = getCurrentUser();
+        
+    const menuBtn = $('#menuBtn');
+    const nav = $('.nav');
+
+    if (menuBtn && nav) {
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+    }
         const loginLink = $('.login-link');
         const regBtn = $('.register-btn');
 

@@ -92,7 +92,7 @@ const khaledAbdelhady={
         preview: "./students/Khaled3bdelhady/game2048/images/name2.png",
         description: "A responsive 2048 Game website ",
         technologies: ["HTML", "CSS", "JavaScript"],
-        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/game2048"
+        github: ""
       },
 
     ]

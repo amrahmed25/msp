@@ -72,6 +72,21 @@ body{
 
     height: 100%;
 }
+.menu-btn {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+    border: 1px solid #a735ff;
+
+    background: rgba(120, 40, 210, 0.85);
+    color: white;
+
+    font-size: 24px;
+    cursor: pointer;
+}
 .nav-link {
     height: 100%;
 
@@ -354,47 +369,68 @@ body{
         font-size: 15px;
     }
 }
-@media (max-width: 450px) {
-
-    nav {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-    }
-
-    nav img {
-        width: 100px;
-    }
-
-    nav .links {
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    nav a {
-        font-size: 14px;
-    }
-    .navbar {
-        padding: 0 7px;
-    }
+@media (max-width: 500px) {
 
     .nav {
-        gap: 5px;
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav.show {
+        display: flex;
+
+        position: absolute;
+        top: 80px;
+        left: 0;
+
+        width: 100%;
+
+        height: auto;
+
+        flex-direction: column;
+        gap: 15px;
+
+        padding: 20px;
+
+        background: rgba(45, 14, 140, 0.95);
+
+        border: 1px solid #e05cff;
+        border-radius: 25px;
+
+        backdrop-filter: blur(15px);
     }
 
     .nav-link {
-        font-size: 9px;
-        gap: 2px;
-        padding: 0 1px;
+        height: auto;
+        font-size: 16px;
+        padding: 10px;
     }
 
-    .title-logo {
-        font-size: 12px;
+    .register-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    .card1,
+    .card2 {
+        width: 90%;
     }
 
-    .icon-btn {
-        width: 30px;
-        height: 30px;
-        font-size: 13px;
+    .main-btn {
+        width: calc(100% - 30px);
+        margin: 20px auto;
+        min-width: 0;
+        padding: 0 10px;
+        font-size: 18px;
+    }    
+    .choose-game-mode {
+        width: 90%;
+        max-width: 500px;
+    }
+
+    .choose-game-mode p {
+        font-size: 15px;
     }
 }
