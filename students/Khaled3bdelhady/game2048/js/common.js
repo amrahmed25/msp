@@ -269,7 +269,7 @@
                 e.preventDefault();
                 if (!getCurrentUser()) {
                     toast('Please log in to see your profile.', 'info');
-                    setTimeout(() => { location.href = 'login_.html'; }, 1200);
+                    setTimeout(() => { location.href = 'index.html'; }, 1200);
                 } else {
                     showProfile();
                 }
