@@ -27,6 +27,14 @@ const YossefAyman={
             technologies: ["HTML", "BootStrap", "Css", "JavaScript"],
             github: "https://github.com/yossef-ayman359/Quiz-App"
         },
+        {
+            title: "2048 Game",
+            folder: "https://2048-game-xi-inky.vercel.app/",
+            preview: "./students/YossefAyman/Tasks/Quiz-App/Images/Quiz-App.jpeg",
+            description: "A 2048 puzzle game featuring undo and redo moves, real-time score and best score tracking, background sound controls, and an instant restart feature.",
+            technologies: ["HTML", "Tailwind", "Css", "JavaScript"],
+            github: "https://github.com/yossef-ayman359/2048-Game"
+        },
     ]
 };
 export default YossefAyman;
