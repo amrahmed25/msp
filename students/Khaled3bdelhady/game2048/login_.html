@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MergeBite 2048</title>
+     <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <div class="login-page">
+        <div class="login-container">
+            
+        <div class="login-card">
+            <div class="card-title">
+                <h2>Login</h2>
+                <p>Welcome back! Please enter your details.</p>
+            </div>
+
+             <form id="loginForm">
+            <div class="input-group">
+                <div class="input-icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <div class="input-content">
+
+                        <input type="email"id="loginEmail" placeholder="Enter your email"  required   >
+                    </div>
+                    </div>
+
+                    <div class="input-group">
+
+                    <div class="input-icon">
+                        <i class="bi bi-lock-fill"></i>
+                    </div>
+
+                    <div class="input-content">
+                    
+                        <input type="password"  id="loginPassword" placeholder="Enter your password" required>
+                    
+                    </div>
+                    <button type="button" class="password-toggle" >
+                        <i class="bi bi-eye-slash"></i>
+                    </button>
+                    </div>
+
+                    <div class="form-options">
+
+                    <label class="remember-me">
+
+                        <input type="checkbox">
+
+                        <span class="custom-checkbox">
+                            <i class="bi bi-check"></i>
+                        </span>
+
+                        <span>Remember me</span>
+
+                    </label>
+
+                    <a href="#" class="forgot-password">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+                <button type="submit" class="main-btn">
+                    LOGIN
+                    <i class="bi bi-arrow-right"></i>
+                </button>
+            </form>
+
+            <div class="bottom-text">
+               <span> Don't have an account?</span>
+
+                <a href="register.html">
+                    Register
+                </a>
+            </div>
+
+            </div>
+            <div class="footer">
+
+            <div>
+                <strong>MergeBite 2048</strong>
+
+                <p>
+                    Play
+                    <span>•</span>
+                    Merge
+                    <span>•</span>
+                    Reach 2048
+                </p>
+            </div>
+
+            <div class="footer-message">
+                <i class="bi bi-heart-fill"></i>
+               <span>Small moves, big combos!</span> 
+                <span>🍃</span>
+            </div>
+
+        </div>
+
+        
+        </div>
+        </div>  
+     
+
+    
+    <script src="js/common.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

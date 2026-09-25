@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MergeBite 2048</title>
+     <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <div class="login-page  register-page">
+        <div class="login-container  register-container">
+           
+        <div class="login-card  register-card">
+            <div class="card-title">
+                <h2>Register</h2>
+                <p>
+                     Create your account to get started.
+                </p>
+            </div>
+
+             <form id="registerForm">
+
+                <div class="input-group">
+
+                    <div class="input-icon">
+                        <i class="bi bi-person"></i>
+                    </div>
+
+                    <div class="input-content">
+
+                        <label>Username</label>
+
+                        <input type="text"  id="username" placeholder="Choose a username" required>   
+
+                    </div>
+
+                </div>
+
+            <div class="input-group">
+                <div class="input-icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <div class="input-content">
+                        <label>Email Address</label>
+
+                        <input type="email"id="regEmail" placeholder="Enter your email"  required   >
+                    </div>
+                    </div>
+
+                    <div class="input-group">
+
+                    <div class="input-icon">
+                        <i class="bi bi-lock-fill"></i>
+                    </div>
+
+                    <div class="input-content">
+                         <label>Password</label>
+                    
+                        <input type="password"  id="regPassword" placeholder="Enter your password" required>
+                    
+                    </div>
+                    <button type="button" class="password-toggle" >
+                        <i class="bi bi-eye-slash"></i>
+                    </button>
+                    </div>
+                     <div class="input-group">
+
+                    <div class="input-icon">
+                        <i class="bi bi-lock-fill"></i>
+                    </div>
+
+                    <div class="input-content">
+
+                        <label>Confirm Password</label>
+
+                        <input  type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                     
+
+                    </div>
+
+                    <button  type="button" class="password-toggle">      
+                        <i class="bi bi-eye-slash"></i>
+                    </button>
+
+                </div>
+                <button type="submit" class="main-btn">
+
+                    CREATE ACCOUNT
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </button>
+
+               
+            </form>
+
+           
+             <div class="bottom-text">
+
+               <span> Already have an account?</span> 
+
+                <a href="login_.html">
+                    Login
+                </a>
+
+            </div>
+
+            </div>
+            <div class="footer">
+
+            <div>
+                <strong>MergeBite 2048</strong>
+
+                <p>
+                    Play
+                    <span>•</span>
+                    Merge
+                    <span>•</span>
+                    Reach 2048
+                </p>
+            </div>
+
+            <div class="footer-message">
+                <i class="bi bi-heart-fill"></i>
+               <span>Small moves, big combos!</span> 
+                <span>🍃</span>
+            </div>
+
+        </div>
+
+        
+        </div>
+        </div>  
+     
+
+    
+    <script src="js/common.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

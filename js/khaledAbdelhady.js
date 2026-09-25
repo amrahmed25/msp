@@ -85,6 +85,16 @@ const khaledAbdelhady={
         technologies: ["HTML", "CSS", "JavaScript"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/quiz%20game"
       },
+
+      {
+        title:"2048 Game",
+        folder: "./students/Khaled3bdelhady/game2048/",
+        preview: "./students/Khaled3bdelhady/game2048/images/name2.png",
+        description: "A responsive 2048 Game website ",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        github: ""
+      },
+
     ]
   };
   export default khaledAbdelhady;
