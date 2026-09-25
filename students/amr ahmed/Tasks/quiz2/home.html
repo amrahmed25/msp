@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Arena</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .sound-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            background: rgba(20, 20, 35, 0.55);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #ffffff;
+            font-size: 22px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .sound-toggle-btn:hover {
+            transform: scale(1.1);
+            background: rgba(20, 20, 35, 0.8);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .sound-toggle-btn.muted {
+            color: #ff4775;
+            border-color: rgba(255, 71, 117, 0.5);
+        }
+
+        @media (max-width: 576px) {
+            .sound-toggle-btn {
+                top: 14px;
+                right: 14px;
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button id="mute-btn" class="sound-toggle-btn" title="Toggle Sound">🔊</button>
+
+    <div class="background">
+        <div class="stars"></div>
+        <div class="grid"></div>
+        <div class="glow glow-purple"></div>
+        <div class="glow glow-blue"></div>
+        <div class="glow glow-pink"></div>
+        <div class="floating-shape shape-one"></div>
+        <div class="floating-shape shape-two"></div>
+        <div class="floating-shape shape-three"></div>
+    </div>
+    <section id="start-screen" class="screen active">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-7">
+                    <div class="logo-area text-center">
+                        <div class="logo-icon">🧠</div>
+                        <h1>BRAIN <span>ARENA</span></h1>
+                        <p>THINK FAST • PLAY SMART • DOMINATE</p>
+                    </div>
+                    <div class="glass-card start-card">
+                        <div class="card-content">
+                            <div class="system-status">
+                                <span>SYSTEM READY</span>
+                                <span class="online">● ONLINE</span>
+                            </div>
+                            <label for="player-name" class="input-label">PLAYER NAME</label>
+                            <input type="text" id="player-name" class="form-control custom-input" placeholder="Enter your name..." maxlength="15">
+                            <button id="start-btn" class="btn main-btn w-100 mt-4">
+                                ENTER THE ARENA
+                                <span>→</span>
+                            </button>
+                            <div class="row g-3 mt-4">
+                                <div class="col-4">
+                                    <div class="feature-box">
+                                        <span>🎯</span>
+                                        <strong>3</strong>
+                                        <small>ARENAS</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="feature-box">
+                                        <span>⚡</span>
+                                        <strong>3</strong>
+                                        <small>LEVELS</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="feature-box">
+                                        <span>🏆</span>
+                                        <strong>∞</strong>
+                                        <small>CHALLENGES</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="arena-screen" class="screen">
+        <div class="container">
+            <div class="section-heading text-center">
+                <div class="small-label">STEP 01</div>
+                <h1>CHOOSE YOUR <span>ARENA</span></h1>
+                <p>Select a challenge category</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-lg-4">
+                    <div class="arena-card public-card">
+                        <div class="arena-icon">🌍</div>
+                        <div class="arena-number">ARENA 01</div>
+                        <h2>PUBLIC <span>INFORMATION</span></h2>
+                        <p>Test your knowledge about science, geography, history and the world around you.</p>
+                        <div class="difficulty-title">SELECT LEVEL</div>
+                        <div class="difficulty-buttons">
+                            <button class="difficulty-btn easy" data-category="public" data-difficulty="easy">EASY</button>
+                            <button class="difficulty-btn medium" data-category="public" data-difficulty="medium">MEDIUM</button>
+                            <button class="difficulty-btn hard" data-category="public" data-difficulty="hard">HARD</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="arena-card egyptian-card">
+                        <div class="arena-icon">🇪🇬</div>
+                        <div class="arena-number">ARENA 02</div>
+                        <h2>EGYPTIAN <span>PROVERBS</span></h2>
+                        <p>Decode Egyptian proverbs from creative emoji clues and choose the correct answer.</p>
+                        <div class="difficulty-title">SELECT LEVEL</div>
+                        <div class="difficulty-buttons">
+                            <button class="difficulty-btn easy" data-category="proverbs" data-difficulty="easy">EASY</button>
+                            <button class="difficulty-btn medium" data-category="proverbs" data-difficulty="medium">MEDIUM</button>
+                            <button class="difficulty-btn hard" data-category="proverbs" data-difficulty="hard">HARD</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="arena-card math-card">
+                        <div class="arena-icon">➗</div>
+                        <div class="arena-number">ARENA 03</div>
+                        <h2><span>MATH</span> CHALLENGE</h2>
+                        <p>Solve mathematical problems against the clock and prove your calculation skills.</p>
+                        <div class="difficulty-title">SELECT LEVEL</div>
+                        <div class="difficulty-buttons">
+                            <button class="difficulty-btn easy" data-category="math" data-difficulty="easy">EASY</button>
+                            <button class="difficulty-btn medium" data-category="math" data-difficulty="medium">MEDIUM</button>
+                            <button class="difficulty-btn hard" data-category="math" data-difficulty="hard">HARD</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="game-screen" class="screen">
+        <div class="container">
+            <div class="row align-items-center game-header">
+                <div class="col-6 col-md-4">
+                    <div class="player-info">
+                        <div class="avatar">🧠</div>
+                        <div>
+                            <small>PLAYER</small>
+                            <h3 id="display-name">PLAYER</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 order-3 order-md-2">
+                    <div class="round-info text-center">
+                        <small id="category-display">ARENA</small>
+                        <strong>
+                            <span id="current-question">1</span> / <span id="total-questions">5</span>
+                        </strong>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 order-2 order-md-3">
+                    <div class="score-info text-end">
+                        <small>SCORE</small>
+                        <strong id="score">0</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="progress custom-progress mt-3">
+                <div id="question-progress" class="progress-bar"></div>
+            </div>
+            <div class="row justify-content-center stats-bar g-3">
+                <div class="col-4 col-md-3">
+                    <div class="stat">
+                        <span>❤️</span>
+                        <div>
+                            <small>LIVES</small>
+                            <strong id="lives">❤️❤️❤️</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-md-3">
+                    <div class="stat">
+                        <span>🔥</span>
+                        <div>
+                            <small>COMBO</small>
+                            <strong id="combo">x0</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-md-3">
+                    <div class="stat">
+                        <span>⭐</span>
+                        <div>
+                            <small>XP</small>
+                            <strong id="xp">0</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <span id="difficulty-badge" class="difficulty-badge">EASY</span>
+            </div>
+            <div class="timer-container">
+                <div id="timer-circle" class="timer-circle">
+                    <span id="timer">15</span>
+                    <small>SEC</small>
+                </div>
+            </div>
+            <main id="challenge-container" class="mx-auto"></main>
+            <div id="feedback" class="feedback text-center"></div>
+        </div>
+    </section>
+    <section id="result-screen" class="screen">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-9 col-lg-7">
+                    <div class="result-card glass-card">
+                        <div class="card-content text-center">
+                            <div class="result-icon">🏆</div>
+                            <div class="result-label">ARENA COMPLETE</div>
+                            <h1 id="result-title">WELL PLAYED</h1>
+                            <div class="result-category">
+                                <span id="result-category">PUBLIC INFORMATION</span>
+                                <span>•</span>
+                                <span id="result-difficulty">EASY</span>
+                            </div>
+                            <div class="final-score">
+                                <small>FINAL SCORE</small>
+                                <strong id="final-score">0</strong>
+                            </div>
+                            <div class="row g-3 my-4">
+                                <div class="col-12 col-md-4">
+                                    <div class="result-stat">
+                                        <span>🎯</span>
+                                        <small>ACCURACY</small>
+                                        <strong id="accuracy">0%</strong>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="result-stat">
+                                        <span>🔥</span>
+                                        <small>BEST COMBO</small>
+                                        <strong id="best-combo">0</strong>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="result-stat">
+                                        <span>⭐</span>
+                                        <small>XP EARNED</small>
+                                        <strong id="final-xp">0</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rank-box">
+                                <small>YOUR RANK</small>
+                                <strong id="rank">NOVICE</strong>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button id="play-again" class="btn main-btn">PLAY AGAIN</button>
+                                <button id="change-arena" class="btn secondary-btn">CHANGE ARENA</button>
+                                <button id="home-btn" class="btn secondary-btn">MAIN MENU</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

@@ -4,6 +4,14 @@ const amrAhmed={
     image: "./students/amr ahmed/image/amr3.png",
     tasksPath: "./students/amr ahmed/Tasks/",
     assignments: [
+      {
+        title: "A&M Quiz",
+        folder: "./students/amr ahmed/Tasks/quiz2/",
+        preview: "./students/amr ahmed/Tasks/gamesStation/images/nostalgia.png",
+        description: "An interactive quiz platform where users can test their knowledge across different topics, answer engaging questions, and get instant results. The website is fully responsive and designed for a smooth and enjoyable experience on all devices.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        github: "https://github.com/amrahmed25/msp/tree/main/students/amr%20ahmed/Tasks/quiz2"
+      },
        {
         title: "XO game",
         folder: "./students/amr ahmed/Tasks/xo game/",
