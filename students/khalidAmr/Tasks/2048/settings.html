@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIFT - Settings</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+
+    <main class="settings-shell">
+
+        <header class="navbar">
+            <a class="shift-logo" href="home.html" aria-label="SHIFT Home">
+                <span class="logo-grid" aria-hidden="true">
+                    <i></i><i></i><i></i><i></i>
+                </span>
+                <span class="logo-copy">
+                    <strong>SHIFT</strong>
+                    <small>2048 PUZZLE GAME</small>
+                </span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="home.html">⌂ <span>HOME</span></a>
+                <a href="index.html">▷ <span>PLAY</span></a>
+                <a href="feedback.html">▣ <span>FEEDBACK</span></a>
+                <a href="leaderboard.html">♜ <span>LEADERBOARD</span></a>
+            </nav>
+
+            <div class="nav-actions">
+                <a class="icon-btn" href="help.html" aria-label="Help">?</a>
+                <a class="icon-btn active" href="settings.html" aria-label="Settings">⚙</a>
+                <button class="icon-btn sound-btn" type="button" aria-label="Sound">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 10v4h4l5 4V6l-5 4H4Z"></path>
+                        <path class="sound-wave" d="M16 9.2c.8.8 1.2 1.8 1.2 2.8s-.4 2-1.2 2.8"></path>
+                        <path class="sound-wave" d="M18.7 6.8A7.3 7.3 0 0 1 21 12a7.3 7.3 0 0 1-2.3 5.2"></path>
+                    </svg>
+                </button>
+                <span class="nav-divider"></span>
+                <div class="profile">
+                    <span class="avatar">S</span>
+                    <span class="profile-name">SHADOW</span>
+                    <span class="chevron">⌄</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div>
+                <p class="eyebrow">SYSTEM CONTROL</p>
+                <h1>SETTINGS</h1>
+                <p class="subtitle">Shape the way SHIFT looks, sounds, and feels.</p>
+            </div>
+            <div class="hero-orbit" aria-hidden="true">
+                <span class="orbit orbit-one"></span>
+                <span class="orbit orbit-two"></span>
+                <span class="orbit-tile tile-blue">2</span>
+                <span class="orbit-tile tile-purple">64</span>
+                <span class="orbit-tile tile-pink">256</span>
+            </div>
+        </section>
+
+        <section class="appearance-card">
+            <div class="section-heading compact">
+                <div>
+                    <span class="section-kicker">APPEARANCE</span>
+                    <h2>Choose your atmosphere</h2>
+                    <p>Switch between SHIFT's signature night interface and its soft futuristic day interface.</p>
+                </div>
+                <div class="theme-status" id="themeStatus">DARK MODE</div>
+            </div>
+
+            <button class="theme-switch" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+                <span class="theme-side moon">☾ <b>DARK</b></span>
+                <span class="theme-rail"><span class="theme-knob"></span></span>
+                <span class="theme-side sun">☼ <b>LIGHT</b></span>
+            </button>
+        </section>
+
+        <section class="settings-card">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">GAMEPLAY</span>
+                    <h2>Core options</h2>
+                </div>
+                <span class="section-code">01</span>
+            </div>
+
+            <div class="setting-row">
+                <div class="setting-info">
+                    <span class="setting-icon blue">⌁</span>
+                    <div>
+                        <h3>Sound Effects</h3>
+                        <p>Play sounds when tiles move and merge.</p>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="soundToggle" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-row">
+                <div class="setting-info">
+                    <span class="setting-icon purple">◉</span>
+                    <div>
+                        <h3>Background Music</h3>
+                        <p>Enable ambient music during the game.</p>
+                    </div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="musicToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            
+        </section>
+
+        <section class="settings-card game-card">
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker orange-text">GAME</span>
+                    <h2>Session options</h2>
+                </div>
+                <span class="section-code">02</span>
+            </div>
+
+            <div class="setting-row">
+                <div class="setting-info">
+                    <span class="setting-icon orange">↻</span>
+                    <div>
+                        <h3>Reset Best Score</h3>
+                        <p>Delete the highest score saved on this device.</p>
+                    </div>
+                </div>
+                <button class="danger-button" id="resetScore" type="button">RESET</button>
+            </div>
+
+            <div class="setting-row last-row">
+                <div class="setting-info">
+                    <span class="setting-icon gradient">▶</span>
+                    <div>
+                        <h3>New Game</h3>
+                        <p>Start a fresh 2048 board.</p>
+                    </div>
+                </div>
+                <a class="action-button" href="index.html">PLAY AGAIN <span>→</span></a>
+            </div>
+        </section>
+
+        <p class="status" id="status" aria-live="polite"></p>
+
+        <footer>
+            <span>SHIFT 2048</span><i></i><span>SYSTEM SETTINGS</span>
+        </footer>
+
+    </main>
+
+    <script src="theme.js"></script>
+<script src="music.js?v=2"></script>
+<script src="settings.js"></script>
+</body>
+</html>

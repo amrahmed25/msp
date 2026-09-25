@@ -82,6 +82,14 @@ const khalidAmr={
         description: "LAMHA is an interactive and fast-paced quiz game designed to turn ordinary questions into an exciting gaming experience. Players can choose their category, difficulty, and number of questions, then challenge themselves against the clock. ⏱️🔥",
         technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
       },
+
+      {
+        title: "Task 10 - 2048-GAME ",
+        folder: "./students/khalidAmr/Tasks/2048/",
+        preview: "./students/khalidAmr/Tasks/2048/images/jjjj.png",
+        description: "SHIFT is a 2048-inspired puzzle game where you merge tiles to reach the highest number possible. It includes multiple game modes — Classic, Dark Zone, Rush, and Time Attack — plus a leaderboard and sound/theme settings.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+      },
     ]
   };
   export default khalidAmr;

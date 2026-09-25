@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHIFT — Help</title>
+<link rel="stylesheet" href="help.css">
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<div class="help-page">
+  <header class="topbar">
+    <a class="brand" href="home.html" aria-label="SHIFT Home">
+      <span class="brand-grid"><i></i><i></i><i></i><i></i></span>
+      <span><strong>SHIFT</strong><small>2048 PUZZLE GAME</small></span>
+    </a>
+    <nav class="top-nav">
+      <a href="home.html"><svg viewBox="0 0 24 24"><path d="M3.5 10.8 12 3.8l8.5 7v8.7a1 1 0 0 1-1 1h-5v-5.2h-5V20h-5a1 1 0 0 1-1-1v-8.2Z"/></svg><span>HOME</span></a>
+      <a href="board.html"><svg viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></svg><span>PLAY</span></a>
+      <a href="feedback.html"><svg viewBox="0 0 24 24"><path d="M5 5.5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-4.5 3v-3H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg><span>FEEDBACK</span></a>
+      <a href="leaderboard.html"><svg viewBox="0 0 24 24"><path d="M8 4h8v6.5c0 2.7-1.8 4.5-4 4.5s-4-1.8-4-4.5V4Z"/><path d="M8 7H4.5v2c0 2.4 1.4 4 3.8 4.2M16 7h3.5v2c0 2.4-1.4 4-3.8 4.2M12 15v4M8.5 20h7"/></svg><span>LEADERBOARD</span></a>
+    </nav>
+    <div class="profile">
+      <a class="top-icon help-control active" href="help.html" aria-label="Help"><span>?</span></a>
+      <a class="top-icon" href="settings.html" aria-label="Settings"><svg viewBox="0 0 24 24"><path d="M12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z"/><path d="m19.4 15 .1.1 1.4 1.1-1.7 2.9-1.7-.7a7.6 7.6 0 0 1-1.6.9l-.3 1.8h-3.4l-.3-1.8a7.6 7.6 0 0 1-1.6-.9l-1.7.7-1.7-2.9 1.4-1.1.1-.1a7.3 7.3 0 0 1 0-2l-.1-.1-1.4-1.1 1.7-2.9 1.7.7a7.6 7.6 0 0 1 1.6-.9l.3-1.8h3.4l.3 1.8a7.6 7.6 0 0 1 1.6.9l1.7-.7 1.7 2.9-1.4 1.1-.1.1a7.3 7.3 0 0 1 0 2Z"/></svg></a>
+      <button class="top-icon sound-control" id="soundBtn" aria-label="Turn sound off"><svg viewBox="0 0 24 24"><path d="M4 10v4h4l5 4V6l-5 4H4Z"/><path class="wave" d="M16 9.2c.8.8 1.2 1.8 1.2 2.8s-.4 2-1.2 2.8"/><path class="wave" d="M18.7 6.8A7.3 7.3 0 0 1 21 12a7.3 7.3 0 0 1-2.3 5.2"/></svg></button>
+      <span class="profile-separator"></span><button class="avatar-btn"><span class="avatar">S</span><span class="profile-name">SHADOW</span><span class="chevron">⌄</span></button>
+    </div>
+  </header>
+
+  <main class="help-layout">
+    <aside class="help-sidebar">
+      <div class="help-title"><div class="big-question">?</div><div><h1>HELP</h1><p>HERE TO GUIDE YOU</p></div></div>
+      <div class="side-links">
+        <a class="selected" href="#how"><span class="side-icon play">▶</span><span>HOW TO PLAY</span></a>
+        <a href="#rules"><span class="side-icon">⌘</span><span>GAME RULES</span></a>
+        <a href="#tips"><span class="side-icon">☆</span><span>TIPS &amp; TRICKS</span></a>
+        <a href="#controls"><span class="side-icon">⌨</span><span>CONTROLS</span></a>
+        <a href="#faq"><span class="side-icon">☷</span><span>FAQ</span></a>
+      </div>
+    </aside>
+
+    <section class="help-main">
+      <div class="guide-header" id="how">
+        <div class="guide-play">▶</div><div><h2>HOW TO PLAY</h2><p>IT'S SIMPLE, JUST THINK AHEAD!</p></div>
+        <div class="merge-visual" aria-label="2048 tile progression">
+  <div class="merge-path"></div>
+  <span class="merge-tile t2">2</span>
+  <span class="merge-tile t4">4</span>
+  <span class="merge-tile t8">8</span>
+  <span class="merge-tile t16">16</span>
+  <span class="merge-tile t32">32</span>
+  <span class="merge-tile t64">64</span>
+  <span class="merge-tile t128">128</span>
+  <span class="merge-tile t256">256</span>
+  <span class="merge-tile t512">512</span>
+  <span class="merge-tile t1024">1024</span>
+  <span class="merge-tile t2048">2048</span>
+  <span class="merge-arrow">→</span>
+</div>
+      </div>
+
+      <div class="steps">
+        <article class="step-card blue-card" id="controls"><div class="step-no">01</div><h3>SWIPE</h3><p>Use your arrow keys or swipe on your screen to move the tiles.</p><div class="arrows"><b>↑</b><div><b>←</b><b>→</b></div><b>↓</b></div></article>
+        <article class="step-card cyan-card"><div class="step-no">02</div><h3>MERGE</h3><p>When two tiles with the same number touch, they merge into one.</p><div class="equation"><b>2</b><span>+</span><b>2</b><span>→</span><strong>4</strong></div></article>
+        <article class="step-card pink-card"><div class="step-no">03</div><h3>SCORE</h3><p>Keep merging tiles to reach higher numbers and get a higher score.</p><div class="equation warm"><b>8</b><span>+</span><b>8</b><span>→</span><strong>16</strong></div></article>
+        <article class="step-card orange-card"><div class="step-no">04</div><h3>REACH 2048</h3><p>The ultimate goal is to create the 2048 tile. Can you do it?</p><div class="goal-tile">2048</div></article>
+      </div>
+
+      <div class="bottom-grid">
+        <section class="quick-panel" id="tips"><div class="panel-heading"><span>💡</span><h3>QUICK TIPS</h3></div><ul><li>Plan your moves, don't rush.</li><li>Keep your biggest tile in a corner.</li><li>Try to keep the board as empty as possible.</li><li>Think ahead — every move matters!</li></ul><div class="hand-note">Small moves<br><em>Big results!</em></div></section>
+        <section class="feedback-panel" id="faq"><div class="panel-heading"><span>💬</span><h3>STILL NEED HELP?</h3></div><p>If you have any other questions, feel free<br>to contact us through the feedback page.</p><a class="feedback-btn" href="feedback.html"><span>💬</span> GO TO FEEDBACK <b>→</b></a><div class="question-orbit"><span>?</span></div></section>
+      </div>
+    </section>
+  </main>
+  <footer><span>SMALL MOVES. BIG NUMBERS.</span><span>SHIFT © 2026</span></footer>
+</div>
+<script src="theme.js"></script>
+<script src="music.js?v=2"></script>
+<script>
+let soundOn=window.ShiftMusic?window.ShiftMusic.isEnabled():true,audioCtx=null;
+if(!soundOn){document.getElementById('soundBtn').classList.add('sound-off');}
+function tone(f=560,d=.08){if(!soundOn)return;try{audioCtx=audioCtx||new(window.AudioContext||window.webkitAudioContext)();audioCtx.resume();const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.frequency.value=f;g.gain.setValueAtTime(.0001,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.03,audioCtx.currentTime+.01);g.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+d);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+d)}catch(e){}}
+document.getElementById('soundBtn').onclick=()=>{soundOn=!soundOn;document.getElementById('soundBtn').classList.toggle('sound-off',!soundOn);if(window.ShiftMusic)window.ShiftMusic.setEnabled(soundOn);if(soundOn)tone(600,.08)};
+document.querySelectorAll('.side-links a,.feedback-btn').forEach(a=>a.addEventListener('click',()=>tone(640,.07)));
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHIFT — Dark Zone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dark-zone.css">
+</head>
+<body>
+
+<section class="intro" id="intro">
+  <div class="intro-grid"></div>
+  <div class="scanlines"></div>
+  <div class="code-layer" id="codeLayer"></div>
+
+  <div class="terminal" id="terminal">
+    <span class="terminal-dot"></span>
+    <span id="terminalText">BOOTING DARK ZONE...</span>
+  </div>
+
+  <div class="intro-title" id="introTitle">
+    <div class="override">SYSTEM OVERRIDE</div>
+    <div class="intro-2048">2048</div>
+    <div class="intro-dark">DARK ZONE</div>
+  </div>
+
+  <div class="red-flash" id="redFlash"></div>
+  <button class="skip" id="skip">SKIP <span>ESC</span></button>
+</section>
+
+<main class="game" id="game">
+  <div class="ambient"></div>
+
+  <header class="topbar">
+    <a class="back" href="home.html">← HOME</a>
+
+    <div class="brand">
+      <strong>SHIFT</strong>
+      <span>DARK ZONE</span>
+    </div>
+
+    <button class="sound" id="soundBtn" aria-label="Toggle sound">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 10v4h4l5 4V6l-5 4H4Z"></path>
+        <path class="wave w1" d="M16 9.5c1.2 1.2 1.2 3.8 0 5"></path>
+        <path class="wave w2" d="M18.5 7c2.5 2.7 2.5 7.3 0 10"></path>
+        <path class="mute-line" d="M16 7l6 10"></path>
+      </svg>
+    </button>
+  </header>
+
+  <section class="hud">
+    <div>
+      <p class="eyebrow">SPECIAL MODE / SYSTEM UNSTABLE</p>
+      <h1>DARK <span>ZONE</span></h1>
+      <p class="sub">The board doesn't follow the rules anymore.</p>
+    </div>
+
+    <div class="stats">
+      <div><small>SCORE</small><strong id="score">0</strong></div>
+      <div><small>BEST</small><strong id="best">0</strong></div>
+      <div><small>SHIFT</small><strong id="moveCount">0</strong></div>
+    </div>
+  </section>
+
+  <section class="game-wrap">
+    <div class="side-panel">
+      <div class="danger-card">
+        <span class="pulse"></span>
+        <div>
+          <small>ZONE STATUS</small>
+          <strong id="status">STABLE</strong>
+        </div>
+      </div>
+
+      <div class="objective">
+        <small>OBJECTIVE</small>
+        <h3>SURVIVE THE <b>SHIFT</b></h3>
+        <p>Locked tiles block paths. Glitches corrupt merges. Every 8 moves, the board shifts.</p>
+      </div>
+
+      <button class="undo" id="undoBtn">↶ UNDO</button>
+      <button class="restart" id="restartBtn">RESTART RUN</button>
+    </div>
+
+    <div class="board-area">
+      <div class="board" id="board" aria-label="2048 board"></div>
+      <p class="controls">ARROWS / <b>W A S D</b> · MERGE · SURVIVE · REACH <b>2048</b></p>
+    </div>
+  </section>
+</main>
+
+<script src="music.js?v=2"></script>
+<script src="dark-zone.js"></script>
+</body>
+</html>

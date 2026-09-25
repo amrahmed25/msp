@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHIFT — Feedback</title>
+<link rel="stylesheet" href="feedback.css">
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<div class="fb-page">
+  <header class="topbar">
+    <a class="brand" href="home.html" aria-label="SHIFT Home">
+      <span class="brand-grid"><i></i><i></i><i></i><i></i></span>
+      <span><strong>SHIFT</strong><small>2048 PUZZLE GAME</small></span>
+    </a>
+    <nav class="top-nav">
+      <a href="home.html"><svg viewBox="0 0 24 24"><path d="M3.5 10.8 12 3.8l8.5 7v8.7a1 1 0 0 1-1 1h-5v-5.2h-5V20h-5a1 1 0 0 1-1-1v-8.2Z"/></svg><span>HOME</span></a>
+      <a href="board.html"><svg viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></svg><span>PLAY</span></a>
+      <a class="fb-nav-active" href="feedback.html"><svg viewBox="0 0 24 24"><path d="M5 5.5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-4.5 3v-3H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg><span>FEEDBACK</span></a>
+      <a href="leaderboard.html"><svg viewBox="0 0 24 24"><path d="M8 4h8v6.5c0 2.7-1.8 4.5-4 4.5s-4-1.8-4-4.5V4Z"/><path d="M8 7H4.5v2c0 2.4 1.4 4 3.8 4.2M16 7h3.5v2c0 2.4-1.4 4-3.8 4.2M12 15v4M8.5 20h7"/></svg><span>LEADERBOARD</span></a>
+    </nav>
+    <div class="profile">
+      <a class="top-icon help-control" href="help.html" aria-label="Help"><span>?</span></a>
+      <a class="top-icon" href="settings.html" aria-label="Settings"><svg viewBox="0 0 24 24"><path d="M12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z"/><path d="m19.4 15 .1.1 1.4 1.1-1.7 2.9-1.7-.7a7.6 7.6 0 0 1-1.6.9l-.3 1.8h-3.4l-.3-1.8a7.6 7.6 0 0 1-1.6-.9l-1.7.7-1.7-2.9 1.4-1.1.1-.1a7.3 7.3 0 0 1 0-2l-.1-.1-1.4-1.1 1.7-2.9 1.7.7a7.6 7.6 0 0 1 1.6-.9l.3-1.8h3.4l.3 1.8a7.6 7.6 0 0 1 1.6.9l1.7-.7 1.7 2.9-1.4 1.1-.1.1a7.3 7.3 0 0 1 0 2Z"/></svg></a>
+      <button class="top-icon sound-control" id="soundBtn" aria-label="Turn sound off" title="Sound on">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 10v4h4l5 4V6l-5 4H4Z"/>
+          <path class="wave wave-1" d="M16 9.2c.8.8 1.2 1.8 1.2 2.8s-.4 2-1.2 2.8"/>
+          <path class="wave wave-2" d="M18.7 6.8A7.3 7.3 0 0 1 21 12a7.3 7.3 0 0 1-2.3 5.2"/>
+        </svg>
+      </button>
+      <span class="profile-separator"></span><button class="avatar-btn"><span class="avatar">S</span><span class="profile-name">SHADOW</span><span class="chevron">⌄</span></button>
+    </div>
+  </header>
+
+  <main class="fb-layout">
+    <aside class="fb-sidebar">
+      <div class="fb-title"><div class="fb-bubble">💬</div><div><h1>FEEDBACK</h1><p>WE'RE LISTENING</p></div></div>
+      <div class="fb-side-links">
+        <a class="selected" href="#rate"><span class="fb-side-icon">★</span><span>RATE THE GAME</span></a>
+        <a href="#category"><span class="fb-side-icon">☰</span><span>TOPIC</span></a>
+        <a href="#message"><span class="fb-side-icon">✎</span><span>YOUR MESSAGE</span></a>
+        <a href="#why"><span class="fb-side-icon">💡</span><span>WHY IT MATTERS</span></a>
+        <a href="#contact"><span class="fb-side-icon">☷</span><span>OTHER CONTACT</span></a>
+      </div>
+    </aside>
+
+    <section class="fb-main">
+      <div class="fb-hero" id="rate">
+        <div class="fb-hero-icon">💬</div>
+        <div><h2>SHARE YOUR FEEDBACK</h2><p>EVERY MERGE STARTED WITH A SMALL MOVE</p></div>
+        <div class="fb-progress" aria-label="feedback shapes the journey">
+          <span class="fb-tile pt2">2</span>
+          <span class="fb-arrow">→</span>
+          <span class="fb-tile pt32">32</span>
+          <span class="fb-arrow">→</span>
+          <span class="fb-tile pt128">128</span>
+          <span class="fb-arrow">→</span>
+          <span class="fb-tile pt2048">YOU</span>
+        </div>
+      </div>
+
+      <div class="fb-grid">
+        <article class="fb-card blue-card" id="category">
+          <div class="fb-card-no">01</div>
+          <h3>RATE YOUR EXPERIENCE</h3>
+          <p>Tap the tiles to score your overall run.</p>
+          <div class="fb-stars" id="starRow">
+            <button type="button" class="fb-star" data-value="1">★</button>
+            <button type="button" class="fb-star" data-value="2">★</button>
+            <button type="button" class="fb-star" data-value="3">★</button>
+            <button type="button" class="fb-star" data-value="4">★</button>
+            <button type="button" class="fb-star" data-value="5">★</button>
+          </div>
+          <p class="fb-error" id="ratingError">Pick a rating first.</p>
+        </article>
+        <article class="fb-card pink-card">
+          <div class="fb-card-no">02</div>
+          <h3>WHAT'S THIS ABOUT?</h3>
+          <p>Choose the topic closest to your note.</p>
+          <div class="fb-chips" id="chipRow">
+            <button type="button" class="fb-chip sel" data-topic="Gameplay">GAMEPLAY</button>
+            <button type="button" class="fb-chip" data-topic="Design">DESIGN</button>
+            <button type="button" class="fb-chip" data-topic="Bug">A BUG</button>
+            <button type="button" class="fb-chip" data-topic="Other">OTHER</button>
+          </div>
+        </article>
+      </div>
+
+      <form class="fb-form-panel" id="feedbackForm" novalidate>
+        <div class="panel-heading"><span>✎</span><h3 id="message">YOUR MESSAGE</h3></div>
+        <label for="fbMessage">TELL US WHAT WORKED OR WHAT DIDN'T</label>
+        <textarea id="fbMessage" placeholder="Tell us what worked, what didn't, or what you'd love to see next..."></textarea>
+        <p class="fb-error" id="messageError">Write a bit more before sending.</p>
+        <label for="fbEmail">EMAIL (OPTIONAL — IF YOU WANT A REPLY)</label>
+        <input type="email" id="fbEmail" placeholder="you@example.com">
+        <div class="fb-submit-row">
+          <button type="submit" class="feedback-btn"><span>💬</span> SUBMIT FEEDBACK <b>→</b></button>
+          <span class="fb-hint">Takes less than a minute. Every message reaches the team.</span>
+        </div>
+        <div class="fb-success" id="fbSuccess">
+          <div class="question-orbit small"><span>✓</span></div>
+          <h3>THANKS FOR THE FEEDBACK</h3>
+          <p>Your note just got merged into our next update queue.</p>
+        </div>
+      </form>
+
+      <div class="bottom-grid">
+        <section class="quick-panel" id="why"><div class="panel-heading"><span>💡</span><h3>WHY IT MATTERS</h3></div><ul><li>Shapes upcoming updates and new tile milestones.</li><li>Helps us catch bugs before they spread.</li><li>Your ideas often become real features.</li></ul><div class="hand-note">Small notes<br><em>Big changes!</em></div></section>
+        <section class="feedback-panel" id="contact"><div class="panel-heading"><span>☷</span><h3>OTHER WAYS TO REACH US</h3></div><p>Prefer a quick chat or a store review<br>instead of a form? Pick what suits you.</p><a class="feedback-btn" href="help.html"><span>❓</span> BACK TO HELP <b>→</b></a><div class="question-orbit"><span>💬</span></div></section>
+      </div>
+    </section>
+  </main>
+  <footer><span>SMALL MOVES. BIG NUMBERS.</span><span>SHIFT © 2026</span></footer>
+</div>
+<script src="theme.js"></script>
+<script src="music.js?v=2"></script>
+<script src="feedback.js"></script>
+</body>
+</html>
