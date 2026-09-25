@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXUS</title>
+
+
+    
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+
+    
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet"
+    >
+
+
+   
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <main class="nexus-page">
+
+
+        
+
+        <div class="nexus-background"></div>
+
+        <div class="background-overlay"></div>
+
+
+
+        
+
+        <div class="nexus-content">
+
+
+           
+
+            
+
+            <div class="nexus-box">
+
+
+               
+
+                <div class="box-glow"></div>
+
+
+
+                
+
+                <div class="box-corner corner-1"></div>
+                <div class="box-corner corner-2"></div>
+                <div class="box-corner corner-3"></div>
+                <div class="box-corner corner-4"></div>
+
+
+
+               
+
+                <div class="auth-tabs">
+
+
+                    <button
+                        class="auth-tab"
+                        id="loginTab"
+                        type="button"
+                    >
+                        LOGIN
+                    </button>
+
+
+                    <button
+                        class="auth-tab active"
+                        id="registerTab"
+                        type="button"
+                    >
+                        REGISTER
+                    </button>
+
+
+                </div>
+
+
+
+
+                <div
+                    class="auth-page"
+                    id="registerPage"
+                >
+
+
+                    <h2>
+                        CREATE YOUR ACCOUNT
+                    </h2>
+
+
+                    <p class="description">
+                        Choose your avatar and enter your name to begin
+                    </p>
+
+
+
+                    
+
+                    <div class="avatar-selector">
+
+
+                        <button
+                            class="avatar-arrow"
+                            type="button"
+                        >
+                            ‹
+                        </button>
+
+
+
+                        <div class="avatars">
+
+
+                            <button
+                                class="avatar active"
+                                type="button"
+                                data-name="Shadow"
+                            >
+
+                                <img
+                                    src="avatar-1.png.jpg"
+                                    alt="Shadow"
+                                >
+
+                            </button>
+
+
+
+                            <button
+                                class="avatar"
+                                type="button"
+                                data-name="Nova"
+                            >
+
+                                <img
+                                    src="avatar-2.png.jpg"
+                                    alt="Nova"
+                                >
+
+                            </button>
+
+
+
+                            <button
+                                class="avatar"
+                                type="button"
+                                data-name="Cipher"
+                            >
+
+                                <img
+                                    src="avatar-3.png.jpg"
+                                    alt="Cipher"
+                                >
+
+                            </button>
+
+
+
+                            <button
+                                class="avatar"
+                                type="button"
+                                data-name="Vex"
+                            >
+
+                                <img
+                                    src="avatar-4.png.jpg"
+                                    alt="Vex"
+                                >
+
+                            </button>
+
+
+
+                            <button
+                                class="avatar"
+                                type="button"
+                                data-name="Astra"
+                            >
+
+                                <img
+                                    src="avatar-5.png.jpg"
+                                    alt="Astra"
+                                >
+
+                            </button>
+
+
+                             <button
+                                class="avatar"
+                                type="button"
+                                data-name="Mary"
+                            >
+
+                                <img
+                                    src="avatar-6.png.jpg"
+                                    alt="Mary"
+                                >
+
+                            </button>
+
+
+
+                        </div>
+
+
+
+                        <button
+                            class="avatar-arrow"
+                            type="button"
+                        >
+                            ›
+                        </button>
+
+
+                    </div>
+
+
+
+                    
+
+                    <div
+                        class="avatar-name"
+                        id="avatarName"
+                    >
+                        SHADOW
+                    </div>
+
+
+
+                    
+
+                    <div class="input-container">
+
+                        <i class="bi bi-person"></i>
+
+                        <input
+                            type="text"
+                            id="registerName"
+                            placeholder="Enter your name"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+
+                   
+
+                    <button
+                        class="continue-button"
+                        id="registerButton"
+                        type="button"
+                    >
+
+                        <span>CONTINUE</span>
+
+                        <strong>→</strong>
+
+                    </button>
+
+
+
+                   
+
+                    <div class="or-divider">
+
+                        <span></span>
+
+                        <b>OR</b>
+
+                        <span></span>
+
+                    </div>
+
+
+
+                    
+
+                    <div class="switch-text">
+
+                        Already have an account?
+
+                        <button
+                            type="button"
+                            id="goLogin"
+                        >
+                            Login
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+
+                
+
+                <div
+                    class="auth-page hidden"
+                    id="loginPage"
+                >
+
+
+                    <h2>
+                        WELCOME BACK
+                    </h2>
+
+
+                    <p class="description">
+                        Enter your name to continue your journey
+                    </p>
+
+
+
+                   
+
+                    <div class="input-container login-input">
+
+                        <i class="bi bi-person"></i>
+
+                        <input
+                            type="text"
+                            id="loginName"
+                            placeholder="Enter your name"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+
+
+                    <button
+                        class="continue-button"
+                        id="loginButton"
+                        type="button"
+                    >
+
+                        <span>ENTER NEXUS</span>
+
+                        <strong>→</strong>
+
+                    </button>
+
+
+
+                    
+
+                    <div class="or-divider">
+
+                        <span></span>
+
+                        <b>OR</b>
+
+                        <span></span>
+
+                    </div>
+
+
+
+                   
+
+                    <div class="switch-text">
+
+                        Don't have an account?
+
+                        <button
+                            type="button"
+                            id="goRegister"
+                        >
+                            Register
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            
+
+            <div class="system-status">
+
+                <span></span>
+
+                NEXUS SYSTEM ONLINE
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,434 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --dark-blue: #070b55;
+    --deep-purple: #160b70;
+    --purple: #4d1aa8;
+    --violet: #9b32e8;
+    --light-violet: #c64dff;
+    --pink: #ed42e5;
+    --white: #ffffff;
+    --soft-white: #eeeaff;
+    --muted: #c9bce8;
+    --border: rgba(236, 104, 255, 0.55);
+}
+body{
+    font-family: "Fredoka", sans-serif;
+    min-height: 100vh;
+    background:linear-gradient(rgba(30, 20, 140, 0.08), rgba(80, 15, 130, 0.22)),url(../images/background.jpg);
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    overflow-x: hidden;
+}
+.navbar{
+     width: 92%;
+    height: 70px;
+
+    margin: 20px auto;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(45, 14, 140, 0.72);
+
+    border: 1px solid #e05cff;
+    border-radius: 40px;
+
+    box-shadow:
+        0 0 24px rgba(230, 80, 255, 0.55);
+
+    backdrop-filter: blur(15px);
+
+    position: relative;
+    z-index: 100;
+}
+.title-logo span{
+     background: linear-gradient(135deg, var(--white), var(--pink));
+     -webkit-background-clip: text;
+     background-clip: text;
+     color: transparent;
+
+}
+.nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    height: 100%;
+}
+.menu-btn {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+    border: 1px solid #a735ff;
+
+    background: rgba(120, 40, 210, 0.85);
+    color: white;
+
+    font-size: 24px;
+    cursor: pointer;
+}
+.nav-link {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0 5px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+.nav-link span {
+    font-size: 19px;
+}
+
+.nav-link:hover {
+    color: #ff62ef;
+
+    transform: translateY(-2px);
+}
+
+
+.login-link {
+    margin-left: 5px;
+}
+
+.register-btn {
+
+ padding: 10px 20px;
+
+ border-radius: 25px;
+
+ color: white;
+
+    text-decoration: none;
+
+    background: linear-gradient(
+        135deg,
+        #8b20e8,
+        #e52de5
+    );
+
+    border: 1px solid #d85cff;
+
+    box-shadow:
+        0 0 12px rgba(218, 50, 255, 0.5);
+
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 20px #dc3cff;
+}
+
+.header-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.icon-btn {
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    border: 1px solid #a735ff;
+
+    background: rgba(120, 40, 210, 0.85);
+
+    color: white;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.icon-btn:hover {
+
+    transform: scale(1.08);
+
+    background: #6817b5;
+
+    box-shadow:
+        0 0 15px #d137ff;
+}
+
+
+.nav-link.active { 
+    color: #ff70ff;
+ }
+ 
+      
+.home { 
+ min-height: calc(100vh - 88px);
+ display: flex; 
+ align-items: center;
+  justify-content: center; 
+  text-align: center; 
+  padding: 30px 20px 50px;
+ }                   
+                  
+                 
+ .hero { 
+     width: 100%;
+     max-width: 900px;
+     display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+}
+                         
+ .hero-logo { 
+         width:900px; 
+        max-width: 90vw; 
+             
+         margin-bottom: 20px;
+                                
+         animation: floating 3s ease-in-out infinite;
+ }  
+
+ .logo-text span{
+         font-size: 60px;
+         background: linear-gradient(135deg, var(--white), var(--pink));
+         -webkit-background-clip: text;
+          background-clip: text;
+         color: transparent;
+ }
+                                   
+ @keyframes floating { 
+      0% { transform: translateY(0); } 
+     50% { transform: translateY(-8px); } 
+      100% { transform: translateY(0); } } 
+                                    
+ .hero .hero-tittle { 
+     margin-top: 5px;
+     font-size: 50px; 
+     font-weight: 700; 
+    color: white; 
+     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+     }
+ .hero .hero-tittle span { 
+         color: #ef65ff;
+         margin: 0 6px;
+         text-shadow: 0 0 10px #ef65ff; } 
+ .description {
+    margin-top: 12px;
+     font-size: 18px; 
+     line-height: 1.7; 
+     color: #eeeeff; 
+      font-weight: 400; } 
+.hero-buttons { 
+     display: flex;
+     justify-content: center; 
+      gap: 30px; 
+      margin-top: 30px;
+}
+ .main-btn { 
+    min-width: 250px; 
+     height: 70px; 
+    padding: 0 30px; 
+    display: flex;
+     align-items: center; 
+     justify-content: center; 
+     gap: 15px; border-radius: 40px;
+     text-decoration: none; 
+     color: white; 
+    font-size: 23px;
+    font-weight: 600; 
+     transition: 0.3s; 
+     position: relative; 
+     overflow: hidden; } 
+                                                          
+  .btn-icon { 
+    font-size: 27px; 
+} 
+                                                            
+ .secondary-btn { 
+    background: linear-gradient( 135deg, #5d14d6, #9b20ed ); 
+    border: 2px solid #b44cff; 
+    box-shadow: 0 0 15px rgba(168, 53, 255, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.1);
+    } 
+ .secondary-btn:hover { 
+      transform: translateY(-5px); 
+     box-shadow: 0 0 25px #b43aff, 0 8px 20px rgba(0, 0, 0, 0.3);
+     } 
+                                                             
+.primary-btn { 
+    background: linear-gradient( 135deg, #b81aff, #ff36c8, #ff77a8 );
+     border: 2px solid #ff80ed; 
+    box-shadow: 0 0 15px #ff38df, 0 0 30px rgba(255, 35, 211, 0.35);
+} 
+.primary-btn:hover {
+  transform: translateY(-5px) scale(1.02);
+ box-shadow: 0 0 25px #ff38df, 0 0 45px rgba(255, 35, 211, 0.5);
+ } 
+                                                             
+ .main-btn::before { 
+   content: ""; 
+     position: absolute; 
+     top: 0; 
+     left: -100%;
+     width: 50%; 
+    height: 100%; 
+    background: linear-gradient( 90deg, transparent, rgba(255,255,255,0.25), transparent );
+     transform: skewX(-20deg); transition: 0.5s; 
+    }
+ .main-btn:hover::before {
+     left: 130%;
+     } 
+     
+                                                             
+@media (max-width: 1000px) {
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .nav {
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        gap: 5px;
+        padding: 0 3px;
+    }
+
+    .title-logo {
+        font-size: 18px;
+    }
+
+    .register-btn {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .icon-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+    }
+}    
+@media (max-width: 700px) {
+    .navbar {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    .nav {
+        gap: 8px;
+    }
+
+    .nav-link {
+        font-size: 11px;
+        gap: 3px;
+        padding: 0 2px;
+    }
+
+    .title-logo {
+        font-size: 15px;
+    }
+
+    .register-btn {
+        padding: 6px 9px;
+        font-size: 11px;
+    }
+
+    .icon-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+}
+@media (max-width: 500px) {
+
+    .nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav.show {
+        display: flex;
+
+        position: absolute;
+        top: 80px;
+        left: 0;
+
+        width: 100%;
+
+        height: auto;
+
+        flex-direction: column;
+        gap: 15px;
+
+        padding: 20px;
+
+        background: rgba(45, 14, 140, 0.95);
+
+        border: 1px solid #e05cff;
+        border-radius: 25px;
+
+        backdrop-filter: blur(15px);
+    }
+
+    .nav-link {
+        height: auto;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .register-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    }
+
+    .main-btn {
+        width: 90%;
+        min-width: 0;
+        height: 60px;
+        font-size: 20px;
+    }
+}

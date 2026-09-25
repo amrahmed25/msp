@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS | Football Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="nexus-quiz.css">
+</head>
+<body>
+<header class="nexus-top">
+    <a class="brand" href="home.html"><span class="brand-mark">✦</span>NEXUS</a>
+    <div class="player-mini">
+        <img id="topAvatar" src="avatar-1.png.jpg" alt="Avatar">
+        <div><strong id="topPlayer">SHADOW</strong><span>LV. 12</span></div>
+    </div>
+</header>
+
+<div class="layout">
+    <aside class="sidebar">
+        <a class="side-link" href="home.html"><i class="bi bi-house-door"></i>HOME</a>
+        <a class="side-link active" href="football.html"><i class="bi bi-controller"></i>PLAY</a>
+        <a class="side-link" href="leaderboard.html"><i class="bi bi-trophy"></i>LEADERBOARD</a>
+        <a class="side-link" href="portfolio.html"><i class="bi bi-person"></i>PORTFOLIO</a>
+        <a class="side-link" href="settings.html"><i class="bi bi-gear"></i>SETTINGS</a>
+        <div class="side-footer"><span class="spark">✦</span>KNOWLEDGE<br>IS POWER</div>
+    </aside>
+
+    <main class="page-main">
+        <section class="quiz-main">
+            <div class="quiz-topline">
+                <div class="quiz-category"><i class="bi bi-dribbble"></i><span>FOOTBALL</span></div>
+                <div class="question-counter">QUESTION <b id="currentNumber">1</b> / <b id="totalNumber">10</b></div>
+            </div>
+
+            <div class="quiz-columns">
+                <div>
+                    <div class="question-panel">
+                        <div id="questionsContainer">
+                            <section id="easy" class="level-group" data-level="easy">
+<article class="question-card">
+    <div class="question-index">01</div>
+    <h3 dir="rtl">من فاز بكأس العالم FIFA عام 2022؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>فرنسا</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>الأرجنتين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>البرازيل</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>ألمانيا</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">02</div>
+    <h3 dir="rtl">كم لاعبًا يوجد في فريق كرة القدم داخل الملعب في بداية المباراة؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>9</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>10</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>11</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>12</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">03</div>
+    <h3 dir="rtl">ما النادي الذي يُعرف بملعب Anfield؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>أرسنال</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>ليفربول</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>تشيلسي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>مانشستر سيتي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">04</div>
+    <h3 dir="rtl">من اللاعب المعروف بلقب &quot;The Egyptian King&quot;؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>محمد صلاح</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>عمر مرموش</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>محمود حسن تريزيجيه</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>مصطفى محمد</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">05</div>
+    <h3 dir="rtl">أي منتخب فاز بكأس العالم 2018؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>ألمانيا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>إسبانيا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>كرواتيا</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">D</span><span>فرنسا</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">06</div>
+    <h3 dir="rtl">ما النادي الذي يُعرف بلقب &quot;Red Devils&quot;؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>مانشستر يونايتد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>ليفربول</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>أرسنال</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>تشيلسي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">07</div>
+    <h3 dir="rtl">من هو النادي المصري المعروف بلقب &quot;الفارس الأبيض&quot;؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الأهلي</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>الزمالك</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>بيراميدز</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الاتحاد السكندري</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">08</div>
+    <h3 dir="rtl">كم مرة فازت مصر بكأس أمم إفريقيا؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>5</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>6</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>7</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>8</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">09</div>
+    <h3 dir="rtl">من اللاعب المعروف بلقب CR7؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>ليونيل ميسي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>نيمار</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>كريستيانو رونالدو</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>كيليان مبابي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">10</div>
+    <h3 dir="rtl">ما اسم البطولة التي تجمع أفضل أندية أوروبا؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Europa League</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Nations League</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>UEFA Champions League</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Conference League</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">11</div>
+    <h3 dir="rtl">أي منتخب يُلقب بـ&quot;السامبا&quot;؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الأرجنتين</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>البرازيل</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>إسبانيا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>البرتغال</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">12</div>
+    <h3 dir="rtl">من هو أول لاعب عربي يفوز بجائزة أفضل لاعب في أفريقيا من مجلة فرانس فوتبول؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>رياض محرز</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>رابح ماجر</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>محمود الخطيب</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>أشرف حكيمي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">13</div>
+    <h3 dir="rtl">من هو الهداف التاريخي لمنتخب مصر؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>محمد صلاح</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>حسام حسن</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>محمود الخطيب</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>أحمد حسن</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">14</div>
+    <h3 dir="rtl">أي منتخب فاز بأكبر عدد من بطولات كأس العالم؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>ألمانيا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الأرجنتين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>إيطاليا</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">D</span><span>البرازيل</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">15</div>
+    <h3 dir="rtl">في أي نادٍ يقع ملعب Santiago Bernabéu؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Barcelona</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Valencia</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>Real Madrid</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Atlético Madrid</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">16</div>
+    <h3 dir="rtl">ما لون البطاقة التي تعني طرد اللاعب؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>زرقاء</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>صفراء</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>حمراء</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>خضراء</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">17</div>
+    <h3 dir="rtl">من فاز ببطولة UEFA Euro 2024؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>إنجلترا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>فرنسا</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>إسبانيا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>ألمانيا</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">18</div>
+    <h3 dir="rtl">ما الدولة التي استضافت كأس العالم 2022؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الإمارات</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>قطر</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>السعودية</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>روسيا</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">19</div>
+    <h3 dir="rtl">ما اسم اللاعب الذي اشتهر بلقب &quot;The Flea&quot;؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>كريستيانو رونالدو</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>ليونيل ميسي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>دييغو مارادونا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>رونالدينيو</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">20</div>
+    <h3 dir="rtl">أي منتخب فاز بكأس العالم 2014؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>البرازيل</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>ألمانيا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>إسبانيا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الأرجنتين</span></button>
+    </div>
+</article>
+</section>
+
+<section id="medium" class="level-group" data-level="medium">
+<article class="question-card">
+    <div class="question-index">01</div>
+    <h3 dir="rtl">من هو أول منتخب إفريقي شارك في كأس العالم؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>مصر</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الكاميرون</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>نيجيريا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>المغرب</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">02</div>
+    <h3 dir="rtl">في أي عام فازت مصر بأول بطولة لكأس أمم إفريقيا؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>1954</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>1957</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>1960</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>1963</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">03</div>
+    <h3 dir="rtl">أي منتخب إفريقي وصل إلى نصف نهائي كأس العالم 2022؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>مصر</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>السنغال</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>المغرب</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>نيجيريا</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">04</div>
+    <h3 dir="rtl">كم مرة فاز الزمالك بدوري أبطال إفريقيا؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>3</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>4</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>5</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>6</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">05</div>
+    <h3 dir="rtl">من هو النادي الذي فاز بدوري أبطال أوروبا 2005 بعد العودة الشهيرة أمام ميلان؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>برشلونة</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>ليفربول</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>مانشستر يونايتد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>بايرن ميونيخ</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">06</div>
+    <h3 dir="rtl">من هو أول لاعب مصري يسجل في كأس العالم؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>مجدي عبدالغني</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>حسام حسن</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>محمد صلاح</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">D</span><span>عبد الرحمن فوزي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">07</div>
+    <h3 dir="rtl">من هو النادي الذي فاز بدوري أبطال إفريقيا 2016؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الأهلي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الزمالك</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>ماميلودي صنداونز</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الترجي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">08</div>
+    <h3 dir="rtl">أي منتخب إفريقي فاز بكأس أمم إفريقيا 2021؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>مصر</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>السنغال</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الجزائر</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الكاميرون</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">09</div>
+    <h3 dir="rtl">أي منتخب فاز بكأس أمم إفريقيا ثلاث مرات متتالية بين 2006 و2010؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الكاميرون</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>مصر</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>نيجيريا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>ساحل العاج</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">10</div>
+    <h3 dir="rtl">من سجل الهدف الأول للأهلي في نهائي دوري أبطال إفريقيا 2012 أمام الترجي؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>محمد أبو تريكة</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>وليد سليمان</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>محمد ناجي جدو</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>عماد متعب</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">11</div>
+    <h3 dir="rtl">من هو المنتخب الذي فاز بكأس أمم إفريقيا 2019؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>السنغال</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>الجزائر</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>مصر</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>تونس</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">12</div>
+    <h3 dir="rtl">أي لاعب فاز بالكرة الذهبية عام 2007؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>كاكا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>كريستيانو رونالدو</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>ليونيل ميسي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>رونالدينيو</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">13</div>
+    <h3 dir="rtl">من هو النادي الذي فاز بدوري أبطال أوروبا موسم 2018–2019؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>توتنهام هوتسبير</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>ليفربول</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>مانشستر سيتي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>برشلونة</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">14</div>
+    <h3 dir="rtl">من سجل هدف مصر الوحيد في نهائي كأس أمم إفريقيا 2008 أمام الكاميرون؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>محمد زيدان</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>محمد أبو تريكة</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>عمرو زكي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>حسام حسن</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">15</div>
+    <h3 dir="rtl">أي فريق فاز بالدوري الإنجليزي موسم 2015–2016 في واحدة من أكبر مفاجآت تاريخ البطولة؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>أرسنال</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>تشيلسي</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>ليستر سيتي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>توتنهام هوتسبير</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">16</div>
+    <h3 dir="rtl">أي نادٍ مصري فاز بالدوري المصري موسم 2001–2002؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الأهلي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الزمالك</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>الإسماعيلي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>المصري</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">17</div>
+    <h3 dir="rtl">من هو اللاعب الذي سجل هدف فوز إسبانيا في نهائي كأس العالم 2010؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>تشافي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>دافيد فيا</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>أندريس إنييستا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>فرناندو توريس</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">18</div>
+    <h3 dir="rtl">من هو أول نادٍ إنجليزي يفوز بكأس أوروبا؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>ليفربول</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>مانشستر يونايتد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>تشيلسي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>نوتنغهام فورست</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">19</div>
+    <h3 dir="rtl">من هو اللاعب الذي سجل هدف الفوز لمانشستر يونايتد في نهائي دوري أبطال أوروبا 1999؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>ديفيد بيكهام</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>رايان جيجز</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>تيدي شيرينغهام</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">D</span><span>أولي جونار سولشاير</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">20</div>
+    <h3 dir="rtl">أي نادٍ فاز بالدوري الإسباني موسم 2013–2014؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>برشلونة</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>ريال مدريد</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>أتلتيكو مدريد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>فالنسيا</span></button>
+    </div>
+</article>
+</section>
+
+<section id="hard" class="level-group" data-level="hard">
+<article class="question-card">
+    <div class="question-index">01</div>
+    <h3 dir="rtl">من هو المنتخب الذي فاز بأول نسخة من كأس العالم عام 1930؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الأرجنتين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>البرازيل</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>الأوروغواي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>إيطاليا</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">02</div>
+    <h3 dir="rtl">من هو المدرب الذي فاز بدوري أبطال أوروبا مع برشلونة عامي 2009 و2011؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>بيب غوارديولا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>لويس إنريكي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>فرانك ريكارد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>يوهان كرويف</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">03</div>
+    <h3 dir="rtl">من هو اللاعب الذي سجل هدف الفوز في نهائي دوري أبطال أوروبا 1999 لصالح مانشستر يونايتد؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>تيدي شيرينغهام</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>أولي غونار سولشاير</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>ديفيد بيكهام</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>رايان غيغز</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">04</div>
+    <h3 dir="rtl">أي منتخب فاز بكأس العالم 1970 بعد أن أصبح أول منتخب يحقق ثلاثة ألقاب في البطولة؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>إيطاليا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>ألمانيا الغربية</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>البرازيل</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الأرجنتين</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">05</div>
+    <h3 dir="rtl">من هو المدرب الذي قاد ريال مدريد للفوز بدوري أبطال أوروبا ثلاث مرات متتالية بين 2016 و2018؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>كارلو أنشيلوتي</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>زين الدين زيدان</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>جوزيه مورينيو</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>بيب غوارديولا</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">06</div>
+    <h3 dir="rtl">في أي عام حقق الزمالك أول لقب له في دوري أبطال إفريقيا؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>1982</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>1984</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>1986</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>1987</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">07</div>
+    <h3 dir="rtl">كم هدفًا سجل محمود الخطيب في نهائي دوري أبطال إفريقيا 1982 ذهابًا وإيابًا؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>هدف واحد</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>هدفان</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>3 أهداف</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>4 أهداف</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">08</div>
+    <h3 dir="rtl">أي فريق مصري حقق أول لقب إفريقي للأندية في تاريخ مصر عام 1969؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الأهلي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الزمالك</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>الإسماعيلي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>المصري</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">09</div>
+    <h3 dir="rtl">في نهائي دوري أبطال إفريقيا 1982، من كان منافس الأهلي؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الترجي</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>أسانتي كوتوكو</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>تي بي مازيمبي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>كانون ياوندي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">10</div>
+    <h3 dir="rtl">من هو أول لاعب يسجل في خمس نسخ مختلفة من كأس العالم؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>ليونيل ميسي</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>كريستيانو رونالدو</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>ميروسلاف كلوزه</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>بيليه</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">11</div>
+    <h3 dir="rtl">أي منتخب فاز بكأس العالم مرتين متتاليتين عامي 1934 و1938؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>البرازيل</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>إيطاليا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>ألمانيا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الأوروغواي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">12</div>
+    <h3 dir="rtl">من هو أول لاعب عربي يسجل في نهائي دوري أبطال أوروبا؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>محمد صلاح</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>رابح ماجر</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>رياض محرز</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>أشرف حكيمي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">13</div>
+    <h3 dir="rtl">أي نادٍ فاز بدوري أبطال أوروبا 2004 في واحدة من أكبر مفاجآت البطولة؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>بورتو</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>موناكو</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>فالنسيا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>ديبورتيفو لاكورونيا</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">14</div>
+    <h3 dir="rtl">من هو المدرب الذي قاد مصر للفوز بكأس أمم إفريقيا ثلاث مرات متتالية من 2006 إلى 2010؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>حسن شحاتة</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>محمود الجوهري</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>هيكتور كوبر</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>كارلوس كيروش</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">15</div>
+    <h3 dir="rtl">أي منتخب خسر نهائي كأس العالم 1954 أمام ألمانيا الغربية رغم تقدمه في بداية المباراة؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>المجر</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>البرازيل</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الأرجنتين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>هولندا</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">16</div>
+    <h3 dir="rtl">من هو النادي المصري الذي وصل إلى نهائي دوري أبطال إفريقيا 2022 وخسره أمام الوداد البيضاوي؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>الأهلي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الزمالك</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>بيراميدز</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الإسماعيلي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">17</div>
+    <h3 dir="rtl">أي فريق خسر نهائي دوري أبطال أوروبا 1999 أمام مانشستر يونايتد بعد هدفين في الوقت بدل الضائع؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>يوفنتوس</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>بايرن ميونيخ</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>ريال مدريد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>فالنسيا</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">18</div>
+    <h3 dir="rtl">من هو اللاعب الذي سجل أسرع هدف في تاريخ نهائيات كأس العالم؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>محمد صلاح</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>هاكان شوكور</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>رونالدو</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>ميروسلاف كلوزه</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">19</div>
+    <h3 dir="rtl">من هو أول لاعب أفريقي يفوز بجائزة الكرة الذهبية؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>روجيه ميلا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>ديدييه دروغبا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>صامويل إيتو</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">D</span><span>جورج وياه</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">20</div>
+    <h3 dir="rtl">من هو أول حارس مرمى يفوز بجائزة الكرة الذهبية؟</h3>
+    <div class="answers-grid">
+        <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>إيكر كاسياس</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>ليف ياشين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>جانلويجي بوفون</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>مانويل نوير</span></button>
+    </div>
+</article>
+</section>
+                        </div>
+                    </div>
+
+                    <div class="quiz-controls">
+                        <button id="previous" class="quiz-btn" type="button"><i class="bi bi-arrow-left"></i> &nbsp; PREVIOUS</button>
+                        <button id="next" class="quiz-btn primary" type="button">NEXT &nbsp; <i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="quiz-note">SELECT AN ANSWER THEN CONTINUE TO THE NEXT QUESTION</div>
+                </div>
+
+                <aside class="stats-panel">
+                    <div class="timer"><strong id="timer">20</strong><span>sec</span></div>
+                    <div class="stat-block">
+                        <div class="stat-label">PROGRESS</div>
+                        <div class="progress-row">
+                            <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+                            <div id="progressText" class="progress-number">1 / 10</div>
+                        </div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-label">SCORE</div>
+                        <div class="score-value"><i class="bi bi-star-fill"></i><span id="score">0</span></div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="quiz.js"></script>
+</body>
+</html>

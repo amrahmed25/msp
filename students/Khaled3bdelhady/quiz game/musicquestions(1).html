@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS | Music Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="nexus-quiz.css">
+</head>
+<body class="music-page">
+<header class="nexus-top">
+    <a class="brand" href="home.html"><span class="brand-mark">✦</span>NEXUS</a>
+    <div class="player-mini">
+        <img id="topAvatar" src="avatar-1.png.jpg" alt="Avatar">
+        <div><strong id="topPlayer">SHADOW</strong><span>LV. 12</span></div>
+    </div>
+</header>
+<div class="layout">
+    <aside class="sidebar">
+        <a class="side-link" href="home.html"><i class="bi bi-house-door"></i>HOME</a>
+        <a class="side-link active" href="music.html"><i class="bi bi-controller"></i>PLAY</a>
+        <a class="side-link" href="leaderboard.html"><i class="bi bi-trophy"></i>LEADERBOARD</a>
+        <a class="side-link" href="portfolio.html"><i class="bi bi-person"></i>PORTFOLIO</a>
+        <a class="side-link" href="settings.html"><i class="bi bi-gear"></i>SETTINGS</a>
+        <div class="side-footer"><span class="spark">✦</span>KNOWLEDGE<br>IS POWER</div>
+    </aside>
+    <main class="page-main">
+        <section class="quiz-main">
+            <div class="quiz-topline">
+                <div class="quiz-category"><i class="bi bi-music-note-beamed"></i><span>MUSIC</span></div>
+                <div class="question-counter">QUESTION <b id="currentNumber">1</b> / <b id="totalNumber">10</b></div>
+            </div>
+            <div class="quiz-columns">
+                <div>
+                    <div class="question-panel">
+                        <div id="questionsContainer">
+<section id="easy" class="level-group" data-level="easy">
+<article class="question-card">
+    <div class="question-index">01</div>
+    <h3 dir="rtl">أغنية سواح من أشهر أغاني مين</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>عبد الحليم حافظ</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>فريد الأطرش</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>محمد عبد الوهاب</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>وديع الصافي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">02</div>
+    <h3 dir="rtl">مين صاحب أغنية حلوة يا بلدي</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>داليدا</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>وردة</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>صباح</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>نجاة الصغيرة</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">03</div>
+    <h3 dir="rtl">مين غنّى 3 دقات مع أبو</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>يسرا</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>شيرين</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>أصالة</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>أنغام</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">04</div>
+    <h3 dir="rtl">أغنية بشرة خير غناها مين</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>حسين الجسمي</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>محمد منير</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>عمرو دياب</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>تامر عاشور</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">05</div>
+    <h3 dir="rtl">مين غنّى أغنية تملي معاك</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>عمرو دياب</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>تامر حسني</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>محمد حماقي</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>وائل كفوري</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">06</div>
+    <h3 dir="rtl">أغنية سيرة الحب من أشهر أغاني مين</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>أم كلثوم</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>وردة</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>فيروز</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>نجاة الصغيرة</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">07</div>
+    <h3 dir="rtl">مين صاحب أغنية يا أنا يا لأ</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>عمرو دياب</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>تامر حسني</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>محمد حماقي</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>وائل جسار</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">08</div>
+    <h3 dir="rtl">أغنية بنت السلطان غناها مين</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>أحمد عدوية</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>حسن الأسمر</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>شعبان عبد الرحيم</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>حكيم</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">09</div>
+    <h3 dir="rtl">مين صاحب أغنية مشاعر</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>شيرين عبد الوهاب</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>أنغام</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>أصالة</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>إليسا</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">10</div>
+    <h3 dir="rtl">مين غنّت آه ونص</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>إليسا</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>نانسي عجرم</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>هيفاء وهبي</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>نوال الزغبي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">11</div>
+    <h3 dir="rtl">مين غنّت Umbrella</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Rihanna</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Katy Perry</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Lady Gaga</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Beyoncé</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">12</div>
+    <h3 dir="rtl">أغنية Like a Rolling Stone مرتبطة بأي فنان</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Bob Dylan</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>John Lennon</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Bruce Springsteen</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Elton John</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">13</div>
+    <h3 dir="rtl">أغنية We Will Rock You من أشهر أغاني أي فرقة</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Queen</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>ABBA</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Metallica</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>The Rolling Stones</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">14</div>
+    <h3 dir="rtl">مين غنّت Shake It Off</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Katy Perry</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Taylor Swift</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Selena Gomez</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Ariana Grande</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">15</div>
+    <h3 dir="rtl">مين غنّى Shape of You</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Ed Sheeran</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Justin Bieber</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Bruno Mars</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Shawn Mendes</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">16</div>
+    <h3 dir="rtl">أغنية Billie Jean من أشهر أغاني مين</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Prince</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Michael Jackson</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Stevie Wonder</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Lionel Richie</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">17</div>
+    <h3 dir="rtl">مين غنّت Rolling in the Deep</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Adele</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Rihanna</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Beyoncé</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Taylor Swift</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">18</div>
+    <h3 dir="rtl">أغنية Bad Guy غنتها مين</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Dua Lipa</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Billie Eilish</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Ariana Grande</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Olivia Rodrigo</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">19</div>
+    <h3 dir="rtl">مين صاحب أغنية Blinding Lights</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>The Weeknd</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Drake</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Post Malone</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Bruno Mars</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">20</div>
+    <h3 dir="rtl">مين غنّى أغنية Shape of My Heart</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Sting</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Phil Collins</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>George Michael</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Elton John</span></button>
+    </div>
+</article>
+</section>
+
+<section id="medium" class="level-group" data-level="medium">
+<article class="question-card">
+    <div class="question-index">01</div>
+    <h3 dir="rtl">أغنية الأماكن اشتهرت بصوت مين</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>راشد الماجد</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>محمد عبده</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>ماجد المهندس</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>عبد المجيد عبد الله</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">02</div>
+    <h3 dir="rtl">أي فنان اشتهر بلقب العندليب الأسمر</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>فريد الأطرش</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>عبد الحليم حافظ</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>محمد عبد الوهاب</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>محرم فؤاد</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">03</div>
+    <h3 dir="rtl">مين غنّى ألبوم أحلى وأحلى</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>تامر حسني</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>عمرو دياب</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>محمد حماقي</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>رامي صبري</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">04</div>
+    <h3 dir="rtl">أغنية سيرة الحب من ألحان مين</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>بليغ حمدي</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>محمد عبد الوهاب</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>رياض السنباطي</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>سيد مكاوي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">05</div>
+    <h3 dir="rtl">مين غنّى أغنية عبد القادر مع الشاب خالد</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>كاظم الساهر</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>رشيد طه</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الشاب مامي</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>حسين الجسمي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">06</div>
+    <h3 dir="rtl">أغنية Hallelujah كتبها وغناها في الأصل مين</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Leonard Cohen</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Bob Dylan</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Elton John</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Billy Joel</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">07</div>
+    <h3 dir="rtl">مين غنّى What's Going On</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Marvin Gaye</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Stevie Wonder</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Ray Charles</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Otis Redding</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">08</div>
+    <h3 dir="rtl">مين لحّن أغنية قارئة الفنجان لعبد الحليم حافظ</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>محمد عبد الوهاب</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>بليغ حمدي</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>محمد الموجي</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>كمال الطويل</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">09</div>
+    <h3 dir="rtl">مين غنّت ألبوم أسعد واحدة</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>إليسا</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>نانسي عجرم</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>شيرين</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>أنغام</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">10</div>
+    <h3 dir="rtl">مين صاحب أغنية أنا وليلى</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>كاظم الساهر</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>ماجد المهندس</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>وائل كفوري</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>راغب علامة</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">11</div>
+    <h3 dir="rtl">مين غنّى Purple Rain</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>David Bowie</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Prince</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Michael Jackson</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>George Michael</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">12</div>
+    <h3 dir="rtl">مين غنّت Toxic</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Christina Aguilera</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Britney Spears</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Avril Lavigne</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Gwen Stefani</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">13</div>
+    <h3 dir="rtl">أغنية Seven Nation Army من أشهر أغاني مين</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>The White Stripes</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>The Strokes</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Arctic Monkeys</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>The Killers</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">14</div>
+    <h3 dir="rtl">مين أصدر ألبوم Random Access Memories</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Daft Punk</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>The Chemical Brothers</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Gorillaz</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Justice</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">15</div>
+    <h3 dir="rtl">أغنية Sweet Child o' Mine من أشهر أغاني مين</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Guns N' Roses</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Aerosmith</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Bon Jovi</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Def Leppard</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">16</div>
+    <h3 dir="rtl">أغنية Lose Yourself مرتبطة بأي فنان</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Jay-Z</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Eminem</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>50 Cent</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Dr. Dre</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">17</div>
+    <h3 dir="rtl">أي ألبوم يحتوي على أغنية Billie Jean</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Bad</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Thriller</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Off the Wall</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Dangerous</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">18</div>
+    <h3 dir="rtl">مين كتب وغنّى Imagine</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Paul McCartney</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>John Lennon</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>George Harrison</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Elton John</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">19</div>
+    <h3 dir="rtl">من يُعرف بلقب ملك البوب</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Michael Jackson</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Elvis Presley</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Bruno Mars</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Justin Bieber</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">20</div>
+    <h3 dir="rtl">أي فنان اشتهر بأغنية Careless Whisper</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>George Michael</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Phil Collins</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Sting</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Elton John</span></button>
+    </div>
+</article>
+</section>
+
+<section id="hard" class="level-group" data-level="hard">
+<article class="question-card">
+    <div class="question-index">01</div>
+    <h3 dir="rtl">أي فنان اشتهر بأغنية Space Oddity</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>David Bowie</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Elton John</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Prince</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Freddie Mercury</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">02</div>
+    <h3 dir="rtl">أي مغنية أصدرت ألبوم Back to Black</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Amy Winehouse</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Adele</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Norah Jones</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Lana Del Rey</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">03</div>
+    <h3 dir="rtl">من كان المغني الرئيسي لفرقة The Rolling Stones</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Mick Jagger</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Keith Richards</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Eric Clapton</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Sting</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">04</div>
+    <h3 dir="rtl">أي فرقة أصدرت ألبوم Nevermind عام 1991</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Nirvana</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Metallica</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Pearl Jam</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Soundgarden</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">05</div>
+    <h3 dir="rtl">من هو مؤلف السيمفونية التاسعة الشهيرة رغم فقدانه السمع بشكل كبير في أواخر حياته</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Mozart</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Beethoven</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Bach</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Chopin</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">06</div>
+    <h3 dir="rtl">ما اسم الفرقة التي اشتهرت بألبوم The Dark Side of the Moon</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Pink Floyd</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Led Zeppelin</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Queen</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>The Rolling Stones</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">07</div>
+    <h3 dir="rtl">من كان المغني الرئيسي في فرقة Nirvana</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Chris Cornell</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Kurt Cobain</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Eddie Vedder</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Dave Grohl</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">08</div>
+    <h3 dir="rtl">أي فنان أصدر ألبوم The Marshall Mathers LP</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Eminem</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>50 Cent</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Jay-Z</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Kanye West</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">09</div>
+    <h3 dir="rtl">من كتب أغنية Nothing Else Matters مع James Hetfield</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Lars Ulrich</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Kirk Hammett</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>James Hetfield نفسه شارك في كتابتها</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Robert Trujillo</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">10</div>
+    <h3 dir="rtl">أي ألبوم لمايكل جاكسون يُعد من أكثر الألبومات مبيعًا في تاريخ الموسيقى</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Bad</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Thriller</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Dangerous</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Invincible</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">11</div>
+    <h3 dir="rtl">من هو مؤسس فرقة المصريين الموسيقية</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>هاني شنودة</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>عمر خيرت</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>حميد الشاعري</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>يحيى خليل</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">12</div>
+    <h3 dir="rtl">أي فنانة مصرية اشتهرت بلقب صوت مصر</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>أنغام</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>شيرين عبد الوهاب</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>آمال ماهر</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>أصالة</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">13</div>
+    <h3 dir="rtl">من هو الفنان المصري الذي اشتهر بلقب الملك</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>محمد منير</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>عمرو دياب</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>علي الحجار</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>هاني شاكر</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">14</div>
+    <h3 dir="rtl">من لُقبت بكوكب الشرق</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>وردة</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>فيروز</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>أم كلثوم</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>نجاة الصغيرة</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">15</div>
+    <h3 dir="rtl">من هو أول مطرب عربي أقام حفلًا في قاعة ألبرت هول الشهيرة في لندن</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>عبد الحليم حافظ</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>فريد الأطرش</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>محمد عبد الوهاب</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>وديع الصافي</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">16</div>
+    <h3 dir="rtl">من هو عازف الجيتار الرئيسي في فرقة Dire Straits</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>Mark Knopfler</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>Sting</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Eric Clapton</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Joe Satriani</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">17</div>
+    <h3 dir="rtl">من هو الفنان المعروف بلقب The King of Rock and Roll</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Chuck Berry</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Elvis Presley</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Little Richard</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>Jerry Lee Lewis</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">18</div>
+    <h3 dir="rtl">أي مطرب كان عضوًا سابقًا في فرقة المصريين قبل أن يبدأ مسيرته المنفردة</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>علاء عبد الخالق</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>محمد منير</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>إيمان البحر درويش</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>مدحت صالح</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">19</div>
+    <h3 dir="rtl">من هو مؤلف موسيقى رأفت الهجان الشهيرة</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>عمار الشريعي</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>عمر خيرت</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>راجح داود</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>ياسر عبد الرحمن</span></button>
+    </div>
+</article>
+<article class="question-card">
+    <div class="question-index">20</div>
+    <h3 dir="rtl">أي فرقة أصدرت ألبوم Led Zeppelin IV</h3>
+    <div class="answers-grid">
+<button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>Deep Purple</span></button>
+<button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>Led Zeppelin</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>Black Sabbath</span></button>
+<button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>AC/DC</span></button>
+    </div>
+</article>
+</section>
+
+                        </div>
+                    </div>
+                    <div class="quiz-controls">
+                        <button id="previous" class="quiz-btn"><i class="bi bi-arrow-left"></i> &nbsp; PREVIOUS</button>
+                        <button id="next" class="quiz-btn primary">NEXT &nbsp; <i class="bi bi-arrow-right"></i></button>
+                    </div>
+                </div>
+                <aside class="stats-panel">
+                    <div class="timer"><strong id="timer">20</strong><span>SEC</span></div>
+                    <div class="stat-block">
+                        <div class="stat-label">PROGRESS</div>
+                        <div class="progress-row">
+                            <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+                            <div id="progressText" class="progress-number">1 / 10</div>
+                        </div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-label">SCORE</div>
+                        <div class="score-value"><i class="bi bi-star-fill"></i><span id="score">0</span></div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="quiz.js"></script>
+</body>
+</html>

@@ -3158,6 +3158,7 @@ var difficulty = document.getElementById("difficulty");
 var startBtn = document.getElementById("start-btn");
 var nextBtn = document.getElementById("next-btn");
 
+var quizCategory = document.getElementById("quiz-category");
 var questionText = document.getElementById("question-text");
 var answers = document.getElementById("answers");
 var feedback = document.getElementById("feedback");
@@ -3454,6 +3455,16 @@ if (localStorage.getItem("theme") === "dark") {
 startBtn.addEventListener("click", function () {
 
     initAudio();
+
+    var selectedCard = document.querySelector(".category-card.selected");
+
+    if (selectedCard) {
+    var nameEl = selectedCard.querySelector(
+        currentLanguage === "ar" ? ".category-ar" : ".category-en"
+    );
+
+    quizCategory.textContent = nameEl ? nameEl.textContent : "";
+}
 
     var allQuestions =
         quizData[currentLanguage][selectedCategory];

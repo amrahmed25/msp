@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXUS | General Knowledge Quiz</title>
+<link rel="stylesheet" href="nexus-quiz.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="general-page">
+
+<header class="nexus-top">
+  <div class="brand"><span class="brand-mark">✦</span>NEXUS</div>
+  <div class="player-mini">
+    <img id="topAvatar" src="avatar-1.png.jpg" alt="Avatar">
+    <div><strong id="topName">SHADOW</strong><span>LV. 12</span></div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <a class="side-link" href="home.html"><i class="bi bi-house"></i>HOME</a>
+    <a class="side-link active" href="#"><i class="bi bi-controller"></i>PLAY</a>
+    <a class="side-link" href="leaderboard.html"><i class="bi bi-trophy"></i>LEADERBOARD</a>
+    <a class="side-link" href="feedback.html"><i class="bi bi-person"></i>PORTFOLIO</a>
+    <a class="side-link" href="settings.html"><i class="bi bi-gear"></i>SETTINGS</a>
+    <div class="side-footer"><span class="spark">✦</span>KNOWLEDGE<br>IS POWER</div>
+  </aside>
+
+  <main class="page-main">
+    <div class="quiz-main">
+      <div class="quiz-topline">
+        <div class="quiz-category"><i class="bi bi-lightbulb"></i><span>GENERAL KNOWLEDGE</span></div>
+        <div class="question-counter">QUESTION <b id="currentNumber">1</b> / <b id="totalNumber">10</b></div>
+      </div>
+
+      <div class="quiz-columns">
+        <section class="question-panel">
+          <div id="easy" class="level-group">
+        <div class="question-card" data-index="1">
+            <div class="question-index">01</div>
+            <h3 dir="rtl">ما هي عاصمة مصر؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>القاهرة</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الإسكندرية</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الأقصر</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>أسوان</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="2">
+            <div class="question-index">02</div>
+            <h3 dir="rtl">كم عدد قارات العالم؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>5</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>6</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>7</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>8</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="3">
+            <div class="question-index">03</div>
+            <h3 dir="rtl">ما هو أكبر كوكب في المجموعة الشمسية؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الأرض</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>المشتري</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>زحل</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>المريخ</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="4">
+            <div class="question-index">04</div>
+            <h3 dir="rtl">ما هو الحيوان المعروف بأنه ملك الغابة؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>النمر</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الفيل</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>الأسد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الذئب</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="5">
+            <div class="question-index">05</div>
+            <h3 dir="rtl">كم عدد أيام الأسبوع؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>5</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>6</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>7</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>8</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="6">
+            <div class="question-index">06</div>
+            <h3 dir="rtl">ما هو الكوكب المعروف بالكوكب الأحمر؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الزهرة</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>المريخ</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>عطارد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>نبتون</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="7">
+            <div class="question-index">07</div>
+            <h3 dir="rtl">ما هي اللغة الرسمية في البرازيل؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الإسبانية</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>البرتغالية</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الإنجليزية</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الفرنسية</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="8">
+            <div class="question-index">08</div>
+            <h3 dir="rtl">ما هو أكبر محيط على الأرض؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الأطلسي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الهندي</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>الهادئ</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>المتجمد الشمالي</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="9">
+            <div class="question-index">09</div>
+            <h3 dir="rtl">كم عدد أضلاع المثلث؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>2</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>3</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>4</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>5</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="10">
+            <div class="question-index">10</div>
+            <h3 dir="rtl">من رسم لوحة الموناليزا؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>فان جوخ</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>بابلو بيكاسو</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>ليوناردو دافنشي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>مونيه</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="11">
+            <div class="question-index">11</div>
+            <h3 dir="rtl">ما هو أسرع حيوان بري؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>الفهد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الأسد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الحصان</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الغزال</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="12">
+            <div class="question-index">12</div>
+            <h3 dir="rtl">ما هي عاصمة فرنسا؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>روما</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>مدريد</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>باريس</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>برلين</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="13">
+            <div class="question-index">13</div>
+            <h3 dir="rtl">أي كوكب أقرب إلى الشمس؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الأرض</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>عطارد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الزهرة</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>المريخ</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="14">
+            <div class="question-index">14</div>
+            <h3 dir="rtl">كم عدد أشهر السنة؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>10</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>11</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>12</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>13</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="15">
+            <div class="question-index">15</div>
+            <h3 dir="rtl">ما هو الغاز الذي نتنفسه بشكل أساسي للبقاء على قيد الحياة؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>الأكسجين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الهيدروجين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الهيليوم</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>النيتروجين</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="16">
+            <div class="question-index">16</div>
+            <h3 dir="rtl">ما هي عاصمة اليابان؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>كيوتو</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>أوساكا</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>طوكيو</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>هيروشيما</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="17">
+            <div class="question-index">17</div>
+            <h3 dir="rtl">كم عدد ألوان قوس قزح التقليدية؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>5</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>6</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>7</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>8</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="18">
+            <div class="question-index">18</div>
+            <h3 dir="rtl">ما هو أكبر حيوان على وجه الأرض؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الفيل الأفريقي</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>الحوت الأزرق</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الزرافة</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الحوت القاتل</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="19">
+            <div class="question-index">19</div>
+            <h3 dir="rtl">ما هي العملة الرسمية للولايات المتحدة؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>اليورو</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>الدولار</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الجنيه</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الين</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="20">
+            <div class="question-index">20</div>
+            <h3 dir="rtl">أي عضو في جسم الإنسان يضخ الدم؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الرئة</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الكبد</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>القلب</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>المعدة</span></button>
+            </div>
+        </div></div>
+          <div id="medium" class="level-group">
+        <div class="question-card" data-index="1">
+            <div class="question-index">01</div>
+            <h3 dir="rtl">ما هو أعلى جبل في العالم فوق مستوى سطح البحر؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>K2</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>إيفرست</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>كليمنجارو</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>مون بلان</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="2">
+            <div class="question-index">02</div>
+            <h3 dir="rtl">في أي قارة تقع دولة الأرجنتين؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>أوروبا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>آسيا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>أفريقيا</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">D</span><span>أمريكا الجنوبية</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="3">
+            <div class="question-index">03</div>
+            <h3 dir="rtl">ما هو العنصر الكيميائي الذي رمزه Fe؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الفضة</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>الحديد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الذهب</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>النحاس</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="4">
+            <div class="question-index">04</div>
+            <h3 dir="rtl">من كتب مسرحية روميو وجولييت؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>تشارلز ديكنز</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>وليام شكسبير</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>مارك توين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>جورج أورويل</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="5">
+            <div class="question-index">05</div>
+            <h3 dir="rtl">ما هو أطول نهر في قارة أفريقيا؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الكونغو</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>النيل</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>النيجر</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الزامبيزي</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="6">
+            <div class="question-index">06</div>
+            <h3 dir="rtl">أي دولة تُعرف بأرض الشمس المشرقة؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الصين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>كوريا الجنوبية</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>اليابان</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>تايلاند</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="7">
+            <div class="question-index">07</div>
+            <h3 dir="rtl">ما هو الكوكب الذي يمتلك حلقات واضحة ومشهورة؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>المريخ</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>زحل</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>عطارد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الزهرة</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="8">
+            <div class="question-index">08</div>
+            <h3 dir="rtl">من هو أول إنسان سار على سطح القمر؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>يوري جاجارين</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>نيل أرمسترونغ</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>باز ألدرين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>جون غلين</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="9">
+            <div class="question-index">09</div>
+            <h3 dir="rtl">ما هو العنصر الذي رمزه Au؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الفضة</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>الذهب</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الألومنيوم</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الأرجون</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="10">
+            <div class="question-index">10</div>
+            <h3 dir="rtl">ما هي عاصمة أستراليا؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>سيدني</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>ملبورن</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>كانبرا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>بيرث</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="11">
+            <div class="question-index">11</div>
+            <h3 dir="rtl">كم عدد الكواكب في المجموعة الشمسية؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>7</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>8</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>9</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>10</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="12">
+            <div class="question-index">12</div>
+            <h3 dir="rtl">ما هو أكبر محيط في العالم؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الأطلسي</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>الهادئ</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الهندي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>المتجمد الجنوبي</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="13">
+            <div class="question-index">13</div>
+            <h3 dir="rtl">أي حضارة بنت مدينة ماتشو بيتشو؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الرومان</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>المايا</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>الإنكا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الفراعنة</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="14">
+            <div class="question-index">14</div>
+            <h3 dir="rtl">ما هو العضو المسؤول بشكل أساسي عن تنقية الدم وإنتاج البول؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>القلب</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>الكلى</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الرئتان</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>المعدة</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="15">
+            <div class="question-index">15</div>
+            <h3 dir="rtl">من صاحب نظرية النسبية؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>إسحاق نيوتن</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>ألبرت أينشتاين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>غاليليو</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>نيكولا تسلا</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="16">
+            <div class="question-index">16</div>
+            <h3 dir="rtl">ما هو البحر الذي يفصل بين أوروبا وأفريقيا؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>البحر الأحمر</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>البحر المتوسط</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>بحر العرب</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>بحر الشمال</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="17">
+            <div class="question-index">17</div>
+            <h3 dir="rtl">أي دولة فازت بأول بطولة لكأس العالم لكرة القدم عام 1930؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>البرازيل</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الأرجنتين</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>الأوروغواي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>إيطاليا</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="18">
+            <div class="question-index">18</div>
+            <h3 dir="rtl">ما هو المعدن السائل في درجة حرارة الغرفة؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الحديد</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>الزئبق</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الألومنيوم</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الفضة</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="19">
+            <div class="question-index">19</div>
+            <h3 dir="rtl">كم عدد العظام تقريبًا في جسم الإنسان البالغ؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>106</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>206</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>306</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>406</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="20">
+            <div class="question-index">20</div>
+            <h3 dir="rtl">ما هي عاصمة كندا؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>تورونتو</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>فانكوفر</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>مونتريال</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">D</span><span>أوتاوا</span></button>
+            </div>
+        </div></div>
+          <div id="hard" class="level-group">
+        <div class="question-card" data-index="1">
+            <div class="question-index">01</div>
+            <h3 dir="rtl">ما هو أعمق محيط معروف على سطح الأرض؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الأطلسي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الهندي</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>الهادئ</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>المتجمد الشمالي</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="2">
+            <div class="question-index">02</div>
+            <h3 dir="rtl">ما هو العنصر الكيميائي الذي يحمل العدد الذري 79؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الفضة</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>الذهب</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>البلاتين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>النحاس</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="3">
+            <div class="question-index">03</div>
+            <h3 dir="rtl">من هو العالم الذي وضع قوانين الحركة الثلاثة؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>إسحاق نيوتن</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>ألبرت أينشتاين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>يوهانس كبلر</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>جيمس وات</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="4">
+            <div class="question-index">04</div>
+            <h3 dir="rtl">ما اسم المضيق الذي يفصل بين آسيا وأمريكا الشمالية؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>مضيق جبل طارق</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>مضيق بيرينغ</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>مضيق هرمز</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>مضيق ملقا</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="5">
+            <div class="question-index">05</div>
+            <h3 dir="rtl">أي حضارة ارتبطت بالكتابة المسمارية في بلاد الرافدين؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الرومانية</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>السومرية</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>الإغريقية</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>المايا</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="6">
+            <div class="question-index">06</div>
+            <h3 dir="rtl">ما هو أكبر قمر لكوكب زحل؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>أوروبا</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>تيتان</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>جانيميد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>تريتون</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="7">
+            <div class="question-index">07</div>
+            <h3 dir="rtl">من كتب رواية 1984؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>جورج أورويل</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>ألدوس هكسلي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>إرنست همنغواي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>فرانز كافكا</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="8">
+            <div class="question-index">08</div>
+            <h3 dir="rtl">ما هو اسم العملية التي تتحول فيها المادة من الحالة الصلبة إلى الغازية مباشرة؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>التكاثف</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>التسامي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>التجمد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>التبخر</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="9">
+            <div class="question-index">09</div>
+            <h3 dir="rtl">أي دولة تُعد موطنًا تاريخيًا لمدينة البتراء؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>مصر</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>الأردن</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>سوريا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>لبنان</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="10">
+            <div class="question-index">10</div>
+            <h3 dir="rtl">ما هو أصغر عظم في جسم الإنسان؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>عظم الفخذ</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>عظم الركاب</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>عظم العضد</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>عظم الكعبرة</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="11">
+            <div class="question-index">11</div>
+            <h3 dir="rtl">أي عالم اقترح نظرية التطور بالانتخاب الطبيعي؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>داروين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>مندل</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>باستور</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>بوهر</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="12">
+            <div class="question-index">12</div>
+            <h3 dir="rtl">ما اسم أكبر صحراء حارة في العالم؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>جوبي</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>الصحراء الكبرى</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>كالاهاري</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>أتاكاما</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="13">
+            <div class="question-index">13</div>
+            <h3 dir="rtl">أي كوكب يدور حول نفسه في اتجاه معاكس لمعظم كواكب المجموعة الشمسية؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>المريخ</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>الزهرة</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>المشتري</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>نبتون</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="14">
+            <div class="question-index">14</div>
+            <h3 dir="rtl">ما هي أقدم جامعة ما زالت تعمل باستمرار وفق موسوعة غينيس؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>جامعة أكسفورد</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>جامعة القرويين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>جامعة بولونيا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>جامعة السوربون</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="15">
+            <div class="question-index">15</div>
+            <h3 dir="rtl">من هو مؤلف كتاب الأمير؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>دانتي</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>نيكولو مكيافيلي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>سقراط</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>أفلاطون</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="16">
+            <div class="question-index">16</div>
+            <h3 dir="rtl">ما هو العنصر الأكثر وفرة في الكون من حيث الكتلة؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الأكسجين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الكربون</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>الهيدروجين</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الحديد</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="17">
+            <div class="question-index">17</div>
+            <h3 dir="rtl">أي إمبراطورية شيدت شبكة طرق واسعة عبر أمريكا الجنوبية؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">A</span><span>الإنكا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>الرومان</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>العثمانيون</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>الفايكنغ</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="18">
+            <div class="question-index">18</div>
+            <h3 dir="rtl">ما اسم أكبر صحراء في العالم إذا شملت الصحارى القطبية؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>الصحراء الكبرى</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>صحراء جوبي</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>صحراء القطب الجنوبي</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>أتاكاما</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="19">
+            <div class="question-index">19</div>
+            <h3 dir="rtl">ما هو أقرب نجم إلى الأرض بعد الشمس؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>سيريوس</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">B</span><span>بروكسيما قنطورس</span></button><button type="button" class="quiz-answer"><span class="answer-letter">C</span><span>فيغا</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>النسر الواقع</span></button>
+            </div>
+        </div>
+
+        <div class="question-card" data-index="20">
+            <div class="question-index">20</div>
+            <h3 dir="rtl">أي مدينة كانت عاصمة الإمبراطورية البيزنطية؟</h3>
+            <div class="answers-grid">
+                <button type="button" class="quiz-answer"><span class="answer-letter">A</span><span>روما</span></button><button type="button" class="quiz-answer"><span class="answer-letter">B</span><span>أثينا</span></button><button type="button" class="quiz-answer" data-correct="true"><span class="answer-letter">C</span><span>القسطنطينية</span></button><button type="button" class="quiz-answer"><span class="answer-letter">D</span><span>أنطاكية</span></button>
+            </div>
+        </div></div>
+
+          <div class="quiz-controls">
+            <button id="previous" class="quiz-btn" type="button">← PREVIOUS</button>
+            <button id="next" class="quiz-btn primary" type="button">NEXT →</button>
+          </div>
+        </section>
+
+        <aside class="stats-panel">
+          <div class="timer">
+            <strong id="timer">20</strong><span>SEC</span>
+          </div>
+          <div class="stat-block">
+            <div class="stat-label">PROGRESS</div>
+            <div class="progress-row">
+              <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+              <div id="progressText" class="progress-number">1 / 10</div>
+            </div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-label">SCORE</div>
+            <div class="score-value"><i class="bi bi-star-fill"></i><span id="score">0</span></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="quiz.js"></script>
+</body>
+</html>
