@@ -176,7 +176,11 @@ h1 span{color:#ff3154;text-shadow:0 0 24px rgba(255,49,84,.35)}
 .undo:disabled{opacity:.45}
 .restart{background:linear-gradient(90deg,rgba(255,49,84,.18),rgba(155,77,255,.12))}
 .board-area{display:flex;flex-direction:column;align-items:center}
-.board{
+.board {
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
   width:min(500px,58vh,68vw);aspect-ratio:1;padding:11px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
   border:1px solid rgba(255,49,84,.28);border-radius:20px;
   background:rgba(12,13,25,.86);

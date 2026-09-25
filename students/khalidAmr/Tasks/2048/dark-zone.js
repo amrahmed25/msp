@@ -224,6 +224,41 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") skipIntro();
 });
 
+
+// ===== MOBILE SWIPE / TOUCH CONTROLS =====
+let touchStart = null;
+
+boardEl.addEventListener("pointerdown", (e) => {
+    if (!started || gameOver) return;
+
+    touchStart = {
+        x: e.clientX,
+        y: e.clientY
+    };
+});
+
+window.addEventListener("pointerup", (e) => {
+    if (!touchStart || !started || gameOver) return;
+
+    const dx = e.clientX - touchStart.x;
+    const dy = e.clientY - touchStart.y;
+
+    touchStart = null;
+
+    // تجاهل الضغطة العادية
+    if (Math.max(Math.abs(dx), Math.abs(dy)) < 24) return;
+
+    // يمين / شمال
+    if (Math.abs(dx) > Math.abs(dy)) {
+        move(dx > 0 ? "right" : "left");
+    }
+
+    // فوق / تحت
+    else {
+        move(dy > 0 ? "down" : "up");
+    }
+});
+
 function emptyBoard() {
   return Array.from({ length: SIZE }, () => Array(SIZE).fill(null));
 }

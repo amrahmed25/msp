@@ -440,6 +440,57 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
+
+const classicBoard = document.getElementById("board");
+
+let touchStart = null;
+
+classicBoard.addEventListener("pointerdown", function (event) {
+    if (!gameActive) return;
+
+    touchStart = {
+        x: event.clientX,
+        y: event.clientY
+    };
+});
+
+window.addEventListener("pointerup", function (event) {
+    if (!touchStart || !gameActive) return;
+
+    const dx = event.clientX - touchStart.x;
+    const dy = event.clientY - touchStart.y;
+
+    touchStart = null;
+
+    if (Math.max(Math.abs(dx), Math.abs(dy)) < 24) return;
+
+    if (Math.abs(dx) > Math.abs(dy)) {
+        handleMove(dx > 0 ? "right" : "left");
+    }
+
+    else {
+        handleMove(dy > 0 ? "down" : "up");
+    }
+});
+
+
+
+window.addEventListener("pointerup", function (event) {
+    if (!touchActive) return;
+    touchActive = false;
+
+    let dx = event.clientX - touchStartX;
+    let dy = event.clientY - touchStartY;
+
+    if (Math.max(Math.abs(dx), Math.abs(dy)) < 24) return;
+
+    if (Math.abs(dx) > Math.abs(dy)) {
+        handleMove(dx > 0 ? "right" : "left");
+    } else {
+        handleMove(dy > 0 ? "down" : "up");
+    }
+});
+
 newGameButton.addEventListener("click", newGame);
 undoButton.addEventListener("click", undo);
 overlayUndoButton.addEventListener("click", undo);

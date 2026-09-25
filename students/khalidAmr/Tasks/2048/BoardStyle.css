@@ -221,6 +221,10 @@ body {
 }
 
 .board {
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
     position: relative;
     background: var(--panel);
     border: 1px solid var(--border);
