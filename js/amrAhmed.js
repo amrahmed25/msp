@@ -5,11 +5,19 @@ const amrAhmed={
     tasksPath: "./students/amr ahmed/Tasks/",
     assignments: [
       {
+        title: "2048 Game",
+        folder: "./students/amr ahmed/Tasks/2048 Game/",
+        preview: "./students/amr ahmed/Tasks/2048 Game/background.jpeg",
+        description: "An interactive 2048 web game featuring user authentication, score tracking, game statistics, and a competitive leaderboard.Built with JavaScript, Tailwind CSS, and Supabase, with a responsive design for a smooth gaming experience across devices.",
+        technologies: ["HTML", "CSS", "JavaScript","Supabase","Tailwind CSS"],
+        github: "https://github.com/amrahmed25/msp/tree/main/students/amr%20ahmed/Tasks/2048 Game"
+      },
+      {
         title: "A&M Quiz",
         folder: "./students/amr ahmed/Tasks/quiz2/",
         preview: "./students/amr ahmed/Tasks/gamesStation/images/nostalgia.png",
         description: "An interactive quiz platform where users can test their knowledge across different topics, answer engaging questions, and get instant results. The website is fully responsive and designed for a smooth and enjoyable experience on all devices.",
-        technologies: ["HTML", "CSS", "JavaScript"],
+        technologies: ["HTML", "CSS", "JavaScript","Supabase","Tailwind CSS"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/amr%20ahmed/Tasks/quiz2"
       },
        {
@@ -17,7 +25,7 @@ const amrAhmed={
         folder: "./students/amr ahmed/Tasks/xo game/",
         preview: "./students/amr ahmed/Tasks/xo game/xxxxx.png.png",
         description: "A responsive XO (Tic-Tac-Toe) game with both online multiplayer and offline gameplay, built with HTML, CSS, JavaScript, and Supabase.Features a clean, interactive UI with real-time game synchronization, winner/draw detection, rematch functionality, and full mobile & desktop responsiveness.",
-        technologies: ["HTML", "CSS", "JavaScript"],
+        technologies: ["HTML", "CSS", "JavaScript","Supabase","Tailwind CSS"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/amr%20ahmed/Tasks/xo game"
       },
       {
@@ -25,7 +33,7 @@ const amrAhmed={
         folder: "./students/amr ahmed/Tasks/gamesStation/",
         preview: "./students/amr ahmed/Tasks/gamesStation/images/nostalgia.png",
         description: "Step back into the world of classic gaming with Nostalgia. Discover timeless games, revisit unforgettable memories, and enjoy the games that made every moment special.",
-        technologies: ["HTML", "CSS", "JavaScript"],
+        technologies: ["HTML", "CSS", "JavaScript","Supabase","Tailwind CSS"],
         github: "https://github.com/amrahmed25/msp/tree/main/students/amr%20ahmed/Tasks/gamesStation"
       },
       {
