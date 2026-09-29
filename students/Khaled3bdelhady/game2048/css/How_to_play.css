@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Poppins", sans-serif;
+
+    min-height: 100vh;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(140, 60, 255, 0.55),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(240, 70, 255, 0.45),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(90, 50, 230, 0.5),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #22096a,
+            #35109a 45%,
+            #180b5c
+        );
+
+    overflow-x: hidden;
+}
+.background-glow {
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    opacity: 0.45;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.glow-1 {
+    background: #a855f7;
+
+    top: 10%;
+    left: -150px;
+}
+
+.glow-2 {
+    background: #ec4899;
+
+    top: 40%;
+    right: -150px;
+}
+
+.glow-3 {
+    background: #6366f1;
+
+    bottom: -150px;
+    left: 40%;
+}
+.how-to-play-container {
+
+    width: min(1100px, 92%);
+
+    margin: 0 auto;
+
+    padding: 35px 0 70px;
+}
+.intro-section {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.intro-section h1 {
+
+    font-size: clamp(30px, 4vw, 46px);
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.4);
+}
+
+.intro-section h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #d69cff,
+            #ff67dd,
+            #b985ff
+        );
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-section p {
+
+    color: #eee7ff;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+.action-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 25px 0 45px;
+}
+
+.btn-game {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    min-width: 145px;
+
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+.btn-back {
+
+    color: #eee7ff;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(10px);
+}
+
+.btn-back:hover {
+
+    color: white;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    transform: translateY(-3px);
+}
+.btn-play {
+
+    color: white;
+
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9146ff,
+            #e04cff
+        );
+
+    box-shadow:
+        0 8px 25px rgba(187, 65, 255, 0.4);
+}
+
+.btn-play:hover {
+
+    color: white;
+
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 12px 35px rgba(218, 69, 255, 0.65);
+}
+.game-modes {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+
+    align-items: start;
+}
+.mode-card {
+
+    position: relative;
+
+    padding: 0;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(135, 65, 225, 0.6),
+            rgba(40, 19, 90, 0.8)
+        );
+
+    border: 1px solid rgba(211, 139, 255, 0.5);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(164, 76, 255, 0.2);
+
+    overflow: hidden;
+
+    transition: 0.4s ease;
+}
+
+.mode-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: rgba(237, 137, 255, 0.8);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4),
+        0 0 35px rgba(202, 83, 255, 0.45);
+}
+.mode-image-wrapper {
+
+    width: 100%;
+
+    padding: 10px;
+
+    background:
+        rgba(20, 8, 62, 0.25);
+}
+
+.mode-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    border-radius: 14px;
+
+    object-fit: contain;
+
+    transition: 0.4s ease;
+}
+
+.mode-card:hover .mode-image {
+
+    transform: scale(1.015);
+}
+footer {
+
+    width: min(1100px, 92%);
+
+    margin: auto;
+
+    padding: 25px 0;
+
+    text-align: center;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    color: #aaa0c5;
+
+    font-size: 12px;
+}
+
+.footer-logo {
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.footer-logo span {
+
+    color: #d66cff;
+}
+
+

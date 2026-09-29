@@ -1,0 +1,646 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+   font-family: "Fredoka", Arial, sans-serif;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+        background:
+        linear-gradient(
+            135deg,
+            rgba(28, 8, 95, 0.5),
+            rgba(80, 14, 130, 0.45)
+        ),
+        url("../images/background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: white;
+}
+
+.game-page {
+
+    min-height: 100vh;
+
+    padding: 60px 20px 80px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+}
+
+
+.game-container {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    position: relative;
+}
+
+
+.game-header {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 35px;
+}
+
+
+.score-card {
+
+    width: 190px;
+
+    min-height: 88px;
+
+    padding: 12px 18px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(140, 70, 255, 0.8),
+            rgba(63, 17, 160, 0.7)
+        );
+
+    border: 1px solid rgba(224, 135, 255, 0.8);
+
+    box-shadow:
+
+        0 0 12px rgba(193, 76, 255, 0.5),
+
+        inset 0 0 15px rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(12px);
+}
+
+.score-title {
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: #f1cfff;
+}
+
+
+.score-number {
+
+    font-size: 28px;
+
+    font-weight: 900;
+
+    line-height: 1.2;
+
+    color: white;
+
+    text-shadow:
+
+        0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+
+.next-wrapper {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.next-card {
+
+    width: 82px;
+
+    height: 105px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #7e42db,
+            #4c16a6
+        );
+
+    border: 1px solid #c96dff;
+
+    box-shadow:
+
+        0 0 15px rgba(207, 85, 255, 0.7),
+
+        inset 0 0 15px rgba(255, 255, 255, 0.12);
+}
+
+
+
+.next-label {
+
+    margin-top: 6px;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: #d69aff;
+
+    text-shadow:
+
+        0 0 7px rgba(219, 103, 255, 0.5);
+}
+
+
+
+.game-board {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    padding: 15px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    grid-template-rows:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    border-radius: 27px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(100, 36, 190, 0.95),
+            rgba(48, 11, 105, 0.95)
+        );
+
+    border: 2px solid rgba(207, 116, 255, 0.8);
+
+    box-shadow:
+
+        0 0 20px rgba(191, 66, 255, 0.55),
+
+        0 0 50px rgba(108, 25, 200, 0.3),
+
+        inset 0 0 25px rgba(255,255,255,0.08);
+}
+
+
+.game-tile {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    border: 2px solid rgba(255,255,255,0.18);
+
+    box-shadow:
+
+        0 5px 10px rgba(0,0,0,0.25),
+
+        inset 0 0 12px rgba(255,255,255,0.2);
+
+    transition:
+
+        transform 0.2s ease,
+
+        box-shadow 0.2s ease;
+}
+
+
+
+/* ---------- Tile palette: glossy candy colours (same family as the Numbers card art) ---------- */
+.game-tile[class*="pie-"] {
+    background: linear-gradient(160deg, var(--c1), var(--c2));
+    border-color: color-mix(in srgb, var(--c1) 65%, #fff);
+    box-shadow:
+        0 4px 0 color-mix(in srgb, var(--c2) 65%, #000),
+        0 0 16px var(--glow),
+        inset 0 0 14px rgba(255, 255, 255, 0.28);
+}
+
+/* glossy sheen on the top half of every tile */
+.game-tile[class*="pie-"]::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 52% 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    pointer-events: none;
+}
+
+.game-tile > .tile-num,
+.game-tile > img,
+.game-tile > .tile-emoji { position: relative; z-index: 1; }
+
+.pie-2    { --c1: #7cc0ff; --c2: #2f62f5; --glow: rgba(70, 130, 255, 0.65); }
+.pie-4    { --c1: #ffe36b; --c2: #ffab18; --glow: rgba(255, 190, 40, 0.65); }
+.pie-8    { --c1: #ffa552; --c2: #ff6420; --glow: rgba(255, 120, 40, 0.65); }
+.pie-16   { --c1: #ff6f84; --c2: #e5203f; --glow: rgba(255, 50, 90, 0.65); }
+.pie-32   { --c1: #ff86ec; --c2: #d51db3; --glow: rgba(255, 70, 220, 0.7); }
+.pie-64   { --c1: #c894ff; --c2: #7a2ce6; --glow: rgba(160, 80, 255, 0.7); }
+.pie-128  { --c1: #6af2ff; --c2: #139bdc; --glow: rgba(40, 210, 255, 0.7); }
+.pie-256  { --c1: #86ffa8; --c2: #12b85d; --glow: rgba(40, 230, 120, 0.7); }
+.pie-512  { --c1: #8f9cff; --c2: #3a3ee0; --glow: rgba(90, 100, 255, 0.75); }
+.pie-1024 { --c1: #ffe14d; --c2: #ff8f00; --glow: rgba(255, 190, 0, 0.85); }
+.pie-2048 {
+    --c1: #ff5ff0; --c2: #7a3cff; --glow: rgba(255, 80, 240, 0.95);
+    border-color: #fff;
+    box-shadow:
+        0 4px 0 #4a1fb0,
+        0 0 26px rgba(255, 80, 240, 0.95),
+        0 0 48px rgba(90, 200, 255, 0.55),
+        inset 0 0 18px rgba(255, 255, 255, 0.4);
+}
+
+/* Fruits mode: softer tile colour so the fruit art stands out */
+.mode-fruits .game-tile[class*="pie-"] {
+    background: linear-gradient(160deg,
+        color-mix(in srgb, var(--c1) 35%, #fff),
+        color-mix(in srgb, var(--c2) 45%, #fff));
+}
+
+@media (max-width: 700px) {
+
+    .game-page {
+
+        padding: 30px 15px 50px;
+    }
+
+
+    .game-header {
+
+        gap: 8px;
+    }
+
+
+    .score-card {
+
+        width: 125px;
+
+        min-height: 70px;
+
+        border-radius: 15px;
+    }
+
+
+    .score-title {
+
+        font-size: 11px;
+    }
+
+
+    .score-number {
+
+        font-size: 20px;
+    }
+
+
+    .next-card {
+
+        width: 62px;
+
+        height: 80px;
+    }
+
+
+    .next-image {
+
+        width: 55px;
+
+        height: 55px;
+    }
+
+
+    .next-label {
+
+        font-size: 11px;
+    }
+
+
+    .game-board {
+
+        padding: 9px;
+
+        gap: 7px;
+
+        border-radius: 20px;
+    }
+
+
+    .game-tile {
+
+        border-radius: 11px;
+    }
+
+
+    
+
+}
+
+/* =========================================================
+   Added for the playable game (js/game.js)
+   ========================================================= */
+
+/* ---------- Top bar ---------- */
+.game-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.mode-title {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff, #ed42e5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.top-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.top-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #a735ff;
+    background: rgba(45, 5, 110, 0.8);
+    color: #fff;
+    font-size: 19px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.top-btn:hover {
+    transform: scale(1.08);
+    background: #6817b5;
+    box-shadow: 0 0 15px #d137ff;
+}
+
+.top-btn:focus-visible { outline: 3px solid #ffd0f8; outline-offset: 2px; }
+
+/* ---------- Board with sliding tiles ---------- */
+.game-board {
+    --gap: 12px;
+    --pad: 15px;
+    position: relative;
+    gap: var(--gap);
+    padding: var(--pad);
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.board-cell {
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.28);
+}
+
+.tile-layer {
+    position: absolute;
+    inset: var(--pad);
+    pointer-events: none;
+}
+
+.tile-layer .tile {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc((100% - 3 * var(--gap)) / 4);
+    height: calc((100% - 3 * var(--gap)) / 4);
+    container-type: size;
+    transform: translate(calc(var(--x) * (100% + var(--gap))), calc(var(--y) * (100% + var(--gap))));
+    transition: transform 0.115s ease-in-out;
+}
+
+.tile-layer .game-tile,
+.next-tile .game-tile,
+.chip .game-tile {
+    width: 100%;
+    height: 100%;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* number sizes are relative to the tile size (container units) */
+.tile-num { line-height: 1; }
+.tile-num.d1, .tile-num.d2 { font-size: 40cqw; }
+.tile-num.d3 { font-size: 33cqw; }
+.tile-num.d4 { font-size: 27cqw; }
+.tile-num.d5 { font-size: 22cqw; }
+
+.game-tile img {
+    width: 88%;
+    height: 88%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.tile-emoji { font-size: 56cqw; line-height: 1; }
+
+.tile-badge {
+    position: absolute;
+    right: 8%;
+    bottom: 4%;
+    font-size: 17cqw;
+    line-height: 1;
+    font-weight: 700;
+    opacity: 0.85;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.game-tile.spawn { animation: tileSpawn 0.2s ease-out 0.1s backwards; }
+.game-tile.merged { animation: tileMerge 0.22s ease-out; }
+
+@keyframes tileSpawn {
+    from { transform: scale(0.2); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes tileMerge {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.22); filter: brightness(1.25); }
+    100% { transform: scale(1); }
+}
+
+/* ---------- NEXT card / score pop ---------- */
+.next-tile {
+    width: 58px;
+    height: 58px;
+    container-type: size;
+}
+
+.score-card { position: relative; }
+
+.score-add {
+    position: absolute;
+    top: 6px;
+    right: 14px;
+    font-weight: 800;
+    font-size: 16px;
+    color: #ffd8fb;
+    text-shadow: 0 0 8px #ff54ea;
+    pointer-events: none;
+    animation: scoreUp 0.7s ease-out forwards;
+}
+
+@keyframes scoreUp {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-26px); opacity: 0; }
+}
+
+/* ---------- Goal text + merge chain ---------- */
+.game-goal {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #eadcff;
+}
+
+.chain {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 14px;
+}
+
+.chip {
+    width: clamp(30px, 8.4vw, 42px);
+    height: clamp(30px, 8.4vw, 42px);
+    container-type: size;
+}
+
+.chip .game-tile { border-radius: 10px; border-width: 1px; }
+.chip .tile-badge { display: none; }
+
+@media (max-width: 700px) {
+    .game-board { --gap: 7px; --pad: 9px; }
+    .board-cell { border-radius: 11px; }
+    .mode-title { font-size: 24px; }
+    .top-btn { width: 40px; height: 40px; font-size: 17px; }
+    .next-tile { width: 46px; height: 46px; }
+}
+
+/* ---------- Fit the board inside short screens ---------- */
+.game-container { max-width: min(600px, max(320px, calc(100vh - 330px))); }
+.game-header .score-card { flex: 1; width: auto; max-width: 190px; }
+.game-header { gap: 12px; }
+
+
+/* =========================================================
+   Vibrant palette for board / cards (brighter, like the art)
+   ========================================================= */
+.score-card {
+    background: linear-gradient(145deg, #b06bff, #6a2df0);
+    border: 2px solid #ff9cf6;
+    box-shadow: 0 0 18px rgba(255, 110, 245, 0.65), inset 0 0 16px rgba(255, 255, 255, 0.2);
+}
+.score-title { color: #ffe3ff; }
+.score-number { text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 2px 0 rgba(60, 10, 140, 0.6); }
+
+.next-card {
+    background: linear-gradient(145deg, #c07bff, #7a30f2);
+    border: 2px solid #ff9cf6;
+    box-shadow: 0 0 20px rgba(255, 110, 245, 0.75), inset 0 0 16px rgba(255, 255, 255, 0.22);
+}
+.next-label { color: #ffb8fa; text-shadow: 0 0 9px rgba(255, 90, 240, 0.8); }
+
+.game-board {
+    background: linear-gradient(145deg, #8b45ff, #4f1ccc);
+    border: 2px solid #ff8cf5;
+    box-shadow:
+        0 0 26px rgba(255, 90, 240, 0.6),
+        0 0 60px rgba(120, 60, 255, 0.45),
+        inset 0 0 26px rgba(255, 255, 255, 0.14);
+}
+.board-cell {
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: inset 0 2px 8px rgba(40, 0, 110, 0.4);
+}
+
+.top-btn {
+    background: linear-gradient(145deg, #9a4dff, #5c22d8);
+    border-color: #ff9cf6;
+}
+.game-goal { color: #fff0ff; }
+
+.tile-badge { z-index: 2; }

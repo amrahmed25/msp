@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHIFT — Leaderboard</title>
+<link rel="stylesheet" href="leaderboard.css">
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<div class="lb-page">
+  <header class="topbar">
+    <a class="brand" href="home.html" aria-label="SHIFT Home">
+      <span class="brand-grid"><i></i><i></i><i></i><i></i></span>
+      <span><strong>SHIFT</strong><small>2048 PUZZLE GAME</small></span>
+    </a>
+    <nav class="top-nav">
+      <a href="home.html"><svg viewBox="0 0 24 24"><path d="M3.5 10.8 12 3.8l8.5 7v8.7a1 1 0 0 1-1 1h-5v-5.2h-5V20h-5a1 1 0 0 1-1-1v-8.2Z"/></svg><span>HOME</span></a>
+      <a href="board.html"><svg viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></svg><span>PLAY</span></a>
+      <a href="feedback.html"><svg viewBox="0 0 24 24"><path d="M5 5.5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-4.5 3v-3H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg><span>FEEDBACK</span></a>
+      <a class="lb-nav-active" href="leaderboard.html"><svg viewBox="0 0 24 24"><path d="M8 4h8v6.5c0 2.7-1.8 4.5-4 4.5s-4-1.8-4-4.5V4Z"/><path d="M8 7H4.5v2c0 2.4 1.4 4 3.8 4.2M16 7h3.5v2c0 2.4-1.4 4-3.8 4.2M12 15v4M8.5 20h7"/></svg><span>LEADERBOARD</span></a>
+    </nav>
+    <div class="profile">
+      <a class="top-icon help-control" href="help.html" aria-label="Help"><span>?</span></a>
+      <a class="top-icon" href="settings.html" aria-label="Settings"><svg viewBox="0 0 24 24"><path d="M12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z"/><path d="m19.4 15 .1.1 1.4 1.1-1.7 2.9-1.7-.7a7.6 7.6 0 0 1-1.6.9l-.3 1.8h-3.4l-.3-1.8a7.6 7.6 0 0 1-1.6-.9l-1.7.7-1.7-2.9 1.4-1.1.1-.1a7.3 7.3 0 0 1 0-2l-.1-.1-1.4-1.1 1.7-2.9 1.7.7a7.6 7.6 0 0 1 1.6-.9l.3-1.8h3.4l.3 1.8a7.6 7.6 0 0 1 1.6.9l1.7-.7 1.7 2.9-1.4 1.1-.1.1a7.3 7.3 0 0 1 0 2Z"/></svg></a>
+      <button class="top-icon sound-control" id="soundBtn" aria-label="Turn sound off" title="Sound on">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 10v4h4l5 4V6l-5 4H4Z"/>
+          <path class="wave wave-1" d="M16 9.2c.8.8 1.2 1.8 1.2 2.8s-.4 2-1.2 2.8"/>
+          <path class="wave wave-2" d="M18.7 6.8A7.3 7.3 0 0 1 21 12a7.3 7.3 0 0 1-2.3 5.2"/>
+        </svg>
+      </button>
+      <span class="profile-separator"></span>
+      <button class="avatar-btn" id="profileBtn"><span class="avatar">S</span><span class="profile-name">SHADOW</span><span class="chevron">⌄</span></button>
+    </div>
+  </header>
+
+  <main class="lb-layout">
+
+    <div class="lb-hero">
+      <div class="lb-hero-icon">♛</div>
+      <div class="lb-hero-copy">
+        <p class="eyebrow">HALL OF SHIFT</p>
+        <h1>LEADERBOARD</h1>
+        <p>Every run you finish on this device is ranked here, best score first.</p>
+      </div>
+      <a class="play-btn" href="board.html"><span>PLAY NOW</span><b>→</b></a>
+    </div>
+
+    <section class="lb-stats">
+      <div class="lb-stat"><span class="lb-stat-icon">♛</span><div><small>BEST SCORE</small><strong id="sumBest">0</strong></div></div>
+      <div class="lb-divider"></div>
+      <div class="lb-stat"><span class="lb-stat-icon">✦</span><div><small>HIGHEST TILE</small><strong id="sumTile">—</strong></div></div>
+      <div class="lb-divider"></div>
+      <div class="lb-stat"><span class="lb-stat-icon">⌁</span><div><small>GAMES PLAYED</small><strong id="sumGames">0</strong></div></div>
+      <div class="lb-divider"></div>
+      <div class="lb-stat"><span class="lb-stat-icon fire">♨</span><div><small>WIN STREAK</small><strong id="sumStreak">0</strong></div></div>
+      <div class="lb-divider"></div>
+      <div class="lb-stat"><span class="lb-stat-icon">★</span><div><small>BEST STREAK</small><strong id="sumBestStreak">0</strong></div></div>
+    </section>
+
+    <section class="lb-board">
+      <div class="lb-board-head">
+        <div class="lb-board-heading">
+          <p class="eyebrow">RANKED BY SCORE</p>
+          <h2>Your Runs</h2>
+        </div>
+        <div class="lb-controls">
+          <div class="lb-tabs" id="lbTabs">
+            <button type="button" class="lb-tab sel" data-filter="all">ALL RUNS</button>
+            <button type="button" class="lb-tab" data-filter="won">WINS ONLY</button>
+          </div>
+          <button type="button" class="lb-clear" id="lbClear">CLEAR</button>
+        </div>
+      </div>
+
+      <div class="lb-table" id="lbTable">
+        <div class="lb-row lb-row-head">
+          <span>RANK</span><span>SCORE</span><span>TILE</span><span>MOVES</span><span>MODE</span><span>RESULT</span><span>DATE</span>
+        </div>
+        <div id="lbRows"></div>
+      </div>
+
+      <div class="lb-empty" id="lbEmpty">
+        <div class="lb-empty-icon">✦</div>
+        <h3>NO RUNS YET</h3>
+        <p>Finish a game and your score will show up here.</p>
+        <a class="play-btn" href="board.html"><span>PLAY NOW</span><b>→</b></a>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="foot">
+  <footer><span>SMALL MOVES. BIG NUMBERS.</span><span>SHIFT © 2026</span></footer>
+
+  </div>
+
+</div>
+<div class="toast" id="toast">Cleared</div>
+<script src="theme.js"></script>
+<script src="music.js?v=2"></script>
+<script src="leaderboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHIFT — Time Attack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="time-attack.css">
+</head>
+<body>
+
+<section class="intro" id="intro">
+  <div class="intro-grid"></div>
+  <div class="bolt-layer" id="boltLayer"></div>
+  <div class="intro-title" id="introTitle">
+    <div class="intro-kicker">SPEED PROTOCOL</div>
+    <div class="intro-bolt">◷</div>
+    <div class="intro-rush">TIME ATTACK</div>
+    <div class="intro-sub">CHOOSE YOUR TIME. BEAT THE CLOCK.</div>
+  </div>
+  <button class="skip" id="skip" type="button">SKIP <span>ESC</span></button>
+</section>
+
+<main class="game" id="game">
+  <div class="ambient"></div>
+
+  <header class="topbar">
+    <a class="back" href="home.html">← HOME</a>
+
+    <div class="brand">
+      <strong>SHIFT</strong>
+      <span>TIME ATTACK</span>
+    </div>
+
+    <button class="sound" id="soundBtn" type="button" aria-label="Toggle sound">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 10v4h4l5 4V6l-5 4H4Z"></path>
+        <path class="wave w1" d="M16 9.5c1.2 1.2 1.2 3.8 0 5"></path>
+        <path class="wave w2" d="M18.5 7c2.5 2.7 2.5 7.3 0 10"></path>
+        <path class="mute-line" d="M16 7l6 10"></path>
+      </svg>
+    </button>
+  </header>
+
+  <section class="time-select" id="timeSelect">
+    <p class="eyebrow">SPECIAL MODE / BEAT THE CLOCK</p>
+    <h1>TIME <span>ATTACK</span></h1>
+    <p class="sub">Pick your round length, then survive until the clock hits zero.</p>
+
+    <div class="time-options">
+      <button class="time-option" data-time="45" type="button">
+        <strong>45</strong><span>SECONDS</span>
+      </button>
+      <button class="time-option active" data-time="60" type="button">
+        <strong>60</strong><span>SECONDS</span>
+      </button>
+    </div>
+
+    <button class="start-time" id="startTime" type="button">START ATTACK →</button>
+  </section>
+
+  <section class="attack-game" id="attackGame">
+    <section class="hud">
+      <div>
+        <p class="eyebrow">SPECIAL MODE / BEAT THE CLOCK</p>
+        <h1>TIME <span>ATTACK</span></h1>
+        <p class="sub">Move fast. Chain merges. Every second matters.</p>
+      </div>
+
+      <div class="stats">
+        <div><small>SCORE</small><strong id="score">0</strong></div>
+        <div><small>BEST</small><strong id="best">0</strong></div>
+        <div><small>MOVES</small><strong id="moveCount">0</strong></div>
+      </div>
+    </section>
+
+    <section class="game-wrap">
+      <div class="side-panel">
+        <div class="status-card">
+          <span class="pulse"></span>
+          <div>
+            <small>ATTACK STATUS</small>
+            <strong id="status">READY</strong>
+          </div>
+        </div>
+
+        <div class="meter-card">
+          <div class="meter-row"><small>TIME</small><b id="sideTime">60s</b></div>
+          <div class="meter-row"><small>MODE</small><b>TIME ATTACK</b></div>
+        </div>
+
+        <div class="objective">
+          <small>OBJECTIVE</small>
+          <h3>OUTRUN THE <b>CLOCK</b></h3>
+          <p>Make as many merges and score as many points as possible before your selected time reaches zero. The final ten seconds enter danger mode with a loud tick-tock countdown.</p>
+        </div>
+
+        <button class="restart" id="restartBtn" type="button">RESTART RUN</button>
+      </div>
+
+      <div class="board-area">
+        <div class="countdown" aria-live="polite">
+          <span id="timeLeft">60</span>
+          <small>SECONDS LEFT</small>
+        </div>
+
+        <div class="board-frame">
+          <div class="board" id="board" aria-label="2048 board"></div>
+
+          <div class="overlay" id="overlay">
+            <div class="overlay-card">
+              <p class="eyebrow">TIME ATTACK COMPLETE</p>
+              <h2>TIME'S UP</h2>
+              <p id="overlayText">The clock has stopped.</p>
+
+              <div class="overlay-stats">
+                <div><span id="finalScore">0</span><p>SCORE</p></div>
+                <div><span id="finalTile">0</span><p>TOP TILE</p></div>
+                <div><span id="finalMoves">0</span><p>MOVES</p></div>
+              </div>
+
+              <div class="overlay-buttons">
+                <button id="overlayRestart" type="button">PLAY AGAIN</button>
+                <a href="leaderboard.html">LEADERBOARD</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timer" aria-label="Time Attack timer">
+          <div class="timer-bar" id="timerBar"></div>
+        </div>
+
+        <p class="controls">ARROWS / <b>W A S D</b> / SWIPE · MERGE · SCORE · SURVIVE</p>
+      </div>
+    </section>
+  </section>
+</main>
+
+<script src="theme.js"></script>
+<script src="music.js?v=2"></script>
+<script src="time-attack.js"></script>
+</body>
+</html>

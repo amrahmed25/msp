@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHIFT — Home</title>
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<main class="home">
+
+  <header class="topbar">
+    <a class="brand" href="home.html">
+      <span class="brand-grid"><i></i><i></i><i></i><i></i></span>
+      <span><strong>SHIFT</strong><small>2048 PUZZLE GAME</small></span>
+    </a>
+
+    <nav class="top-nav">
+      <a class="active" href="home.html">
+        <svg viewBox="0 0 24 24"><path d="M3.5 10.8 12 3.8l8.5 7v8.7a1 1 0 0 1-1 1h-5v-5.2h-5V20h-5a1 1 0 0 1-1-1v-8.2Z"/></svg>
+        <span>HOME</span>
+      </a>
+      <a href="board.html">
+        <svg viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></svg>
+        <span>PLAY</span>
+      </a>
+      <a href="feedback.html">
+        <svg viewBox="0 0 24 24"><path d="M5 5.5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-4.5 3v-3H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg>
+        <span>FEEDBACK</span>
+      </a>
+      <a href="leaderboard.html">
+        <svg viewBox="0 0 24 24"><path d="M8 4h8v6.5c0 2.7-1.8 4.5-4 4.5s-4-1.8-4-4.5V4Z"/><path d="M8 7H4.5v2c0 2.4 1.4 4 3.8 4.2M16 7h3.5v2c0 2.4-1.4 4-3.8 4.2M12 15v4M8.5 20h7"/></svg>
+        <span>LEADERBOARD</span>
+      </a>
+    </nav>
+
+    <div class="profile">
+      <a class="top-icon help-control" href="help.html" aria-label="Help" title="Help"><span>?</span></a>
+
+      <a class="top-icon settings-control" href="settings.html" aria-label="Settings" title="Settings">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6Z"/>
+          <path d="m19.4 15 .1.1 1.4 1.1-1.7 2.9-1.7-.7a7.6 7.6 0 0 1-1.6.9l-.3 1.8h-3.4l-.3-1.8a7.6 7.6 0 0 1-1.6-.9l-1.7.7-1.7-2.9 1.4-1.1.1-.1a7.3 7.3 0 0 1 0-2l-.1-.1-1.4-1.1 1.7-2.9 1.7.7a7.6 7.6 0 0 1 1.6-.9l.3-1.8h3.4l.3 1.8a7.6 7.6 0 0 1 1.6.9l1.7-.7 1.7 2.9-1.4 1.1-.1.1a7.3 7.3 0 0 1 0 2Z"/>
+        </svg>
+      </a>     
+
+      <button class="top-icon sound-control" id="soundBtn" aria-label="Turn sound off" title="Sound on">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 10v4h4l5 4V6l-5 4H4Z"/>
+          <path class="wave wave-1" d="M16 9.2c.8.8 1.2 1.8 1.2 2.8s-.4 2-1.2 2.8"/>
+          <path class="wave wave-2" d="M18.7 6.8A7.3 7.3 0 0 1 21 12a7.3 7.3 0 0 1-2.3 5.2"/>
+        </svg>
+      </button>
+
+      <span class="profile-separator"></span>
+
+      <button class="avatar-btn" id="profileBtn">
+        <span class="avatar">S</span>
+        <span class="profile-name">SHADOW</span>
+        <span class="chevron">⌄</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">READY TO SHIFT?</p>
+      <div class="hero-logo">
+        <div class="big-grid"><i></i><i></i><i></i><i></i></div>
+        <div><h1>SHIFT</h1><p>2048 PUZZLE GAME</p></div>
+      </div>
+      <h2>Think ahead.<br><span>Make your moves.</span></h2>
+      <p class="hero-description">Every move changes the board. Every number gets you closer to 2048.</p>
+      <button class="play-btn" id="playBtn"><span>PLAY NOW</span><b>→</b></button>
+    </div>
+
+    <div class="hero-scene">
+      <div class="energy-ring ring-a"></div>
+      <div class="energy-ring ring-b"></div>
+      <div class="energy-ring ring-c"></div>
+      <div class="hero-tile tile-32">32</div>
+      <div class="hero-tile tile-64">64</div>
+      <div class="hero-tile tile-128">128</div>
+      <div class="hero-tile tile-256">256</div>
+      <div class="hero-tile tile-2048">2048</div>
+      <span class="particle p-a"></span><span class="particle p-b"></span>
+      <span class="particle p-c"></span><span class="particle p-d"></span>
+    </div>
+  </section>
+
+  <section class="modes-section">
+    <div class="section-heading">
+      <div><p class="eyebrow">CHOOSE YOUR CHALLENGE</p><h2>Game Modes</h2></div>
+      <p>Different challenges. Same goal.</p>
+    </div>
+
+    <div class="mode-grid">
+      <article class="mode-card classic" data-mode="Classic">
+        <div class="card-image"><img src="images/classic-card.jpg" alt="Classic"></div>
+        <div class="card-overlay"></div>
+        <div class="mode-icon grid-icon"><i></i><i></i><i></i><i></i></div>
+        <div class="mode-content"><span>01</span><h3>Classic</h3><p>The original 2048 experience.</p></div>
+        <button class="mode-arrow">→</button>
+      </article>
+
+      <article class="mode-card time" data-mode="Time Attack">
+        <div class="card-image"><img src="images/time-attack-card.jpg" alt="Time Attack"></div>
+        <div class="card-overlay"></div>
+        <div class="mode-icon clock-icon">◷</div>
+        <div class="mode-content"><span>02</span><h3>Time Attack</h3><p>Beat the clock. Chase the score.</p></div>
+        <button class="mode-arrow">→</button>
+      </article>
+
+      <article class="mode-card rush" data-mode="Rush">
+        <div class="card-image"><img src="images/rush-card.jpg" alt="Rush"></div>
+        <div class="card-overlay"></div>
+        <div class="mode-icon lightning">ϟ</div>
+        <div class="mode-content"><span>03</span><h3>Rush</h3><p>Faster tiles. Bigger challenge.</p></div>
+        <button class="mode-arrow">→</button>
+      </article>
+
+      <article class="mode-card dark" data-mode="Dark Zone">
+        <div class="card-image"><img src="images/dark-zone-card.jpg" alt="Dark Zone"></div>
+        <div class="card-overlay"></div>
+        <div class="mode-icon diamond">◇</div>
+        <div class="mode-content"><span>04</span><h3>Dark Zone</h3><p>Higher numbers. Greater risk.</p></div>
+        <button class="mode-arrow">→</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="stats-strip">
+    <div class="stat"><span class="stat-icon">♛</span><div><small>BEST SCORE</small><strong id="statBest">0</strong></div></div>
+    <div class="divider"></div>
+    <div class="stat"><span class="stat-icon">✦</span><div><small>HIGHEST TILE</small><strong id="statTile">—</strong></div></div>
+    <div class="divider"></div>
+    <div class="stat"><span class="stat-icon">⌁</span><div><small>GAMES PLAYED</small><strong id="statGames">0</strong></div></div>
+    <div class="divider"></div>
+    <div class="stat"><span class="stat-icon fire">♨</span><div><small>WIN STREAK</small><strong id="statStreak">0</strong></div></div>
+  </section>
+
+  <footer class="footer"><span>SMALL MOVES. BIG NUMBERS.</span><span>SHIFT © 2026</span></footer>
+</main>
+<div class="toast" id="toast">Loading game...</div>
+<script src="theme.js"></script>
+<script src="music.js?v=2"></script>
+<script src="script.js"></script>
+</body>
+</html>
