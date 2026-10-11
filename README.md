@@ -1,120 +1,116 @@
-# Student Assignments Showcase
+<div align="center">
 
-A static website — plain HTML, CSS, and vanilla JavaScript, no frameworks —
-for browsing students and the coding assignments they've submitted. Built
-to run as-is on GitHub Pages.
+# MSP Student Assignments
 
-## What's in here
+### A centralized showcase for student projects and coding assignments
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Open_Platform-2563EB?style=for-the-badge)](https://msp-gamma.vercel.app)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/Vanilla_JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+A lightweight platform developed for MSP to help organize students and showcase the projects they submit during training.
+
+</div>
+
+---
+
+## 🎯 Project Purpose
+
+MSP Student Assignments provides a central place to browse student profiles and explore their submitted coding assignments. It was built to make project submissions easier to review and present during a Front-End Development training program.
+
+## ✨ Features
+
+- Browse students through a responsive card grid.
+- Search for students by name.
+- Open a dedicated page for an individual student.
+- Display each student's assignments with descriptions and technologies.
+- Provide project previews when preview images are available.
+- Offer links to live demos and source code when configured.
+- Handle missing images, empty states, and unknown student IDs.
+- Respect reduced-motion preferences for accessibility.
+
+## 🧰 Tech Stack
+
+- **HTML5** — semantic page structure
+- **CSS3** — responsive styling and interactions
+- **Vanilla JavaScript** — student data and dynamic rendering
+- **Vercel** — deployment
+
+The project intentionally uses no front-end framework or build step.
+
+## 📁 Project Structure
 
 ```text
-student-assignments/
-├── index.html          Home page: student grid + search
-├── student.html         Individual student page (student.html?id=ahmed)
+msp/
+├── index.html             # Student listing and search
+├── student.html           # Individual student page
 ├── css/
-│   └── style.css        All styling
+│   └── style.css          # Application styles
 ├── js/
-│   ├── data.js           ← the folder map. Edit this to add students/tasks.
-│   ├── home.js           Renders the home page
-│   └── student.js        Renders a student's page from the URL
-├── students/
-│   └── <Name>/
-│       ├── img.jpg       Profile picture
-│       └── Tasks/
-│           └── taskN/    One folder per assignment
-└── README.md
+│   ├── data.js            # Student and assignment data
+│   ├── home.js            # Home page rendering and search
+│   └── student.js         # Student details rendering
+└── students/
+    └── <StudentName>/
+        ├── img.jpg
+        └── Tasks/
+            └── task1/
+                └── index.html
 ```
 
-## ⚠️ About the sample data
+## ➕ Add a Student
 
-No real student folders were provided when this site was generated, so
-`js/data.js` currently ships with **three placeholder students** (Ahmed,
-Mohamed, Sara) using the exact structure described in the brief, plus
-placeholder profile images and placeholder `index.html` demo pages inside
-each task folder. None of it is real — swap it out using the steps below.
+1. Create a folder under `students/` for the student.
+2. Add their profile image and assignment folders.
+3. Open `js/data.js` and add a student object to the students array.
 
-## Adding a real student
+Example:
 
-1. Create their folder:
-   ```text
-   students/<Name>/img.jpg
-   students/<Name>/Tasks/task1/  (their first project, with its own index.html)
-   students/<Name>/Tasks/task2/
-   ...
-   ```
-2. Open `js/data.js` and copy one of the existing student objects, then
-   edit it:
-   ```js
-   {
-     id: "khaled",                          // used in the URL: student.html?id=khaled
-     name: "Khaled",
-     image: "./students/Khaled/img.jpg",
-     tasksPath: "./students/Khaled/Tasks/",
-     assignments: [
-       {
-         title: "Task 1 — <what it is>",
-         folder: "./students/Khaled/Tasks/task1/",
-         preview: "./students/Khaled/Tasks/task1/preview.jpg", // optional
-         description: "One or two sentences about the project.",
-         technologies: ["HTML", "CSS", "JavaScript"],
-         github: "https://github.com/<user>/<repo>"            // optional
-       }
-     ]
-   }
-   ```
-3. Push the new object into the `students` array. That's the only file
-   you need to touch — no other code changes required.
+```javascript
+{
+  id: "student-id",
+  name: "Student Name",
+  image: "./students/StudentName/img.jpg",
+  tasksPath: "./students/StudentName/Tasks/",
+  assignments: [
+    {
+      title: "Assignment Title",
+      folder: "./students/StudentName/Tasks/task1/",
+      description: "A short explanation of the assignment.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      github: "https://github.com/username/project"
+    }
+  ]
+}
+```
 
-**Removing a student or task** is the same in reverse: delete their
-object from `data.js` (the folder can stay or go; only what's listed in
-`data.js` shows up on the site).
+Each assignment can optionally include a `preview` image and a `liveDemo` URL. Check `js/data.js` for the exact data structure used by the current version.
 
-## How "Live Demo" works
+## 🚀 Run Locally
 
-Each task is treated as its own mini-project. If `students/<Name>/Tasks/
-task1/index.html` exists, the **Live Demo** button opens it directly. If
-a task needs a different entry point, set `liveDemo` explicitly on that
-assignment object in `data.js` and it will be used instead of the default
-`folder + "index.html"`.
-
-## "View Code" button
-
-Only shown when the assignment object has a non-empty `github` field.
-Leave it out (or set it to `""`) to hide the button for a given task.
-
-## Screenshots / previews
-
-Set `preview` to a path (e.g. a `preview.jpg` you drop inside the task's
-folder). If it's omitted, or the image fails to load, a clean placeholder
-is shown automatically — nothing breaks.
-
-## Running locally
-
-Because the pages load `js/data.js` etc. as external scripts, open this
-folder with a local static server rather than double-clicking `index.html`
-(the `file://` protocol blocks some browsers from loading scripts):
+Because the site loads external JavaScript files, use a local static server rather than opening the HTML file directly.
 
 ```bash
-# from inside student-assignments/
-python3 -m http.server 8000
-# then open http://localhost:8000
+git clone https://github.com/amrahmed25/msp.git
+cd msp
+python -m http.server 8000
 ```
 
-## Deploying to GitHub Pages
+Open `http://localhost:8000` in your browser.
 
-1. Push this folder to a GitHub repository.
-2. In the repo settings, enable **Pages** and point it at the branch/
-   folder containing `index.html` (root, or `/docs` if you move it there).
-3. Done — all paths in `data.js` are relative, so they resolve correctly
-   whether the site is served from a custom domain or a
-   `username.github.io/repo-name/` subpath.
+## 🌐 Live Demo
 
-## Features included
+**[Open MSP Student Assignments](https://msp-gamma.vercel.app)**
 
-- Responsive grid on both pages, down to mobile
-- Live client-side search on the home page (by student name)
-- Hover animations on cards, respecting `prefers-reduced-motion`
-- Broken-image fallback (profile photos and task previews) — shows
-  initials or a placeholder icon instead of a broken image icon
-- Empty states (no students yet, no assignments yet, no search results)
-- 404 handling on `student.html` when the `id` in the URL doesn't match
-  any student
+## 👨‍💻 Developer
+
+Developed by **Amr Ahmed** during Front-End Development training for MSP.
+
+[GitHub](https://github.com/amrahmed25) · [LinkedIn](https://linkedin.com/in/3mrahmed/)
+
+---
+
+<div align="center">
+Made to make student work easier to browse, review, and share.
+</div>
