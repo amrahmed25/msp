@@ -87,17 +87,10 @@ Example:
 
 Each assignment can optionally include a `preview` image and a `liveDemo` URL. Check `js/data.js` for the exact data structure used by the current version.
 
-## 🚀 Run Locally
-
-Because the site loads external JavaScript files, use a local static server rather than opening the HTML file directly.
-
 ```bash
 git clone https://github.com/amrahmed25/msp.git
 cd msp
-python -m http.server 8000
 ```
-
-Open `http://localhost:8000` in your browser.
 
 ## 🌐 Live Demo
 
