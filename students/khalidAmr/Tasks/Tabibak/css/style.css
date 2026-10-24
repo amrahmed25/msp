@@ -1,0 +1,97 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Tahoma, sans-serif;
+}
+
+.hero-section {
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb 0%,
+            #1d4ed8 50%,
+            #1e40af 100%
+        );
+}
+
+.doctor-card {
+    transition: all 0.25s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+}
+
+button,
+a {
+    transition: all 0.2s ease;
+}
+
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease;
+}
+body { direction: rtl; color: #172033; }
+input, select, textarea, button { max-width: 100%; }
+input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, .28); outline-offset: 2px;
+}
+
+.doctor-card { height: 100%; }
+@media (max-width: 640px) {
+  h1 { overflow-wrap: anywhere; }
+  .hero-section { padding-inline: 0; }
+}
