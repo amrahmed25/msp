@@ -93,7 +93,7 @@ const khalidAmr={
 
       {
         title: "Task 11 - Tabibak ",
-        folder: "./students/khalidAmr/Tasks/Tabibak",
+        folder: "./students/khalidAmr/Tasks/Tabibak/",
         preview: "./students/khalidAmr/Tasks/3rd Task/Images/khaled.jpeg",
         description: "Tabibak is a doctor appointment booking website that helps users find doctors, explore their profiles, and book appointments through a simple and user-friendly interface.",
         technologies: ["HTML", "CSS","Tailwind CSS", "JavaScript"],
