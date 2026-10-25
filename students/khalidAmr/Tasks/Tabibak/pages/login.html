@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tabibak | تسجيل الدخول</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body class="bg-gray-50">
+
+
+    <div class="min-h-screen flex items-center justify-center px-6">
+
+        <div class="w-full max-w-md">
+
+            <div class="text-center mb-8">
+
+                <a href="../index.html"
+                    class="text-3xl font-bold text-blue-600">
+                    Tabibak
+                </a>
+
+                <h1 class="text-2xl font-bold mt-6">
+                    تسجيل الدخول
+                </h1>
+
+                <p class="text-gray-500 mt-2">
+                    ادخل إلى حسابك في Tabibak
+                </p>
+
+            </div>
+
+
+            <div class="bg-white rounded-2xl shadow-sm p-8">
+
+                <form id="login-form">
+
+                    <div class="mb-5">
+
+                        <label class="block font-semibold mb-2">
+                            البريد الإلكتروني
+                        </label>
+
+                        <input
+                            id="login-email"
+                            type="email"
+                            required
+                            class="w-full border rounded-xl px-4 py-3"
+                            placeholder="example@email.com">
+
+                    </div>
+
+
+                    <div class="mb-6">
+
+                        <label class="block font-semibold mb-2">
+                            كلمة المرور
+                        </label>
+
+                        <input
+                            id="login-password"
+                            type="password"
+                            required
+                            class="w-full border rounded-xl px-4 py-3"
+                            placeholder="********">
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition">
+
+                        تسجيل الدخول
+
+                    </button>
+
+                </form>
+
+
+                <div id="login-message"
+                    class="mt-5 text-center">
+                </div>
+
+
+                <p class="text-center text-gray-500 mt-6">
+
+                    ليس لديك حساب؟
+
+                    <a href="register.html"
+                        class="text-blue-600 font-semibold hover:underline">
+
+                        إنشاء حساب
+
+                    </a>
+
+                </p>
+
+            </div>
+
+
+            <div class="text-center mt-6">
+
+                <a href="../index.html"
+                    class="text-gray-500 hover:text-blue-600">
+
+                    ← العودة للرئيسية
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="../js/auth.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <div class="main-container">
+        <nav class="navbar">
+            <div class="top">
+                <button class="menu-toggle" id="menuToggle" type="button">
+                    <i class="bi bi-list"></i>
+                </button>            
+                <div class="input-icon">
+                    <i class="bi bi-mortarboard-fill"></i>
+                            
+                </div>  
+                <div class="brand">
+                    <h1>STUDENT LIFE</h1>
+                    <p>MANAGEMENT SYSTEM</p>                    
+                </div>
+
+            </div> 
+            <button class="theme-toggle" id="themeToggle" type="button">
+                <i class="bi bi-sun-fill"></i>
+            </button>
+        </nav>
+        <div class="container">
+
+            <div class="sidebar">
+
+                <a href="dashboard.html" class="side-cont">
+                    <div class="input-icon">
+                        <i class="bi bi-grid-1x2"></i>
+                    </div>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="schedule.html" class="side-cont">
+                    <div class="input-icon">
+                        <i class="bi bi-calendar-week"></i>
+                    </div>
+                    <span>Lecture Schedule</span>
+                </a>
+
+                <a href="study_plan.html" class="side-cont">
+                    <div class="input-icon">
+                        <i class="bi bi-journal-check"></i>
+                    </div>
+                    <span>Weekly Study Plan</span>
+                </a>
+
+                <a href="to_do_list.html" class="side-cont">
+                    <div class="input-icon">
+                        <i class="bi bi-check2-square"></i>
+                    </div>
+                    <span>To-Do List</span>
+                </a>
+
+                <a href="subjects.html" class="side-cont">
+                    <div class="input-icon">
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <span>My Subjects</span>
+                </a>
+
+            </div>
+
+
+            <div class="middle">
+
+                <div class="welcome-section">
+
+                    <div class="welcome-card">
+                        <div class="welcome-icon">
+                            <i class="bi bi-mortarboard-fill"></i>
+                        </div>
+
+                        <div class="welcome-text">
+                            <h2 id="welcomeMessage">Welcome back!</h2>                            <p>Here's your academic progress at a glance.</p>
+                        </div>
+                    </div>
+
+                    <div class="university-card">
+
+                        <div class="university-info">
+                            <div class="info-icon">
+                                <i class="bi bi-bank"></i>
+                            </div>
+
+                            <div>
+                                <h3 id="universityName">University Name</h3>
+                                <p id="facultyName">Faculty Name</p>
+                            </div>
+                        </div>
+
+                        <div class="academic-info">
+                            <div class="academic-item">
+                                <div class="info-icon">
+                                    <i class="bi bi-calendar3"></i>
+                                </div>
+
+                                <div>
+                                    <p>Academic Year</p>
+                                    <h4 id="yearName">Year</h4>
+                                </div>
+                            </div>
+
+                            <div class="academic-item">
+                                <div class="info-icon">
+                                    <i class="bi bi-mortarboard"></i>
+                                </div>
+
+                                <div>
+                                    <p>Semester</p>
+                                    <h4 id="semesterName">Semester</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="stats">
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="bi bi-book-half"></i>
+                        </div>
+
+                        <div>
+                            <h2 id="totalSubjects">0</h2>
+                            <p>Total Subjects</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="bi bi-pie-chart-fill"></i>
+                        </div>
+
+                        <div>
+                            <h2 id="overallProgressText">0%</h2>
+                            <p>Overall Progress</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="bi bi-check-circle-fill"></i>
+                        </div>
+
+                        <div>
+                            <h2>
+                                <span id="completedAssessments">0</span>
+                                /
+                                <span id="totalAssessments">0</span>
+                            </h2>
+                            <p>Completed Assessments</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="overall-card">
+
+                    <div class="section-title">
+                        <i class="bi bi-graph-up-arrow"></i>
+                        <h2>Overall Academic Progress</h2>
+                    </div>
+
+                    <div class="overall-progress">
+                        <div class="progress-track">
+                            <div
+                                class="progress-fill"
+                                id="overallProgressBar"
+                                style="width: 0%;">
+                            </div>
+                        </div>
+
+                        <h2 id="overallProgressLabel">0%</h2>
+                    </div>
+
+                    <p>Progress across all your subjects</p>
+
+                </div>
+
+                <div class="subjects-section">
+
+                    <div class="section-title">
+                        <i class="bi bi-book-half"></i>
+                        <h2>Subject Progress</h2>
+                    </div>
+
+                    <div class="subjects-grid" id="subjectsGrid">
+
+                        <div class="subject-card">
+
+                            <div class="subject-details">
+
+                                <div class="subject-heading">
+                                    <div>
+                                        <h3>Subject</h3>
+                                        <p>0 / 0 assessments</p>
+                                    </div>
+
+                                    <span class="subject-percentage">0%</span>
+                                </div>
+
+                                <div class="progress-track">
+                                    <div
+                                        class="progress-fill">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="main.js"></script>
+    <script src="mode.js"></script>
+</body>
+</html>

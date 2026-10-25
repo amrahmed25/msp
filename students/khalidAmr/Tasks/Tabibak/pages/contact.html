@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tabibak | تواصل معنا</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+
+    <nav class="bg-white shadow-sm">
+
+        <div class="max-w-7xl mx-auto px-6 py-4">
+
+            <div class="flex flex-row-reverse items-center justify-between">
+
+                <a href="login.html"
+                    class="bg-blue-600 text-white px-5 py-2 rounded-lg">
+                    تسجيل الدخول
+                </a>
+
+                <div class="hidden md:flex gap-8">                     
+
+                    <a href="../index.html#specialties"
+                        class="hover:text-blue-600">
+                        التخصصات
+                    </a>
+                                        
+                    <a href="doctors.html"
+                        class="hover:text-blue-600 transition">
+                        الأطباء
+                    </a>
+
+                    <a href="about.html"
+                        class="hover:text-blue-600 transition">
+                        عن Tabibak
+                    </a>
+
+                    <a href="contact.html"
+                        class="hover:text-blue-600 transition">
+                        تواصل معنا
+                    </a>
+                    
+
+                </div>
+
+                <a href="../index.html"
+                    class="text-2xl font-bold text-blue-600">
+                    Tabibak
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <main class="py-16">
+
+        <div class="max-w-5xl mx-auto px-6">
+
+            <div class="text-center mb-12">
+
+                <h1 class="text-4xl font-bold mb-4">
+                    تواصل معنا
+                </h1>
+
+                <p class="text-gray-500">
+                    لو عندك أي سؤال أو اقتراح، ابعتلنا.
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+
+                <div class="bg-white rounded-2xl shadow-sm p-8">
+
+                    <h2 class="text-2xl font-bold mb-6">
+                        معلومات التواصل
+                    </h2>
+
+                    <div class="space-y-6">
+
+                        <div>
+
+                            <p class="text-gray-500 mb-1">
+                                البريد الإلكتروني
+                            </p>
+
+                            <p class="font-semibold">
+                                support@tabibak.com
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <p class="text-gray-500 mb-1">
+                                الهاتف
+                            </p>
+
+                            <p class="font-semibold">
+                                01000000000
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <p class="text-gray-500 mb-1">
+                                العنوان
+                            </p>
+
+                            <p class="font-semibold">
+                                القاهرة، مصر
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bg-white rounded-2xl shadow-sm p-8">
+
+                    <form id="contact-form">
+
+                        <div class="mb-5">
+
+                            <label class="block font-semibold mb-2">
+                                الاسم
+                            </label>
+
+                            <input
+                                type="text"
+                                required
+                                class="w-full border rounded-xl px-4 py-3"
+                                placeholder="اسمك">
+
+                        </div>
+
+
+                        <div class="mb-5">
+
+                            <label class="block font-semibold mb-2">
+                                البريد الإلكتروني
+                            </label>
+
+                            <input
+                                type="email"
+                                required
+                                class="w-full border rounded-xl px-4 py-3"
+                                placeholder="example@email.com">
+
+                        </div>
+
+
+                        <div class="mb-5">
+
+                            <label class="block font-semibold mb-2">
+                                الرسالة
+                            </label>
+
+                            <textarea
+                                rows="5"
+                                required
+                                class="w-full border rounded-xl px-4 py-3"
+                                placeholder="اكتب رسالتك..."></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700">
+
+                            إرسال الرسالة
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer class="bg-gray-900 text-white py-8 text-center">
+
+        <p class="text-gray-400">
+            © 2026 Tabibak — جميع الحقوق محفوظة
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        document
+            .getElementById("contact-form")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                alert("تم إرسال رسالتك بنجاح!");
+
+                this.reset();
+
+            });
+
+    </script>
+
+</body>
+
+</html>

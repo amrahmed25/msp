@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="subjects.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects</title>
+</head>
+<body>
+
+    <div class="main-container">
+        <nav class="navbar">
+            <div class="top">
+                <button class="menu-toggle" id="menuToggle" type="button">
+                    <i class="bi bi-list"></i>
+                </button>            
+                <div class="input-icon">
+                    <i class="bi bi-mortarboard-fill"></i>
+                            
+                </div>  
+                <div class="brand">
+                    <h1>STUDENT LIFE</h1>
+                    <p>MANAGEMENT SYSTEM</p>                    
+                </div>
+
+            </div> 
+            <button class="theme-toggle" id="themeToggle" type="button">
+                <i class="bi bi-sun-fill"></i>
+            </button>
+        </nav>
+        <div class="container">
+
+            <div class="sidebar">
+
+                <a href="dashboard.html" class="side-cont">
+                    <div class="input-icon">
+                        <i class="bi bi-grid-1x2"></i>
+                    </div>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="schedule.html" class="side-cont">
+                    <div class="input-icon">
+                        <i class="bi bi-calendar-week"></i>
+                    </div>
+                    <span>Lecture Schedule</span>
+                </a>
+
+                <a href="study_plan.html" class="side-cont">
+                    <div class="input-icon">
+                        <i class="bi bi-journal-check"></i>
+                    </div>
+                    <span>Weekly Study Plan</span>
+                </a>
+
+                <a href="to_do_list.html" class="side-cont">
+                    <div class="input-icon">
+                        <i class="bi bi-check2-square"></i>
+                    </div>
+                    <span>To-Do List</span>
+                </a>
+
+                <a href="subjects.html" class="side-cont">
+                    <div class="input-icon">
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <span>My Subjects</span>
+                </a>
+
+            </div>
+
+            <div class="middle">
+                <div class="heading">
+                    <h1>My Subjects</h1>
+                    <p>Manage your subjects and keep everything organized.</p>
+                </div>
+                <div class="cards">
+                    <div id="subjectsContainer"></div>                    
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+   
+    
+    <script src="main.js"></script>
+    <script src="mode.js"></script>
+
+</body>
+</html>

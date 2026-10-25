@@ -90,6 +90,14 @@ const khalidAmr={
         description: "SHIFT is a 2048-inspired puzzle game where you merge tiles to reach the highest number possible. It includes multiple game modes — Classic, Dark Zone, Rush, and Time Attack — plus a leaderboard and sound/theme settings.",
         technologies: ["HTML", "CSS", "JavaScript"],
       },
+
+      {
+        title: "Task 11 - Tabibak ",
+        folder: "./students/khalidAmr/Tasks/Tabibak/",
+        preview: "./students/khalidAmr/Tasks/3rd Task/Images/khaled.jpeg",
+        description: "Tabibak is a doctor appointment booking website that helps users find doctors, explore their profiles, and book appointments through a simple and user-friendly interface.",
+        technologies: ["HTML", "CSS","Tailwind CSS", "JavaScript"],
+      },
     ]
   };
   export default khalidAmr;

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tabibak | احجز دكتورك بسهولة</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+
+        <div class="max-w-7xl mx-auto px-6 py-4">
+
+            <div class="flex flex-row-reverse items-center justify-between">
+
+
+                <a href="pages/login.html"
+                    class="bg-blue-600 text-white px-5 py-2.5 rounded-lg hover:bg-blue-700 transition">
+                    تسجيل الدخول
+                </a>
+
+                <div class="hidden md:flex items-center gap-8">
+
+                    <a href="#specialties"
+                        class="hover:text-blue-600 transition">
+                        التخصصات
+                    </a>
+
+                    <a href="pages/doctors.html"
+                        class="hover:text-blue-600 transition">
+                        الأطباء
+                    </a>
+
+                    <a href="pages/about.html"
+                        class="hover:text-blue-600 transition">
+                        عن Tabibak
+                    </a>
+
+                    <a href="pages/contact.html"
+                        class="hover:text-blue-600 transition">
+                        تواصل معنا
+                    </a>
+
+                </div>
+
+
+
+                <a href="index.html"
+                    class="text-2xl font-bold text-blue-600">
+
+                    Tabibak
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <section class="hero-section text-white py-24">
+
+        <div class="max-w-6xl mx-auto px-6 text-center">
+
+            <div class="max-w-3xl mx-auto">
+
+                <p class="text-blue-100 font-semibold mb-4">
+                    رعايتك الصحية تبدأ من هنا
+                </p>
+
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    احجز دكتورك بسهولة
+                </h1>
+
+                <p class="text-xl text-blue-100 mb-10">
+                    ابحث عن أفضل الأطباء واحجز موعدك في دقائق
+                </p>
+
+            </div>
+
+
+
+            <div class="bg-white rounded-2xl p-4 shadow-2xl max-w-5xl mx-auto">
+
+                <form id="home-search-form">
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+                        <input
+                            id="home-search-input"
+                            type="text"
+                            placeholder="اكتب التخصص الطبي"
+                            class="w-full border border-gray-200 rounded-xl px-4 py-4 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+
+                        <select
+                            id="home-location-input"
+                            class="w-full border border-gray-200 rounded-xl px-4 py-4 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                            <option value="">
+                                اختر المنطقة
+                            </option>
+
+                            <option value="مدينة نصر">
+                                مدينة نصر
+                            </option>
+
+                            <option value="مصر الجديدة">
+                                مصر الجديدة
+                            </option>
+
+                            <option value="المعادي">
+                                المعادي
+                            </option>
+
+                            <option value="التجمع">
+                                التجمع
+                            </option>
+
+                            <option value="الهرم">
+                                الهرم
+                            </option>
+
+                            <option value="الدقي">
+                                الدقي
+                            </option>
+
+                        </select>
+
+
+                        <button
+                            type="submit"
+                            class="bg-blue-600 text-white rounded-xl px-6 py-4 font-bold hover:bg-blue-700 transition">
+
+                            بحث عن طبيب
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+
+            <div class="mt-8">
+
+                <p class="text-blue-100 mb-4">
+                    التخصصات الشائعة
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-3">
+
+                    <a href="pages/doctors.html?specialty=طب وجراحة الأسنان"
+                        class="bg-white/10 hover:bg-white/20 px-5 py-2 rounded-full transition">
+                        أسنان
+                    </a>
+
+                    <a href="pages/doctors.html?specialty=أمراض القلب"
+                        class="bg-white/10 hover:bg-white/20 px-5 py-2 rounded-full transition">
+                        قلب
+                    </a>
+
+                    <a href="pages/doctors.html?specialty=طب الأطفال"
+                        class="bg-white/10 hover:bg-white/20 px-5 py-2 rounded-full transition">
+                        أطفال
+                    </a>
+
+                    <a href="pages/doctors.html?specialty=الأمراض الباطنية"
+                        class="bg-white/10 hover:bg-white/20 px-5 py-2 rounded-full transition">
+                        باطنة
+                    </a>
+
+                    <a href="pages/doctors.html?specialty=الأمراض الجلدية"
+                        class="bg-white/10 hover:bg-white/20 px-5 py-2 rounded-full transition">
+                        جلدية
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="specialties" class="py-20">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center mb-12">
+
+                <p class="text-blue-600 font-semibold mb-3">
+                    اختر تخصصك
+                </p>
+
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    التخصصات الطبية
+                </h2>
+
+                <p class="text-gray-500">
+                    ابحث عن الطبيب المناسب حسب تخصصه
+                </p>
+
+            </div>
+
+
+            <div id="specialties-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- تُنشأ بطاقات جميع التخصصات من doctors-data.js -->
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="py-20 bg-gray-100">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center mb-12">
+
+                <p class="text-blue-600 font-semibold mb-3">
+                    اختيارات Tabibak
+                </p>
+
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    أطباء مميزون
+                </h2>
+
+                <p class="text-gray-500">
+                    مجموعة من الأطباء المتاحين للحجز
+                </p>
+
+            </div>
+
+
+            <div id="featured-doctors"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            </div>
+
+
+            <div class="text-center mt-10">
+
+                <a href="pages/doctors.html"
+                    class="inline-block bg-blue-600 text-white px-8 py-3 rounded-xl hover:bg-blue-700 transition">
+
+                    عرض جميع الأطباء
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="py-20 bg-white">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center mb-12">
+
+                <p class="text-blue-600 font-semibold mb-3">
+                    بسيط وسريع
+                </p>
+
+                <h2 class="text-3xl md:text-4xl font-bold">
+                    إزاي تحجز؟
+                </h2>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+
+                <div class="text-center">
+
+                    <div class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-5">
+                        1
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3">
+                        ابحث عن طبيب
+                    </h3>
+
+                    <p class="text-gray-500">
+                        اختر التخصص والمنطقة وابحث عن الطبيب المناسب.
+                    </p>
+
+                </div>
+
+
+                <div class="text-center">
+
+                    <div class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-5">
+                        2
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3">
+                        اختر الموعد
+                    </h3>
+
+                    <p class="text-gray-500">
+                        شاهد بيانات الطبيب والمواعيد المتاحة.
+                    </p>
+
+                </div>
+
+
+                <div class="text-center">
+
+                    <div class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-5">
+                        3
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3">
+                        احجز موعدك
+                    </h3>
+
+                    <p class="text-gray-500">
+                        أكمل بيانات الحجز واحصل على تأكيد الموعد.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="about" class="py-20 bg-blue-50">
+
+        <div class="max-w-5xl mx-auto px-6 text-center">
+
+            <p class="text-blue-600 font-semibold mb-3">
+                عن Tabibak
+            </p>
+
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                صحتك تستاهل الأفضل
+            </h2>
+
+            <p class="text-gray-600 text-lg leading-8">
+                Tabibak منصة تساعدك على البحث عن الأطباء حسب
+                التخصص والمنطقة والسعر والتقييم، ثم الوصول إلى
+                الطبيب المناسب وحجز موعدك بسهولة.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <footer class="bg-gray-900 text-white py-12">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+
+                <div>
+
+                    <h3 class="text-2xl font-bold text-blue-400 mb-4">
+                        Tabibak
+                    </h3>
+
+                    <p class="text-gray-400 leading-7">
+                        منصتك للبحث عن الأطباء وحجز المواعيد بسهولة.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h4 class="font-bold mb-4">
+                        روابط
+                    </h4>
+
+                    <div class="flex flex-col gap-3 text-gray-400">
+
+                        <a href="pages/doctors.html"
+                            class="hover:text-white transition">
+                            الأطباء
+                        </a>
+
+                        <a href="#specialties"
+                            class="hover:text-white transition">
+                            التخصصات
+                        </a>
+
+                        <a href="pages/about.html"
+                            class="hover:text-white transition">
+                            عن Tabibak
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <h4 class="font-bold mb-4">
+                        الحساب
+                    </h4>
+
+                    <div class="flex flex-col gap-3 text-gray-400">
+
+                        <a href="pages/login.html"
+                            class="hover:text-white transition">
+                            تسجيل الدخول
+                        </a>
+
+                        <a href="pages/register.html"
+                            class="hover:text-white transition">
+                            إنشاء حساب
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <h4 class="font-bold mb-4">
+                        تواصل معنا
+                    </h4>
+
+                    <p class="text-gray-400 mb-2">
+                        support@tabibak.com
+                    </p>
+
+                    <a href="pages/contact.html"
+                        class="text-blue-400 hover:text-blue-300">
+                        صفحة التواصل
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
+
+                © 2026 Tabibak — جميع الحقوق محفوظة
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="js/doctors-data.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+
+</html>

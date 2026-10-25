@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tabibak | الأطباء</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+
+
+    <nav class="bg-white shadow-sm">
+
+        <div class="max-w-7xl mx-auto px-6 py-4">
+
+            <div class="flex flex-row-reverse items-center justify-between">
+
+                <a href="login.html"
+                    class="bg-blue-600 text-white px-5 py-2.5 rounded-lg hover:bg-blue-700">
+                    تسجيل الدخول
+                </a>
+
+
+                <div class="hidden md:flex gap-8">
+
+                    <a href="../index.html#specialties"
+                        class="hover:text-blue-600">
+                        التخصصات
+                    </a>
+                                        
+                    <a href="doctors.html"
+                        class="hover:text-blue-600 transition">
+                        الأطباء
+                    </a>
+
+                    <a href="about.html"
+                        class="hover:text-blue-600 transition">
+                        عن Tabibak
+                    </a>
+
+                    <a href="contact.html"
+                        class="hover:text-blue-600 transition">
+                        تواصل معنا
+                    </a>
+
+                </div>
+
+
+                <a href="../index.html"
+                    class="text-2xl font-bold text-blue-600">
+                    Tabibak
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <section class="bg-blue-600 text-white py-16">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <h1 class="text-4xl font-bold mb-4">
+                ابحث عن طبيب
+            </h1>
+
+            <p class="text-blue-100">
+                اعثر على الطبيب المناسب حسب المدينة والمنطقة والتخصص والتقييم.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="py-8 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <label class="block font-medium">
+                    المدينة
+                    <select id="doctor-city" class="w-full border rounded-xl px-4 py-3 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">كل المدن</option>
+                    </select>
+                </label>
+
+                <label class="block font-medium">
+                    المنطقة
+                    <select id="doctor-area" class="w-full border rounded-xl px-4 py-3 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">كل المناطق</option>
+                    </select>
+                </label>
+
+                <label class="block font-medium">
+                    التخصص
+                    <select id="doctor-specialty" class="w-full border rounded-xl px-4 py-3 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">كل التخصصات</option>
+                    </select>
+                </label>
+
+                <label class="block font-medium">
+                    التقييم
+                    <select id="doctor-rating" class="w-full border rounded-xl px-4 py-3 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">كل التقييمات</option>
+                        <option value="4">4 نجوم فأعلى</option>
+                        <option value="4.5">4.5 نجوم فأعلى</option>
+                        <option value="4.8">4.8 نجوم فأعلى</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+    </section>
+
+
+
+    <main class="py-12">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="flex items-center justify-between mb-8">
+
+                <div>
+
+                    <h2 class="text-2xl font-bold">
+                        الأطباء
+                    </h2>
+
+                    <p id="results-count"
+                        class="text-gray-500 mt-1">
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="doctors-list"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="../js/doctors-data.js"></script>
+    <script src="../js/doctors.js"></script>
+
+</body>
+
+</html>
