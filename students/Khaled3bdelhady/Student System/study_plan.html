@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="study_plan.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Plan</title>
+</head>
+<body>
+
+    <div class="main-container">
+        <nav class="navbar">
+            <div class="top">
+                <button class="menu-toggle" id="menuToggle" type="button">
+                    <i class="bi bi-list"></i>
+                </button>            
+                <div class="input-icon">
+                    <i class="bi bi-mortarboard-fill"></i>
+                            
+                </div>  
+                <div class="brand">
+                    <h1>STUDENT LIFE</h1>
+                    <p>MANAGEMENT SYSTEM</p>                    
+                </div>
+
+            </div> 
+            <button class="theme-toggle" id="themeToggle" type="button">
+                <i class="bi bi-sun-fill"></i>
+            </button>
+        </nav>
+        <div class="container">
+
+            <div class="sidebar">
+
+                <a href="dashboard.html" class="side-cont">
+                    <div class="input-icon">
+                        <i class="bi bi-grid-1x2"></i>
+                    </div>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="schedule.html" class="side-cont">
+                    <div class="input-icon">
+                        <i class="bi bi-calendar-week"></i>
+                    </div>
+                    <span>Lecture Schedule</span>
+                </a>
+
+                <a href="study_plan.html" class="side-cont">
+                    <div class="input-icon">
+                        <i class="bi bi-journal-check"></i>
+                    </div>
+                    <span>Weekly Study Plan</span>
+                </a>
+
+                <a href="to_do_list.html" class="side-cont">
+                    <div class="input-icon">
+                        <i class="bi bi-check2-square"></i>
+                    </div>
+                    <span>To-Do List</span>
+                </a>
+
+                <a href="subjects.html" class="side-cont">
+                    <div class="input-icon">
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <span>My Subjects</span>
+                </a>
+
+            </div>
+
+
+
+            <div class="middle">
+                <div class="description">
+                    <div class="head-logo">
+                        <i class="bi bi-calendar-week"></i>
+                    </div>
+                    <h2>Weekly Study Plan</h2>
+                    <p>Plan your week, stay consistent, achieve your goals.</p>
+
+                    <div class="des-det">
+                        <div>
+                            <i class="bi bi-book-half"></i>
+                            <p id="sessionsCount">0</p>
+                            <p>Study sessions</p>
+                        </div>
+
+
+                        <div>
+                            <i class="bi bi-clock-history"></i>
+                            <p id="studyHours">0 <span>h</span></p>
+                            <p>Study hours</p>
+
+                        </div>
+
+
+                        <div>
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            <p id="completedCount">0 </p>
+                            <p>Completed</p>
+
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="days">
+                    <div class="day">
+                        <h3>Saturday</h3>
+                        <div class="sessions-list"></div>
+
+                        <button type="button" class="add-session-btn">
+                            <i class="bi bi-plus-circle"></i>
+
+                             Add Sessions
+                        </button>
+                    </div>
+
+                    
+                    <div class="day">
+                        <h3>sunday</h3>
+                        <div class="sessions-list"></div>
+
+                        <button type="button" class="add-session-btn">
+                            <i class="bi bi-plus-circle"></i>
+
+                             Add Sessions
+                        </button>
+                    </div>
+
+                    <div class="day">
+                        <h3>Monday</h3>
+                        <div class="sessions-list"></div>
+
+                        <button type="button" class="add-session-btn">
+                            <i class="bi bi-plus-circle"></i>
+
+                             Add Sessions
+                        </button>
+                    </div>
+
+                    <div class="day">
+                        <h3>Tuesday</h3>
+                        <div class="sessions-list"></div>
+
+                        <button type="button" class="add-session-btn">
+                            <i class="bi bi-plus-circle"></i>
+
+                             Add Sessions
+                        </button>
+                    </div>
+
+                    <div class="day">
+                        <h3>Wednesday</h3>
+                        <div class="sessions-list"></div>
+
+                        <button type="button" class="add-session-btn">
+                            <i class="bi bi-plus-circle"></i>
+
+                             Add Sessions
+                        </button>
+                    </div>
+
+                    <div class="day">
+                        <h3>Thursday</h3>
+                        <div class="sessions-list"></div>
+
+                        <button type="button" class="add-session-btn">
+                            <i class="bi bi-plus-circle"></i>
+
+                             Add Sessions
+                        </button>
+
+                    </div>
+                
+                    <div class="day">
+                        <h3>Friday</h3>
+                        <div class="sessions-list"></div>
+
+                        <button type="button" class="add-session-btn">
+                            <i class="bi bi-plus-circle"></i>
+
+                             Add Sessions
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+                <button type="button" class="save" id="saveStudyPlan">
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>            
+    <script src="mode.js"></script>
+  
+</body>
+</html>

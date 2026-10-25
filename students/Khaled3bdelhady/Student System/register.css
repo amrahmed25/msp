@@ -1,0 +1,630 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image:linear-gradient(rgba(6, 28, 44, 0.45), rgba(0, 16, 36, 0.70)),url(./images/registerback.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.theme-toggle {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid rgba(143, 196, 255, 0.35);
+    border-radius: 50%;
+
+    background: rgba(4, 28, 52, 0.75);
+    color: #8FC4FF;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+    
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    background: rgba(52, 136, 250, 0.2);
+    border-color: #3488FA;
+    color: #F2F7FA;
+    transform: rotate(15deg) scale(1.08);
+}
+.top {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.top h1 {
+    color: #F2F7FA;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0 0 2px;
+}
+
+.top p {
+    color: #91A1B2;
+    font-size: 22px;
+    letter-spacing: 3px;
+    margin: 0;
+}
+.content-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+    margin-top: 75px;
+}
+.left-side{
+    flex: 1;
+    max-width: 550px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.left-side > p:first-child{
+    color: #91A1B2;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+
+.left-side h1{
+    color: #F2F7FA;
+    font-size: 48px;
+    line-height: 1.08;
+    margin-bottom: 18px;
+}
+.left-side h1 span {
+    color: #3488FA;
+}
+
+
+.left-side > .description{
+    width: 400px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #B7C7D6;
+    margin-bottom: 42px;
+}
+
+.left-side > div i{
+    color: #8FC4FF;
+    font-size: 21px;
+    width: 25px;
+}
+.left-side > div p{
+    color: #F2F7FA;
+    font-size: 20px;
+    margin: 0;
+}
+.feature{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+.feature > i{
+    color: #8FC4FF;
+    font-size: 30px;
+    width: 35px;
+}
+.feature div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.feature div p{
+    margin: 0 0 3px;
+    color: #F2F7FA;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.feature div span {
+    color: #91A1B2;
+    font-size: 15px;
+}
+
+.card-title h2 {
+    color: #F2F7FA;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.card-title h2 i{
+    color: #3488FA;
+    font-size: 25px;
+    margin-right: 5px;
+}
+.card-title p{
+    color: #B7C7D6;
+    font-size: 14px;
+}
+
+.container{
+    width: 380px;
+    max-width: 100%;
+    margin: auto;
+    padding: 32px 34px 30px;
+    border-radius:18px;
+    background: #001024;
+    border: 1px solid rgba(25, 58, 86, 0.8);
+    flex-shrink: 0;
+}
+
+.input-group{
+    position: relative;
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    border-radius:15px;
+    background: rgba(4, 28, 52, 0.9);
+    border: 1px solid rgba(36, 87, 125, 0.8);
+    transition: 0.3s;
+}
+
+.input-icon {
+    width: 57px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    color: #8FC4FF;
+}
+.input-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-content input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #F2F7FA;
+    font-size: 14px;
+}
+.input-content input::placeholder {
+    color: #91A1B2;
+}
+
+.password-toggle {
+    width: 45px;
+    height: 50px;
+    border: none;
+    background: transparent;
+    color: #B7C7D6;
+    font-size: 18px;
+    cursor: pointer;
+}
+.input-content label{
+    color: #B7C7D6;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.input-group:focus-within {
+    border-color: #3488FA;
+    background: rgba(10, 40, 68, 0.95);
+    box-shadow: 0 0 0 2px rgba(52, 136, 250, 0.12),
+                0 0 18px rgba(52, 136, 250, 0.15);
+    transform: translateY(-1px);
+}
+.input-group:focus-within label {
+    color: #8FC4FF;
+}
+input::placeholder{
+    color: #91A1B2;
+}
+
+.log p{
+    color: #91A1B2;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.log a{
+    color: #3488FA;
+    text-decoration: none;
+}
+
+.card-title{
+    text-align: center;
+    color: #F2F7FA;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+}
+.main-btn{
+    width: 100%;
+    height: 54px;
+    border: none;
+    outline: none;
+    border-radius: 14px;
+    background: #3488FA;
+    color: #F2F7FA;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.main-btn:hover {
+    background: #4A98FF;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(52, 136, 250, 0.30);
+}
+
+.main-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(52, 136, 250, 0.20);
+}
+
+
+
+
+
+body.light-mode {
+    background-image:
+        linear-gradient(
+            rgba(77, 131, 162, 0.65),
+            rgba(183, 199, 214, 0.75)
+        ),
+        url(./images/registerback.jpg);
+}
+body.light-mode .left-side h1 span {
+    color: #001024;
+}
+
+body.light-mode .top h1{
+    color: #001024;
+}
+body.light-mode .top p{
+    color: #001024;
+}
+body.light-mode .left-side h1{
+    color: #001024;
+}
+body.light-mode .left-side p{
+    color: #001024;
+}
+body.light-mode .feature div span{
+    color: #001024;
+}
+body.light-mode .feature i{
+    color: #3488FA;
+}
+body.light-mode .container {
+    background: #F2F7FA;
+    border-color: rgba(108, 127, 145, 0.4);
+}
+
+body.light-mode .card-title h2 {
+    color: #061C2C;
+}
+
+body.light-mode .card-title p {
+    color: #4F6478;
+}
+
+body.light-mode .input-group {
+    background: rgba(242, 247, 250, 0.9);
+    border-color: rgba(79, 100, 120, 0.4);
+}
+
+body.light-mode .input-content label {
+    color: #334B60;
+}
+
+body.light-mode .input-content input {
+    color: #061C2C;
+}
+
+body.light-mode .input-content input::placeholder {
+    color: #6C7F91;
+}
+
+body.light-mode .password-toggle {
+    color: #334B60;
+}
+
+body.light-mode .log p {
+    color: #4F6478;
+}
+
+body.light-mode .theme-toggle {
+    background: rgba(242, 247, 250, 0.9);
+    color: #334B60;
+    border-color: rgba(79, 100, 120, 0.4);
+}
+
+
+
+
+@media (max-width: 992px) {
+    body {
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 30px 20px;
+        box-sizing: border-box;
+    }
+
+    .main-container {
+        width: 100%;
+        max-width: 750px;
+        margin: auto;
+    }
+
+    .top {
+        margin-top: 20px;
+        margin-bottom: 35px;
+    }
+
+    .content-row {
+        gap: 35px;
+        margin-top: 30px;
+        align-items: center;
+    }
+
+    .left-side {
+        min-width: 0;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .left-side h1 {
+        font-size: 36px;
+    }
+
+    .left-side > .description {
+        width: 100%;
+        font-size: 16px;
+        margin-bottom: 28px;
+    }
+
+    .left-side > p:first-child {
+        font-size: 15px;
+    }
+
+    .feature {
+        gap: 12px;
+    }
+
+    .feature div p {
+        font-size: 17px;
+    }
+
+    .feature div span {
+        font-size: 13px;
+    }
+
+    .container {
+        width: 360px;
+        max-width: 55%;
+        min-width: 0;
+        padding: 25px 20px;
+        box-sizing: border-box;
+    }
+}
+
+
+@media (max-width: 700px) {
+    body {
+        display: block;
+        padding: 75px 16px 30px;
+    }
+
+    .main-container {
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+    }
+
+    .top {
+        margin: 0 0 30px;
+    }
+
+    .top h1 {
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
+
+    .top p {
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+
+    .content-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+        margin-top: 0;
+    }
+
+    .left-side {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .left-side > p:first-child {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+    }
+
+    .left-side h1 {
+        font-size: 34px;
+        line-height: 1.15;
+        margin-bottom: 12px;
+    }
+
+    .left-side > .description {
+        width: 100%;
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 22px;
+    }
+
+    .feature {
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+
+    .feature > i {
+        font-size: 24px;
+        width: 30px;
+        flex-shrink: 0;
+    }
+
+    .feature div p {
+        font-size: 16px;
+    }
+
+    .feature div span {
+        font-size: 13px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 25px 20px;
+        margin: 0;
+        box-sizing: border-box;
+        border-radius: 16px;
+    }
+
+    .card-title {
+        margin-bottom: 20px;
+    }
+
+    .card-title h2 {
+        font-size: 26px;
+    }
+
+    .card-title h2 i {
+        font-size: 22px;
+    }
+
+    .card-title p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .input-group {
+        min-height: 58px;
+        border-radius: 12px;
+    }
+
+    .input-icon {
+        width: 45px;
+        flex-shrink: 0;
+        font-size: 20px;
+    }
+
+    .input-content {
+        min-width: 0;
+    }
+
+    .input-content input {
+        min-width: 0;
+        font-size: 13px;
+    }
+
+    .password-toggle {
+        width: 38px;
+        flex-shrink: 0;
+        font-size: 16px;
+    }
+
+    .main-btn {
+        height: 48px;
+        font-size: 14px;
+    }
+
+    .log p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .theme-toggle {
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 360px) {
+    body {
+        padding: 70px 12px 20px;
+    }
+
+    .top h1 {
+        font-size: 26px;
+    }
+
+    .top p {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    .content-row {
+        gap: 22px;
+    }
+
+    .left-side h1 {
+        font-size: 29px;
+    }
+
+    .left-side > .description {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 20px 14px;
+    }
+
+    .card-title h2 {
+        font-size: 24px;
+    }
+
+    .input-icon {
+        width: 38px;
+    }
+
+    .password-toggle {
+        width: 32px;
+    }
+}
