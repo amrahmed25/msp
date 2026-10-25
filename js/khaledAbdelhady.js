@@ -95,6 +95,15 @@ const khaledAbdelhady={
         github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/game2048"
       },
 
+      {
+        title:"Student life management system",
+        folder: "./students/Khaled3bdelhady/Student System/",
+        preview: "./students/Khaled3bdelhady/Student System/Images/setup.jpg",
+        description: "A responsive Student life management system website ",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        github: ""
+      },
+
     ]
   };
   export default khaledAbdelhady;
