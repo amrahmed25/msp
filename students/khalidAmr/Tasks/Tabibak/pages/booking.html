@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tabibak | حجز موعد</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+
+
+    <nav class="bg-white shadow-sm">
+
+        <div class="max-w-7xl mx-auto px-6 py-4">
+
+            <div class="flex flex-row-reverse items-center justify-between">
+
+                <a href="login.html"
+                    class="bg-blue-600 text-white px-5 py-2 rounded-lg">
+                    تسجيل الدخول
+                </a>
+
+                <a href="doctors.html"
+                    class="hover:text-blue-600">
+                    الأطباء
+                </a>
+
+                <a href="../index.html"
+                    class="text-2xl font-bold text-blue-600">
+                    Tabibak
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <main class="py-12">
+
+        <div class="max-w-5xl mx-auto px-6">
+
+            <h1 class="text-3xl font-bold mb-3">
+                حجز موعد
+            </h1>
+
+            <p class="text-gray-500 mb-8">
+                اختر الموعد المناسب وأكمل بياناتك.
+            </p>
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+
+
+                <div id="booking-doctor"
+                    class="bg-white rounded-2xl shadow-sm p-6">
+
+                </div>
+
+
+
+                <div class="bg-white rounded-2xl shadow-sm p-6">
+
+                    <form id="booking-form">
+
+                        <div class="mb-5">
+
+                            <label class="block font-semibold mb-2">
+                                الاسم بالكامل
+                            </label>
+
+                            <input
+                                id="patient-name"
+                                type="text"
+                                required
+                                class="w-full border rounded-xl px-4 py-3"
+                                placeholder="اكتب اسمك">
+
+                        </div>
+
+
+                        <div class="mb-5">
+
+                            <label class="block font-semibold mb-2">
+                                رقم الهاتف
+                            </label>
+
+                            <input
+                                id="patient-phone"
+                                type="tel"
+                                required
+                                class="w-full border rounded-xl px-4 py-3"
+                                placeholder="01xxxxxxxxx">
+
+                        </div>
+
+
+                        <div class="mb-5">
+
+                            <label class="block font-semibold mb-2">
+                                التاريخ
+                            </label>
+
+                            <input
+                                id="appointment-date"
+                                type="date"
+                                required
+                                class="w-full border rounded-xl px-4 py-3">
+
+                        </div>
+
+
+                        <div class="mb-6">
+
+                            <label class="block font-semibold mb-2">
+                                الوقت
+                            </label>
+
+                            <select
+                                id="appointment-time"
+                                required
+                                class="w-full border rounded-xl px-4 py-3">
+
+                                <option value="">
+                                    اختر الوقت
+                                </option>
+
+                                <option>
+                                    10:00 صباحًا
+                                </option>
+
+                                <option>
+                                    11:00 صباحًا
+                                </option>
+
+                                <option>
+                                    12:00 ظهرًا
+                                </option>
+
+                                <option>
+                                    02:00 مساءً
+                                </option>
+
+                                <option>
+                                    04:00 مساءً
+                                </option>
+
+                                <option>
+                                    06:00 مساءً
+                                </option>
+
+                                <option>
+                                    08:00 مساءً
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition">
+
+                            تأكيد الحجز
+
+                        </button>
+
+                    </form>
+
+
+                    <div id="booking-success"
+                        class="hidden mt-6 bg-green-50 text-green-700 p-4 rounded-xl">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="../js/doctors-data.js"></script>
+    <script src="../js/booking.js"></script>
+
+</body>
+
+</html>

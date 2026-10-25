@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHIFT — 2048</title>
+<link rel="stylesheet" href="loading.css">
+<link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<main class="loading-screen" id="loadingScreen" aria-label="SHIFT 2048 loading screen">
+  <div class="ambient one"></div><div class="ambient two"></div>
+
+  <section class="loader-content">
+    <div class="tile-stage">
+      <div class="tile tile-a">2</div>
+      <div class="tile tile-b">4</div>
+      <div class="tile tile-c">8</div>
+      <div class="tile tile-d">16</div>
+    </div>
+
+    <div class="brand hidden" id="brand">
+      <div class="brand-mark"><span></span><span></span><span></span><span></span></div>
+      <div class="brand-text">
+        <h1>SHIFT</h1>
+        <p>2048 PUZZLE GAME</p>
+      </div>
+    </div>
+
+    <div class="loading-copy">
+      <span id="statusText">SHIFTING</span>
+      <span class="dots"><i></i><i></i><i></i></span>
+    </div>
+    <button class="sound-button" id="soundButton" type="button" aria-label="Turn sound on"></button>
+
+  </section>
+
+  <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+</main>
+<script src="theme.js"></script>
+<script src="loading.js"></script>
+</body>
+</html>
