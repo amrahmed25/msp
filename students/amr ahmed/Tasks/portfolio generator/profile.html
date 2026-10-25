@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Settings – PortfolioHub</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main class="profile-main">
+    <div class="container profile-container">
+      <header class="profile-header">
+        <h1>Profile Settings</h1>
+        <p>This information appears on your portfolios and community posts.</p>
+      </header>
+
+      <div id="profile-loading" class="profile-state" role="status">Loading your profile...</div>
+      <div id="profile-error" class="profile-state profile-state--error" role="alert" hidden>
+        <p id="profile-error-text">Could not load your profile.</p>
+        <button type="button" class="btn btn-outline" id="profile-retry">Try again</button>
+      </div>
+
+      <form id="profile-form" class="profile-form" novalidate hidden>
+        <div class="form-group profile-avatar-row">
+          <img id="avatar-preview" class="profile-avatar" alt="" hidden />
+          <div id="avatar-initials" class="profile-avatar profile-avatar--initials" aria-hidden="true">?</div>
+          <div>
+            <label class="btn btn-outline btn-sm" for="avatar-input">Change photo</label>
+            <input type="file" id="avatar-input" accept="image/jpeg,image/png,image/webp,image/gif" hidden />
+            <button type="button" class="btn btn-ghost btn-sm" id="avatar-remove" hidden>Remove</button>
+            <p class="form-hint">JPG, PNG, WebP or GIF, up to 5 MB.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="full_name">Full name <span class="req">*</span></label>
+          <input class="form-control" id="full_name" name="full_name" type="text" maxlength="80" autocomplete="name" required />
+          <span class="field-error" id="full_name-error" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="username">Username</label>
+          <input class="form-control" id="username" name="username" type="text" maxlength="30" autocomplete="username" />
+          <p class="form-hint">3-30 letters, numbers, hyphens or underscores.</p>
+          <span class="field-error" id="username-error" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="title">Professional title</label>
+          <input class="form-control" id="title" name="title" type="text" maxlength="100" placeholder="Frontend Developer" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="bio">Bio</label>
+          <textarea class="form-control" id="bio" name="bio" rows="4" maxlength="500"></textarea>
+        </div>
+        <div class="profile-row">
+          <div class="form-group">
+            <label class="form-label" for="location">Location</label>
+            <input class="form-control" id="location" name="location" type="text" maxlength="80" placeholder="City, Country" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="website">Website</label>
+            <input class="form-control" id="website" name="website" type="text" maxlength="200" placeholder="https://example.com" />
+            <span class="field-error" id="website-error" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <div class="profile-actions">
+          <button type="submit" class="btn btn-primary" id="profile-save">Save changes</button>
+          <a href="dashboard.html" class="btn btn-ghost">Back to dashboard</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <div id="toast-container" class="toast-container"></div>
+  <script src="js/config.js"></script>
+  <script src="js/navigation.js"></script>
+  <script type="module" src="js/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — PortfolioHub</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body class="auth-body">
+
+  <div class="auth-split">
+
+    <!-- ===== LEFT PANEL — FORM ===== -->
+    <div class="auth-left">
+      <div class="auth-form-wrap">
+
+        <!-- Logo -->
+        <a href="index.html" class="auth-logo">
+          <span class="auth-logo-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></span>
+          <span class="auth-logo-text">PortfolioHub</span>
+        </a>
+
+        <!-- Heading -->
+        <h1 class="auth-title">Create your account</h1>
+        <p class="auth-subtitle">Start building your professional portfolio today</p>
+
+        <!-- Error Banner -->
+        <div id="auth-error" class="auth-error" role="alert" aria-live="polite" hidden>
+          <span class="auth-error-icon"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9L2 18a2 2 0 0 0 1.7 3h16.6A2 2 0 0 0 22 18L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg></span>
+          <span id="auth-error-msg"></span>
+        </div>
+
+        <!-- Form -->
+        <form id="signup-form" class="auth-form" novalidate>
+
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="full-name" class="form-label">Full Name</label>
+            <div class="input-wrap">
+              <span class="input-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              <input
+                type="text"
+                id="full-name"
+                name="full_name"
+                class="form-input"
+                placeholder="Jane Smith"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <span class="field-error" id="name-error" aria-live="polite"></span>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email" class="form-label">Email address</label>
+            <div class="input-wrap">
+              <span class="input-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </span>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <span class="field-error" id="email-error" aria-live="polite"></span>
+          </div>
+
+          <!-- Professional Role -->
+          <div class="form-group">
+            <label for="role" class="form-label">Professional Role <span class="optional-badge">optional</span></label>
+            <div class="input-wrap input-wrap--select">
+              <span class="input-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+              </span>
+              <select id="role" name="role" class="form-input form-select">
+                <option value="">Select your role…</option>
+                <option value="Developer">Developer</option>
+                <option value="Designer">Designer</option>
+                <option value="Freelancer">Freelancer</option>
+                <option value="Content Creator">Content Creator</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Business">Business</option>
+                <option value="Student">Student</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="select-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <div class="input-wrap">
+              <span class="input-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </span>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-input"
+                placeholder="Create a strong password"
+                autocomplete="new-password"
+                required
+              />
+              <button type="button" class="toggle-pw" id="toggle-password" aria-label="Toggle password visibility">
+                <svg class="eye-icon show-eye" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="eye-icon hide-eye" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+              </button>
+            </div>
+            <!-- Strength Meter -->
+            <div class="strength-meter" id="strength-meter" aria-label="Password strength">
+              <div class="strength-bars">
+                <div class="strength-bar" id="bar-1"></div>
+                <div class="strength-bar" id="bar-2"></div>
+                <div class="strength-bar" id="bar-3"></div>
+                <div class="strength-bar" id="bar-4"></div>
+              </div>
+              <span class="strength-label" id="strength-label"></span>
+            </div>
+            <span class="field-error" id="password-error" aria-live="polite"></span>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label for="confirm-password" class="form-label">Confirm Password</label>
+            <div class="input-wrap">
+              <span class="input-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </span>
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm_password"
+                class="form-input"
+                placeholder="Re-enter your password"
+                autocomplete="new-password"
+                required
+              />
+              <button type="button" class="toggle-pw" id="toggle-confirm-password" aria-label="Toggle confirm password visibility">
+                <svg class="eye-icon show-eye" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="eye-icon hide-eye" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+              </button>
+            </div>
+            <span class="field-error" id="confirm-error" aria-live="polite"></span>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" id="signup-btn" class="btn btn-primary btn-full btn-auth">
+            <span class="btn-text">Create Account</span>
+            <span class="btn-spinner" hidden>
+              <svg class="spinner-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              Creating account…
+            </span>
+          </button>
+
+        </form>
+
+        <!-- Sign In Link -->
+        <p class="auth-switch">
+          Already have an account?
+          <a href="login.html" class="auth-link">Sign in</a>
+        </p>
+
+      </div>
+    </div>
+
+    <!-- ===== RIGHT PANEL — DECORATIVE ===== -->
+    <div class="auth-right auth-right--signup">
+      <div class="auth-right-inner">
+
+        <h2 class="auth-right-title">Everything you need to shine online</h2>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <span class="feature-icon"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span>
+            <div>
+              <strong>Launch in minutes</strong>
+              <p>Drag-and-drop builder with beautiful templates ready to go.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="10" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16" cy="10" r="1"/></svg></span>
+            <div>
+              <strong>Fully customizable</strong>
+              <p>Colors, fonts, layouts — make it uniquely yours.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></span>
+            <div>
+              <strong>Built-in analytics</strong>
+              <p>See who's viewing your portfolio and where they're from.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <span class="feature-icon"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></span>
+            <div>
+              <strong>Custom domain</strong>
+              <p>Connect your own domain for a truly professional presence.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="auth-testimonial">
+          <img src="assets/avatar-placeholder.svg" alt="User avatar" class="testimonial-avatar" onerror="this.style.display='none'" />
+          <div class="testimonial-body">
+            <p>"I landed three freelance clients in my first month after publishing my PortfolioHub page."</p>
+            <strong>— Alex R., Freelance Developer</strong>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/config.js"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module">
+    import { initSignupPage } from './js/auth.js';
+    initSignupPage();
+  </script>
+</body>
+</html>

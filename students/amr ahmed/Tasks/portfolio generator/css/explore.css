@@ -1,0 +1,57 @@
+/* Explore page */
+.explore-hero { background: var(--off-white); border-bottom: 1px solid var(--border); padding: 56px 0 32px; text-align: center; }
+.explore-hero-inner { max-width: 680px; margin: 0 auto; }
+.explore-hero-title { font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--dark-text); }
+.explore-hero-sub { color: var(--secondary-text); margin: 10px 0 24px; }
+.explore-search-wrap { max-width: 560px; margin: 0 auto; }
+.explore-search-inner { position: relative; display: flex; align-items: center; }
+.explore-search-icon { position: absolute; left: 14px; color: var(--secondary-text); pointer-events: none; }
+.explore-search-input { width: 100%; padding: 13px 40px 13px 42px; border: 1px solid var(--border); border-radius: var(--radius-full); font: inherit; background: var(--white); box-shadow: var(--shadow-sm); }
+.explore-search-input:focus { outline: 2px solid var(--primary); outline-offset: 1px; border-color: var(--primary); }
+.explore-search-clear { position: absolute; right: 10px; width: 28px; height: 28px; border: 0; background: transparent; cursor: pointer; color: var(--secondary-text); }
+
+.explore-filters-bar { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 20; }
+.explore-filters-inner { display: flex; align-items: center; gap: 16px; padding: 12px 0; flex-wrap: wrap; justify-content: space-between; }
+.filters-label { font-size: .8rem; font-weight: 600; color: var(--secondary-text); text-transform: uppercase; letter-spacing: .05em; margin-right: 10px; }
+.role-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.role-pill { border: 1px solid var(--border); background: var(--white); border-radius: var(--radius-full); padding: 6px 14px; font: 500 .85rem var(--font-sans); cursor: pointer; }
+.role-pill:hover { border-color: var(--primary); }
+.role-pill.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+.sort-select { padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--white); font: inherit; }
+
+.explore-main { padding: 28px 0 64px; }
+.results-info { color: var(--secondary-text); font-size: .9rem; margin-bottom: 16px; }
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+.portfolio-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow-sm); transition: box-shadow .2s, transform .2s; }
+.portfolio-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.portfolio-card-cover-link { display: block; }
+.portfolio-card-cover { position: relative; height: 110px; }
+.portfolio-card-cover-pattern { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.35) 1px, transparent 1px); background-size: 14px 14px; }
+.template-badge { position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,.92); color: var(--dark-blue); font-size: .7rem; font-weight: 700; padding: 3px 10px; border-radius: var(--radius-full); }
+.portfolio-card-body { padding: 0 20px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.portfolio-card-avatar-wrap { margin-top: -28px; }
+.portfolio-card-avatar { width: 56px; height: 56px; border-radius: 50%; border: 3px solid var(--white); object-fit: cover; display: block; }
+.portfolio-card-avatar--initials { display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; }
+.portfolio-card-name { font-size: 1.05rem; } .portfolio-card-name a { color: var(--dark-text); } .portfolio-card-name a:hover { color: var(--primary); }
+.portfolio-card-title { color: var(--secondary-text); font-size: .9rem; }
+.portfolio-card-bio { color: var(--secondary-text); font-size: .88rem; line-height: 1.55; }
+.portfolio-card-skills { display: flex; flex-wrap: wrap; gap: 6px; }
+.portfolio-skill-tag { background: var(--primary-light); color: var(--dark-blue); padding: 3px 10px; border-radius: var(--radius-full); font-size: .75rem; font-weight: 500; }
+.portfolio-card-role { align-self: flex-start; font-size: .75rem; color: var(--secondary-text); border: 1px solid var(--border); border-radius: var(--radius-full); padding: 2px 10px; }
+.portfolio-card-footer { margin-top: auto; padding-top: 6px; }
+.portfolio-view-btn { width: 100%; justify-content: center; gap: 6px; }
+
+.explore-empty { flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: 56px 16px; color: var(--secondary-text); }
+.explore-empty-icon { color: var(--secondary-text); }
+.load-more-wrap { display: flex; justify-content: center; margin-top: 28px; }
+.portfolio-card-skeleton { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.skeleton-cover, .skeleton-avatar-circle, .skeleton-name, .skeleton-title-sm, .skeleton-tag-sm { background: var(--light-gray); animation: ex-pulse 1.4s ease-in-out infinite; }
+.skeleton-cover { height: 110px; } .skeleton-avatar-wrap { padding: 0 20px; margin-top: -28px; }
+.skeleton-avatar-circle { width: 56px; height: 56px; border-radius: 50%; border: 3px solid var(--white); }
+.skeleton-card-body { padding: 12px 20px 20px; display: grid; gap: 10px; }
+.skeleton-name { height: 16px; width: 55%; border-radius: 6px; } .skeleton-title-sm { height: 12px; width: 40%; border-radius: 6px; }
+.skeleton-tags-row { display: flex; gap: 6px; } .skeleton-tag-sm { width: 52px; height: 20px; border-radius: 999px; }
+@keyframes ex-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: normal; border: 0; }
+@media (max-width: 640px) { .explore-filters-inner { align-items: flex-start; } .explore-filters-bar { position: static; } }
+@media (prefers-reduced-motion: reduce) { .skeleton-cover, .skeleton-avatar-circle, .skeleton-name, .skeleton-title-sm, .skeleton-tag-sm { animation: none; } .portfolio-card { transition: none; } }

@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Builder — PortfolioHub</title>
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <style>
+    /* ── Reset & Tokens ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary:        #2563EB;
+      --primary-hover:  #1d4ed8;
+      --dark-blue:      #1E3A8A;
+      --white:          #FFFFFF;
+      --off-white:      #F8FAFC;
+      --light-gray:     #F1F5F9;
+      --dark-text:      #0F172A;
+      --secondary-text: #64748B;
+      --border:         #E2E8F0;
+      --success:        #16a34a;
+      --danger:         #dc2626;
+      --warning:        #d97706;
+      --radius:         8px;
+      --left-panel-w:   250px;
+      --mid-panel-w:    450px;
+      --header-h:       60px;
+      --shadow-sm:      0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md:      0 4px 16px rgba(0,0,0,0.10);
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      color: var(--dark-text);
+      background: var(--off-white);
+    }
+
+    /* ── Builder Layout ── */
+    #builder-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ── Header ── */
+    #builder-header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      height: var(--header-h);
+      min-height: var(--header-h);
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 16px;
+    }
+    #back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--secondary-text);
+      text-decoration: none;
+      white-space: normal;
+      padding: 6px 8px;
+      border-radius: var(--radius);
+      transition: background 0.15s, color 0.15s;
+    }
+    #back-link:hover { background: var(--light-gray); color: var(--dark-text); }
+
+    #header-divider { width: 1px; height: 28px; background: var(--border); flex-shrink: 0; }
+
+    #portfolio-title-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+    #portfolio-title-input {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--dark-text);
+      border: 1px solid transparent;
+      background: transparent;
+      border-radius: var(--radius);
+      padding: 4px 8px;
+      width: 100%;
+      max-width: 340px;
+      transition: border-color 0.15s, background 0.15s;
+      outline: none;
+    }
+    #portfolio-title-input:hover { border-color: var(--border); background: var(--light-gray); }
+    #portfolio-title-input:focus { border-color: var(--primary); background: var(--white); box-shadow: 0 0 0 3px rgba(37,99,235,0.15); }
+
+    #header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .header-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: var(--radius);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--dark-text);
+      transition: background 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s;
+      white-space: normal;
+    }
+    .header-btn:hover { background: var(--light-gray); }
+    .header-btn--primary { background: var(--primary); color: var(--white); border-color: var(--primary); }
+    .header-btn--primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
+    .header-btn--success { background: var(--success); color: var(--white); border-color: var(--success); }
+    .header-btn--success:hover { background: #15803d; border-color: #15803d; }
+    .header-btn--danger  { background: var(--danger);  color: var(--white); border-color: var(--danger); }
+    .header-btn--danger:hover  { background: #b91c1c; }
+
+    #save-status {
+      font-size: 0.75rem;
+      color: var(--secondary-text);
+      white-space: normal;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      min-width: 130px;
+    }
+    #save-status.saving { color: var(--warning); }
+    #save-status.saved  { color: var(--success); }
+    #save-status.error  { color: var(--danger); }
+
+    /* ── Three-panel body ── */
+    #builder-body {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── Left panel: section tabs ── */
+    #left-panel {
+      width: var(--left-panel-w);
+      min-width: var(--left-panel-w);
+      background: var(--white);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      padding: 12px 0;
+    }
+    .section-tab {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      width: 100%;
+      text-align: left;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--secondary-text);
+      border-left: 3px solid transparent;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      border-radius: 0;
+    }
+    .section-tab:hover { background: var(--light-gray); color: var(--dark-text); }
+    .section-tab.active {
+      background: #EFF6FF;
+      color: var(--primary);
+      border-left-color: var(--primary);
+    }
+    .section-tab .tab-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      stroke: currentColor;
+    }
+    .section-tab .tab-label { flex: 1; }
+
+    /* ── Middle panel: form editor ── */
+    #mid-panel {
+      width: var(--mid-panel-w);
+      min-width: var(--mid-panel-w);
+      background: var(--off-white);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    #mid-panel-header {
+      padding: 20px 24px 0;
+    }
+    #mid-panel-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 4px;
+    }
+    #mid-panel-desc {
+      font-size: 0.8125rem;
+      color: var(--secondary-text);
+      margin-bottom: 20px;
+    }
+    #section-form-container {
+      padding: 0 24px 32px;
+      flex: 1;
+    }
+
+    /* Form styles */
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--dark-text);
+      margin-bottom: 6px;
+    }
+    .form-label .req { color: var(--danger); margin-left: 2px; }
+    .form-label .hint { font-weight: 400; color: var(--secondary-text); margin-left: 6px; font-size: 0.75rem; }
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      color: var(--dark-text);
+      background: var(--white);
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+    }
+    .form-textarea { min-height: 100px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-hint {
+      font-size: 0.75rem;
+      color: var(--secondary-text);
+      margin-top: 4px;
+    }
+
+    /* Image upload */
+    .upload-zone {
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      background: var(--white);
+    }
+    .upload-zone:hover { border-color: var(--primary); background: #EFF6FF; }
+    .upload-zone input[type=file] { display: none; }
+    .upload-zone .upload-preview {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 10px;
+      display: block;
+      border: 2px solid var(--border);
+    }
+    .upload-zone .upload-preview.cover-preview {
+      width: 100%; height: 100px;
+      border-radius: var(--radius);
+    }
+    .upload-zone .upload-text { font-size: 0.8125rem; color: var(--secondary-text); }
+    .upload-zone .upload-text span { color: var(--primary); font-weight: 600; cursor: pointer; }
+    .upload-spinner {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.8125rem;
+      color: var(--secondary-text);
+    }
+    .upload-spinner.active { display: flex; }
+
+    /* Skill sliders */
+    .skill-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      margin-bottom: 10px;
+    }
+    .skill-item-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .skill-name-input {
+      flex: 1;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.875rem;
+      outline: none;
+    }
+    .skill-name-input:focus { border-color: var(--primary); }
+    .skill-level-label {
+      font-size: 0.8125rem;
+      color: var(--secondary-text);
+      white-space: normal;
+      min-width: 36px;
+      text-align: right;
+    }
+    .skill-category-input {
+      flex: 1;
+      padding: 5px 8px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.8rem;
+      outline: none;
+    }
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 5px;
+      background: var(--border);
+      border-radius: 3px;
+      outline: none;
+      margin: 8px 0;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--primary);
+      cursor: pointer;
+    }
+
+    /* Tags / chips */
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      min-height: 38px;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+      cursor: text;
+      align-items: center;
+    }
+    .tags-container:focus-within { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
+    .tag-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px 2px 10px;
+      background: #EFF6FF;
+      color: var(--primary);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      white-space: normal;
+    }
+    .tag-chip .remove-tag {
+      background: none; border: none; cursor: pointer;
+      color: inherit; font-size: 0.9rem; line-height: 1;
+      padding: 0 2px;
+      opacity: 0.7;
+    }
+    .tag-chip .remove-tag:hover { opacity: 1; }
+    .tag-input-inline {
+      border: none; outline: none;
+      font-size: 0.875rem;
+      min-width: 80px;
+      flex: 1;
+      background: transparent;
+    }
+
+    /* List items (experience, education, certs, projects, services, links) */
+    .list-item-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+    .list-item-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .list-item-title {
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--dark-text);
+    }
+    .list-item-subtitle {
+      font-size: 0.8125rem;
+      color: var(--secondary-text);
+      margin-top: 2px;
+    }
+    .list-item-actions {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .icon-btn {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 5px 7px;
+      cursor: pointer;
+      color: var(--secondary-text);
+      display: inline-flex;
+      align-items: center;
+      transition: background 0.15s, color 0.15s;
+    }
+    .icon-btn:hover { background: var(--light-gray); color: var(--dark-text); }
+    .icon-btn.danger:hover { background: #FEF2F2; color: var(--danger); border-color: var(--danger); }
+
+    .add-item-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border: 1.5px dashed var(--primary);
+      border-radius: var(--radius);
+      color: var(--primary);
+      font-size: 0.875rem;
+      font-weight: 600;
+      background: transparent;
+      cursor: pointer;
+      width: 100%;
+      justify-content: center;
+      transition: background 0.15s;
+      margin-top: 4px;
+    }
+    .add-item-btn:hover { background: #EFF6FF; }
+
+    /* Inline edit form */
+    .inline-form {
+      background: var(--light-gray);
+      border: 1px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 10px;
+    }
+    .inline-form-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      justify-content: flex-end;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--dark-text);
+      transition: background 0.15s;
+    }
+    .btn:hover { background: var(--light-gray); }
+    .btn-primary { background: var(--primary); color: var(--white); border-color: var(--primary); }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-sm { padding: 5px 12px; font-size: 0.8125rem; }
+    .btn-danger { background: var(--danger); color: var(--white); border-color: var(--danger); }
+    .btn-danger:hover { background: #b91c1c; }
+
+    /* Social link item */
+    .link-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .link-platform-badge {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .link-url-input {
+      flex: 1;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 0.875rem;
+      outline: none;
+    }
+    .link-url-input:focus { border-color: var(--primary); }
+
+    /* Template gallery */
+    .template-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .template-card {
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      background: var(--white);
+    }
+    .template-card:hover { border-color: var(--primary); box-shadow: var(--shadow-md); }
+    .template-card.selected { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.15); }
+    .template-thumb {
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .template-info { padding: 10px 12px; }
+    .template-name { font-weight: 700; font-size: 0.875rem; color: var(--dark-text); }
+    .template-desc { font-size: 0.75rem; color: var(--secondary-text); margin-top: 2px; }
+
+    /* Color picker row */
+    .color-swatches {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .color-swatch {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .color-swatch:hover { transform: scale(1.1); }
+    .color-swatch.selected { border-color: var(--dark-text); }
+
+    /* ── Right panel: live preview ── */
+    #right-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: var(--light-gray);
+      position: relative;
+    }
+    #preview-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 16px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8125rem;
+      color: var(--secondary-text);
+    }
+    #preview-toolbar strong { color: var(--dark-text); font-weight: 600; }
+    #preview-device-btns { display: flex; gap: 4px; }
+    .device-btn {
+      padding: 4px 8px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--white);
+      cursor: pointer;
+      color: var(--secondary-text);
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: background 0.15s, color 0.15s;
+    }
+    .device-btn.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
+    #preview-frame-wrap {
+      flex: 1;
+      overflow: auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 20px;
+    }
+    #preview-frame {
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      transition: width 0.3s;
+      width: 100%;
+      max-width: 100%;
+      min-height: 600px;
+    }
+    #preview-frame.mobile { width: 375px; max-width: 375px; }
+    #preview-frame.tablet { width: 768px; max-width: 768px; }
+    #preview-content {
+      width: 100%;
+      height: 100%;
+    }
+    /* Loading overlay */
+    #preview-loading {
+      position: absolute;
+      inset: 0;
+      background: rgba(248,250,252,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    #preview-loading.active { display: flex; }
+    .preview-spinner {
+      width: 36px; height: 36px;
+      border: 3px solid var(--border);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Mobile ── */
+    #mobile-tab-bar {
+      display: none;
+      overflow-x: auto;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      padding: 0 8px;
+      gap: 2px;
+      scrollbar-width: none;
+    }
+    #mobile-tab-bar::-webkit-scrollbar { display: none; }
+    .mobile-tab {
+      flex-shrink: 0;
+      padding: 10px 14px;
+      border: none;
+      background: transparent;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--secondary-text);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+      white-space: normal;
+    }
+    .mobile-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+    #mobile-preview-btn {
+      display: none;
+    }
+
+    /* Section header separator */
+    .section-sep {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--secondary-text);
+      padding: 14px 16px 6px;
+    }
+
+    /* Checkbox row */
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--dark-text);
+      cursor: pointer;
+    }
+    .checkbox-label input[type=checkbox] {
+      width: 16px; height: 16px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: 32px 16px;
+      color: var(--secondary-text);
+      font-size: 0.875rem;
+    }
+    .empty-state svg { margin: 0 auto 10px; display: block; opacity: 0.4; }
+
+    /* Loading skeletons */
+    .skeleton {
+      background: linear-gradient(90deg, var(--light-gray) 25%, var(--border) 50%, var(--light-gray) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.2s infinite;
+      border-radius: 6px;
+    }
+    @keyframes shimmer { to { background-position: -200% 0; } }
+
+    /* ── Responsive ── */
+    @media (max-width: 1100px) {
+      #left-panel { width: 200px; min-width: 200px; }
+      #mid-panel  { width: 380px; min-width: 380px; }
+    }
+    @media (max-width: 860px) {
+      #left-panel { display: none; }
+      #mobile-tab-bar { display: flex; }
+      #mid-panel { width: 100%; min-width: 0; border-right: none; }
+      #right-panel { display: none; }
+      #right-panel.preview-open {
+        display: flex;
+        position: fixed;
+        inset: 0;
+        z-index: 300;
+      }
+      #mobile-preview-btn { display: inline-flex; }
+      #builder-body { flex-direction: column; overflow: hidden; }
+      #preview-toolbar .preview-close-btn { display: flex; }
+    }
+    @media (max-width: 480px) {
+      #portfolio-title-input { max-width: 160px; font-size: 0.9rem; }
+      .header-btn span { display: none; }
+      #save-status { display: none; }
+    }
+
+    /* Scroll utility */
+    .scrollbar-thin { scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+    .scrollbar-thin::-webkit-scrollbar { width: 5px; }
+    .scrollbar-thin::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    /* Drag handle for reorder */
+    .drag-handle {
+      cursor: grab;
+      color: var(--secondary-text);
+      padding: 2px 4px;
+      opacity: 0.5;
+    }
+    .drag-handle:hover { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<div id="builder-wrapper">
+
+  <!-- ── Header ── -->
+  <header id="builder-header">
+    <a id="back-link" href="dashboard.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      <span>Dashboard</span>
+    </a>
+    <div id="header-divider"></div>
+    <div id="portfolio-title-wrap">
+      <input
+        id="portfolio-title-input"
+        type="text"
+        value="My Portfolio"
+        placeholder="Portfolio title…"
+        title="Click to edit title"
+        autocomplete="off"
+        spellcheck="false"
+      />
+    </div>
+    <div id="header-actions">
+      <span id="save-status">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" id="save-icon">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+        <span id="save-status-text">All changes saved</span>
+      </span>
+
+      <!-- Mobile preview toggle -->
+      <button id="mobile-preview-btn" class="header-btn" title="Preview portfolio">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+        <span>Preview</span>
+      </button>
+
+      <button id="publish-btn" class="header-btn header-btn--success" title="Publish portfolio">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 16 12 12 8 16"/>
+          <line x1="12" y1="12" x2="12" y2="21"/>
+          <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
+        </svg>
+        <span id="publish-btn-text">Publish</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── Mobile tabs ── -->
+  <div id="mobile-tab-bar" role="tablist">
+    <!-- populated by JS -->
+  </div>
+
+  <!-- ── Three-panel body ── -->
+  <div id="builder-body">
+
+    <!-- Left panel: section list -->
+    <nav id="left-panel" class="scrollbar-thin" aria-label="Portfolio sections">
+      <div class="section-sep">Content</div>
+
+      <button class="section-tab active" data-section="personal">
+        <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        <span class="tab-label">Personal Info</span>
+      </button>
+
+      <button class="section-tab" data-section="about">
+        <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
+        </svg>
+        <span class="tab-label">About &amp; Bio</span>
+      </button>
+
+      <button class="section-tab" data-section="skills">
+        <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+        <span class="tab-label">Skills</span>
+      </button>
+
+      <button class="section-tab" data-section="experience">
+        <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+        </svg>
+        <span class="tab-label">Experience</span>
+      </button>
+
+      <button class="section-tab" data-section="education">
+        <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+        <span class="tab-label">Education</span>
+      </button>
+
+      <button class="section-tab" data-section="certifications">
+        <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="8" r="6"/>
+          <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+        </svg>
+        <span class="tab-label">Certifications</span>
+      </button>
+
+      <button class="section-tab" data-section="projects">
+        <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+        </svg>
+        <span class="tab-label">Projects</span>
+      </button>
+
+      <button class="section-tab" data-section="services">
+        <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/>
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+          <line x1="12" y1="22.08" x2="12" y2="12"/>
+        </svg>
+        <span class="tab-label">Services</span>
+      </button>
+
+      <div class="section-sep">Settings</div>
+
+      <button class="section-tab" data-section="links">
+        <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+        </svg>
+        <span class="tab-label">Social Links</span>
+      </button>
+
+      <button class="section-tab" data-section="template">
+        <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+          <line x1="3" y1="9" x2="21" y2="9"/>
+          <line x1="9" y1="21" x2="9" y2="9"/>
+        </svg>
+        <span class="tab-label">Template</span>
+      </button>
+    </nav>
+
+    <!-- Middle panel: form editor -->
+    <main id="mid-panel" class="scrollbar-thin">
+      <div id="mid-panel-header">
+        <h2 id="mid-panel-title">Personal Info</h2>
+        <p  id="mid-panel-desc">Basic information shown on your portfolio.</p>
+      </div>
+      <div id="section-form-container">
+        <!-- Rendered by JS -->
+        <div class="skeleton" style="height:40px; margin-bottom:12px;"></div>
+        <div class="skeleton" style="height:40px; margin-bottom:12px;"></div>
+        <div class="skeleton" style="height:80px; margin-bottom:12px;"></div>
+      </div>
+    </main>
+
+    <!-- Right panel: live preview -->
+    <section id="right-panel">
+      <div id="preview-toolbar">
+        <strong>Live Preview</strong>
+        <div id="preview-device-btns">
+          <button class="device-btn active" data-device="desktop" title="Desktop view"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Desktop</button>
+          <button class="device-btn" data-device="tablet" title="Tablet view"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg> Tablet</button>
+          <button class="device-btn" data-device="mobile" title="Mobile view"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg> Mobile</button>
+        </div>
+        <!-- Only visible on mobile overlay -->
+        <button class="preview-close-btn icon-btn" id="preview-close-btn"
+                style="display:none; margin-left:8px;" title="Close preview">✕</button>
+      </div>
+      <div id="preview-frame-wrap">
+        <div id="preview-frame">
+          <div id="preview-content"></div>
+        </div>
+      </div>
+      <div id="preview-loading">
+        <div class="preview-spinner"></div>
+      </div>
+    </section>
+
+  </div><!-- /#builder-body -->
+</div><!-- /#builder-wrapper -->
+
+<!-- Config must come before the module -->
+<script src="js/config.js"></script>
+<script type="module" src="js/portfolio-builder.js"></script>
+
+</body>
+</html>

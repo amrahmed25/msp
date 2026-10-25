@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Templates – PortfolioHub</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/templates.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Page Header -->
+  <section class="templates-hero">
+    <div class="container">
+      <div class="templates-hero-inner">
+        <div class="templates-hero-badge">Professional Templates</div>
+        <h1 class="templates-hero-title">Choose Your Template</h1>
+        <p class="templates-hero-sub">Start with a professionally designed template and customize it to match your brand. Every template is fully responsive and optimized for performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Template Gallery -->
+  <main class="templates-main">
+    <div class="container">
+      <div class="template-grid" id="template-grid">
+        <!-- Cards rendered by JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- FAQ Strip -->
+  <section class="templates-faq">
+    <div class="container">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>Can I switch templates later?</h4>
+          <p>Yes. Open your portfolio in the builder and pick another template under Template &amp; Settings. Your content stays the same.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Are templates fully customizable?</h4>
+          <p>All of your content is editable in the builder. You can also choose an accent colour and show or hide sections.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Are portfolios mobile-friendly?</h4>
+          <p>Every template is responsive and adapts to phones, tablets and desktops. The builder preview lets you check each size.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Is there a free plan?</h4>
+          <p>Yes. Every template is free to use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Template Preview Modal -->
+  <div class="modal-overlay templates-preview-overlay" id="template-preview-overlay" role="dialog" aria-modal="true" aria-labelledby="preview-modal-title">
+    <div class="template-preview-modal" id="template-preview-modal">
+      <div class="preview-modal-header">
+        <div class="preview-modal-info">
+          <h2 class="preview-modal-title" id="preview-modal-title">Template Name</h2>
+          <p class="preview-modal-desc" id="preview-modal-desc"></p>
+        </div>
+        <div class="preview-modal-actions">
+          <button class="btn btn-primary" id="preview-use-btn">Use This Template</button>
+          <button class="preview-modal-close" id="preview-modal-close" aria-label="Close preview">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="preview-modal-body" id="preview-modal-body">
+        <!-- Preview rendered by JS -->
+      </div>
+      <div class="preview-modal-footer">
+        <div class="preview-features" id="preview-features"></div>
+        <button class="btn btn-primary btn-lg" id="preview-use-btn-bottom">Use This Template</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/navigation.js"></script>
+  <script type="module" src="js/templates.js"></script>
+</body>
+</html>

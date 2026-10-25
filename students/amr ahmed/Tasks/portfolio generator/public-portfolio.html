@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Clean URLs (/u/<slug>) are rewritten server-side, so relative asset paths must be
+       resolved from the site root, not from /u/. This must run before any asset is requested. -->
+  <script>
+(function () {
+  var path = window.location.pathname;
+  var match = path.match(/^(.*\/)u\/[^/]+\/?$/);
+  var base = match ? match[1] : new URL('.', window.location.href).pathname;
+
+  document.write('<base href="' + base + '">');
+})();
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loading Portfolio… — PortfolioHub</title>
+  <meta name="description" content="A professional portfolio built with PortfolioHub." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Portfolio — PortfolioHub" />
+  <meta property="og:description" content="A professional portfolio built with PortfolioHub." />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/public-portfolio.css" />
+</head>
+<body>
+
+  <!-- ── Loading Overlay ──────────────────────────────────────── -->
+  <div id="loading-overlay" role="status" aria-live="polite">
+    <div class="loading-logo">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="40" height="40" rx="10" fill="#2563EB"/>
+        <path d="M10 28V12h10a6 6 0 0 1 0 12H10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="28" cy="26" r="4" fill="#fff" opacity="0.85"/>
+      </svg>
+      PortfolioHub
+    </div>
+    <div class="loading-spinner" aria-hidden="true"></div>
+    <p class="loading-text">Loading portfolio…</p>
+  </div>
+
+  <!-- ── Share Bar ────────────────────────────────────────────── -->
+  <div id="share-bar" role="toolbar" aria-label="Share this portfolio">
+    <a href="index.html" class="share-bar__brand" aria-label="PortfolioHub home">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="40" height="40" rx="10" fill="#2563EB"/>
+        <path d="M10 28V12h10a6 6 0 0 1 0 12H10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="28" cy="26" r="4" fill="#fff" opacity="0.85"/>
+      </svg>
+      <span>PortfolioHub</span>
+    </a>
+    <div class="share-bar__actions">
+      <button class="share-btn" id="btn-copy-link" title="Copy link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+        </svg>
+        <span>Copy Link</span>
+      </button>
+      <button class="share-btn" id="btn-native-share" title="Share" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+          <polyline points="16 6 12 2 8 6"/>
+          <line x1="12" y1="2" x2="12" y2="15"/>
+        </svg>
+        <span>Share</span>
+      </button>
+      <a href="explore.html" class="share-btn share-btn--primary" id="btn-explore">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <span>Explore Portfolios</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── Portfolio Content ────────────────────────────────────── -->
+  <main id="portfolio-container" aria-label="Portfolio content"></main>
+
+  <!-- ── Load Error State ─────────────────────────────────────── -->
+  <div id="state-error" class="state-page" role="alert" aria-label="Could not load portfolio">
+    <h1 class="state-page__title">Could Not Load Portfolio</h1>
+    <p class="state-page__body">Something went wrong while loading this portfolio. Check your connection and try again.</p>
+    <button type="button" class="state-page__btn" id="btn-retry">Try Again</button>
+  </div>
+
+  <!-- ── Not Found State ──────────────────────────────────────── -->
+  <div id="state-not-found" class="state-page" role="main" aria-label="Portfolio not found">
+    <div class="state-page__icon" aria-hidden="true"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+    <h1 class="state-page__title">Portfolio Not Found</h1>
+    <p class="state-page__body">
+      We couldn't find a portfolio at this address. The link may be incorrect, or the portfolio may have been removed.
+    </p>
+    <a href="explore.html" class="state-page__btn">
+      Browse Portfolios
+    </a>
+  </div>
+
+  <!-- ── Not Published State ──────────────────────────────────── -->
+  <div id="state-not-published" class="state-page" role="main" aria-label="Portfolio not published">
+    <div class="state-page__icon" aria-hidden="true"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+    <h1 class="state-page__title">Portfolio Not Published</h1>
+    <p class="state-page__body">
+      This portfolio hasn't been published yet. If you're the owner, head to your dashboard and publish it to make it visible to everyone.
+    </p>
+    <a href="dashboard.html" class="state-page__btn">
+      Go to Dashboard
+    </a>
+  </div>
+
+  <!-- ── Powered-by Footer ────────────────────────────────────── -->
+  <footer id="powered-by-footer">
+    Built with <a href="index.html">PortfolioHub</a> — Create your own free professional portfolio today.
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script type="module" src="js/public-portfolio.js"></script>
+</body>
+</html>
