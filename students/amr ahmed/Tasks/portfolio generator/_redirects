@@ -1,0 +1,9 @@
+# Netlify URL Rewrite Rules
+# Maps clean /u/:slug URLs to the public-portfolio.html page
+# The 200 status means a rewrite (not a redirect) — the browser URL stays clean
+
+/u/:slug  /public-portfolio.html?u=:slug  200
+
+# Catch-all: send any other unmatched paths to the index (SPA-style fallback)
+# Uncomment the line below if you want a 404-friendly fallback:
+# /*  /index.html  200

@@ -5,6 +5,14 @@ const amrAhmed={
     tasksPath: "./students/amr ahmed/Tasks/",
     assignments: [
       {
+        title: "portfoliohub",
+        folder: "./students/amr ahmed/Tasks/portfolio generator/",
+        preview: "./students/amr ahmed/Tasks/portfolio generator/assets/avatar-placeholder.svg",
+        description: "A modern, responsive portfolio website designed to showcase my skills, projects, experience, and services in a professional way.Built with a focus on clean UI, smooth navigation, and an engaging user experience across all devices.",
+        technologies: ["HTML", "CSS", "JavaScript","Supabase","Tailwind CSS"],
+        github: "https://github.com/amrahmed25/msp/tree/main/students/amr%20ahmed/Tasks/portfolio generator"
+      },
+      {
         title: "2048 Game",
         folder: "./students/amr ahmed/Tasks/2048 Game/",
         preview: "./students/amr ahmed/Tasks/2048 Game/background.jpeg",

@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PortfolioHub Dashboard — Manage your portfolios, track views, and build your online presence." />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Dashboard — PortfolioHub</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+
+  <style>
+    /* ── CSS Custom Properties ── */
+    :root {
+      --primary: #2563EB;
+      --dark-blue: #1E3A8A;
+      --white: #FFFFFF;
+      --off-white: #F8FAFC;
+      --light-gray: #F1F5F9;
+      --dark-text: #0F172A;
+      --secondary-text: #64748B;
+      --border: #E2E8F0;
+      --sidebar-width: 260px;
+      --topbar-height: 64px;
+      --success: #10B981;
+      --warning: #F59E0B;
+      --danger: #EF4444;
+    }
+
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--off-white);
+      color: var(--dark-text);
+      min-height: 100vh;
+      display: flex;
+      overflow-x: hidden;
+    }
+
+    /* ── Dashboard Layout ── */
+    .dashboard-layout {
+      display: flex;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    /* ══════════════════════════════
+       SIDEBAR
+    ══════════════════════════════ */
+    .dashboard-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: var(--sidebar-width);
+      background: var(--white);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      z-index: 200;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    /* ── Sidebar Logo ── */
+    .sidebar-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1.25rem 1.5rem;
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .sidebar-logo-icon { font-size: 1.6rem; }
+    .sidebar-logo-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.3px;
+    }
+
+    /* ── Sidebar User Area ── */
+    .sidebar-user-area {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-shrink: 0;
+    }
+    .sidebar-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .sidebar-avatar-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: none;
+    }
+    .sidebar-avatar-initials {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0; left: 0;
+    }
+    .sidebar-user-info { flex: 1; min-width: 0; }
+    .sidebar-user-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--dark-text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sidebar-user-email {
+      font-size: 0.75rem;
+      color: var(--secondary-text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sidebar-pro-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.5rem;
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+
+    /* ── Sidebar Nav ── */
+    .sidebar-nav {
+      flex: 1;
+      padding: 1rem 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .sidebar-nav-section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--secondary-text);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 0.75rem 0.75rem 0.3rem;
+    }
+    .sidebar-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 0.85rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--secondary-text);
+      border-radius: 10px;
+      transition: all 0.15s ease;
+      border: none;
+      background: none;
+      width: 100%;
+      cursor: pointer;
+      text-align: left;
+    }
+    .sidebar-nav-link:hover {
+      background: var(--light-gray);
+      color: var(--primary);
+    }
+    .sidebar-nav-link.active {
+      background: #EFF6FF;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .sidebar-nav-link svg { flex-shrink: 0; width: 18px; height: 18px; }
+    .sidebar-nav-link .nav-badge {
+      margin-left: auto;
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: var(--primary);
+      color: white;
+      padding: 0.15rem 0.45rem;
+      border-radius: 20px;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    /* ── Sidebar Footer ── */
+    .sidebar-footer {
+      padding: 1rem 0.75rem;
+      border-top: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .sidebar-logout-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--secondary-text);
+      border-radius: 10px;
+      border: none;
+      background: none;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: left;
+    }
+    .sidebar-logout-btn:hover { background: #FEF2F2; color: #DC2626; }
+    .sidebar-logout-btn svg { flex-shrink: 0; }
+
+    /* ── Sidebar Overlay (mobile) ── */
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 199;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .sidebar-overlay.active { opacity: 1; }
+
+    /* ══════════════════════════════
+       MAIN CONTENT
+    ══════════════════════════════ */
+    .dashboard-main {
+      margin-left: var(--sidebar-width);
+      flex: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Topbar ── */
+    .dashboard-topbar {
+      height: var(--topbar-height);
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 1rem; }
+    .sidebar-toggle-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.4rem;
+      cursor: pointer;
+      color: var(--secondary-text);
+      transition: all 0.15s;
+    }
+    .sidebar-toggle-btn:hover { background: var(--light-gray); color: var(--primary); }
+    .topbar-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--dark-text);
+    }
+    .topbar-right { display: flex; align-items: center; gap: 0.75rem; }
+
+    /* ── Dashboard Content ── */
+    .dashboard-content {
+      flex: 1;
+      padding: 2rem;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    /* ── Dashboard Header ── */
+    .dashboard-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .dashboard-greeting h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--dark-text);
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    .dashboard-greeting p {
+      font-size: 0.95rem;
+      color: var(--secondary-text);
+      margin-top: 0.35rem;
+    }
+    .dashboard-header-actions { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1.25rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+    .btn-primary { background: var(--primary); color: var(--white); }
+    .btn-primary:hover { background: var(--dark-blue); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
+    .btn-secondary { background: var(--light-gray); color: var(--dark-text); }
+    .btn-secondary:hover { background: var(--border); }
+    .btn-ghost { background: transparent; color: var(--secondary-text); border: 1.5px solid var(--border); }
+    .btn-ghost:hover { color: var(--primary); border-color: var(--primary); background: #EFF6FF; }
+    .btn-danger { background: var(--danger); color: var(--white); }
+    .btn-danger:hover { background: #DC2626; }
+    .btn-sm { padding: 0.35rem 0.85rem; font-size: 0.82rem; border-radius: 8px; }
+
+    /* ══════════════════════════════
+       STATS CARDS
+    ══════════════════════════════ */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .stat-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .stat-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); transform: translateY(-2px); }
+    .stat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .stat-icon-blue { background: #EFF6FF; }
+    .stat-icon-green { background: #ECFDF5; }
+    .stat-icon-purple { background: #F5F3FF; }
+    .stat-icon-orange { background: #FFF7ED; }
+    .stat-info { flex: 1; min-width: 0; }
+    .stat-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--secondary-text);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.35rem;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--dark-text);
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+    .stat-trend {
+      font-size: 0.78rem;
+      color: var(--secondary-text);
+      margin-top: 0.3rem;
+    }
+
+    /* ══════════════════════════════
+       SECTION HEADER
+    ══════════════════════════════ */
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--dark-text);
+    }
+    .section-subtitle {
+      font-size: 0.875rem;
+      color: var(--secondary-text);
+      margin-top: 0.2rem;
+    }
+    .section-controls { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+    .search-input {
+      padding: 0.45rem 0.85rem 0.45rem 2.2rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.875rem;
+      color: var(--dark-text);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      font-family: inherit;
+      width: 200px;
+    }
+    .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+    .search-wrapper { position: relative; }
+    .search-icon {
+      position: absolute;
+      left: 0.6rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--secondary-text);
+      pointer-events: none;
+    }
+    .filter-select {
+      padding: 0.45rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.875rem;
+      color: var(--dark-text);
+      background: var(--white);
+      outline: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: border-color 0.15s;
+    }
+    .filter-select:focus { border-color: var(--primary); }
+
+    /* ══════════════════════════════
+       PORTFOLIO CARDS
+    ══════════════════════════════ */
+    .portfolios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .portfolio-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .portfolio-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.1); transform: translateY(-3px); }
+    .portfolio-card-cover {
+      height: 160px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--light-gray);
+    }
+    .portfolio-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .portfolio-card:hover .portfolio-cover-img { transform: scale(1.04); }
+    .portfolio-cover-icon {
+      font-size: 3rem;
+      opacity: 0.6;
+    }
+    .portfolio-template-badge {
+      position: absolute;
+      bottom: 0.6rem;
+      left: 0.6rem;
+      background: rgba(0,0,0,0.55);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 20px;
+      text-transform: capitalize;
+      letter-spacing: 0.3px;
+      backdrop-filter: blur(4px);
+    }
+    .portfolio-card-body { padding: 1.1rem 1.25rem 1.25rem; }
+    .portfolio-status-badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      margin-bottom: 0.6rem;
+    }
+    .portfolio-status-badge.published { background: #ECFDF5; color: #059669; }
+    .portfolio-status-badge.draft { background: var(--light-gray); color: var(--secondary-text); }
+    .portfolio-card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 0.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .portfolio-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--secondary-text);
+      margin-bottom: 1rem;
+    }
+    .portfolio-view-count {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .portfolio-card-actions {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .card-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 7px;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: inherit;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn-edit { background: #EFF6FF; color: var(--primary); border-color: #BFDBFE; }
+    .btn-edit:hover { background: var(--primary); color: var(--white); }
+    .btn-preview { background: var(--light-gray); color: var(--dark-text); border-color: var(--border); }
+    .btn-preview:hover { background: var(--border); }
+    .btn-publish { background: #ECFDF5; color: #059669; border-color: #A7F3D0; }
+    .btn-publish:hover { background: #059669; color: white; }
+    .btn-unpublish { background: #FFF7ED; color: #D97706; border-color: #FDE68A; }
+    .btn-unpublish:hover { background: #D97706; color: white; }
+    .btn-delete { background: #FEF2F2; color: #DC2626; border-color: #FECACA; }
+    .btn-delete:hover { background: #DC2626; color: white; }
+
+    /* ══════════════════════════════
+       EMPTY STATE
+    ══════════════════════════════ */
+    .portfolios-empty {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      text-align: center;
+      background: var(--white);
+      border: 2px dashed var(--border);
+      border-radius: 20px;
+      margin-bottom: 2.5rem;
+    }
+    .empty-state-illustration {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.8;
+    }
+    .empty-state-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 0.5rem;
+    }
+    .empty-state-desc {
+      font-size: 0.95rem;
+      color: var(--secondary-text);
+      max-width: 380px;
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }
+
+    /* ══════════════════════════════
+       QUICK ACTIONS
+    ══════════════════════════════ */
+    .quick-actions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .quick-action-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-left: 4px solid transparent;
+    }
+    .quick-action-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+    .quick-action-card.blue { border-left-color: var(--primary); }
+    .quick-action-card.green { border-left-color: #10B981; }
+    .quick-action-card.purple { border-left-color: #8B5CF6; }
+    .qa-icon { font-size: 2rem; }
+    .qa-title { font-size: 1rem; font-weight: 700; color: var(--dark-text); }
+    .qa-desc { font-size: 0.85rem; color: var(--secondary-text); line-height: 1.5; }
+    .qa-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: auto;
+    }
+
+    /* ══════════════════════════════
+       RECENT ACTIVITY
+    ══════════════════════════════ */
+    .activity-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .activity-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .activity-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .activity-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .activity-info { flex: 1; min-width: 0; }
+    .activity-title {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--dark-text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .activity-desc { display: block; font-size: 0.8rem; color: var(--secondary-text); }
+    .activity-time { font-size: 0.78rem; color: var(--secondary-text); white-space: nowrap; flex-shrink: 0; }
+    .activity-empty { font-size: 0.9rem; color: var(--secondary-text); text-align: center; padding: 1rem 0; }
+
+    /* ══════════════════════════════
+       SKELETON LOADERS
+    ══════════════════════════════ */
+    .skeleton {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: skeleton-shimmer 1.5s infinite;
+      border-radius: 6px;
+    }
+    @keyframes skeleton-shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .skeleton-cover { height: 160px; border-radius: 0; }
+    .skeleton-badge { width: 70px; height: 22px; margin-bottom: 0.6rem; border-radius: 20px; }
+    .skeleton-title { width: 80%; height: 22px; margin-bottom: 0.5rem; }
+    .skeleton-meta { width: 60%; height: 16px; margin-bottom: 1rem; }
+    .skeleton-actions { width: 100%; height: 34px; border-radius: 7px; }
+    .skeleton-stat-num { display: block; width: 60px; height: 40px; border-radius: 6px; }
+    .skeleton-card .portfolio-card-body { padding: 1.1rem 1.25rem 1.25rem; }
+
+    /* ══════════════════════════════
+       CREATE PORTFOLIO MODAL
+    ══════════════════════════════ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s;
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-box {
+      background: var(--white);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 520px;
+      padding: 2rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      transform: scale(0.95) translateY(10px);
+      transition: transform 0.25s ease;
+    }
+    .modal-overlay.open .modal-box { transform: scale(1) translateY(0); }
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+    .modal-title { font-size: 1.25rem; font-weight: 700; color: var(--dark-text); }
+    .modal-close-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--secondary-text);
+      padding: 0.3rem;
+      border-radius: 6px;
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: background 0.15s, color 0.15s;
+    }
+    .modal-close-btn:hover { background: var(--light-gray); color: var(--dark-text); }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--dark-text);
+      margin-bottom: 0.4rem;
+    }
+    .form-input, .form-select {
+      width: 100%;
+      padding: 0.65rem 0.9rem;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: var(--dark-text);
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      background: var(--white);
+    }
+    .form-input:focus, .form-select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+    }
+    .form-hint { font-size: 0.78rem; color: var(--secondary-text); margin-top: 0.35rem; }
+    .template-option-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+    .template-option {
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 0.75rem;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s;
+      position: relative;
+    }
+    .template-option:hover { border-color: var(--primary); background: #EFF6FF; }
+    .template-option.selected { border-color: var(--primary); background: #EFF6FF; }
+    .template-option-icon { font-size: 1.5rem; margin-bottom: 0.3rem; }
+    .template-option-name { font-size: 0.78rem; font-weight: 600; color: var(--dark-text); }
+    .template-option input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+
+    /* ══════════════════════════════
+       TOAST NOTIFICATIONS (fallback)
+    ══════════════════════════════ */
+    .toast-container {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (max-width: 1024px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .quick-actions-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .dashboard-sidebar {
+        transform: translateX(-100%);
+      }
+      .dashboard-sidebar.open {
+        transform: translateX(0);
+        box-shadow: 6px 0 30px rgba(0,0,0,0.15);
+      }
+      .sidebar-overlay { display: block; }
+      .dashboard-main { margin-left: 0; }
+      .sidebar-toggle-btn { display: flex; }
+    }
+    @media (max-width: 640px) {
+      .dashboard-content { padding: 1.25rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+      .stat-card { padding: 1rem; }
+      .stat-value { font-size: 1.6rem; }
+      .quick-actions-grid { grid-template-columns: 1fr; }
+      .portfolios-grid { grid-template-columns: 1fr; }
+      .dashboard-header { flex-direction: column; align-items: flex-start; }
+      .dashboard-greeting h1 { font-size: 1.4rem; }
+      .section-header { flex-direction: column; align-items: flex-start; }
+      .section-controls { width: 100%; }
+      .search-input { width: 100%; }
+      .template-option-grid { grid-template-columns: repeat(2, 1fr); }
+      .modal-box { padding: 1.25rem; }
+      .modal-footer { flex-direction: column-reverse; }
+      .modal-footer .btn { width: 100%; justify-content: center; }
+    }
+    @media (max-width: 400px) {
+      .stats-grid { grid-template-columns: 1fr; }
+      .portfolio-card-actions { flex-wrap: wrap; }
+      .card-action-btn { flex: 1; justify-content: center; min-width: calc(50% - 0.25rem); }
+    }
+  </style>
+</head>
+<body>
+  <!-- ════════════════════════════════
+       DASHBOARD LAYOUT
+  ════════════════════════════════ -->
+  <div class="dashboard-layout">
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar" role="navigation" aria-label="Dashboard navigation">
+
+      <!-- Logo -->
+      <a href="index.html" class="sidebar-logo">
+        <span class="sidebar-logo-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></span>
+        <span class="sidebar-logo-text">PortfolioHub</span>
+      </a>
+
+      <!-- User Area -->
+      <div class="sidebar-user-area">
+        <div class="sidebar-avatar">
+          <img src="" alt="User avatar" class="sidebar-avatar-img" id="sidebar-avatar-img" />
+          <span class="sidebar-avatar-initials" id="sidebar-avatar-initials"></span>
+        </div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="sidebar-user-name">Loading…</div>
+          <div class="sidebar-user-email" id="sidebar-user-email"></div>
+        </div>
+        <span class="sidebar-pro-badge" id="sidebar-pro-badge" style="display:none;">PRO</span>
+      </div>
+
+      <!-- Nav Links -->
+      <nav class="sidebar-nav" aria-label="Sidebar">
+        <span class="sidebar-nav-section-label">Main</span>
+
+        <a href="dashboard.html" class="sidebar-nav-link" data-page="dashboard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+          </svg>
+          Overview
+        </a>
+
+        <a href="dashboard.html#portfolios" class="sidebar-nav-link" data-page="portfolios">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+          </svg>
+          My Portfolios
+        </a>
+
+        <a href="portfolio-builder.html" class="sidebar-nav-link" data-page="builder">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+          </svg>
+          Portfolio Builder
+        </a>
+
+        <a href="templates.html" class="sidebar-nav-link" data-page="templates">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M3 9h18M9 21V9"/>
+          </svg>
+          Templates
+        </a>
+
+        <a href="community.html" class="sidebar-nav-link" data-page="community">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          Community
+        </a>
+
+        <span class="sidebar-nav-section-label">Account</span>
+
+        <a href="profile.html" class="sidebar-nav-link" data-page="profile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          Settings
+        </a>
+      </nav>
+
+      <!-- Footer / Logout -->
+      <div class="sidebar-footer">
+        <button class="sidebar-logout-btn" id="sidebar-logout-btn" aria-label="Log out">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+          Log Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- Sidebar Overlay (mobile) -->
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <!-- ── MAIN ── -->
+    <main class="dashboard-main" id="dashboard-main">
+
+      <!-- Topbar -->
+      <div class="dashboard-topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" id="sidebar-toggle-btn" aria-label="Toggle sidebar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+          <span class="topbar-title">Dashboard</span>
+        </div>
+        <div class="topbar-right">
+          <a href="explore.html" class="btn btn-ghost btn-sm">Explore</a>
+          <button class="btn btn-primary btn-sm" data-action="create-portfolio">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            New Portfolio
+          </button>
+        </div>
+      </div>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+
+        <!-- ── Dashboard Header ── -->
+        <div class="dashboard-header">
+          <div class="dashboard-greeting">
+            <h1>Welcome back, <span id="welcome-name">there</span>! </h1>
+            <p>Here's what's happening with your portfolios today.</p>
+          </div>
+          <div class="dashboard-header-actions">
+            <a href="explore.html" class="btn btn-ghost">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              Explore
+            </a>
+            <button class="btn btn-primary" data-action="create-portfolio">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+              Create Portfolio
+            </button>
+          </div>
+        </div>
+
+        <!-- ── Stats Grid ── -->
+        <div class="stats-grid" id="stats-grid" aria-label="Portfolio statistics">
+          <div class="stat-card">
+            <div class="stat-icon stat-icon-blue"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <div class="stat-info">
+              <div class="stat-label">Total Portfolios</div>
+              <div class="stat-value" id="stat-total-portfolios">—</div>
+              <div class="stat-trend">All time</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon stat-icon-green"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+            <div class="stat-info">
+              <div class="stat-label">Published</div>
+              <div class="stat-value" id="stat-published">—</div>
+              <div class="stat-trend">Live portfolios</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon stat-icon-purple"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <div class="stat-info">
+              <div class="stat-label">Total Views</div>
+              <div class="stat-value" id="stat-views">—</div>
+              <div class="stat-trend">Across all portfolios</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon stat-icon-orange"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <div class="stat-info">
+              <div class="stat-label">Community Posts</div>
+              <div class="stat-value" id="stat-posts">—</div>
+              <div class="stat-trend">Your contributions</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── My Portfolios Section ── -->
+        <section id="portfolios" aria-label="My Portfolios">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">My Portfolios</h2>
+              <p class="section-subtitle">Create, manage, and publish your portfolios.</p>
+            </div>
+            <div class="section-controls">
+              <div class="search-wrapper">
+                <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <input
+                  type="search"
+                  id="portfolio-search"
+                  class="search-input"
+                  placeholder="Search portfolios…"
+                  aria-label="Search portfolios"
+                />
+              </div>
+              <select id="portfolio-filter" class="filter-select" aria-label="Filter portfolios">
+                <option value="all">All</option>
+                <option value="published">Published</option>
+                <option value="draft">Draft</option>
+              </select>
+              <button class="btn btn-primary btn-sm" data-action="create-portfolio">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+                New
+              </button>
+            </div>
+          </div>
+
+          <!-- Portfolio Grid -->
+          <div class="portfolios-grid" id="portfolios-grid" role="list" aria-label="Your portfolios"></div>
+
+          <!-- Empty State -->
+          <div class="portfolios-empty" id="portfolios-empty" role="status" aria-live="polite">
+            <div class="empty-state-illustration"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <h3 class="empty-state-title">No portfolios yet</h3>
+            <p class="empty-state-desc">
+              Create your first portfolio and showcase your work to the world.
+              Choose from beautiful templates and customize everything!
+            </p>
+            <button class="btn btn-primary" data-action="create-portfolio">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+              Create Your First Portfolio
+            </button>
+          </div>
+        </section>
+
+        <!-- ── Quick Actions ── -->
+        <section aria-label="Quick Actions">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Quick Actions</h2>
+              <p class="section-subtitle">Jump right in and get things done.</p>
+            </div>
+          </div>
+          <div class="quick-actions-grid">
+            <div class="quick-action-card blue" data-action="create-portfolio" style="cursor:pointer;" role="button" tabindex="0">
+              <span class="qa-icon"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></svg></span>
+              <div class="qa-title">Create Portfolio</div>
+              <p class="qa-desc">Start a new portfolio from scratch or choose a beautiful template to get started faster.</p>
+              <span class="qa-link">
+                Get started
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </span>
+            </div>
+            <a href="community.html" class="quick-action-card green">
+              <span class="qa-icon"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20a6 6 0 0 1 12 0M15 20a5 5 0 0 1 6-4"/></svg></span>
+              <div class="qa-title">Join Community</div>
+              <p class="qa-desc">Connect with other creators, share feedback, and get inspired by portfolios from around the world.</p>
+              <span class="qa-link">
+                Explore community
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </span>
+            </a>
+            <a href="templates.html" class="quick-action-card purple">
+              <span class="qa-icon"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="10" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16" cy="10" r="1"/></svg></span>
+              <div class="qa-title">Browse Templates</div>
+              <p class="qa-desc">Explore our library of professionally designed templates for developers, designers, and more.</p>
+              <span class="qa-link">
+                Browse templates
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </section>
+
+        <!-- ── Recent Activity ── -->
+        <section aria-label="Recent Activity">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Recent Activity</h2>
+              <p class="section-subtitle">Your latest portfolio updates.</p>
+            </div>
+          </div>
+          <div class="activity-card">
+            <div id="recent-activity-list" aria-live="polite">
+              <!-- Populated by JS -->
+              <p class="activity-empty">Loading activity…</p>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /dashboard-content -->
+    </main><!-- /dashboard-main -->
+  </div><!-- /dashboard-layout -->
+
+  <!-- ════════════════════════════════
+       CREATE PORTFOLIO MODAL
+  ════════════════════════════════ -->
+  <div class="modal-overlay" id="create-portfolio-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title">Create New Portfolio</h2>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <form id="create-portfolio-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="portfolio-title-input">Portfolio Title *</label>
+          <input
+            type="text"
+            id="portfolio-title-input"
+            class="form-input"
+            placeholder="e.g. John's Design Portfolio"
+            maxlength="80"
+            required
+            autocomplete="off"
+          />
+          <p class="form-hint">This will be the name of your portfolio. You can change it later.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Choose a Template</label>
+          <div class="template-option-grid" role="radiogroup" aria-label="Template selection">
+            <label class="template-option selected" tabindex="0">
+              <input type="radio" name="template" value="reference" checked />
+              <div class="template-option-name">Reference</div>
+            </label>
+            <label class="template-option" tabindex="0">
+              <input type="radio" name="template" value="developer" />
+              <div class="template-option-name">Developer</div>
+            </label>
+            <label class="template-option" tabindex="0">
+              <input type="radio" name="template" value="creative" />
+              <div class="template-option-name">Creative</div>
+            </label>
+            <label class="template-option" tabindex="0">
+              <input type="radio" name="template" value="freelancer" />
+              <div class="template-option-name">Freelancer</div>
+            </label>
+          </div>
+          <!-- Hidden select synced to radio group for form submission -->
+          <select id="portfolio-template-select" style="display:none;">
+            <option value="reference">Reference</option>
+            <option value="developer">Developer</option>
+            <option value="creative">Creative</option>
+            <option value="freelancer">Freelancer</option>
+          </select>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost" id="modal-cancel-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="modal-submit-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Create Portfolio
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── Template option radio sync script ── -->
+  <script>
+    // Sync radio buttons → hidden select + selected class
+    document.addEventListener('DOMContentLoaded', () => {
+      const options = document.querySelectorAll('.template-option');
+      const select = document.getElementById('portfolio-template-select');
+      options.forEach(opt => {
+        const radio = opt.querySelector('input[type="radio"]');
+        opt.addEventListener('click', () => {
+          options.forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          if (radio) {
+            radio.checked = true;
+            if (select) select.value = radio.value;
+          }
+        });
+        opt.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            opt.click();
+          }
+        });
+      });
+
+      // Quick action card keyboard support
+      const qaCard = document.querySelector('.quick-action-card[data-action="create-portfolio"]');
+      if (qaCard) {
+        qaCard.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            qaCard.click();
+          }
+        });
+      }
+    });
+  </script>
+
+  <!-- ════════════════════════════════
+       SCRIPTS
+  ════════════════════════════════ -->
+  <script src="js/config.js"></script>
+  <script type="module">
+    import supabase, { requireAuth } from './js/supabase-client.js';
+    import { loadDashboard } from './js/dashboard.js';
+
+    // Auth guard — requireAuth() redirects to login.html if no session
+    // loadDashboard() also calls requireAuth internally, but we call it here
+    // to redirect before any content renders.
+    (async () => {
+      try {
+        await requireAuth();
+        await loadDashboard();
+      } catch (err) {
+        // requireAuth redirects on failure, but catch any other errors
+        console.error('[dashboard.html] Init error:', err);
+      }
+    })();
+  </script>
+</body>
+</html>

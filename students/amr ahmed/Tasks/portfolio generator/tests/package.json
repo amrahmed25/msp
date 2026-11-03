@@ -1,0 +1,16 @@
+{
+  "name": "portfoliohub-tests",
+  "private": true,
+  "type": "module",
+  "description": "Offline tests: page modules run in jsdom against an in-memory, schema-aware Supabase mock. They do NOT contact a real Supabase project.",
+  "scripts": {
+    "test": "node templates.test.mjs && node builder.test.mjs && node public.test.mjs && node dash.test.mjs && node pages.test.mjs && node profile.test.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0",
+    "jsdom": "^30.0.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

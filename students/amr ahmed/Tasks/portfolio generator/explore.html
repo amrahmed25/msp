@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Portfolios – PortfolioHub</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/explore.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Page Header -->
+  <section class="explore-hero">
+    <div class="container">
+      <div class="explore-hero-inner">
+        <h1 class="explore-hero-title">Explore Portfolios</h1>
+        <p class="explore-hero-sub">Discover talented professionals from around the world</p>
+
+        <!-- Search Bar -->
+        <div class="explore-search-wrap">
+          <div class="explore-search-inner">
+            <svg class="explore-search-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input
+              type="text"
+              id="explore-search"
+              class="explore-search-input"
+              placeholder="Search by name, title, or skill..."
+              autocomplete="off"
+            />
+            <button id="explore-search-clear" class="explore-search-clear" style="display:none;" aria-label="Clear">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+          <button id="explore-search-btn" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <div class="explore-filters-bar">
+    <div class="container">
+      <div class="explore-filters-inner">
+        <span class="filters-label">Filter by role:</span>
+        <div class="role-pills" id="role-pills">
+          <button class="role-pill active" data-role="all">All</button>
+          <button class="role-pill" data-role="Developer">Developer</button>
+          <button class="role-pill" data-role="Designer">Designer</button>
+          <button class="role-pill" data-role="Freelancer">Freelancer</button>
+          <button class="role-pill" data-role="Content Creator">Content Creator</button>
+          <button class="role-pill" data-role="Marketing">Marketing</button>
+          <button class="role-pill" data-role="Other">Other</button>
+        </div>
+        <div class="explore-sort">
+          <label for="sort-select" class="sr-only">Sort by</label>
+          <select id="sort-select" class="sort-select">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="name_asc">Name A–Z</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="explore-main">
+    <div class="container">
+
+      <!-- Results Info -->
+      <div class="results-info" id="results-info" style="display:none;">
+        <span id="results-count">0 portfolios found</span>
+      </div>
+
+      <!-- Portfolio Grid Skeleton -->
+      <div class="portfolio-grid" id="portfolio-skeleton">
+        <div class="portfolio-card-skeleton">
+          <div class="skeleton-cover"></div>
+          <div class="skeleton-card-body">
+            <div class="skeleton-avatar-wrap"><div class="skeleton-avatar-circle"></div></div>
+            <div class="skeleton-name"></div>
+            <div class="skeleton-title-sm"></div>
+            <div class="skeleton-tags-row"><span class="skeleton-tag-sm"></span><span class="skeleton-tag-sm"></span><span class="skeleton-tag-sm"></span></div>
+          </div>
+        </div>
+        <div class="portfolio-card-skeleton">
+          <div class="skeleton-cover"></div>
+          <div class="skeleton-card-body">
+            <div class="skeleton-avatar-wrap"><div class="skeleton-avatar-circle"></div></div>
+            <div class="skeleton-name"></div>
+            <div class="skeleton-title-sm"></div>
+            <div class="skeleton-tags-row"><span class="skeleton-tag-sm"></span><span class="skeleton-tag-sm"></span><span class="skeleton-tag-sm"></span></div>
+          </div>
+        </div>
+        <div class="portfolio-card-skeleton">
+          <div class="skeleton-cover"></div>
+          <div class="skeleton-card-body">
+            <div class="skeleton-avatar-wrap"><div class="skeleton-avatar-circle"></div></div>
+            <div class="skeleton-name"></div>
+            <div class="skeleton-title-sm"></div>
+            <div class="skeleton-tags-row"><span class="skeleton-tag-sm"></span><span class="skeleton-tag-sm"></span><span class="skeleton-tag-sm"></span></div>
+          </div>
+        </div>
+        <div class="portfolio-card-skeleton">
+          <div class="skeleton-cover"></div>
+          <div class="skeleton-card-body">
+            <div class="skeleton-avatar-wrap"><div class="skeleton-avatar-circle"></div></div>
+            <div class="skeleton-name"></div>
+            <div class="skeleton-title-sm"></div>
+            <div class="skeleton-tags-row"><span class="skeleton-tag-sm"></span><span class="skeleton-tag-sm"></span><span class="skeleton-tag-sm"></span></div>
+          </div>
+        </div>
+        <div class="portfolio-card-skeleton">
+          <div class="skeleton-cover"></div>
+          <div class="skeleton-card-body">
+            <div class="skeleton-avatar-wrap"><div class="skeleton-avatar-circle"></div></div>
+            <div class="skeleton-name"></div>
+            <div class="skeleton-title-sm"></div>
+            <div class="skeleton-tags-row"><span class="skeleton-tag-sm"></span><span class="skeleton-tag-sm"></span><span class="skeleton-tag-sm"></span></div>
+          </div>
+        </div>
+        <div class="portfolio-card-skeleton">
+          <div class="skeleton-cover"></div>
+          <div class="skeleton-card-body">
+            <div class="skeleton-avatar-wrap"><div class="skeleton-avatar-circle"></div></div>
+            <div class="skeleton-name"></div>
+            <div class="skeleton-title-sm"></div>
+            <div class="skeleton-tags-row"><span class="skeleton-tag-sm"></span><span class="skeleton-tag-sm"></span><span class="skeleton-tag-sm"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="portfolio-grid" id="portfolio-grid" style="display:none;"></div>
+
+      <!-- Empty State -->
+      <div class="explore-empty" id="explore-empty" style="display:none;">
+        <div class="explore-empty-icon"><svg class="ph-icon" width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>No portfolios found</h3>
+        <p>Try adjusting your search or filter criteria.</p>
+        <button class="btn btn-outline" id="explore-reset-btn">Clear Filters</button>
+      </div>
+
+      <!-- Load More -->
+      <div class="load-more-wrap" id="explore-load-more-wrap" style="display:none;">
+        <button class="btn btn-outline" id="explore-load-more-btn">Load More Portfolios</button>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/navigation.js"></script>
+  <script type="module">
+    import { init } from './js/explore.js';
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
