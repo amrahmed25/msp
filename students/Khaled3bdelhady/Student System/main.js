@@ -232,6 +232,7 @@ if (subjectsContainer) {
     }
 }
 
+const welcomeMessage = document.getElementById("welcomeMessage");
 
 if (welcomeMessage) {
     const email = localStorage.getItem("loggedInUser");
@@ -544,56 +545,70 @@ if (welcomeMessage) {
 
 
 
-//TO DO
+// TO DO 
 (() => {
     const addTaskBtn = document.getElementById("addTaskBtn");
     const tasksContainer = document.querySelector(".tasks-section");
-    
+
     if (!addTaskBtn || !tasksContainer) return;
 
     const nameInput = document.getElementById("task-name");
     const subjectInput = document.getElementById("task-subject");
     const durationInput = document.getElementById("task-duration");
     const priorityInput = document.getElementById("task-priority");
-
+    const list = document.getElementById("tasksList");
     const totalEl = document.getElementById("totalTasks");
     const completedEl = document.getElementById("completedTasks");
     const pendingEl = document.getElementById("pendingTasks");
     const highPriorityEl = document.getElementById("highPriorityTasks");
+    if (!subjectInput || !list) {
+        console.error("Missing #task-subject or #tasksList in to_do_list.html");
+        return;
+    }
 
-    const list = document.getElementById("tasksList");
+    const email = localStorage.getItem("loggedInUser");
 
-    if (!list) return;
-
-    const email = localStorage.getItem("loggedInUser") || "guest";
     function loadSubjects() {
-    const allSubjects =
-        JSON.parse(localStorage.getItem("studentSubjects")) || {};
+        const allSubjects =
+            JSON.parse(localStorage.getItem("studentSubjects")) || {};
 
-    const savedSubjects = allSubjects[email] || [];
+        const savedSubjects = allSubjects[email] || [];
 
-    subjectInput.replaceChildren();
+        subjectInput.replaceChildren();
 
-    const defaultOption = document.createElement("option");
-    defaultOption.value = "";
-    defaultOption.textContent = "Select Subject";
-    defaultOption.disabled = true;
-    defaultOption.selected = true;
+        const defaultOption = document.createElement("option");
+        defaultOption.value = "";
+        defaultOption.textContent = "Select Subject";
+        defaultOption.selected = true;
+        defaultOption.disabled = true;
+        subjectInput.appendChild(defaultOption);
 
-    subjectInput.appendChild(defaultOption);
+        let count = 0;
 
-    savedSubjects.forEach(subject => {
-        if (!subject || !subject.name || !subject.name.trim()) return;
+        savedSubjects.forEach(subject => {
+            if (!subject?.name?.trim()) return;
 
-        const option = document.createElement("option");
-        option.value = subject.name;
-        option.textContent = subject.name;
+            const option = document.createElement("option");
+            option.value = subject.name;
+            option.textContent = subject.name;
+            subjectInput.appendChild(option);
+            count++;
+        });
 
-        subjectInput.appendChild(option);
-    });
-}
+        if (count === 0) {
+            const option = document.createElement("option");
+            option.value = "";
+            option.textContent = "No subjects found — add them in My Subjects";
+            option.disabled = true;
+            subjectInput.appendChild(option);
+        }
 
-loadSubjects();
+        console.log("Logged-in email:", email);
+        console.log("Saved subjects:", savedSubjects);
+    }
+
+    loadSubjects();
+
     const storageKey = `todoTasks_${email}`;
 
     let tasks = [];
