@@ -101,7 +101,7 @@ const khaledAbdelhady={
         preview: "./students/Khaled3bdelhady/Student System/Images/setup.jpg",
         description: "A responsive Student life management system website ",
         technologies: ["HTML", "CSS", "JavaScript"],
-        github: ""
+        github: "https://github.com/amrahmed25/msp/tree/main/students/Khaled3bdelhady/Student%20System"
       },
 
     ]
