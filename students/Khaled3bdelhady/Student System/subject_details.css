@@ -6,7 +6,7 @@
 body {
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(rgba(6, 28, 44, 0.45), rgba(0, 16, 36, 0.70)), url(./images/setup.jpg);
+    background-image: linear-gradient(rgba(6, 28, 44, 0.45), rgba(0, 16, 36, 0.70)), url(./Images/setup.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
